@@ -1,0 +1,338 @@
+---
+title: "Interactive_R_Shiny_Html_Document"
+author: "Emir Toker"
+date: "9/11/2019"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+***
+## Data Frames
+
+
+### Interactive Data Frame
+
+```{r cars}
+cars
+summary(cars)
+```
+
+#### for iris data
+
+```{r iris}
+iris
+```
+
+#### DT packages
+
+```{r}
+library(DT)
+datatable(iris, options = list(pageLength = 5))
+```
+
+***
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r } 
+pressure  
+plot(pressure)
+```
+
+
+***
+## Magma Demo
+Maunga Whau volcano in Auckland, New Zealand. *(volcano)*
+
+### Magma colors
+
+Viridis package displays a contour map
+```{r message=FALSE, warning=FALSE}
+library(viridis)
+```
+
+```{r fig.cap="The Maunda Whau volcano, Auckland."}
+image(volcano, col = viridis(200, option = "A"))
+```
+
+### Terrain colors
+
+```{r }
+colorFunc <- "terrain.colors"
+```
+
+```{r fig.cap="The Maunda Whau volcano, Auckland."}
+image(volcano, col = get(colorFunc)(200))
+```
+
+### with other colors
+
+```{r include = FALSE}
+library(shiny)
+library(viridis)
+```
+
+You've seen the Maunga Whau volcano displayed in a variety of colors. Now pick your favorite.
+
+```{r echo = FALSE}
+
+library(shiny)
+library(viridis)
+
+selectInput("colors", "Choose a color palette", 
+  choices = c("viridis", "magma", "inferno", "plasma", "heat",
+  "terrain", "topographic", "cyan/magenta", "rainbow"))
+
+colorPalette <- reactive({
+  switch(input$colors, 
+         "viridis" = viridis(200),
+         "magma" = viridis(200, option = "A"),
+         "inferno" = viridis(200, option = "B"),
+         "plasma" = viridis(200, option = "C"),
+         "heat" = heat.colors(200),
+         "terrain" = terrain.colors(200),
+         "topographic" = topo.colors(200),
+         "cyan/magenta" = cm.colors(200),
+         "rainbow" = rainbow(200))
+})
+
+renderPlot({
+  image(volcano, col = colorPalette())
+})
+```
+
+
+***
+## Other languages
+
+### Bash
+
+```{bash}
+ls *.Rmd
+```
+
+### Python
+
+```{python}
+x = 'hi dear earth!'
+print(x)
+print(x.split(' '))
+```
+
+***
+## Link to somewhere
+
+For example my cv
+
+* [emir_cv](https://web.itu.edu.tr/~tokerem/cv.pdf)
+
+
+***
+## Daynamic MAP (Leaflet)
+
+http://rstudio.github.io/leaflet/
+
+Leaflet is a JavaScript library for creating dynamic maps that support panning and zooming along with various annotations like markers, polygons, and popups.
+
+```{r include = FALSE}
+library(leaflet)
+library(dplyr)
+```
+
+Use the leaflet map below to explore the actual point where, We Are Here. 
+
+```{r}
+l <- leaflet() %>%
+  setView(lng=29.025564, lat=41.103914, zoom = 15) %>% 
+  addTiles() %>%
+  addMarkers(lng=29.025564, lat=41.103914, popup="Maunga Whau") 
+
+l %>%
+  addMiniMap()
+```
+
+### Weather
+
+```{r}
+leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 4) %>%
+  addWMSTiles(
+    "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi",
+    layers = "nexrad-n0r-900913",
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    attribution = "Weather data © 2012 IEM Nexrad"
+  )
+```
+
+### Earth Quake
+
+```{r}
+library(shiny)
+library(leaflet)
+library(RColorBrewer)
+
+ui <- bootstrapPage(
+  tags$style(type = "text/css", "html, body {width:100%;height:100%}"),
+  leafletOutput("map", width = "100%", height = "100%"),
+  absolutePanel(top = 10, right = 10,
+    sliderInput("range", "Magnitudes", min(quakes$mag), max(quakes$mag),
+      value = range(quakes$mag), step = 0.1
+    ),
+    selectInput("colors", "Color Scheme",
+      rownames(subset(brewer.pal.info, category %in% c("seq", "div")))
+    ),
+    checkboxInput("legend", "Show legend", TRUE)
+  )
+)
+
+server <- function(input, output, session) {
+
+  # Reactive expression for the data subsetted to what the user selected
+  filteredData <- reactive({
+    quakes[quakes$mag >= input$range[1] & quakes$mag <= input$range[2],]
+  })
+
+  # This reactive expression represents the palette function,
+  # which changes as the user makes selections in UI.
+  colorpal <- reactive({
+    colorNumeric(input$colors, quakes$mag)
+  })
+
+  output$map <- renderLeaflet({
+    # Use leaflet() here, and only include aspects of the map that
+    # won't need to change dynamically (at least, not unless the
+    # entire map is being torn down and recreated).
+    leaflet(quakes) %>% addTiles() %>%
+      fitBounds(~min(long), ~min(lat), ~max(long), ~max(lat))
+  })
+
+  # Incremental changes to the map (in this case, replacing the
+  # circles when a new color is chosen) should be performed in
+  # an observer. Each independent set of things that can change
+  # should be managed in its own observer.
+  observe({
+    pal <- colorpal()
+
+    leafletProxy("map", data = filteredData()) %>%
+      clearShapes() %>%
+      addCircles(radius = ~10^mag/10, weight = 1, color = "#777777",
+        fillColor = ~pal(mag), fillOpacity = 0.7, popup = ~paste(mag)
+      )
+  })
+
+  # Use a separate observer to recreate the legend as needed.
+  observe({
+    proxy <- leafletProxy("map", data = quakes)
+
+    # Remove any existing legend, and only if the legend is
+    # enabled, create a new one.
+    proxy %>% clearControls()
+    if (input$legend) {
+      pal <- colorpal()
+      proxy %>% addLegend(position = "bottomright",
+        pal = pal, values = ~mag
+      )
+    }
+  })
+}
+
+shinyApp(ui, server)
+```
+
+***
+## Daynamic Time Series (Dygraphs)
+
+http://rstudio.github.io/dygraphs
+
+Dygraphs provides rich facilities for charting time-series data in R and includes support for many interactive features including series/point highlighting, zooming, and panning.
+
+```{r e1,exercise=TRUE}
+library(dygraphs)
+dygraph(nhtemp, main = "New Haven Temperatures") %>% 
+  dyRangeSelector(dateWindow = c("1920-01-01", "1960-01-01")) %>%
+  # add this
+  dyLimit(mean(nhtemp), color = "red") %>%
+  # add this
+  dyEvent("1953-2-09", "Vov", labelLoc = "bottom") 
+```
+
+***
+## Daynamic Bars (Dygraphs)
+
+https://rstudio.github.io/dygraphs/index.html
+
+```{r}
+library(ggplot2)
+library(plotly)
+p <- ggplot(data = diamonds, aes(x = cut, fill = clarity)) +
+            geom_bar(position = "dodge")
+ggplotly(p)
+```
+
+
+***
+## Daynamic Scatter Plot 
+
+```{r}
+d <- diamonds[sample(nrow(diamonds), 500), ]
+plot_ly(d, x = d$carat, y = d$price, 
+        text = paste("Clarity: ", d$clarity),
+        mode = "markers", color = d$carat, size = d$carat)
+```
+
+***
+## networkD3
+
+```{r}
+# Load package
+library(networkD3)
+
+# Create fake data
+src <- c("Handan", "Handan", "Handan", "Handan",
+        "Murat", "Murat", "Ceyda", "Ceyda", "Doruk")
+target <- c("Murat", "Ceyda", "Doruk", "J",
+            "Eeren", "Fatma", "Gökhan", "Halim", "Umut")
+networkData <- data.frame(src, target)
+
+# Plot
+simpleNetwork(networkData)
+```
+
+```{r}
+library(networkD3)
+data(MisLinks, MisNodes)
+forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name",
+             Group = "group", opacity = 0.4)
+```
+
+***
+## animation
+
+```{r
+library(gapminder)
+library(ggplot2)
+library(gganimate)
+library(ggExtra)
+
+ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  # Here comes the gganimate specific bits
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+```
+
+
