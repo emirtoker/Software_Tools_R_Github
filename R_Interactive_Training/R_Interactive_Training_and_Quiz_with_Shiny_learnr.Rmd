@@ -1,5 +1,5 @@
 ---
-title: "Introduction to R - Interactive Training & Quiz"
+title: "R Interactive Training and Quiz"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
