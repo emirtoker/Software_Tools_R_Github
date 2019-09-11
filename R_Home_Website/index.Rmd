@@ -19,15 +19,18 @@ output: html_document
 <div class="col-sm-6">
 
 
-**Syllabus - ** [PDF]()
+
+**R Repository** -  [Emir Github](https://github.com/emirtoker/Software_Tools_R_Github)
+
+***
+
+**Syllabus - ** [PDF](https://github.com/emirtoker/Software_Tools_R_Github/blob/master/Software_Tools_for_Earth_and_Environmental_Science_Syllabus.pdf)
 
 ***
 
 **My interactive training - ** ["Intro to R"](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
 
 ***
-
-
 
 
 
