@@ -1,7 +1,6 @@
 ---
 title: "Introduction to R"
 author: "Emir Toker"
-date: "9/12/2019"
 output: html_document
 ---
 
@@ -10,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 ***
 
-**R Repository** -  [Emir Github](https://github.com/emirtoker/Software_Tools_R_Github)
+**R Repository** -  [Github](https://github.com/emirtoker/Software_Tools_R_Github)
 
 ***
 
