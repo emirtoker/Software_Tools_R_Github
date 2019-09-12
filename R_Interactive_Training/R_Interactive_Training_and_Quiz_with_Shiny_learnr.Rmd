@@ -12,7 +12,7 @@ library(learnr)
 
 
 
-## Introduction
+## **Introduction**
 
 ***
 **R - Interactive Training and Quiz**
@@ -34,7 +34,7 @@ library(learnr)
 
 *Qıiz*
 
-## Calculations
+## **Calculations**
 
 You probably heard R is good at doing math. Let’s start with the basic syntax for calculations. R performs addition, subtraction, multiplication, and division with `+`, `-`, `*`, and `/` :
 ```{r}
@@ -54,7 +54,7 @@ That was R code too, you see. It is OK!
 
 
 
-## Comments
+## **Comments**
 Ironically, the second thing we’re going to do is show how to tell R to ignore a part of your program. We promise it’s very useful to know how to do this. Text written in a program but not run by the computer is called a *comment*. R interprets anything after a `#` as a comment.
 
 Why would anyone want the computer to ignore a part of their file? Multiple reasons! Comments can:
@@ -84,7 +84,7 @@ Write a command about that code. Say something ! Where is your `#` ?
 
 
 
-## Data Types
+## **Data Types**
 Now that you know how to calculate basic math and add comments explaining your code, let’s dive into how R labels different types of data. In R and in programming, *data types* are the classifications we give different kinds of information pieces. In this lesson, we will explore the following R data types:
 
 1. **Numeric**: Any number with or without a decimal point: `23`, `0.03` 
@@ -121,7 +121,7 @@ print()
 
 
 
-## Variables
+## **Variables**
 
 Now that you know how R classifies some of the basic information types, let’s figure out how to store them. In programming, variables allow us to store information and associate that information with a name. In R, we *assign* variables by using the assignment operator, an arrow sign (`<-`) made with a carat and a dash.
 ```{r t5,exercise=TRUE}
@@ -154,7 +154,7 @@ print(message_string)
 
 
 
-## Vectors
+## **Vectors**
 
 We mentioned Vectors when we introduced data types earlier. In R, vectors are a list-like structure that contain items of the same data type.\
 Take a look here:
@@ -190,7 +190,7 @@ phone <- c("0212","548","3652")
 
 
 
-## Conditionals
+## **Conditionals**
 
 In R, we will often perform a task based on a condition. For example, if we are analyzing data for the summer, then we will only want to look at data that falls in June, July, and September.
 
@@ -246,7 +246,7 @@ if (___) {
 
 
 
-## Comparison Operators
+## **Comparison Operators**
 
 When writing conditional statements, sometimes we need to use different types of operators to compare values. These operators are called comparison operators.
 
@@ -283,7 +283,7 @@ It can be helpful to think of comparison statements as questions. When the answe
 
 
 
-## Logical Operators
+## **Logical Operators**
 
 Working with conditionals means that we will be using logical, true or false values. In R, there are operators that work with logical values known as logical operators. We can use logical operators to add more sophisticated logic to our conditionals. There are three logical operators:
 
@@ -367,7 +367,7 @@ if (weather == "cloudy" & high_chance_of_rain == TRUE) {
 
 
 
-## Calling a Function
+## **Calling a Function**
 
 Functions are actions we can perform. R provides a number of functions, and you’ve actually been using a few of them even though you maybe didn’t realize!
 
@@ -435,7 +435,7 @@ print(c(round_down,round_up))
 
 
 
-## Importing Packages
+## **Importing Packages**
 
 R’s popularity is also largely due to the many fantastic packages available in the language! A package is a bundle of code that makes coding certain tasks easier. There are all sorts of packages for all sorts of purposes, ranging from visualizing and cleaning data, to ordering pizza or posting a tweet. In fact, most R-grammers (R programmers) use packages when they code. This is why you might hear them differentiate packages from “Base R.” Base R refers the R language by itself and all that it can do without importing any packages.
 
@@ -469,7 +469,7 @@ library(readr)
 
 
 
-## Review
+## **Review**
 
 Congrats on finishing your first R lesson!
 
@@ -492,7 +492,7 @@ This is not the **End**
 
 
 
-## Quiz
+## **Quiz**
 
 *When you need, use this*
 

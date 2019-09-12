@@ -46,7 +46,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <p><em>I am inspired from <a href="https://www.codecademy.com/">codecademy</a>.</em></p>
 <div id="section-introduction" class="section level2">
-<h2>Introduction</h2>
+<h2><strong>Introduction</strong></h2>
 <hr />
 <p><strong>R - Interactive Training and Quiz</strong></p>
 <p><strong>Topics</strong></p>
@@ -66,7 +66,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <p><em>Qıiz</em></p>
 </div>
 <div id="section-calculations" class="section level2">
-<h2>Calculations</h2>
+<h2><strong>Calculations</strong></h2>
 <p>You probably heard R is good at doing math. Let’s start with the basic syntax for calculations. R performs addition, subtraction, multiplication, and division with <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code> :</p>
 <pre class="r"><code>7 + 7 </code></pre>
 <pre><code>## [1] 14</code></pre>
@@ -82,7 +82,7 @@ Calculate; 25 <code>*</code> 4 <code>+</code> 9 <code>/</code> 3 <code>-</code> 
 </div>
 </div>
 <div id="section-comments" class="section level2">
-<h2>Comments</h2>
+<h2><strong>Comments</strong></h2>
 <p>Ironically, the second thing we’re going to do is show how to tell R to ignore a part of your program. We promise it’s very useful to know how to do this. Text written in a program but not run by the computer is called a <em>comment</em>. R interprets anything after a <code>#</code> as a comment.</p>
 <p>Why would anyone want the computer to ignore a part of their file? Multiple reasons! Comments can:</p>
 <ul>
@@ -103,7 +103,7 @@ Write a command about that code. Say something ! Where is your <code>#</code> ?
 </div>
 </div>
 <div id="section-data-types" class="section level2">
-<h2>Data Types</h2>
+<h2><strong>Data Types</strong></h2>
 <p>Now that you know how to calculate basic math and add comments explaining your code, let’s dive into how R labels different types of data. In R and in programming, <em>data types</em> are the classifications we give different kinds of information pieces. In this lesson, we will explore the following R data types:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Numeric</strong>: Any number with or without a decimal point: <code>23</code>, <code>0.03</code></li>
@@ -141,7 +141,7 @@ class(NA) </code></pre>
 </div>
 </div>
 <div id="section-variables" class="section level2">
-<h2>Variables</h2>
+<h2><strong>Variables</strong></h2>
 Now that you know how R classifies some of the basic information types, let’s figure out how to store them. In programming, variables allow us to store information and associate that information with a name. In R, we <em>assign</em> variables by using the assignment operator, an arrow sign (<code>&lt;-</code>) made with a carat and a dash.
 <div class="tutorial-exercise" data-label="t5" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>full_name &lt;-&quot;Killa Hakan&quot;</code></pre>
@@ -175,7 +175,7 @@ print(message_string)</code></pre>
 </div>
 </div>
 <div id="section-vectors" class="section level2">
-<h2>Vectors</h2>
+<h2><strong>Vectors</strong></h2>
 <p>We mentioned Vectors when we introduced data types earlier. In R, vectors are a list-like structure that contain items of the same data type.<br />
 Take a look here:</p>
 <div class="tutorial-exercise" data-label="t8" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
@@ -210,7 +210,7 @@ phone &lt;- c(&quot;0212&quot;,&quot;548&quot;,&quot;3652&quot;)</code></pre>
 </div>
 </div>
 <div id="section-conditionals" class="section level2">
-<h2>Conditionals</h2>
+<h2><strong>Conditionals</strong></h2>
 <p>In R, we will often perform a task based on a condition. For example, if we are analyzing data for the summer, then we will only want to look at data that falls in June, July, and September.</p>
 <p>We can perform a task based on a condition using an if statement:</p>
 <div class="tutorial-exercise" data-label="t10" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
@@ -263,7 +263,7 @@ if (___) {
 </div>
 </div>
 <div id="section-comparison-operators" class="section level2">
-<h2>Comparison Operators</h2>
+<h2><strong>Comparison Operators</strong></h2>
 <p>When writing conditional statements, sometimes we need to use different types of operators to compare values. These operators are called comparison operators.</p>
 <p>Here is a list of some handy comparison operators and their syntax:</p>
 <ul>
@@ -295,7 +295,7 @@ if (___) {
 </div>
 </div>
 <div id="section-logical-operators" class="section level2">
-<h2>Logical Operators</h2>
+<h2><strong>Logical Operators</strong></h2>
 <p>Working with conditionals means that we will be using logical, true or false values. In R, there are operators that work with logical values known as logical operators. We can use logical operators to add more sophisticated logic to our conditionals. There are three logical operators:</p>
 <ul>
 <li>the and operator (<code>&amp;</code>)</li>
@@ -371,7 +371,7 @@ if (weather == &quot;cloudy&quot; &amp; high_chance_of_rain == TRUE) {
 </div>
 </div>
 <div id="section-calling-a-function" class="section level2">
-<h2>Calling a Function</h2>
+<h2><strong>Calling a Function</strong></h2>
 <p>Functions are actions we can perform. R provides a number of functions, and you’ve actually been using a few of them even though you maybe didn’t realize!</p>
 <p>We <em>call</em>, or use, these functions by stating the name of the function and following it with an opening and closing parentheses: ie. <code>functionName()</code>. In addition, between the parenthesis, we usually pass in an <em>argument</em>, or a value that the function uses to conduct an action, i.e. <code>functionName(value)</code>.</p>
 <p>Does that syntax look a little familiar? When we have used <code>print()</code> we’re calling the <code>print</code> function. When we made a vector, we actually used the combine <code>c()</code> function! Let’s see <code>print()</code> and some real functions in action!</p>
@@ -431,7 +431,7 @@ print(c(round_down,round_up))</code></pre>
 </div>
 </div>
 <div id="section-importing-packages" class="section level2">
-<h2>Importing Packages</h2>
+<h2><strong>Importing Packages</strong></h2>
 <p>R’s popularity is also largely due to the many fantastic packages available in the language! A package is a bundle of code that makes coding certain tasks easier. There are all sorts of packages for all sorts of purposes, ranging from visualizing and cleaning data, to ordering pizza or posting a tweet. In fact, most R-grammers (R programmers) use packages when they code. This is why you might hear them differentiate packages from “Base R.” Base R refers the R language by itself and all that it can do without importing any packages.</p>
 <p>Base R is very powerful, but most of the time, you’ll want to import a package to make your life easier. You only need to run this command the first time you install a package, after that there is no need to run it:</p>
 <pre><code>install.packages(&#39;package-name&#39;)</code></pre>
@@ -454,7 +454,7 @@ library(readr)</code></pre>
 </div>
 </div>
 <div id="section-review" class="section level2">
-<h2>Review</h2>
+<h2><strong>Review</strong></h2>
 <p>Congrats on finishing your first R lesson!</p>
 <p>Here’s a summary of some of the concepts you’ve learned:</p>
 <ul>
@@ -471,7 +471,7 @@ library(readr)</code></pre>
 <p>This is not the <strong>End</strong></p>
 </div>
 <div id="section-quiz" class="section level2">
-<h2>Quiz</h2>
+<h2><strong>Quiz</strong></h2>
 <p><em>When you need, use this</em></p>
 <div class="tutorial-exercise" data-label="q1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
@@ -482,105 +482,105 @@ library(readr)</code></pre>
 <tr>
 <td>
 
-<div id="htmlwidget-4f53f6f260aaa1dc3d50" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-4f17c1087ce067fb7be8" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-4f53f6f260aaa1dc3d50">{"x":{"question":"1.Which of the following examples includes a <em>function<\/em> call with two arguments?","answers":[{"option":"sum(289,398)","correct":true,"message":null},{"option":"numbers &lt;- c(22,33,44,55)","correct":false,"message":null},{"option":"population &lt;- &#39; 7 billion &#39;","correct":false,"message":null},{"option":"lenght(data)","correct":false,"message":null}],"label":"quiz1-1","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"1.Which of the following examples includes a <em>function<\/em> call with two arguments?","a":[{"option":"sum(289,398)","correct":true,"message":null},{"option":"numbers &lt;- c(22,33,44,55)","correct":false,"message":null},{"option":"population &lt;- &#39; 7 billion &#39;","correct":false,"message":null},{"option":"lenght(data)","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-4f17c1087ce067fb7be8">{"x":{"question":"1.Which of the following examples includes a <em>function<\/em> call with two arguments?","answers":[{"option":"sum(289,398)","correct":true,"message":null},{"option":"numbers &lt;- c(22,33,44,55)","correct":false,"message":null},{"option":"population &lt;- &#39; 7 billion &#39;","correct":false,"message":null},{"option":"lenght(data)","correct":false,"message":null}],"label":"quiz1-1","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"1.Which of the following examples includes a <em>function<\/em> call with two arguments?","a":[{"option":"sum(289,398)","correct":true,"message":null},{"option":"numbers &lt;- c(22,33,44,55)","correct":false,"message":null},{"option":"population &lt;- &#39; 7 billion &#39;","correct":false,"message":null},{"option":"lenght(data)","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
 <td>
 
-<div id="htmlwidget-03f7e01d864de30b9bc9" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-02c08395c7964c0b5f6e" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-03f7e01d864de30b9bc9">{"x":{"question":"2.What is the outcome of the following code snippet? <\/p>\n\n<pre><code>     (15 + 5) / 2 * 2\n<\/code><\/pre>\n","answers":[{"option":"20","correct":true,"message":null},{"option":"2","correct":false,"message":null},{"option":"5","correct":false,"message":null},{"option":"16.25","correct":false,"message":null}],"label":"quiz1-2","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"2.What is the outcome of the following code snippet? <\/p>\n\n<pre><code>     (15 + 5) / 2 * 2\n<\/code><\/pre>\n","a":[{"option":"20","correct":true,"message":null},{"option":"2","correct":false,"message":null},{"option":"5","correct":false,"message":null},{"option":"16.25","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-02c08395c7964c0b5f6e">{"x":{"question":"2.What is the outcome of the following code snippet? <\/p>\n\n<pre><code>     (15 + 5) / 2 * 2\n<\/code><\/pre>\n","answers":[{"option":"20","correct":true,"message":null},{"option":"2","correct":false,"message":null},{"option":"5","correct":false,"message":null},{"option":"16.25","correct":false,"message":null}],"label":"quiz1-2","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"2.What is the outcome of the following code snippet? <\/p>\n\n<pre><code>     (15 + 5) / 2 * 2\n<\/code><\/pre>\n","a":[{"option":"20","correct":true,"message":null},{"option":"2","correct":false,"message":null},{"option":"5","correct":false,"message":null},{"option":"16.25","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
 <td>
 
-<div id="htmlwidget-91d226a57e3845dff1f5" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-e7462b152f9ba58562aa" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-91d226a57e3845dff1f5">{"x":{"question":"3.Which of the following creates a variable with arrow syntax called student_count with a character value of 23? <em>(reply it like a R&#39;tist)<\/em>","answers":[{"option":"student_count &lt;- &#39;23&#39;","correct":true,"message":null},{"option":"student_count &lt;- 23","correct":false,"message":null},{"option":"student_count = &#39;23&#39;","correct":false,"message":null},{"option":"student_count = 23","correct":false,"message":null}],"label":"quiz1-3","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"3.Which of the following creates a variable with arrow syntax called student_count with a character value of 23? <em>(reply it like a R&#39;tist)<\/em>","a":[{"option":"student_count &lt;- &#39;23&#39;","correct":true,"message":null},{"option":"student_count &lt;- 23","correct":false,"message":null},{"option":"student_count = &#39;23&#39;","correct":false,"message":null},{"option":"student_count = 23","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-e7462b152f9ba58562aa">{"x":{"question":"3.Which of the following creates a variable with arrow syntax called student_count with a character value of 23? <em>(reply it like a R&#39;tist)<\/em>","answers":[{"option":"student_count &lt;- &#39;23&#39;","correct":true,"message":null},{"option":"student_count &lt;- 23","correct":false,"message":null},{"option":"student_count = &#39;23&#39;","correct":false,"message":null},{"option":"student_count = 23","correct":false,"message":null}],"label":"quiz1-3","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"3.Which of the following creates a variable with arrow syntax called student_count with a character value of 23? <em>(reply it like a R&#39;tist)<\/em>","a":[{"option":"student_count &lt;- &#39;23&#39;","correct":true,"message":null},{"option":"student_count &lt;- 23","correct":false,"message":null},{"option":"student_count = &#39;23&#39;","correct":false,"message":null},{"option":"student_count = 23","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
 <td>
 
-<div id="htmlwidget-d468c81f6fbf71d103fc" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-360035618f7a4ec6671b" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-d468c81f6fbf71d103fc">{"x":{"question":"4.Which of the following sentences explains the conditional statement below? <\/p>\n\n<pre><code>     if (age &gt;= 18 &amp; registered == TRUE) {\n      can_vote &lt;- TRUE\n     } else {\n       can_vote &lt;- FALSE\n     }\n<\/code><\/pre>\n","answers":[{"option":"If <strong>age<\/strong> is greater than 18 or <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":true,"message":null},{"option":"If <strong>age<\/strong> is greater than 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to FALSE Otherwise, set it to TRUE","correct":false,"message":null}],"label":"quiz1-4","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"4.Which of the following sentences explains the conditional statement below? <\/p>\n\n<pre><code>     if (age &gt;= 18 &amp; registered == TRUE) {\n      can_vote &lt;- TRUE\n     } else {\n       can_vote &lt;- FALSE\n     }\n<\/code><\/pre>\n","a":[{"option":"If <strong>age<\/strong> is greater than 18 or <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":true,"message":null},{"option":"If <strong>age<\/strong> is greater than 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to FALSE Otherwise, set it to TRUE","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-360035618f7a4ec6671b">{"x":{"question":"4.Which of the following sentences explains the conditional statement below? <\/p>\n\n<pre><code>     if (age &gt;= 18 &amp; registered == TRUE) {\n      can_vote &lt;- TRUE\n     } else {\n       can_vote &lt;- FALSE\n     }\n<\/code><\/pre>\n","answers":[{"option":"If <strong>age<\/strong> is greater than 18 or <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":true,"message":null},{"option":"If <strong>age<\/strong> is greater than 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to FALSE Otherwise, set it to TRUE","correct":false,"message":null}],"label":"quiz1-4","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"4.Which of the following sentences explains the conditional statement below? <\/p>\n\n<pre><code>     if (age &gt;= 18 &amp; registered == TRUE) {\n      can_vote &lt;- TRUE\n     } else {\n       can_vote &lt;- FALSE\n     }\n<\/code><\/pre>\n","a":[{"option":"If <strong>age<\/strong> is greater than 18 or <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":true,"message":null},{"option":"If <strong>age<\/strong> is greater than 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to TRUE. Otherwise, set it to FALSE.","correct":false,"message":null},{"option":"If <strong>age<\/strong> is greater than or equal to 18 and <strong>registered<\/strong> is TRUE, set the value of <strong>can_vote<\/strong> to FALSE Otherwise, set it to TRUE","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
 <td>
 
-<div id="htmlwidget-661f1b84eefa4367c712" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-85cb1cee89a75cd83d7c" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-661f1b84eefa4367c712">{"x":{"question":"5.Which of the following defined variables has a logical value?<\/p>\n\n<pre><code>       cool_variable1 = 324.2\n       cool_variable2 = glup glup this is the center of fight clup\n       cool_variable3 = FALSE\n       cool_variable4 = 0\n<\/code><\/pre>\n","answers":[{"option":"cool_variable1","correct":false,"message":null},{"option":"cool_variable2","correct":false,"message":null},{"option":"cool_variable3","correct":true,"message":null},{"option":"cool_variable4","correct":false,"message":null}],"label":"quiz1-5","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"5.Which of the following defined variables has a logical value?<\/p>\n\n<pre><code>       cool_variable1 = 324.2\n       cool_variable2 = glup glup this is the center of fight clup\n       cool_variable3 = FALSE\n       cool_variable4 = 0\n<\/code><\/pre>\n","a":[{"option":"cool_variable1","correct":false,"message":null},{"option":"cool_variable2","correct":false,"message":null},{"option":"cool_variable3","correct":true,"message":null},{"option":"cool_variable4","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-85cb1cee89a75cd83d7c">{"x":{"question":"5.Which of the following defined variables has a logical value?<\/p>\n\n<pre><code>       cool_variable1 = 324.2\n       cool_variable2 = glup glup this is the center of fight clup\n       cool_variable3 = FALSE\n       cool_variable4 = 0\n<\/code><\/pre>\n","answers":[{"option":"cool_variable1","correct":false,"message":null},{"option":"cool_variable2","correct":false,"message":null},{"option":"cool_variable3","correct":true,"message":null},{"option":"cool_variable4","correct":false,"message":null}],"label":"quiz1-5","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"5.Which of the following defined variables has a logical value?<\/p>\n\n<pre><code>       cool_variable1 = 324.2\n       cool_variable2 = glup glup this is the center of fight clup\n       cool_variable3 = FALSE\n       cool_variable4 = 0\n<\/code><\/pre>\n","a":[{"option":"cool_variable1","correct":false,"message":null},{"option":"cool_variable2","correct":false,"message":null},{"option":"cool_variable3","correct":true,"message":null},{"option":"cool_variable4","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
 <td>
 
-<div id="htmlwidget-f1d685d40c40df326355" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-9d853ee86d962d6bb2b5" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-f1d685d40c40df326355">{"x":{"question":"6.Which of the following is a false statement about vectors?","answers":[{"option":"Vectors can store items of different data types","correct":true,"message":null},{"option":"Vectors are created by calling the <code>c()<\/code> function and passing in arguments to add to the vector","correct":false,"message":null},{"option":"You can retrieve the lenght of a vector by calling the <code>length()<\/code>function and passing in the vector as an argument","correct":false,"message":null},{"option":"Vectors are list-like data-structures","correct":false,"message":null}],"label":"quiz1-6","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"6.Which of the following is a false statement about vectors?","a":[{"option":"Vectors can store items of different data types","correct":true,"message":null},{"option":"Vectors are created by calling the <code>c()<\/code> function and passing in arguments to add to the vector","correct":false,"message":null},{"option":"You can retrieve the lenght of a vector by calling the <code>length()<\/code>function and passing in the vector as an argument","correct":false,"message":null},{"option":"Vectors are list-like data-structures","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-9d853ee86d962d6bb2b5">{"x":{"question":"6.Which of the following is a false statement about vectors?","answers":[{"option":"Vectors can store items of different data types","correct":true,"message":null},{"option":"Vectors are created by calling the <code>c()<\/code> function and passing in arguments to add to the vector","correct":false,"message":null},{"option":"You can retrieve the lenght of a vector by calling the <code>length()<\/code>function and passing in the vector as an argument","correct":false,"message":null},{"option":"Vectors are list-like data-structures","correct":false,"message":null}],"label":"quiz1-6","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"6.Which of the following is a false statement about vectors?","a":[{"option":"Vectors can store items of different data types","correct":true,"message":null},{"option":"Vectors are created by calling the <code>c()<\/code> function and passing in arguments to add to the vector","correct":false,"message":null},{"option":"You can retrieve the lenght of a vector by calling the <code>length()<\/code>function and passing in the vector as an argument","correct":false,"message":null},{"option":"Vectors are list-like data-structures","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
 <td>
 
-<div id="htmlwidget-7741e7fa07232e13a458" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-ff17a4bb43c24e8bc247" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-7741e7fa07232e13a458">{"x":{"question":"7.Which of the following statements about variables is true?","answers":[{"option":"Variable names can start with letters, numbers, and a period or underscore character","correct":false,"message":null},{"option":"The only way to assign a variable name is with <code>&lt;-<\/code>arrow syntax","correct":false,"message":null},{"option":"Variables store information in your program and associate that information with a name","correct":true,"message":null},{"option":"Once a variable has been created, you cannot change its value","correct":false,"message":null}],"label":"quiz1-7","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"7.Which of the following statements about variables is true?","a":[{"option":"Variable names can start with letters, numbers, and a period or underscore character","correct":false,"message":null},{"option":"The only way to assign a variable name is with <code>&lt;-<\/code>arrow syntax","correct":false,"message":null},{"option":"Variables store information in your program and associate that information with a name","correct":true,"message":null},{"option":"Once a variable has been created, you cannot change its value","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-ff17a4bb43c24e8bc247">{"x":{"question":"7.Which of the following statements about variables is true?","answers":[{"option":"Variable names can start with letters, numbers, and a period or underscore character","correct":false,"message":null},{"option":"The only way to assign a variable name is with <code>&lt;-<\/code>arrow syntax","correct":false,"message":null},{"option":"Variables store information in your program and associate that information with a name","correct":true,"message":null},{"option":"Once a variable has been created, you cannot change its value","correct":false,"message":null}],"label":"quiz1-7","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"7.Which of the following statements about variables is true?","a":[{"option":"Variable names can start with letters, numbers, and a period or underscore character","correct":false,"message":null},{"option":"The only way to assign a variable name is with <code>&lt;-<\/code>arrow syntax","correct":false,"message":null},{"option":"Variables store information in your program and associate that information with a name","correct":true,"message":null},{"option":"Once a variable has been created, you cannot change its value","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
 <td>
 
-<div id="htmlwidget-0fc026da1fa040142498" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-fb1eeec03e57fb0d316a" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-0fc026da1fa040142498">{"x":{"question":"8.Which of the following is an example of a single line comment?","answers":[{"option":"This is a comment","correct":false,"message":null},{"option":"#This is a comment","correct":true,"message":null},{"option":"*This is a comment","correct":false,"message":null},{"option":"//This i...Okay I am not, obviously. &lt;3","correct":false,"message":null}],"label":"quiz1-8","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"8.Which of the following is an example of a single line comment?","a":[{"option":"This is a comment","correct":false,"message":null},{"option":"#This is a comment","correct":true,"message":null},{"option":"*This is a comment","correct":false,"message":null},{"option":"//This i...Okay I am not, obviously. &lt;3","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-fb1eeec03e57fb0d316a">{"x":{"question":"8.Which of the following is an example of a single line comment?","answers":[{"option":"This is a comment","correct":false,"message":null},{"option":"#This is a comment","correct":true,"message":null},{"option":"*This is a comment","correct":false,"message":null},{"option":"//This i...Okay I am not, obviously. &lt;3","correct":false,"message":null}],"label":"quiz1-8","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":false,"json":{"info":{"name":"","main":""},"questions":[{"q":"8.Which of the following is an example of a single line comment?","a":[{"option":"This is a comment","correct":false,"message":null},{"option":"#This is a comment","correct":true,"message":null},{"option":"*This is a comment","correct":false,"message":null},{"option":"//This i...Okay I am not, obviously. &lt;3","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </table>
