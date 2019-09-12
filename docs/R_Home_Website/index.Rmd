@@ -1,0 +1,45 @@
+---
+title: "About R Markdown"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+output: html_document
+---
+
+
+<style type="text/css">
+.title {
+  display: none;
+}
+
+#getting-started img {
+  margin-right: 10px;
+}
+
+</style>
+
+<div class="row" style="padding-top: 30px;">
+<div class="col-sm-6">
+
+
+
+**R Repository** -  [Emir Github](https://github.com/emirtoker/Software_Tools_R_Github)
+
+***
+
+**Syllabus - ** [PDF](https://github.com/emirtoker/Software_Tools_R_Github/blob/master/Software_Tools_for_Earth_and_Environmental_Science_Syllabus.pdf)
+
+***
+
+**My interactive training - ** ["Intro to R"](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+
+***
+
+
+
+
+
+</div>
+<div class="col-sm-6">
