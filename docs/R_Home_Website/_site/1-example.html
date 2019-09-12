@@ -9,14 +9,13 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Emir Toker" />
 
 
-<title>index</title>
+<title>Viridis Demo</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -280,7 +279,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">My Website</a>
+      <a class="navbar-brand" href="index.html">R Home Website</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -288,7 +287,10 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="section1.html">Section1</a>
+  <a href="1-example.html">Viridis Colors</a>
+</li>
+<li>
+  <a href="3-inline.html">Terrain Colors</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -302,31 +304,21 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">index</h1>
-<h4 class="author">Emir Toker</h4>
-<h4 class="date">9/12/2019</h4>
+<h1 class="title toc-ignore">Viridis Demo</h1>
 
 </div>
 
 
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>The code below demonstrates two color palettes in the <a href="https://github.com/sjmgarnier/viridis">viridis</a> package. Each plot displays a contour map of the Maunga Whau volcano in Auckland, New Zealand.</p>
+<div id="viridis-colors" class="section level2">
+<h2>Viridis colors</h2>
+<pre class="r"><code>image(volcano, col = viridis(200))</code></pre>
+<p><img src="1-example_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="index_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<div id="magma-colors" class="section level2">
+<h2>Magma colors</h2>
+<pre class="r"><code>image(volcano, col = viridis(200, option = &quot;A&quot;))</code></pre>
+<p><img src="1-example_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 
 

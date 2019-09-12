@@ -1,0 +1,571 @@
+---
+title: "R Interactive Training and Quiz"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+*I am inspired from [codecademy](https://www.codecademy.com/).*
+
+```{r setup, include=FALSE}
+library(learnr)
+# knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## Calculations
+
+You probably heard R is good at doing math. Let’s start with the basic syntax for calculations. R performs addition, subtraction, multiplication, and division with `+`, `-`, `*`, and `/` :
+```{r}
+7 + 7 
+```
+Mathematical operations in R follow the standard mathematical order of operations. Let’s write your first line of R code and calculate some basic math!
+
+***
+#### **Instructions** :
+
+Calculate; 25 `*` 4 `+` 9 `/` 3 `-` 56
+```{r t1a,exercise=TRUE}
+```
+
+That was R code too, you see. It is OK!
+
+
+
+
+## Comments
+Ironically, the second thing we’re going to do is show how to tell R to ignore a part of your program. We promise it’s very useful to know how to do this. Text written in a program but not run by the computer is called a *comment*. R interprets anything after a `#` as a comment.
+
+Why would anyone want the computer to ignore a part of their file? Multiple reasons! Comments can:
+
+- Provide context for why something is written the way it is:
+```
+# This variable will be used to count the number of times anyone tweets the word persnickety
+persnickety_count <- 0
+```
+- Help other people reading the code understand it faster:
+```
+# This code will calculate the likelihood that it will rain tomorrow
+complicated_rain_calculation_for_tomorrow()
+```
+- Ignore a line of code and see how a program will run without it:
+```
+# useful_value <- old_sloppy_code()
+  useful_value <- new_clean_code()
+```
+Documenting your code will help others reproduce it, and it will help you become a better programmer too. 
+
+Write a command about that code. Say something ! Where is your `#` ?
+```{r t2,exercise=TRUE}
+
+```
+
+
+
+
+## Data Types
+Now that you know how to calculate basic math and add comments explaining your code, let’s dive into how R labels different types of data. In R and in programming, *data types* are the classifications we give different kinds of information pieces. In this lesson, we will explore the following R data types:
+
+1. **Numeric**: Any number with or without a decimal point: `23`, `0.03` 
+2. **Character**: Any grouping of characters on your keyboard (letters, numbers, spaces, symbols, etc.) or text. Most strings are surrounded by single quotes: `' ... '` or double quotes `" ... "`, though we prefer single quotes. Sometimes you will hear this type referred to as “string.”
+3. **Logical**: This data type only has two possible values— either `TRUE` or `FALSE` (without quotes). It’s helpful to think of logical types or booleans as on and off switches or as the answers to a “yes” or “no” question.
+4. **Vectors**: A list of related data that is all the same type.
+5. **NA**: This data type represents the absence of a value, and is represented by the keyword `NA` (without quotes) but it has its own significance in the context of the different types. That is there is a numeric NA, a character NA, and a logical NA.
+
+Let’s get comfortable with checking the data type of the following (with `class()` function):
+
+```{r t3a,exercise=TRUE}
+class(2) 
+class('hello') 
+class('23') 
+class (FALSE) 
+class(NA) 
+```
+In the example above, notice that the third line is labeled a character type. Why? Because the characters `23` are in quotes, so it gets classified as a character.
+
+***
+#### **Instructions** :
+
+1. Print your name as a character string.
+2. Print your age as a numeric type.
+3. Print your age as a character type.
+3. On a new line of code, try to print your name as a numeric type. **(?!)**
+
+> In order to print a value, you must put the value inside the following syntax: `print()`. 
+
+```{r t4,exercise=TRUE}
+print()
+```
+
+
+
+
+## Variables
+
+Now that you know how R classifies some of the basic information types, let’s figure out how to store them. In programming, variables allow us to store information and associate that information with a name. In R, we *assign* variables by using the assignment operator, an arrow sign (`<-`) made with a carat and a dash.
+```{r t5,exercise=TRUE}
+full_name <-"Killa Hakan"
+```
+In the example above, we store the string value “Killa Hakan” in a variable called `full_name`. Variables can’t have spaces or symbols in their names other than an underscore (`_`). They can’t begin with numbers but they can have numbers after the first letter (e.g., `cool_variable_1` is OK).\
+It’s no coincidence we call these creatures “variables”. If we need to update a variable but perform the same logical process on it, we can change its value! For example, take the variable `message_string`:
+```{r t6,exercise=TRUE}
+# Greeting
+message_string <- "Hello there"
+print(message_string)
+
+# Farewell
+message_string <- "Hasta la vista"
+print(message_string)
+```
+
+> Note: You can also use `=` instead of `<-` to assign a value but "R'tists" (R programmers) prefer to do it with an arrow.
+
+***
+#### **Instructions** :
+1. Create a variable `name` with your first name as a **string**.
+2. Create a variable `age` with your age as a **number**.
+
+```{r t7,exercise=TRUE}
+
+```
+
+
+
+
+
+## Vectors
+
+We mentioned Vectors when we introduced data types earlier. In R, vectors are a list-like structure that contain items of the same data type.\
+Take a look here:
+
+```{r t8,exercise=TRUE}
+# spring_months is just a variable. It is a name. I made it. It is a vector_name.
+spring_months <- c("March", "April","May","June")
+```
+
+In the example above, we created a new variable with the value of a new vector. We created this vector by separating four character strings with a comma and wrapping them inside `c()`.
+
+> **c** means “combine”. 
+
+* You can check the type of elements in a vector by using `typeof(vector_name)`
+* You can check the length of a vector by using `length(vector_name)`
+* You can access individual elements in the vector by using `[]` and placing the element position inside the brackets. For example, if we wanted to access the second element we would write: `vector_name[2]`.
+
+> Note: In R, you start counting elements at position one, not zero.
+
+***
+#### Instructions
+
+1. Create a ***numeric*** vector named `phone` that contains your, phone number as three numbers: "your area code", "the next three digits", and then "the last four".
+2. Create a vector which is separating with three ***character strings***  named `phone` that contains your, phone number as three numbers: "your area code", "the next three digits", and then "the last four".
+
+```{r t9,exercise=TRUE}
+phone <- c(0212,548,3652)
+phone <- c("0212","548","3652")
+```
+
+
+
+
+
+
+## Conditionals
+
+In R, we will often perform a task based on a condition. For example, if we are analyzing data for the summer, then we will only want to look at data that falls in June, July, and September.
+
+We can perform a task based on a condition using an if statement:
+
+```{r t10,exercise=TRUE}
+if (TRUE) {
+  print('This message will print!')
+} 
+```
+
+Notice in the example above, we have an *if statement*. The if statement is composed of:
+
+* The if keyword followed by a set of parentheses `()` which is followed by a code block, or block statement, indicated by a set of curly braces `{}.
+* Inside the parentheses `()`, a condition is provided that evaluates to `TRUE` or `FALSE`.
+* If the condition evaluates to true, the code inside the curly braces `{}` runs, or executes.
+* If the condition evaluates to false, the code inside the block won’t execute.
+
+Knowing how to use if statements will help you introduce logic in your data analysis. There is also a way to add an *else statement*. An else statement must be paired with an if statement, and together they are referred to as an if…else statement.
+
+```{r t12,exercise=TRUE}
+if (TRUE) {
+   print("Go to sleep!")
+} else {
+   print("Wake up!")
+}
+```
+
+In the example above, the else statement:
+
+* Uses the else keyword following the code block of an if statement.
+* Has a code block that is wrapped by a set of curly braces, `{}`.
+* The code inside the else statement code block will execute when the if statement’s condition evaluates to false. These if…else statements allow us to automate solutions to yes-or-no questions, also known as binary decisions.
+
+***
+#### **Instructions** :
+
+1. Create a conditional statement. It will change the value of the variable `message` to `'I execute this when true!'` when the condition is `TRUE`, and the value of `message` to `'I execute this when false!'` when it is `FALSE`.
+2. Print the value of `message` after the if…else statement by using `print(message)`.
+
+```{r t13,exercise=TRUE}
+# I change based on a condition
+
+if (___) {
+  message <- "___"
+  print(message)
+} else {
+  message <- "I execute this when false!"
+  print(____)
+}
+```
+
+
+
+
+## Comparison Operators
+
+When writing conditional statements, sometimes we need to use different types of operators to compare values. These operators are called comparison operators.
+
+Here is a list of some handy comparison operators and their syntax:
+
+* Less than: `<`
+* Greater than: `>`
+* Less than or equal to: `<=`
+* Greater than or equal to: `>=`
+* Is equal to: `==`
+* Is NOT equal to: `!=`
+
+Comparison operators compare the value on the left with the value on the right. For instance:
+
+```{r t34,exercise=TRUE}
+10 < 12   #it is logical, isn't it ?
+```
+
+It can be helpful to think of comparison statements as questions. When the answer is “yes”, the statement evaluates to true, and when the answer is “no”, the statement evaluates to false. The code above would be asking: is 10 less than 12? Yes! So 10 < 12 evaluates to true.
+
+***
+#### **Instructions** :
+
+1. Use a comparison operator to check if 56 is greater than or equal to 129. What should this expression evaluate to? Check by running your code!
+2. In a new line, use the right comparison operator to check if 56 is NOT equal to 129. What should this expression evaluate to? Check by running your code!
+
+```{r t15,exercise=TRUE}
+56 >= 129
+56 != 129
+```
+
+
+
+
+
+
+## Logical Operators
+
+Working with conditionals means that we will be using logical, true or false values. In R, there are operators that work with logical values known as logical operators. We can use logical operators to add more sophisticated logic to our conditionals. There are three logical operators:
+
+* the and operator (`&`)
+* the or operator (`|`)
+* the not operator, otherwise known as the bang operator (`!`)
+
+When we use the `&` operator, we are checking that two things are true:
+
+```{r t16,exercise=TRUE}
+# you are a CAR, and you are going on the road, BUT ;
+
+Car_Stop_Light <- 'orange'
+Number_of_Pedestrians <- 2
+
+if (Car_Stop_Light == 'green' & Number_of_Pedestrians ==0) {
+  print('Go!');
+} else {
+  print('STOP');
+}
+
+```
+
+When using the `&` operator, both conditions must evaluate to true for the entire condition to evaluate to true and execute. Otherwise, if either condition is false, the `&` condition will evaluate to false and the else block will execute.
+
+If we only care about either condition being true, we can use the `| operator:
+
+```{r t17,exercise=TRUE}
+# You want to enjoy, and let's say the day is;
+
+day <- "Saturday"
+
+if (day == 'Saturday' | day == 'Sunday') {
+  print('Enjoy the weekend!')
+} else {
+  print('Do some work.')
+}
+```
+
+When using the `|` operator, only one of the conditions must evaluate to true for the overall statement to evaluate to true. In the code example above, if either `day == 'Saturday'` or `day == 'Sunday'` evaluates to true the if’s condition will evaluate to true and its code block will execute. If the first condition in an `|` statement evaluates to true, the second condition won’t even be checked.
+
+The `!` not operator reverses, or negates, the value of a TRUE value:
+
+```{r t18,exercise=TRUE}
+excited <- TRUE
+print(!excited) # Prints FALSE
+```
+
+Essentially, the `!` operator will either take a true value and pass back false, or it will take a false value and pass back true.
+
+Logical operators are often used in conditional statements to add another layer of logic to our code.
+
+***
+#### **Instructions** :
+
+1. There are two variables in your code, `weather` and `high_chance_of_rain`. Write a conditional statement that:
+
+* Checks to see if `weather` is equal `cloudy` and there is a `high_chance_of_rain`.
+* If it is both, the code block should assign the value of the variable `message` to be `"Pack umbrella!"`
+* Otherwise, the code block should assign the value of the variable `message` to `"No need for umbrella!"`
+* Print the `message` variable after the conditional statement. Based on the condition, what should its value be?
+
+```{r t19,exercise=TRUE}
+# you want to go out and your question is "Should I pack an umbrella?"
+
+message <- 'Should I pack an umbrella?'
+
+weather <- "cloudy"
+high_chance_of_rain <- TRUE
+
+if (weather == "cloudy" & high_chance_of_rain == TRUE) {
+  message <- 'Pack umbrella!'
+  print(message)
+} else { 
+  message <- 'No need for umbrella!'
+  print(message)
+  }
+```
+
+
+
+
+
+## Calling a Function
+
+Functions are actions we can perform. R provides a number of functions, and you’ve actually been using a few of them even though you maybe didn’t realize!
+
+We *call*, or use, these functions by stating the name of the function and following it with an opening and closing parentheses: ie. `functionName()`. In addition, between the parenthesis, we usually pass in an *argument*, or a value that the function uses to conduct an action, i.e. `functionName(value)`.
+
+Does that syntax look a little familiar? When we have used `print()` we’re calling the `print` function. When we made a vector, we actually used the combine `c()` function! Let’s see `print()` and some real functions in action!
+
+```{r t30,exercise=TRUE}
+sort(c(2,4,10,5,1)); # Outputs c(1,2,4,5,10)
+length(c(2,4,10,5,1)); # Outputs 5
+sum(5,15,10) #Outputs 30
+```
+
+Let’s look at each of the lines above:
+
+* On the first line, the `sort()` function is called with a parameter of the vector `c(2,4,10,5,1)`. The result is a sorted vector `c(1,2,4,5,10)` with the values in ascending order.
+* On the second line, we called a function we’ve seen before: `length()` and it returned the value 5 because there were five items in the vector.
+* On the third line, we called a function `sum()` which added up all of the arguments we passed to it.
+
+Understanding how to call a function and what arguments it needs is a fundamental part of leveraging R as a tool to conduct analysis. Let’s practice calling some useful functions!
+
+***
+#### **Instructions** :
+
+1. The `unique()` function takes a vector argument and returns a vector with only the unique elements in that vector (removing all duplicates).
+
+For example, we have a `data`
+
+```
+data <- c(120,22,22,31,15,120)
+```
+
+* Call `unique()` function and pass in the argument `data`
+* Save that result inside a variable named `unique_vals`
+* Print `unique_vals` variable so you can see what is inside the vector with only unique values.
+
+```{r t31,exercise=TRUE}
+data <- c(120,22,22,31,15,120)
+# unique(data)
+unique_vals <- unique(data)
+print(unique_vals)
+```
+
+2. Get the `sqrt()` square root of the number 49 by calling the function with the specified argument. Save the result inside a variable named `solution`.
+Print the `solution` variable so you can see confirm `sqrt()` computed the square root correctly.
+
+```{r t32,exercise=TRUE}
+# sqrt(49)
+solution <- sqrt(49)
+print(solution)
+```
+
+3. The `floor()` function rounds a decimal down to the next integer, and the `ceiling()` function will round up to the next integer. Call both functions on the number 3.14, and save each result inside two new variables you create: `round_down` and `round_up` respectively.
+Print both variables so you can see what’s in them!
+
+```{r t33,exercise=TRUE}
+# floor(3.14)
+# ceiling(3.14)
+round_down <- floor(3.14)
+round_up <- ceiling(3.14)
+print(c(round_down,round_up))
+```
+
+
+
+
+
+## Importing Packages
+
+R’s popularity is also largely due to the many fantastic packages available in the language! A package is a bundle of code that makes coding certain tasks easier. There are all sorts of packages for all sorts of purposes, ranging from visualizing and cleaning data, to ordering pizza or posting a tweet. In fact, most R-grammers (R programmers) use packages when they code. This is why you might hear them differentiate packages from “Base R.” Base R refers the R language by itself and all that it can do without importing any packages.
+
+Base R is very powerful, but most of the time, you’ll want to import a package to make your life easier. You only need to run this command the first time you install a package, after that there is no need to run it:
+
+```
+install.packages('package-name')
+```
+
+To import a package you simply:
+
+```
+To import a package you simply:
+```
+You can look up documentation for the different packages available at the [CRAN](https://cran.r-project.org/) (The “Comprehensive R Archive Network.” (CRAN) is a collection of sites which carry identical material, consisting of the R distribution(s), the contributed extensions, documentation for R, and binaries.) website.
+
+In this lesson, we coded in Base R but let’s practice importing one of the most popular R packages: dplyr. Dplyr is a package used to clean, process, and organize data which you will use as you learn about R.
+
+***
+#### **Instructions** :
+
+1. Currently, the code inside notebook.Rmd throws an error because it uses the `dplyr` and `readr` packages without importing them. Import the `dplyr` and `readr` packages by using the `library()` function and then press run so that you can observe the packages do their magic!
+
+```{r t25,exercise=TRUE}
+# load libraries
+library(dplyr)
+library(readr)
+```
+
+
+
+
+
+## Review
+
+Congrats on finishing your first R lesson!
+
+Here’s a summary of some of the concepts you’ve learned:
+
+* R is a powerful statistical programming language with a large community of data enthusiasts.
+* You can calculate arithmetic with R and it will follow the normal order of operations
+* Data types allow us to classify different pieces of information.
+* You can store that information inside of variables
+* You can use conditional statements and operators to introduce logic to your code
+* You can call a function in R by using the () and passing in the correct arguments
+* R programmers have published lots of useful packages that specialize in different tasks, which are all available for you to use in your programs after you install them.
+
+We hope you’re as excited as we are about the possibilities of analyzing data now that you know some of the basics of programming with R.
+
+***
+This is not the **End**
+
+
+
+
+
+## Quiz
+
+*When you need, use this*
+
+```{r q1,exercise=TRUE}
+
+```
+
+```{r quiz1, echo = FALSE}
+quiz(
+  
+  question("1.Which of the following examples includes a *function* call with two arguments?",
+    answer("sum(289,398)", correct = TRUE),
+    answer("numbers <- c(22,33,44,55)"),
+    answer("population <- ' 7 billion '"),
+    answer("lenght(data)")
+  ),
+  
+  question("2.What is the outcome of the following code snippet? 
+           
+
+         (15 + 5) / 2 * 2",
+    
+    answer("20", correct = TRUE),
+    answer("2"),
+    answer("5"),
+    answer("16.25")
+  ),
+  
+  question("3.Which of the following creates a variable with arrow syntax called student_count with a character value of 23? *(reply it like a R'tist)*",
+    
+    answer("student_count <- '23'", correct = TRUE),
+    answer("student_count <- 23"),
+    answer("student_count = '23'"),
+    answer("student_count = 23")
+  ),
+
+  question("4.Which of the following sentences explains the conditional statement below? 
+
+
+         if (age >= 18 & registered == TRUE) {
+          can_vote <- TRUE
+         } else {
+           can_vote <- FALSE
+         }",
+    
+    answer("If **age** is greater than 18 or **registered** is TRUE, set the value of **can_vote** to TRUE. Otherwise, set it to FALSE."),
+    answer("If **age** is greater than or equal to 18 and **registered** is TRUE, set the value of **can_vote** to TRUE. Otherwise, set it to FALSE.", correct = TRUE),
+    answer("If **age** is greater than 18 and **registered** is TRUE, set the value of **can_vote** to TRUE. Otherwise, set it to FALSE."),
+    answer("If **age** is greater than or equal to 18 and **registered** is TRUE, set the value of **can_vote** to FALSE Otherwise, set it to TRUE")
+  ),
+  
+  question("5.Which of the following defined variables has a logical value?
+
+           cool_variable1 = 324.2
+           cool_variable2 = glup glup this is the center of fight clup
+           cool_variable3 = FALSE
+           cool_variable4 = 0",
+           
+    answer("cool_variable1"),
+    answer("cool_variable2"),
+    answer("cool_variable3", correct = TRUE),
+    answer("cool_variable4")
+  ),
+  
+  question("6.Which of the following is a false statement about vectors?",
+           
+    answer("Vectors can store items of different data types", correct = TRUE),
+    answer("Vectors are created by calling the `c()` function and passing in arguments to add to the vector"),
+    answer("You can retrieve the lenght of a vector by calling the `length()`function and passing in the vector as an argument"),
+    answer("Vectors are list-like data-structures")
+  ),
+  
+  question("7.Which of the following statements about variables is true?",
+           
+    answer("Variable names can start with letters, numbers, and a period or underscore character"),
+    answer("The only way to assign a variable name is with `<-`arrow syntax"),
+    answer("Variables store information in your program and associate that information with a name", correct = TRUE),
+    answer("Once a variable has been created, you cannot change its value")
+  ),
+  
+  question("8.Which of the following is an example of a single line comment?",
+           
+    answer("This is a comment"),
+    answer("#This is a comment", correct = TRUE),
+    answer("*This is a comment"),
+    answer("//This i...Okay I am not, obviously. <3")
+  )
+  
+  
+)
+```
+
+
+
+
+
+
+
