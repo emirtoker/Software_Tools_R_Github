@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-**Syllabus - ** [PDF](https://github.com/emirtoker/Software_Tools_R_Github/blob/master/Software_Tools_for_Earth_and_Environmental_Science_Syllabus.pdf)
+**Extended Syllabus - ** [PDF](https://github.com/emirtoker/Software_Tools_R_Github/blob/master/Software_Tools_for_Earth_and_Environmental_Science_Syllabus.pdf)
 
 ***
 
