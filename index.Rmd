@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "Introduction to R"
 author: "Emir Toker"
 date: "9/12/2019"
 output: html_document
@@ -8,23 +8,16 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+***
 
-## R Markdown
+**R Repository** -  [Emir Github](https://github.com/emirtoker/Software_Tools_R_Github)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+***
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+**Syllabus - ** [PDF](https://github.com/emirtoker/Software_Tools_R_Github/blob/master/Software_Tools_for_Earth_and_Environmental_Science_Syllabus.pdf)
 
-```{r cars}
-summary(cars)
-```
+***
 
-## Including Plots
+**My interactive training - ** ["Intro to R"](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+***
