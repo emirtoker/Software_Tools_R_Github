@@ -1,5 +1,5 @@
 ---
-title: "R Interactive Training and Quiz"
+title: "Getting Started with R"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
@@ -11,6 +11,28 @@ library(learnr)
 ```
 
 
+
+## Introduction
+
+***
+**R - Interactive Training and Quiz**
+
+**Topics**
+
+* Calculations
+* Comments
+* Data Types
+* Variables
+* Vectors
+* Conditionals
+* Comparison Operators
+* Logical Operators
+* Calling a Function
+* Importing Packages
+
+*Review*
+
+*Qıiz*
 
 ## Calculations
 

@@ -17,6 +17,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-**Interactive training 1 - ** [Getting Started with R](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+**Interactive Trainings** 
+
+1. [Getting Started with R](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+
+2. [R Language](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+
+3. [R Programming](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+
+4. [R Data Import and Visualization](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+
+5. [R Statistics and Probability](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
 
 ***
