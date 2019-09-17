@@ -7,6 +7,8 @@ navbar:
       href: index.html
     - text: "Syllabus"
       href: syllabus.html
+    - text: "Book"
+      href: book.html
     - text: "New Accounts"
       href: new_accounts.html
     - text: "About"
