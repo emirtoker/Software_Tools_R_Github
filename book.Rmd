@@ -12,4 +12,6 @@ img27 <- readPNG("Presentation/The_Book_of_R.png")
 grid.raster(img27)
 ```
 
+<center>
 The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
+<center>
