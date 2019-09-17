@@ -3,13 +3,17 @@
 
 ***
 
-**Extended Syllabus - ** [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+<center>
+
+![](Presentation/syllabus.png)
+
+<center>
 
 ***
 
 <center>
 
-![](Presentation/syllabus.png)
+**Extended Syllabus - ** [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 <center>
 
