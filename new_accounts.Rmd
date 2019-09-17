@@ -24,6 +24,7 @@ library(grid)
 img3 <- readPNG("Presentation/github.png")
  grid.raster(img3)
 ```
+
 [LINK](https://github.com)
 
 ***
@@ -33,6 +34,7 @@ img3 <- readPNG("Presentation/github.png")
 img4 <- readPNG("Presentation/researchgate.png")
  grid.raster(img4)
 ```
+
 [LINK](https://www.researchgate.net)
 
 ***
@@ -42,6 +44,7 @@ img4 <- readPNG("Presentation/researchgate.png")
 img5 <- readPNG("Presentation/zenodo-doi.png")
  grid.raster(img5)
 ```
+
 [LINK](https://zenodo.org/)
 
 ***
@@ -51,6 +54,7 @@ img5 <- readPNG("Presentation/zenodo-doi.png")
 img6 <- readPNG("Presentation/orcid.png")
  grid.raster(img6)
 ```
+
 [LINK](https://orcid.org/)
 
 ***
@@ -60,6 +64,7 @@ img6 <- readPNG("Presentation/orcid.png")
 img7 <- readPNG("Presentation/overleaf.png")
  grid.raster(img7)
 ```
+
 [LINK](https://www.overleaf.com/)
 
 ***
@@ -69,6 +74,7 @@ img7 <- readPNG("Presentation/overleaf.png")
 img8 <- readPNG("Presentation/mendeley.png")
  grid.raster(img8)
 ```
+
 [LINK](https://www.mendeley.com)
 
 ***
@@ -78,6 +84,7 @@ img8 <- readPNG("Presentation/mendeley.png")
 img9 <- readPNG("Presentation/panoply.png")
  grid.raster(img9)
 ```
+
 [LINK](https://www.giss.nasa.gov/tools/panoply/)
 
 ***
@@ -87,6 +94,7 @@ img9 <- readPNG("Presentation/panoply.png")
 img10 <- readPNG("Presentation/sublimetext.png")
  grid.raster(img10)
 ```
+
 [LINK](https://www.sublimetext.com/)
 
 ***
@@ -96,6 +104,7 @@ img10 <- readPNG("Presentation/sublimetext.png")
 img11 <- readPNG("Presentation/filezilla.png")
  grid.raster(img11)
 ```
+
 [LINK](https://filezilla-project.org/)
 
 ***
@@ -105,6 +114,7 @@ img11 <- readPNG("Presentation/filezilla.png")
 img12 <- readPNG("Presentation/arcgis.png")
  grid.raster(img12)
 ```
+
 [LINK](https://www.arcgis.com/index.html)
  
  ***
@@ -114,6 +124,7 @@ img12 <- readPNG("Presentation/arcgis.png")
 img13 <- readPNG("Presentation/qgis.png")
  grid.raster(img13)
 ```
+
 [LINK](https://qgis.org/en/site/)
 
 ***
@@ -123,6 +134,7 @@ img13 <- readPNG("Presentation/qgis.png")
 img14 <- readPNG("Presentation/anaconda.png")
  grid.raster(img14)
 ```
+
 [LINK](https://www.anaconda.com)
 
 ***
@@ -132,6 +144,7 @@ img14 <- readPNG("Presentation/anaconda.png")
 img15 <- readPNG("Presentation/jupyter.png")
  grid.raster(img15)
 ```
+
 [LINK](https://jupyter.org/install)
 
 ***
@@ -141,6 +154,7 @@ img15 <- readPNG("Presentation/jupyter.png")
 img16 <- readPNG("Presentation/cygwin.png")
  grid.raster(img16)
 ```
+
 [LINK](https://www.cygwin.com/)
 
 ***
@@ -150,6 +164,7 @@ img16 <- readPNG("Presentation/cygwin.png")
 img17 <- readPNG("Presentation/rstudio.png")
  grid.raster(img17)
 ```
+
 [LINK](https://www.rstudio.com/)
 
 ***
@@ -159,6 +174,7 @@ img17 <- readPNG("Presentation/rstudio.png")
 img18 <- readPNG("Presentation/ncl.png")
  grid.raster(img18)
 ```
+
 [LINK](https://www.ncl.ucar.edu/)
 
 ***
@@ -168,6 +184,7 @@ img18 <- readPNG("Presentation/ncl.png")
 img19 <- readPNG("Presentation/meted.png")
  grid.raster(img19)
 ```
+
 [LINK](https://www.meted.ucar.edu/)
  
 ***
@@ -177,6 +194,7 @@ img19 <- readPNG("Presentation/meted.png")
 img20 <- readPNG("Presentation/coursera.png")
  grid.raster(img20)
 ```
+
 [LINK](https://www.coursera.org)
 
 ***
@@ -186,6 +204,7 @@ img20 <- readPNG("Presentation/coursera.png")
 img21 <- readPNG("Presentation/udemy.png")
  grid.raster(img21)
 ```
+
 [LINK](https://www.udemy.com/)
 
 ***
@@ -195,6 +214,7 @@ img21 <- readPNG("Presentation/udemy.png")
 img22 <- readPNG("Presentation/datacamp.png")
  grid.raster(img22)
 ```
+
 [LINK](https://www.datacamp.com/home)
 
 ***
@@ -204,6 +224,7 @@ img22 <- readPNG("Presentation/datacamp.png")
 img23 <- readPNG("Presentation/edx.png")
  grid.raster(img23)
 ```
+
 [LINK](https://www.edx.org)
 
 ***
@@ -213,6 +234,7 @@ img23 <- readPNG("Presentation/edx.png")
 img24 <- readPNG("Presentation/khanacademy.png")
  grid.raster(img24)
 ```
+
 [LINK](https://www.khanacademy.org/)
 
 ***
@@ -222,6 +244,7 @@ img24 <- readPNG("Presentation/khanacademy.png")
 img25 <- readPNG("Presentation/stackoverflow.png")
  grid.raster(img25)
 ```
+
 [LINK](https://stackoverflow.com/)
 
 ***
@@ -231,6 +254,7 @@ img25 <- readPNG("Presentation/stackoverflow.png")
 img26 <- readPNG("Presentation/wolfram-alpha.png")
  grid.raster(img26)
 ```
+
 [LINK](https://www.wolframalpha.com/)
 
 ***
@@ -240,6 +264,7 @@ img26 <- readPNG("Presentation/wolfram-alpha.png")
 img27 <- readPNG("Presentation/dropbox.png")
  grid.raster(img27)
 ```
+
 [LINK](https://www.dropbox.com/)
 
 ***
@@ -249,5 +274,6 @@ img27 <- readPNG("Presentation/dropbox.png")
 img28 <- readPNG("Presentation/wetransfer.png")
  grid.raster(img28)
 ```
+
 [LINK](https://wetransfer.com/)
 
