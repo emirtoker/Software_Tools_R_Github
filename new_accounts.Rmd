@@ -1,5 +1,4 @@
 ---
-title: "New Accounts"
 ---
 
 ```{r, echo=FALSE}
@@ -7,6 +6,7 @@ library(png)
 library(grid)
 ```
 
+***
 
 - Github, Researchgate, DOI Code, ORCID, Overleaf(LaTeX)
 - Mendeley, Panoply, Sublime Text, Filezilla
