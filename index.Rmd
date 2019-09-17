@@ -13,10 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-**Extended Syllabus - ** [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
-
-***
-
 **Interactive Trainings** 
 
 1. [Getting Started with R](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
