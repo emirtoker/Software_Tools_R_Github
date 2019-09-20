@@ -1,5 +1,6 @@
 ---
-title: "Week1 - Data and Code"
+title: "Software Tools for Earth and Environmental Science"
+subtitle: "YSB 801E"
 output: 
   revealjs::revealjs_presentation:
     theme: league
@@ -14,11 +15,9 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## **Week1 - Data and Code**
+## **Lecture 1 - Data and Code**
 
-- **Syllabus**
-
-- **Book**
+- **Course**
 
 - **Data**
 
@@ -31,51 +30,170 @@ knitr::opts_chunk$set(echo = FALSE)
 - Syllabus
 - Book
 
+## **Objective**
+
+* Introduction to software tools.
+
+* Traditional 5-step process for the scientific method
+
+1. Observation
+2. Hypothesis
+3. Experimental Design
+4. **Data** collection
+5. **Analysis** and Conclusion
+
 ## **Syllabus**
 
-![Syllabus](Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png)
+![](Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png)
+
+## **Extended Syllabus**
+
+![](extended_syllabus.png) 
+
+[LINK](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 ## **Book**
 
-![The Book of R](The_Book_of_R.png)
+![](The_Book_of_R.png)
 
 [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
 
+## **Flow**
+
+![](book_flow.png)
+
+[LINK](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+
+
+## **Course Github-Web Page**
+
+![](course_github.png)
+
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
+
+# **Data**
+
+
 ## **Data**
-
-- What is the Data
-- Data Collection and Production
-- Data Types, Formats and Source
+- What is the Data and Metadata?
+- Data Collection and Generation
+- Data Types, Formats and Sources
+- Download and Get the Data
+- Interpretation and Visualization
 - Popular Terms About Data
-- Obtain and Get the Data
 
-## What is the Data
+## What is the Data and Metadata?
 
-## Data Collection and Production
+Data are things, known or assumed as facts, making the basis of reasoning or calculation.
 
-## Data Types, Formats and Source
+  ![](datum.png)
+
+Metadata is information about data.
+
+## Metadata
+
+![](metadata0.png)
+
+## Metadata
+
+![](metadata1.png)
+
+## Data Collection and Generation
+
+Data collection is the process of gathering and measuring information on targeted variables in an established system. The purpose is to answer relevant questions or/and evaluate outcomes.
+
+* Observational 
+* Statistical 
+* Simulation
+
+![](generate.png)
+
+## Data Types
+
+![](what_data.svg)
+
+## Data Formats
+
+* Text, Picture, Audio, Video
+* File; pdf, txt, csv, html, xml, nc, hdf
+* Point, Line, Polygon
+* 1D, 2D, 3D, xD
+
+![](nc.png)
+
+## Data Sources
+
+The location where data that is being used comes from.
+
+![](earthdata.png)
+[LINK](https://earthdata.nasa.gov/)
+
+## Download and Get the Data
+
+![](download.png) 
+
+![](wget.jpg)
+
+## Interpretation and Visualization
+
+Interpretation is the process of making sense of numerical data that has been collected, analyzed, and presented. 
+
+Visualization is the graphical representation of information and data.
+
+![](visual.jpg)
+
 
 ## Popular Terms About Data
 
-- Data Science
-- Data Analysis
+- Data Analysis and EDA
 - Big Data
 - Data Mining
 - Data Assimilation and Manipulation
+- Data Scientist
 
-## Data Science
 
 ## Data Analysis
 
+Data analysis is a process of inspecting, cleaning, transforming and modeling data with the goal of discovering useful information, informing conclusions and supporting decision-making.
+
+![](data_analytics.png) ![](datashape.jpg)
+
+## Exploratory Data Analysis (EDA)
+
+In statistics, exploratory data analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods.
+
+![](eda.png)
+
 ## Big Data
+
+Too large or complex data to be dealt with by traditional data-processing application and software.
+
+![](apache_point.jpg) ![](alma.jpg)
+
+Apache Point, New Mexico, US, 1995
+
+ALMA, Atacama, Antofagasta Region, Chile
 
 ## Data Mining
 
+Data mining is the process of discovering patterns in large data sets.
+
+![](mining1.jpg)  ![](mining.jpg)
+
 ## Data Assimilation and Manipulation
 
+Data assimilation is a mathematical discipline that seeks to optimally combine theory with observations. 
+
+![](data_assim.jpeg)
+
+Data manipulation; inserting, deleting, and modifying data in a database.
 
 
-## Obtain and Get the Data
+## Data Science
+
+Data science is a multi-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge from structured and unstructured data.
+
+![](datascience.png)
 
 
 
@@ -83,45 +201,95 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
+
+
+
+# **Code**
+
+## **Code**
+
+![](code.png)
 
 
 ## **Code**
 
-- Operational Systems
+- Operating Systems
 - Programming Languages
-- Fields of Programming
-- Popular Terms About Programming
 - Interpretation and Visualization
-- Algorithm, Simulation and Modeling
+- Algorithm, Simulation and Modelling
+- Popular Terms About Programming
 
 
 
 ## Operational Systems
 
-- Microsoft Windows
-- Unix
-- Apple Macintosh OS
-- Linux OS
+An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
+
+![](os.png)
+
+Microsoft Windows, Apple macOS, Linux 
 
 ## Programming Languages
 
-- C
-- Fortran
-- JavaScript
-- Python
-- R
-- NCL
+![](languages.png)
 
-## Fields of Programming
+
+##  Algorithm 
+
+The algorithm is a set of instructions, typically to solve a class of problems or perform a computation.
+
+![](algorithm.png)
+
+## Simulation 
+
+The simulation is an approximate imitation of the operation of a process or system; that represents its operation over time.
+
+![](simulation.jpg)
+
+
+## Modelling
+
+Model is a description of a system using mathematical concepts. The aim of modeling is to understand easier a particular part or feature of thing.
+
+![](model.png)
 
 ##  Popular Terms About Programming
 
--	Artifical Intelligent
+-	Artificial İntelligence
 -	Machine Learning
 -	Deep Learning
 -	Internet of Things
 
-## NEW ACCOUNTS
+##  Artificial İntelligence
+
+Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning and self-correction.
+
+![](ai.png)
+
+##  Machine Learning
+
+Machine learning (ML) is the scientific study of algorithms and statistical models that computer systems use to perform a specific task without using explicit instructions.
+
+![](machine.jpg)
+
+1997, Deep Blue vs Garry Kasparov
+
+##  Deep Learning
+
+Deep learning is part of a family of machine learning methods based on artificial neural networks.
+
+![](deep.jpg)
+
+##  Internet of Things
+
+The Internet of Things (IoT) is a system of interrelated computing devices, mechanical and digital machines. IoT has the ability to transfer data over a network without requiring human-to-human or human-to-computer interaction.
+
+![](iot.png)
+
+# **NEW ACCOUNTS**
+
+
+## **NEW ACCOUNTS**
 
 - Github, Researchgate, DOI Code, ORCID, Overleaf(LaTeX)
 - Mendeley, Panoply, Sublime Text, Filezilla

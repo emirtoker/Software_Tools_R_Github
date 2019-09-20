@@ -9,6 +9,8 @@ navbar:
       href: syllabus.html
     - text: "Book"
       href: book.html
+    - text: "Data"
+      href: data.html
     - text: "New Accounts"
       href: new_accounts.html
     - text: "About"
