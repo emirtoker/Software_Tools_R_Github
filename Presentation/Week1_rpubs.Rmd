@@ -1,5 +1,6 @@
 ---
-title: "New Accounts"
+title: "Software Tools for Earth and Environmental Science"
+subtitle: "YSB 801E"
 output: 
   revealjs::revealjs_presentation:
     theme: league
@@ -13,10 +14,280 @@ knitr::opts_chunk$set(error = FALSE)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-```{r}
-library(png)
-library(grid)
-```
+
+## **Lecture 1 - Data and Code**
+
+- **Course**
+
+- **Data**
+
+- **Code**
+
+- **New Accounts**
+
+
+# **Course**
+- Syllabus
+- Book
+
+## **Objective**
+
+* Introduction to software tools.
+
+* Traditional 5-step process for the scientific method
+
+1. Observation
+2. Hypothesis
+3. Experimental Design
+4. **Data** collection
+5. **Analysis** and Conclusion
+
+## **Syllabus**
+
+![](Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png)
+
+## **Extended Syllabus**
+
+![](extended_syllabus.png) 
+
+[LINK](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+
+## **Book**
+
+![](The_Book_of_R.png)
+
+[PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
+
+## **Flow**
+
+![](book_flow.png)
+
+[LINK](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+
+
+## **Course Github-Web Page**
+
+![](course_github.png)
+
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
+
+# **Data**
+
+
+## **Data**
+- What is the Data and Metadata?
+- Data Collection and Generation
+- Data Types, Formats and Sources
+- Download and Get the Data
+- Interpretation and Visualization
+- Popular Terms About Data
+
+## What is the Data and Metadata?
+
+Data are things, known or assumed as facts, making the basis of reasoning or calculation.
+
+  ![](datum.png)
+
+Metadata is information about data.
+
+## Metadata
+
+![](metadata0.png)
+
+## Metadata
+
+![](metadata1.png)
+
+## Data Collection and Generation
+
+Data collection is the process of gathering and measuring information on targeted variables in an established system. The purpose is to answer relevant questions or/and evaluate outcomes.
+
+* Observational 
+* Statistical 
+* Simulation
+
+![](generate.png)
+
+## Data Types
+
+![](what_data.svg)
+
+## Data Formats
+
+* Text, Picture, Audio, Video
+* File; pdf, txt, csv, html, xml, nc, hdf
+* Point, Line, Polygon
+* 1D, 2D, 3D, xD
+
+![](nc.png)
+
+## Data Sources
+
+The location where data that is being used comes from.
+
+![](earthdata.png)
+[LINK](https://earthdata.nasa.gov/)
+
+## Download and Get the Data
+
+![](download.png) 
+
+![](wget.jpg)
+
+## Interpretation and Visualization
+
+Interpretation is the process of making sense of numerical data that has been collected, analyzed, and presented. 
+
+Visualization is the graphical representation of information and data.
+
+![](visual.jpg)
+
+
+## Popular Terms About Data
+
+- Data Analysis and EDA
+- Big Data
+- Data Mining
+- Data Assimilation and Manipulation
+- Data Scientist
+
+
+## Data Analysis
+
+Data analysis is a process of inspecting, cleaning, transforming and modeling data with the goal of discovering useful information, informing conclusions and supporting decision-making.
+
+![](data_analytics.png) ![](datashape.jpg)
+
+## Exploratory Data Analysis (EDA)
+
+In statistics, exploratory data analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods.
+
+![](eda.png)
+
+## Big Data
+
+Too large or complex data to be dealt with by traditional data-processing application and software.
+
+![](apache_point.jpg) ![](alma.jpg)
+
+Apache Point, New Mexico, US, 1995
+
+ALMA, Atacama, Antofagasta Region, Chile
+
+## Data Mining
+
+Data mining is the process of discovering patterns in large data sets.
+
+![](mining1.jpg)  ![](mining.jpg)
+
+## Data Assimilation and Manipulation
+
+Data assimilation is a mathematical discipline that seeks to optimally combine theory with observations. 
+
+![](data_assim.jpeg)
+
+Data manipulation; inserting, deleting, and modifying data in a database.
+
+
+## Data Science
+
+Data science is a multi-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge from structured and unstructured data.
+
+![](datascience.png)
+
+
+
+
+
+
+
+
+
+
+# **Code**
+
+## **Code**
+
+![](code.png)
+
+
+## **Code**
+
+- Operating Systems
+- Programming Languages
+- Interpretation and Visualization
+- Algorithm, Simulation and Modelling
+- Popular Terms About Programming
+
+
+
+## Operational Systems
+
+An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.
+
+![](os.png)
+
+Microsoft Windows, Apple macOS, Linux 
+
+## Programming Languages
+
+![](languages.png)
+
+
+##  Algorithm 
+
+The algorithm is a set of instructions, typically to solve a class of problems or perform a computation.
+
+![](algorithm.png)
+
+## Simulation 
+
+The simulation is an approximate imitation of the operation of a process or system; that represents its operation over time.
+
+![](simulation.jpg)
+
+
+## Modelling
+
+Model is a description of a system using mathematical concepts. The aim of modeling is to understand easier a particular part or feature of thing.
+
+![](model.png)
+
+##  Popular Terms About Programming
+
+-	Artificial İntelligence
+-	Machine Learning
+-	Deep Learning
+-	Internet of Things
+
+##  Artificial İntelligence
+
+Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning and self-correction.
+
+![](ai.png)
+
+##  Machine Learning
+
+Machine learning (ML) is the scientific study of algorithms and statistical models that computer systems use to perform a specific task without using explicit instructions.
+
+![](machine.jpg)
+
+1997, Deep Blue vs Garry Kasparov
+
+##  Deep Learning
+
+Deep learning is part of a family of machine learning methods based on artificial neural networks.
+
+![](deep.jpg)
+
+##  Internet of Things
+
+The Internet of Things (IoT) is a system of interrelated computing devices, mechanical and digital machines. IoT has the ability to transfer data over a network without requiring human-to-human or human-to-computer interaction.
+
+![](iot.png)
+
+# **NEW ACCOUNTS**
+
 
 ## **NEW ACCOUNTS**
 
@@ -27,188 +298,4 @@ library(grid)
 - Meted, Coursera, Udemy, Datacamp, Edx, Khanacademy
 - Stackoverflow, Wolfram-alpha, Dropbox, Wetransfer
 
-
-
-
-## Github
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img3 <- readPNG("github.png")
- grid.raster(img3)
-```
-[LINK](https://github.com)
-
-## Researchgate
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img4 <- readPNG("researchgate.png")
- grid.raster(img4)
-```
-[LINK](https://www.researchgate.net)
-
-## DOI Code - (digital object identifier) - Zenodo
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img5 <- readPNG("zenodo-doi.png")
- grid.raster(img5)
-```
-[LINK](https://zenodo.org/)
-
-## ORCID
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img6 <- readPNG("orcid.png")
- grid.raster(img6)
-```
-[LINK](https://orcid.org/)
-
-## Overleaf (LaTeX)
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img7 <- readPNG("overleaf.png")
- grid.raster(img7)
-```
-[LINK](https://www.overleaf.com/)
-
-## Mendeley
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img8 <- readPNG("mendeley.png")
- grid.raster(img8)
-```
-[LINK](https://www.mendeley.com)
-
-## Panoply
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img9 <- readPNG("panoply.png")
- grid.raster(img9)
-```
-[LINK](https://www.giss.nasa.gov/tools/panoply/)
-
-## Sublime Text
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img10 <- readPNG("sublimetext.png")
- grid.raster(img10)
-```
-[LINK](https://www.sublimetext.com/)
-
-## Filezilla
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img11 <- readPNG("filezilla.png")
- grid.raster(img11)
-```
-[LINK](https://filezilla-project.org/)
-
-## ArcGIS
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img12 <- readPNG("arcgis.png")
- grid.raster(img12)
-```
-[LINK](https://www.arcgis.com/index.html)
- 
-## QGIS
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img13 <- readPNG("qgis.png")
- grid.raster(img13)
-```
-[LINK](https://qgis.org/en/site/)
-
-## Anaconda
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img14 <- readPNG("anaconda.png")
- grid.raster(img14)
-```
-[LINK](https://www.anaconda.com)
-
-## Jupyter
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img15 <- readPNG("jupyter.png")
- grid.raster(img15)
-```
-[LINK](https://jupyter.org/install)
-
-## Cygwin
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img16 <- readPNG("cygwin.png")
- grid.raster(img16)
-```
-[LINK](https://www.cygwin.com/)
-
-## R Studio
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img17 <- readPNG("rstudio.png")
- grid.raster(img17)
-```
-[LINK](https://www.rstudio.com/)
-
-## NCL
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img18 <- readPNG("ncl.png")
- grid.raster(img18)
-```
-[LINK](https://www.ncl.ucar.edu/)
-
-## Meted
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img19 <- readPNG("meted.png")
- grid.raster(img19)
-```
-[LINK](https://www.meted.ucar.edu/)
- 
-## Coursera
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img20 <- readPNG("coursera.png")
- grid.raster(img20)
-```
-[LINK](https://www.coursera.org)
-
-## Udemy
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img21 <- readPNG("udemy.png")
- grid.raster(img21)
-```
-[LINK](https://www.udemy.com/)
-
-## Datacamp
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img22 <- readPNG("datacamp.png")
- grid.raster(img22)
-```
-[LINK](https://www.datacamp.com/home)
-
-## Edx
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img23 <- readPNG("edx.png")
- grid.raster(img23)
-```
-[LINK](https://www.edx.org)
-
-## Khan academy
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img24 <- readPNG("khanacademy.png")
- grid.raster(img24)
-```
-[LINK](https://www.khanacademy.org/)
-
-## Stack overflow
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img25 <- readPNG("stackoverflow.png")
- grid.raster(img25)
-```
-[LINK](https://stackoverflow.com/)
-
-## Wolfram alpha
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img26 <- readPNG("wolfram-alpha.png")
- grid.raster(img26)
-```
-[LINK](https://www.wolframalpha.com/)
-
-## Dropbox
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img27 <- readPNG("dropbox.png")
- grid.raster(img27)
-```
-[LINK](https://www.dropbox.com/)
-
-## Wetransfer
-```{r fig.width=9, fig.height=5, echo=FALSE}
-img28 <- readPNG("wetransfer.png")
- grid.raster(img28)
-```
-[LINK](https://wetransfer.com/)
-
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/new_accounts.html)
