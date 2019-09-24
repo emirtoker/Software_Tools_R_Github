@@ -18,6 +18,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 1. [Week 1 - Syllabus, Data and Code](http://rpubs.com/emirtoker/software_tools_week1)
 
+2. Week 2 - Linux and Python
+
+3. Data Formats, Sources, Download and NCL
+
 ***
 
 **Interactive Trainings** 
