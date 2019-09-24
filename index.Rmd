@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 2. Week 2 - Linux and Python
 
-3. Data Formats, Sources, Download and NCL
+3. Week 3 - Data Formats, Sources, Download and NCL
 
 ***
 
