@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Software Tools</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="book.html">Book</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="code.html">Code</a>
+</li>
+<li>
+  <a href="new_accounts.html">New Accounts</a>
+</li>
+<li>
+  <a href="unix_linux.html">GNU/Linux</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<hr />
+<div id="unix-gnulinux-and-terminal" class="section level1">
+<h1><strong>Unix, GNU/Linux and Terminal</strong></h1>
+<hr />
+<div id="what-is-unix" class="section level3">
+<h3><strong>What is Unix?</strong></h3>
+<ul>
+<li>UNIX is a computer operating system.</li>
+<li>It was first developed in 1969 at Bell Labs.</li>
+<li>In 1972, the Unix code was rewritten with the new C programming language.</li>
+</ul>
+<div class="figure">
+<img src="Presentation/unix_develop.jpg" />
+
+</div>
+<p>(Dennis, Ken)</p>
+<hr />
+</div>
+<div id="what-is-gnu" class="section level3">
+<h3><strong>What is GNU?</strong></h3>
+<ul>
+<li>A wildebeest (or gnu) is an animal. Lives in Africa.</li>
+<li>GNU is the name of a computer operating system.</li>
+<li>The GNU project was started by Richard Stallman in 1983.</li>
+<li><span style="color:purple"><strong>G</strong></span>NU’s <span style="color:purple"><strong>N</strong></span>ot <span style="color:purple"><strong>U</strong></span>nix!</li>
+<li>Fully free to modify, share and publish.</li>
+</ul>
+<p><img src="Presentation/gnu_logo.png" /> <img src="Presentation/Richard.jpg" /></p>
+<hr />
+</div>
+<div id="what-is-linux-or-gnulinux" class="section level3">
+<h3><strong>What is Linux (or GNU/Linux) ?</strong></h3>
+<ul>
+<li>Linux (or GNU/Linux) is a Unix-like operating system.</li>
+<li>GNU did not have all the parts.</li>
+<li>The kernel (GNU Hurd) is not yet completely built.</li>
+<li>In 1991 Linus Torvalds began to work -&gt; Linux kernel.</li>
+</ul>
+<p><img src="Presentation/kernel.jpg" /> <img src="Presentation/linux_logo.png" /> <img src="Presentation/linus.jpeg" /></p>
+<hr />
+</div>
+<div id="how-is-unix-different-from-linux" class="section level3">
+<h3><strong>How is Unix different from Linux?</strong></h3>
+<ul>
+<li><p>Linux does not use code from UNIX.</p></li>
+<li><p>The idea and names of commands are similar.</p></li>
+</ul>
+<div class="figure">
+<img src="Presentation/unix_linux.png" />
+
+</div>
+<hr />
+</div>
+<div id="gnulinux-distributions" class="section level3">
+<h3><strong>GNU/Linux Distributions</strong></h3>
+<p><img src="Presentation/linux_dist.png" /> <a href="https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg">Linux_Distribution_Timeline</a></p>
+<hr />
+</div>
+<div id="terminal" class="section level3">
+<h3><strong>Terminal</strong></h3>
+<p>A computer <strong>terminal</strong> is a <strong>hardware device</strong> that is used for entering data into, and displaying or printing data from a computer or a computing system.</p>
+<div class="figure">
+<img src="Presentation/terminal0.png" />
+
+</div>
+<p><img src="Presentation/terminal.png" /> <img src="Presentation/terminal1.png" /></p>
+<hr />
+</div>
+<div id="basic-gnulinux-commands" class="section level2">
+<h2><strong>Basic GNU/Linux Commands</strong></h2>
+<ul>
+<li><p>Frequently Used Terms</p></li>
+<li><p>Directory Commands</p></li>
+<li><p>File Commands</p></li>
+<li><p>Special Commands</p></li>
+<li><p>vi Editor, Print Commands and Symbols</p></li>
+</ul>
+<hr />
+<div id="frequently-used-terms" class="section level3">
+<h3><strong>Frequently Used Terms</strong></h3>
+<ul>
+<li>File and Folder</li>
+<li>Directory
+<ul>
+<li>Parent Directory</li>
+<li>Working Directory</li>
+</ul></li>
+<li>User</li>
+<li>Root or Root Directory</li>
+<li>Environments</li>
+<li>Backup</li>
+<li>Command, Command Line, Console</li>
+<li>Warning, Error, Permission Denied</li>
+<li>Segmentation Fault</li>
+</ul>
+<hr />
+</div>
+<div id="frequently-used-terms-1" class="section level3">
+<h3><strong>Frequently Used Terms</strong></h3>
+<ul>
+<li>File and Folder</li>
+<li>Directory Path, Parent and Working Directory</li>
+</ul>
+<div class="figure">
+<img src="Presentation/filer_folder.png" />
+
+</div>
+<hr />
+</div>
+<div id="frequently-used-terms-2" class="section level3">
+<h3><strong>Frequently Used Terms</strong></h3>
+<p>User, Root and Home Directory</p>
+<pre class="bash"><code>whoami</code></pre>
+<pre><code>## emirtoker</code></pre>
+<p>Root directory symbol; “<strong><code>/</code></strong>”. Home directory symbol; “<strong><code>~</code></strong>”.</p>
+<div class="figure">
+<img src="Presentation/root_fig.gif" />
+
+</div>
+<hr />
+</div>
+<div id="frequently-used-terms-3" class="section level3">
+<h3><strong>Frequently Used Terms</strong></h3>
+<p>Environments and Backup</p>
+<pre><code>printenv  </code></pre>
+<div class="figure">
+<img src="Presentation/printenv.png" />
+
+</div>
+<hr />
+</div>
+<div id="frequently-used-terms-4" class="section level3">
+<h3><strong>Frequently Used Terms</strong></h3>
+<p>Command Line, Command</p>
+<div class="figure">
+<img src="Presentation/command_line.png" />
+
+</div>
+<hr />
+</div>
+<div id="frequently-used-terms-5" class="section level3">
+<h3><strong>Frequently Used Terms</strong></h3>
+<p>Warning, Error, Permission Denied, Segmentation Fault</p>
+<div class="figure">
+<img src="Presentation/warning.png" />
+
+</div>
+<hr />
+</div>
+<div id="directory-commands" class="section level3">
+<h3><strong>Directory Commands</strong></h3>
+<ul>
+<li><p><span style="color:purple"><strong>pwd</strong></span> <em>(<strong>P</strong>rint <strong>W</strong>orking <strong>D</strong>irectory)</em></p></li>
+<li><p><span style="color:purple"><strong>ls</strong></span> <em>(<strong>L</strong>ist <strong>D</strong>irectories)</em></p></li>
+<li><p><span style="color:purple"><strong>cd</strong></span> <em>(<strong>C</strong>hange <strong>D</strong>irectory)</em></p></li>
+<li><p><span style="color:purple"><strong>mkdir</strong></span> <em>(<strong>M</strong>ake <strong>D</strong>irectory)</em></p></li>
+</ul>
+<hr />
+</div>
+<div id="directory-commands---pwd" class="section level3">
+<h3><strong>Directory Commands - <span style="color:purple"><strong>pwd</strong></span></strong></h3>
+<p><em>(<strong>P</strong>rint <strong>W</strong>orking <strong>D</strong>irectory)</em></p>
+<pre class="bash"><code>pwd</code></pre>
+<pre><code>## /Users/emirtoker/Desktop/Dersler/Memurluk/Software_Tools_for_Earth_&amp;_Environmental_Science/Software_Tools_R_Github</code></pre>
+<div class="figure">
+<img src="Presentation/pwd_mac1.png" />
+
+</div>
+<hr />
+</div>
+<div id="directory-commands---ls" class="section level3">
+<h3><strong>Directory Commands - <span style="color:purple"><strong>ls</strong></span></strong></h3>
+<p><em>(<strong>L</strong>ist <strong>D</strong>irectories)</em></p>
+<pre class="bash"><code>ls</code></pre>
+<pre><code>## LICENSE
+## Presentation
+## README.html
+## README.md
+## R_Home_Website
+## R_Interactive_Samples_with_Shiny.Rmd
+## R_Interactive_Samples_with_Shiny.html
+## R_Interactive_Samples_with_Shiny_files
+## R_Interactive_Training
+## Software_Tools_R_Github.Rproj
+## Software_Tools_for_Earth_and_Environmental_Science_Syllabus.pdf
+## Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png
+## _site.yml
+## about.Rmd
+## book.Rmd
+## code.Rmd
+## data.Rmd
+## docs
+## index.Rmd
+## new_accounts.Rmd
+## syllabus.Rmd
+## unix_linux.Rmd</code></pre>
+<hr />
+</div>
+<div id="directory-commands---pwd-and-ls" class="section level3">
+<h3><strong>Directory Commands - pwd and ls</strong></h3>
+<div class="figure">
+<img src="Presentation/win_folder.png" />
+
+</div>
+<hr />
+</div>
+<div id="directory-commands---cd" class="section level3">
+<h3><strong>Directory Commands - <span style="color:purple"><strong>cd</strong></span></strong></h3>
+<p><em>(<strong>C</strong>hange <strong>D</strong>irectory)</em></p>
+<pre><code>cd Presentation/</code></pre>
+<p><img src="Presentation/cd1.png" /> <img src="Presentation/cd2.png" /></p>
+<hr />
+</div>
+<div id="directory-commands---mkdir" class="section level3">
+<h3><strong>Directory Commands - <span style="color:purple"><strong>mkdir</strong></span></strong></h3>
+<p><em>(<strong>M</strong>ake <strong>D</strong>irectory)</em></p>
+<pre><code>mkdir &lt;new_folder_name&gt;</code></pre>
+<p><img src="Presentation/mkdir1.png" /> <img src="Presentation/mkdir2.png" /></p>
+<hr />
+</div>
+<div id="file-commands" class="section level3">
+<h3><strong>File Commands</strong></h3>
+<ul>
+<li><p><span style="color:purple"><strong>touch</strong></span></p></li>
+<li><p><span style="color:purple"><strong>cat</strong></span> <em>(Concatenate)</em></p></li>
+<li><p><span style="color:purple"><strong>rm</strong></span> <em>(Remove)</em></p></li>
+<li><p><span style="color:purple"><strong>cp</strong></span> <em>(Copy)</em></p></li>
+<li><p><span style="color:purple"><strong>mv</strong></span> <em>(Move)</em></p></li>
+</ul>
+<hr />
+</div>
+<div id="file-commands---touch" class="section level3">
+<h3><strong>File Commands - <span style="color:purple"><strong>touch</strong></span></strong></h3>
+<pre><code>touch &lt;my_new_file&gt;</code></pre>
+<div class="figure">
+<img src="Presentation/touch.png" />
+
+</div>
+<hr />
+</div>
+<div id="file-commands---cat" class="section level3">
+<h3><strong>File Commands - <span style="color:purple"><strong>cat</strong></span></strong></h3>
+<p><em>(Con<strong>cat</strong>enate)</em></p>
+<pre><code>cat my_new_file</code></pre>
+<pre><code>This is my new file. Hi!</code></pre>
+<div class="figure">
+<img src="Presentation/mynewfile.png" />
+
+</div>
+<hr />
+</div>
+<div id="file-commands---cp" class="section level3">
+<h3><strong>File Commands - <span style="color:purple"><strong>cp</strong></span></strong></h3>
+<p><em>(<strong>C</strong>o<strong>p</strong>y)</em></p>
+<pre><code>cp my_new_file my_new_file2</code></pre>
+<div class="figure">
+<img src="Presentation/cp.png" />
+
+</div>
+<hr />
+</div>
+<div id="file-commands---mv" class="section level3">
+<h3><strong>File Commands - <span style="color:purple"><strong>mv</strong></span></strong></h3>
+<p><em>(<strong>M</strong>o<strong>v</strong>e)</em></p>
+<pre><code>mv my_new_file2 my_new_file3</code></pre>
+<div class="figure">
+<img src="Presentation/mv.png" />
+
+</div>
+<hr />
+</div>
+<div id="file-commands---rm" class="section level3">
+<h3><strong>File Commands - <span style="color:purple"><strong>rm</strong></span></strong></h3>
+<p><em>(<strong>R</strong>e<strong>m</strong>ove)</em></p>
+<pre><code>rm my_new_file my_new_file3</code></pre>
+<div class="figure">
+<img src="Presentation/rm.png" />
+
+</div>
+<hr />
+</div>
+<div id="special-commands" class="section level3">
+<h3><strong>Special Commands</strong></h3>
+<ul>
+<li><p><strong><span style="color:purple"><strong>find</strong></span></strong></p></li>
+<li><p><strong><span style="color:purple"><strong>help</strong></span></strong></p></li>
+<li><p><strong><span style="color:purple"><strong>history</strong></span></strong></p></li>
+<li><p><strong><span style="color:purple"><strong>clear</strong></span></strong></p></li>
+<li><p><strong><span style="color:purple"><strong>date</strong></span></strong> and <strong><span style="color:purple"><strong>cal</strong></span></strong></p></li>
+<li><p><strong><span style="color:purple"><strong>exit</strong></span></strong></p></li>
+</ul>
+<hr />
+</div>
+<div id="special-commands---find" class="section level3">
+<h3><strong>Special Commands - <span style="color:purple"><strong>find</strong></span></strong></h3>
+<pre><code>find -name &lt;name_of_file&gt;</code></pre>
+<div class="figure">
+<img src="Presentation/find.png" />
+
+</div>
+<hr />
+</div>
+<div id="special-commands---help" class="section level3">
+<h3><strong>Special Commands - <span style="color:purple"><strong>help</strong></span></strong></h3>
+<pre><code>find --help</code></pre>
+<div class="figure">
+<img src="Presentation/help.png" />
+
+</div>
+<hr />
+</div>
+<div id="special-commands---history" class="section level3">
+<h3><strong>Special Commands - <span style="color:purple"><strong>history</strong></span></strong></h3>
+<pre><code>history</code></pre>
+<div class="figure">
+<img src="Presentation/history.png" />
+
+</div>
+<hr />
+</div>
+<div id="special-commands---clear" class="section level3">
+<h3><strong>Special Commands - <span style="color:purple"><strong>clear</strong></span></strong></h3>
+<pre><code>clear</code></pre>
+<div class="figure">
+<img src="Presentation/clear.png" />
+
+</div>
+<hr />
+</div>
+<div id="special-commands---date-and-cal" class="section level3">
+<h3><strong>Special Commands - <span style="color:purple"><strong>date</strong></span> and <span style="color:purple"><strong>cal</strong></span></strong></h3>
+<pre class="bash"><code>date</code></pre>
+<pre><code>## Mon Sep 30 17:03:10 +03 2019</code></pre>
+<pre class="bash"><code>cal</code></pre>
+<pre><code>##    September 2019     
+## Su Mo Tu We Th Fr Sa  
+##  1  2  3  4  5  6  7  
+##  8  9 10 11 12 13 14  
+## 15 16 17 18 19 20 21  
+## 22 23 24 25 26 27 28  
+## 29 _3_0                 
+## </code></pre>
+</div>
+</div>
+<div id="special-commands---exit" class="section level2">
+<h2><strong>Special Commands - <span style="color:purple"><strong>exit</strong></span></strong></h2>
+<pre><code>exit</code></pre>
+<div class="figure">
+<img src="Presentation/exit.png" />
+
+</div>
+<hr />
+<div id="symbols" class="section level3">
+<h3>Symbols</h3>
+<ul>
+<li><span style="color:purple"><strong>|</strong></span> <em>(and)</em></li>
+<li><span style="color:purple"><strong>&gt;</strong></span> <em>(assing)</em></li>
+<li><span style="color:purple"><strong>$</strong></span> <em>(special variable)</em></li>
+<li><span style="color:purple"><strong>?</strong></span> <em>(an unknown character)</em></li>
+<li><span style="color:purple"><code>*</code></span> <em>(an unknown sroup of characters)</em></li>
+</ul>
+<pre><code>cat my_profile | sort</code></pre>
+<pre><code>ls &gt; my_list</code></pre>
+<pre><code>x=3
+echo $x</code></pre>
+<pre><code>ls my*</code></pre>
+<pre><code>ls ?y_list* </code></pre>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands" class="section level3">
+<h3><strong>vi Editor and Print Commands</strong></h3>
+<ul>
+<li><p><span style="color:purple"><strong>vi</strong></span></p></li>
+<li><p><span style="color:purple"><strong>esc</strong></span> <em>(default mode)</em></p></li>
+<li><p><span style="color:purple"><strong>i</strong></span> <em>(insert mode)</em></p></li>
+<li><p><span style="color:purple"><strong>:q</strong></span> <em>(just quit)</em></p></li>
+<li><p><span style="color:purple"><strong>:q!</strong></span> <em>(don’t save and quit)</em></p></li>
+<li><p><span style="color:purple"><strong>:qw</strong></span> <em>(write/save and quit)</em></p></li>
+<li><p><span style="color:purple"><strong>grep</strong></span> and <span style="color:purple"><strong>echo</strong></span></p></li>
+<li><p><span style="color:purple"><strong>head</strong></span> and <span style="color:purple"><strong>tail</strong></span></p></li>
+<li><p><span style="color:purple"><strong>sed</strong></span> <em>(stream editor)</em></p></li>
+</ul>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands---vi" class="section level3">
+<h3><strong>vi Editor and Print Commands - <span style="color:purple"><strong>vi</strong></span></strong></h3>
+<div class="figure">
+<img src="Presentation/vi_0.png" />
+
+</div>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands---esc" class="section level3">
+<h3><strong>vi Editor and Print Commands - <span style="color:purple"><strong>esc</strong></span></strong></h3>
+<p><em>(Default Mode)</em></p>
+<div class="figure">
+<img src="Presentation/vi_1.png" />
+
+</div>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands---i" class="section level3">
+<h3><strong>vi Editor and Print Commands - <span style="color:purple"><strong>i</strong></span></strong></h3>
+<p><em>(Insert Mode)</em></p>
+<div class="figure">
+<img src="Presentation/vi_2.png" />
+
+</div>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands---wq" class="section level3">
+<h3><strong>vi Editor and Print Commands - <span style="color:purple"><strong>:wq</strong></span></strong></h3>
+<p><em>(Write/Save and Quit)</em></p>
+<div class="figure">
+<img src="Presentation/vi_3.png" />
+
+</div>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands---grep-and-echo" class="section level3">
+<h3><strong>vi Editor and Print Commands - <span style="color:purple"><strong>grep</strong></span> and <span style="color:purple"><strong>echo</strong></span></strong></h3>
+<pre><code>grep my_profile</code></pre>
+<pre><code>grep ITU my_profile</code></pre>
+<pre><code>echo my_profile</code></pre>
+<pre><code>name=Emir</code></pre>
+<pre><code>echo $name</code></pre>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands---head-and-tail" class="section level3">
+<h3><strong>vi Editor and Print Commands - <span style="color:purple"><strong>head</strong></span> and <span style="color:purple"><strong>tail</strong></span></strong></h3>
+<pre><code>head my_profile</code></pre>
+<pre><code>tail my_profile</code></pre>
+<hr />
+</div>
+<div id="vi-editor-and-print-commands---sed" class="section level3">
+<h3>vi Editor and Print Commands - <span style="color:purple"><strong>sed</strong></span></h3>
+<p><em>(Stream Editor)</em></p>
+<p>Replacing or substituting string;</p>
+<pre><code>sed &#39;s/ITU/ODTU/&#39; my_profile</code></pre>
+<pre><code>sed &#39;5d&#39; my_profile </code></pre>
+<hr />
+</div>
+<div id="bash-script" class="section level3">
+<h3>Bash Script</h3>
+<pre><code>touch my_bash_script.sh
+vi my_bash_script.sh</code></pre>
+<pre><code>x=5
+y=3
+echo $((x+y))</code></pre>
+<pre><code>bash my_bash_script.sh</code></pre>
+<pre><code>8</code></pre>
+<hr />
+</div>
+<div id="practice-and-quiz" class="section level3">
+<h3>Practice and Quiz</h3>
+<hr />
+</div>
+<div id="practice" class="section level3">
+<h3>Practice</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Learn where you are</strong> <em>(Print your working directory)</em></li>
+<li><strong>Look at inside</strong> <em>(list all documents and directories)</em></li>
+<li><strong>Create a new folder</strong> <em>(make a directory,<code>&lt;my_new_dir&gt;</code>)</em></li>
+<li><strong>Go to the <code>&lt;my_new_dir&gt;</code></strong> <em>(change your directory)</em></li>
+<li><strong>Create a new file</strong> <em>(touch it, file name : <code>&lt;my_new_file&gt;</code>)</em></li>
+<li><strong>Open this new file and write your name</strong> <em>(vi-insert mode)</em></li>
+<li><strong>Save your work and close the file</strong> <em>(write + quit)</em></li>
+<li><strong>Print your name on the screen</strong> <em>(grep, tail, head, cat)</em></li>
+<li><strong>Put <code>&lt;my_new_file&gt;</code> at the parent directory</strong> <em>(move it)</em></li>
+<li><strong>Go to parent directory</strong> (change directory with two dots)</li>
+<li><strong>Create a copy, name; <code>&lt;my_new_file_2&gt;</code></strong></li>
+<li><strong>Remove your first folder <code>&lt;my_new_dir&gt;</code></strong></li>
+<li><strong>List all documents and directories</strong></li>
+</ol>
+<hr />
+</div>
+<div id="quiz" class="section level3">
+<h3>Quiz</h3>
+<div class="figure">
+<img src="Presentation/linux_logo.png" />
+
+</div>
+<p>Introduction to Gnu/Linux</p>
+<p><a href="https://create.kahoot.it/details/1932babe-f920-47bc-9216-802e5c3d294d">LINK</a></p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

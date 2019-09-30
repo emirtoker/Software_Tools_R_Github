@@ -15,8 +15,10 @@ navbar:
       href: code.html
     - text: "New Accounts"
       href: new_accounts.html
+    - text: "GNU/Linux"
+      href: unix_linux.html   
     - text: "About"
-      href: about.html      
+      href: about.html     
 output:
   html_document:
     theme: cosmo
