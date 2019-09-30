@@ -1,0 +1,45 @@
+---
+title: ""
+output: html_document
+---
+
+***
+
+# **Python and Jupyter**
+
+***
+
+### **What is the Python**
+
+- Python is a programming language.
+- Created by Guido van Rossum and first released in 1991.
+- Python 2.0, released 2000, Python 3.0, released 2008.
+- Python 2.7, the last release in the 2.x series, was extended to 2020.
+
+![](Presentation/python.jpg)
+
+***
+### **Python in Terminal**
+
+[webminal.org](https://www.webminal.org/terminal/)
+
+![](Presentation/python_term.png)
+
+GCC : GNU Compiler Collection
+
+
+***
+### **What is the Anaconda/Jupyter**
+
+![](Presentation/conda.png)
+
+***
+### **Python in Anaconda/Jupyter**
+
+
+```
+jupyter notebook
+```
+
+![](Presentation/jupyter_notebook.png)
+
