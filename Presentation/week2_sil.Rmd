@@ -1,5 +1,5 @@
 ---
-title: "Week 2"
+title: "Software Tools for Earth and Environmental Science - Week 2"
 subtitle: YSB 801E
 date: "September 27, 2019"
 output: 
@@ -15,413 +15,72 @@ knitr::opts_chunk$set(error = FALSE)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## **Basic GNU/Linux Commands and vi Editor**
 
-- Frequently Used Terms
+## **Linux and Python**
 
-- Directory Commands
+- **Syllabus, Book and Last Week**
 
-- File Commands
+- **Unix, Gnu/Linux and Terminal**
 
-- Special Commands
+- **Python and Jupyter**
 
-- vi Editor, Print Commands and Symbols
 
-# **Basic GNU/Linux Commands and vi Editor**
+# **Syllabus, Book and Last Week**
 
-## **Frequently Used Terms**
 
-- File and Folder
-- Directory
-    - Parent Directory
-    - Working Directory
-- User
-- Root or Root Directory
-- Environments
-- Backup
-- Command, Command Line, Console
-- Warning, Error, Permission Denied
-- Segmentation Fault
+## **Syllabus**
 
-## **Frequently Used Terms**
+![](syllabus.png)
+Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
-- File and Folder
-- Directory Path, Parent and Working Directory
+## **Book**
 
-![](filer_folder.png)
+![](The_Book_of_R.png)
 
-## **Frequently Used Terms**
-User, Root and Home Directory
+The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
 
-```{bash, echo=TRUE}
-whoami
-```
-Root directory symbol; "**`/`**". Home directory symbol; "**`~`**".
+## **Last Week**
 
-![](root_fig.gif)
+![](last_week.png)
+Course Home Page [LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
 
-## **Frequently Used Terms**
+Week 1 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week1)
 
-Environments and Backup
 
-```
-printenv  
-```
-![](printenv.png)
+# **Unix, Gnu/Linux and Terminal**
 
+## **Unix, Gnu/Linux and Terminal**
 
-## **Frequently Used Terms**
-Command Line, Command
+- **What is Unix?**
+- **What is GNU?**
+- **What is Linux (or GNU/Linux) ?**
+- **How is Unix different from Linux?**
+- **GNU/Linux Distributions**
+- **Terminal**
+- **Basic GNU/Linux Commands**
+- Practice and Quiz
 
-![](command_line.png)
+[Web Link](https://emirtoker.github.io/Software_Tools_R_Github/unix_linux.html)
 
-## **Frequently Used Terms**
 
-Warning, Error, Permission Denied, Segmentation Fault
+# **Python and Jupyter**
 
-![](warning.png)
 
-# **Directory Commands**
+## **Python and Jupyter**
 
-## **Directory Commands**
+- **What is the Python**
+- **Python in Terminal**
+- **What is the Anaconda/Jupyter**
+- **Python in Anaconda/Jupyter**
 
-- <span style="color:purple">**pwd**</span> *(**P**rint **W**orking **D**irectory)*
+[Web Link](https://emirtoker.github.io/Software_Tools_R_Github/unix_linux.html)
 
-- <span style="color:purple">**ls**</span> *(**L**ist **D**irectories)*
+# **Next Week**
 
-- <span style="color:purple">**cd**</span> *(**C**hange **D**irectory)*
+## **Next Week**
 
-- <span style="color:purple">**mkdir**</span> *(**M**ake **D**irectory)*
+- Data Fortmats, Sources and Download
 
-## **Directory Commands - <span style="color:purple">**pwd**</span>**
+- NCL, nco, cdo
 
-*(**P**rint **W**orking **D**irectory)*
 
-```{bash, echo=TRUE}
-pwd
-```
-
-![](pwd_mac1.png)
-
-## **Directory Commands - <span style="color:purple">**ls**</span>**
-
-*(**L**ist **D**irectories)*
-
-```{bash, echo=TRUE}
-ls
-```
-
-## **Directory Commands - pwd and ls**
-
-![](win_folder.png)
-
-## **Directory Commands - <span style="color:purple">**cd**</span>**
-
-*(**C**hange **D**irectory)*
-
-```
-cd Presentation/
-```
-
-![](cd1.png) ![](cd2.png)
-
-## **Directory Commands - <span style="color:purple">**mkdir**</span>**
-
-*(**M**ake **D**irectory)*
-
-```
-mkdir <new_folder_name>
-```
-
-![](mkdir1.png) ![](mkdir2.png)
-
-# **File Commands**
-
-## **File Commands**
-
-- <span style="color:purple">**touch**</span>
-
-- <span style="color:purple">**cat**</span> *(Concatenate)*
-
-- <span style="color:purple">**rm**</span> *(Remove)*
-
-- <span style="color:purple">**cp**</span> *(Copy)*
-
-- <span style="color:purple">**mv**</span> *(Move)*
-
-## **File Commands - <span style="color:purple">**touch**</span>**
-
-```
-touch <my_new_file>
-```
-
-![](touch.png)
-
-## **File Commands - <span style="color:purple">**cat**</span>**
-
-*(Con**cat**enate)*
-
-```
-cat my_new_file
-```
-
-```
-This is my new file. Hi!
-```
-
-![](mynewfile.png)
-
-
-## **File Commands - <span style="color:purple">**cp**</span>**
-
-*(**C**o**p**y)*
-
-```
-cp my_new_file my_new_file2
-```
-
-![](cp.png)
-
-
-## **File Commands - <span style="color:purple">**mv**</span>**
-
-*(**M**o**v**e)*
-
-```
-mv my_new_file2 my_new_file3
-```
-
-![](mv.png)
-
-
-## **File Commands - <span style="color:purple">**rm**</span>**
-
-*(**R**e**m**ove)*
-
-```
-rm my_new_file my_new_file3
-```
-
-![](rm.png)
-
-# **Special Commands**
-
-## **Special Commands**
-
-- **<span style="color:purple">**find**</span>**
-
-- **<span style="color:purple">**help**</span>**
-
-- **<span style="color:purple">**history**</span>**
-
-- **<span style="color:purple">**clear**</span>**
-
-- **<span style="color:purple">**date**</span>** and **<span style="color:purple">**cal**</span>**
-
-- **<span style="color:purple">**exit**</span>**
-
-## **Special Commands - <span style="color:purple">**find**</span>**
-
-```
-find -name <name_of_file>
-```
-
-![](find.png)
-
-## **Special Commands - <span style="color:purple">**help**</span>**
-
-```
-find --help
-```
-![](help.png)
-
-## **Special Commands - <span style="color:purple">**history**</span>**
-
-```
-history
-```
-
-![](history.png)
-
-
-## **Special Commands - <span style="color:purple">**clear**</span>**
-
-```
-clear
-```
-
-![](clear.png)
-
-## **Special Commands - <span style="color:purple">**date**</span> and <span style="color:purple">**cal**</span>**
-
-```{bash, echo=TRUE}
-date
-```
-
-
-```{bash, echo=TRUE}
-cal
-```
-
-## **Special Commands - <span style="color:purple">**exit**</span>**
-
-```
-exit
-```
-
-![](exit.png)
-
-## Symbols 
-
-- <span style="color:purple">**|**</span> *(and)*
-- <span style="color:purple">**>**</span> *(assing)*
-- <span style="color:purple">**$**</span> *(special variable)*
-- <span style="color:purple">**?**</span> *(an unknown character)*
-- <span style="color:purple">`*`</span> *(an unknown sroup of characters)*
-
-```
-cat my_profile | sort
-```
-```
-ls > my_list
-```
-```
-x=3
-echo $x
-```
-```
-ls my*
-```
-```
-ls ?y_list* 
-```
-
-# **vi Editor**
-
-
-## **vi Editor and Print Commands**
-
-- <span style="color:purple">**vi**</span>
-
-- <span style="color:purple">**esc**</span> *(default mode)*
-
-- <span style="color:purple">**i**</span> *(insert mode)*
-
-- <span style="color:purple">**:q**</span> *(just quit)*
-
-- <span style="color:purple">**:q!**</span> *(don't save and quit)*
-
-- <span style="color:purple">**:qw**</span> *(write/save and quit)*
-
-- <span style="color:purple">**grep**</span> and <span style="color:purple">**echo**</span>
-
-- <span style="color:purple">**head**</span> and <span style="color:purple">**tail**</span>
-
-- <span style="color:purple">**sed**</span> *(stream editor)*
-
-## **vi Editor and Print Commands - <span style="color:purple">**vi**</span>**
-
-![](vi_0.png)
-
-## **vi Editor and Print Commands - <span style="color:purple">**esc**</span>**
-
-*(Default Mode)*
-
-![](vi_1.png)
-
-## **vi Editor and Print Commands - <span style="color:purple">**i**</span>**
-
-*(Insert Mode)*
-
-![](vi_2.png)
-
-## **vi Editor and Print Commands - <span style="color:purple">**:wq**</span>**
-
-*(Write/Save and Quit)*
-
-![](vi_3.png)
-
-## **vi Editor and Print Commands - <span style="color:purple">**grep**</span> and <span style="color:purple">**echo**</span>**
-
-```
-grep my_profile
-```
-
-```
-grep ITU my_profile
-```
-
-```
-echo my_profile
-```
-
-```
-name=Emir
-```
-
-```
-echo $name
-```
-
-
-## **vi Editor and Print Commands - <span style="color:purple">**head**</span> and <span style="color:purple">**tail**</span>**
-
-```
-head my_profile
-```
-
-```
-tail my_profile
-```
-
-
-## vi Editor and Print Commands - <span style="color:purple">**sed**</span>
-
- *(Stream Editor)*
-
-Replacing or substituting string;
-
-```
-sed 's/ITU/ODTU/' my_profile
-```
-
-```
-sed '5d' my_profile 
-```
-
-## Bash Script
-
-```
-touch my_bash_script.sh
-vi my_bash_script.sh
-```
-
-```
-x=5
-y=3
-echo $((x+y))
-```
-
-```
-bash my_bash_script.sh
-```
-
-```
-8
-```
-
-## Practice
-
-1. **Learn where you are** *(Print your working directory)*
-2. **Look at inside** *(list all documents and directories)*
-3. **Create a new folder** *(make a directory,`<my_new_dir>`)*
-4. **Go to the `<my_new_dir>`** *(change your directory)*
-5. **Create a new file** *(touch it, file name : `<my_new_file>`)*
-6. **Open this new file and write your name** *(vi-insert mode)*
-7. **Save your work and close the file** *(write + quit)*
-8. **Print your name on the screen** *(grep, tail, head, cat)*
-9. **Put `<my_new_file>` at the parent directory** *(move it)*
-10. **Go to parent directory** (change directory with two dots)
-11. **Create a copy, name; `<my_new_file_2>`**
-12. **Remove your first folder `<my_new_dir>`**
-13. **List all documents and directories** 
