@@ -37,3 +37,9 @@ knitr::opts_chunk$set(echo = TRUE)
 5. R Statistics and Probability
 
 ***
+
+**KNMI Data - ERA5 2m-Temp - CDO and NCO**
+
+WeTransfer - [era5_t2m.zip](https://we.tl/t-ROLVAnlEos)
+
+***
