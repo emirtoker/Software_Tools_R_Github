@@ -12,6 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **R Repository** -  [Github](https://github.com/emirtoker/Software_Tools_R_Github)
 
+**Ninova** - [YSB 801E - CRN:15163](https://ninova.itu.edu.tr/members/ogrenci.sinif.default.aspx?eId=12600&sinifId=40084)
+
 ***
 
 **Presentations**
