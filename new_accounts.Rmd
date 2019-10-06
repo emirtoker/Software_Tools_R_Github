@@ -277,3 +277,15 @@ img28 <- readPNG("Presentation/wetransfer.png")
 
 [LINK](https://wetransfer.com/)
 
+***
+
+
+## TeamViewer
+```{r fig.width=9, fig.height=5, echo=FALSE}
+img29 <- readPNG("Presentation/teamviewer.png")
+ grid.raster(img29)
+```
+
+[LINK](https://www.teamviewer.com/en-us/?t=1570379454764)
+
+***
