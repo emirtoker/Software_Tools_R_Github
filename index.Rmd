@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 2. [Week 2 - Unix, GNU/Linux and Python](http://rpubs.com/emirtoker/software_tools_week2)
 
-3. Week 3 - Data Formats, Sources, Download and NCL
+3. [Week 3 - Data Formats, Sources, Download and NCL](http://rpubs.com/emirtoker/software_tools_week3)
 
 ***
 
@@ -40,6 +40,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **KNMI Data - ERA5 2m-Temp - CDO and NCO**
 
-WeTransfer - [era5_t2m.zip](https://we.tl/t-ROLVAnlEos)
+WeTransfer - [era5_t2m.zip](https://we.tl/t-x55NHIxrGo)
 
 ***
