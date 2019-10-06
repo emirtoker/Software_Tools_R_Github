@@ -167,3 +167,264 @@ Data science is a multi-disciplinary field that uses scientific methods, process
 ![](Presentation/datascience.png)
 
 ***
+
+# **Data Formats** - 3th Week
+
+  - **Data Types**
+
+  - **Data Set**
+
+  - **Data Formats**
+
+
+***
+
+### **Data Types**
+
+- Vector
+    - Point
+    - Line
+    - Polygon
+
+- Raster
+
+- Gridded
+
+***
+
+### **Vector Data**
+
+Vector data structures represent specific features on the Earth’s surface, and assign attributes to those features.
+
+![](Presentation/vector_type.png) ![](Presentation/vector_type_1.jpg)
+
+***
+
+### **BONUS - Point to Polygon**
+
+Thiessen polygon 
+
+![](Presentation/th_1.gif) ![](Presentation/th_2.gif) ![](Presentation/th_3.gif)
+
+It defines an area around a point, where every location is nearer to this point than to all the others (2D).
+
+***
+
+### **Raster Data**
+
+Rasters are made up of a matrix of pixels (also called cells), each containing a value that represents the conditions for the area covered by that cell.
+
+![](Presentation/raster_dataset.png)
+
+
+***
+
+### **Vector vs Raster**
+
+![](Presentation/raster_0.gif)
+
+
+***
+
+### **Vector vs Raster**
+
+![](Presentation/vector_vs_raster.png)
+
+
+***
+
+### **Vector vs Raster**
+
+![](Presentation/raster_vs_vector.png)
+
+
+
+
+***
+
+### **Gridded Data**
+
+- A multi-dimensional rectangular or square-shaped
+- The array of grid 
+- Borders and points which are containing values
+
+![](Presentation/gridded.jpg)
+
+
+***
+
+### **Gridded Data**
+
+![](Presentation/grid_sample.jpg)
+
+![](Presentation/grid_diff.jpg)
+
+
+***
+
+### **BONUS - Numerical weather prediction (NWP)**
+
+NWP uses mathematical models of the atmosphere and oceans to predict the weather based on current weather conditions.
+
+
+![](Presentation/nwp_1.png) ![](Presentation/nwp_2.png)
+
+
+***
+
+### **Data Set**
+
+- Observation
+
+- Forecast
+
+- Re-Analysis Data
+
+- Ensamble Data
+
+
+***
+
+### **Observation Data**
+
+The information collected by a primary source.
+
+![](Presentation/observation_data.png)
+
+***
+
+### **Forecast**
+
+The process of making predictions of the future based on past and present data. 
+
+![](Presentation/forecast.png)
+
+
+***
+
+### **Re-Analysis Data**
+
+A scientific method for developing a comprehensive record.
+Observations and a numerical model are combined objectively.
+
+![](Presentation/reanalysis.jpg)
+
+
+
+***
+
+### **Ensamble Data**
+
+Instead of making a single forecast, a set (or ensemble) of forecasts. 
+This set of forecasts aims to give an indication of the range of possible future states of the atmosphere.
+
+![](Presentation/ensemble.png)
+
+
+    
+***
+
+### **Data Formats**
+
+- ASCII (csv, txt)
+
+- netCDF
+
+- HDF
+
+- GRIB
+
+- Shapefile    
+
+
+***
+
+### **ASCII**
+
+*American Standard Code for Information Interchange*
+
+ASCII codes represent text in computers and other devices.
+
+- .txt (tab-separated values)
+- .csv (comma-separated values)
+- .xls (excel spreadsheet)
+
+![](Presentation/ascii_1.png) ![](Presentation/ascii_2.png)
+
+
+***
+
+### **netCDF**
+
+*Network Common Data Form*
+
+A file format for storing multidimensional scientific data (variables) such as temperature, humidity, pressure, wind speed, and direction.
+
+![](Presentation/netcdf.png)
+
+***
+
+### **netCDF - .nc**
+
+NCAR (National Center for Atmospheric Research)
+
+UCAR (University Corporation for Atmospheric Research)
+
+
+![](Presentation/netcdf_1.png)
+
+
+***
+
+### **HDF - .hdf**
+
+*Hierarchical Data Format*
+
+Designed to store and organize large amounts of data. 
+
+National Center for Supercomputing Applications, supported by The HDF Group.
+
+
+![](Presentation/hdf5_structure.jpg)
+
+
+***
+
+### **GRIB - .grib**
+
+*GRIdded Binary or General Regularly-distributed Information in Binary form*
+
+Data format commonly used in meteorology to store historical and forecast weather data.
+
+World Meteorological Organization
+
+![](Presentation/grib.jpg)
+
+***
+
+### **GRIB - .grib**
+
+![](Presentation/grib_1.png)
+
+
+***
+
+### **Shapefile - .shp**
+
+Geospatial vector data format for geographic information system (GIS) software. 
+
+It is developed and regulated by Esri.
+
+![](Presentation/shp.png)
+
+
+***
+
+### **Shapefile - .shp**
+
+![](Presentation/shp_mask.png)
+
+
+***
+
+

@@ -358,7 +358,9 @@ It is developed and regulated by Esri.
   - ERA
   - GFS
   - ESGF
-
+  - CRU
+  - E-OBS
+  
 ## **Earthdata**
 
 ![](earthdata.png)
@@ -411,6 +413,24 @@ It is developed and regulated by Esri.
 ![](esgf.png)
 
 [LINK](https://esgf-data.dkrz.de/projects/esgf-dkrz/)
+
+
+
+## **CRU**
+
+*Climatic Research Unit-University of East Anglia*
+
+![](cru.png)
+
+[LINK](http://www.cru.uea.ac.uk/)
+
+
+## **E-OBS**
+
+*Europe daily gridded observational dataset*
+
+![](eobs.png)
+[LINK](https://www.ecad.eu/download/ensembles/download.php)
 
 
 

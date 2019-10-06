@@ -302,6 +302,9 @@ $(document).ready(function () {
   <a href="new_accounts.html">New Accounts</a>
 </li>
 <li>
+  <a href="data_sources.html">Data Sources</a>
+</li>
+<li>
   <a href="unix_linux.html">GNU/Linux</a>
 </li>
 <li>
@@ -485,6 +488,243 @@ $(document).ready(function () {
 <p>Data science is a multi-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge from structured and unstructured data.</p>
 <div class="figure">
 <img src="Presentation/datascience.png" />
+
+</div>
+<hr />
+</div>
+</div>
+<div id="data-formats---3th-week" class="section level1">
+<h1><strong>Data Formats</strong> - 3th Week</h1>
+<ul>
+<li><p><strong>Data Types</strong></p></li>
+<li><p><strong>Data Set</strong></p></li>
+<li><p><strong>Data Formats</strong></p></li>
+</ul>
+<hr />
+<div id="data-types-1" class="section level3">
+<h3><strong>Data Types</strong></h3>
+<ul>
+<li>Vector
+<ul>
+<li>Point</li>
+<li>Line</li>
+<li>Polygon</li>
+</ul></li>
+<li><p>Raster</p></li>
+<li><p>Gridded</p></li>
+</ul>
+<hr />
+</div>
+<div id="vector-data" class="section level3">
+<h3><strong>Vector Data</strong></h3>
+<p>Vector data structures represent specific features on the Earth’s surface, and assign attributes to those features.</p>
+<p><img src="Presentation/vector_type.png" /> <img src="Presentation/vector_type_1.jpg" /></p>
+<hr />
+</div>
+<div id="bonus---point-to-polygon" class="section level3">
+<h3><strong>BONUS - Point to Polygon</strong></h3>
+<p>Thiessen polygon</p>
+<p><img src="Presentation/th_1.gif" /> <img src="Presentation/th_2.gif" /> <img src="Presentation/th_3.gif" /></p>
+<p>It defines an area around a point, where every location is nearer to this point than to all the others (2D).</p>
+<hr />
+</div>
+<div id="raster-data" class="section level3">
+<h3><strong>Raster Data</strong></h3>
+<p>Rasters are made up of a matrix of pixels (also called cells), each containing a value that represents the conditions for the area covered by that cell.</p>
+<div class="figure">
+<img src="Presentation/raster_dataset.png" />
+
+</div>
+<hr />
+</div>
+<div id="vector-vs-raster" class="section level3">
+<h3><strong>Vector vs Raster</strong></h3>
+<div class="figure">
+<img src="Presentation/raster_0.gif" />
+
+</div>
+<hr />
+</div>
+<div id="vector-vs-raster-1" class="section level3">
+<h3><strong>Vector vs Raster</strong></h3>
+<div class="figure">
+<img src="Presentation/vector_vs_raster.png" />
+
+</div>
+<hr />
+</div>
+<div id="vector-vs-raster-2" class="section level3">
+<h3><strong>Vector vs Raster</strong></h3>
+<div class="figure">
+<img src="Presentation/raster_vs_vector.png" />
+
+</div>
+<hr />
+</div>
+<div id="gridded-data" class="section level3">
+<h3><strong>Gridded Data</strong></h3>
+<ul>
+<li>A multi-dimensional rectangular or square-shaped</li>
+<li>The array of grid</li>
+<li>Borders and points which are containing values</li>
+</ul>
+<div class="figure">
+<img src="Presentation/gridded.jpg" />
+
+</div>
+<hr />
+</div>
+<div id="gridded-data-1" class="section level3">
+<h3><strong>Gridded Data</strong></h3>
+<div class="figure">
+<img src="Presentation/grid_sample.jpg" />
+
+</div>
+<div class="figure">
+<img src="Presentation/grid_diff.jpg" />
+
+</div>
+<hr />
+</div>
+<div id="bonus---numerical-weather-prediction-nwp" class="section level3">
+<h3><strong>BONUS - Numerical weather prediction (NWP)</strong></h3>
+<p>NWP uses mathematical models of the atmosphere and oceans to predict the weather based on current weather conditions.</p>
+<p><img src="Presentation/nwp_1.png" /> <img src="Presentation/nwp_2.png" /></p>
+<hr />
+</div>
+<div id="data-set" class="section level3">
+<h3><strong>Data Set</strong></h3>
+<ul>
+<li><p>Observation</p></li>
+<li><p>Forecast</p></li>
+<li><p>Re-Analysis Data</p></li>
+<li><p>Ensamble Data</p></li>
+</ul>
+<hr />
+</div>
+<div id="observation-data" class="section level3">
+<h3><strong>Observation Data</strong></h3>
+<p>The information collected by a primary source.</p>
+<div class="figure">
+<img src="Presentation/observation_data.png" />
+
+</div>
+<hr />
+</div>
+<div id="forecast" class="section level3">
+<h3><strong>Forecast</strong></h3>
+<p>The process of making predictions of the future based on past and present data.</p>
+<div class="figure">
+<img src="Presentation/forecast.png" />
+
+</div>
+<hr />
+</div>
+<div id="re-analysis-data" class="section level3">
+<h3><strong>Re-Analysis Data</strong></h3>
+<p>A scientific method for developing a comprehensive record. Observations and a numerical model are combined objectively.</p>
+<div class="figure">
+<img src="Presentation/reanalysis.jpg" />
+
+</div>
+<hr />
+</div>
+<div id="ensamble-data" class="section level3">
+<h3><strong>Ensamble Data</strong></h3>
+<p>Instead of making a single forecast, a set (or ensemble) of forecasts. This set of forecasts aims to give an indication of the range of possible future states of the atmosphere.</p>
+<div class="figure">
+<img src="Presentation/ensemble.png" />
+
+</div>
+<hr />
+</div>
+<div id="data-formats-1" class="section level3">
+<h3><strong>Data Formats</strong></h3>
+<ul>
+<li><p>ASCII (csv, txt)</p></li>
+<li><p>netCDF</p></li>
+<li><p>HDF</p></li>
+<li><p>GRIB</p></li>
+<li><p>Shapefile</p></li>
+</ul>
+<hr />
+</div>
+<div id="ascii" class="section level3">
+<h3><strong>ASCII</strong></h3>
+<p><em>American Standard Code for Information Interchange</em></p>
+<p>ASCII codes represent text in computers and other devices.</p>
+<ul>
+<li>.txt (tab-separated values)</li>
+<li>.csv (comma-separated values)</li>
+<li>.xls (excel spreadsheet)</li>
+</ul>
+<p><img src="Presentation/ascii_1.png" /> <img src="Presentation/ascii_2.png" /></p>
+<hr />
+</div>
+<div id="netcdf" class="section level3">
+<h3><strong>netCDF</strong></h3>
+<p><em>Network Common Data Form</em></p>
+<p>A file format for storing multidimensional scientific data (variables) such as temperature, humidity, pressure, wind speed, and direction.</p>
+<div class="figure">
+<img src="Presentation/netcdf.png" />
+
+</div>
+<hr />
+</div>
+<div id="netcdf---.nc" class="section level3">
+<h3><strong>netCDF - .nc</strong></h3>
+<p>NCAR (National Center for Atmospheric Research)</p>
+<p>UCAR (University Corporation for Atmospheric Research)</p>
+<div class="figure">
+<img src="Presentation/netcdf_1.png" />
+
+</div>
+<hr />
+</div>
+<div id="hdf---.hdf" class="section level3">
+<h3><strong>HDF - .hdf</strong></h3>
+<p><em>Hierarchical Data Format</em></p>
+<p>Designed to store and organize large amounts of data.</p>
+<p>National Center for Supercomputing Applications, supported by The HDF Group.</p>
+<div class="figure">
+<img src="Presentation/hdf5_structure.jpg" />
+
+</div>
+<hr />
+</div>
+<div id="grib---.grib" class="section level3">
+<h3><strong>GRIB - .grib</strong></h3>
+<p><em>GRIdded Binary or General Regularly-distributed Information in Binary form</em></p>
+<p>Data format commonly used in meteorology to store historical and forecast weather data.</p>
+<p>World Meteorological Organization</p>
+<div class="figure">
+<img src="Presentation/grib.jpg" />
+
+</div>
+<hr />
+</div>
+<div id="grib---.grib-1" class="section level3">
+<h3><strong>GRIB - .grib</strong></h3>
+<div class="figure">
+<img src="Presentation/grib_1.png" />
+
+</div>
+<hr />
+</div>
+<div id="shapefile---.shp" class="section level3">
+<h3><strong>Shapefile - .shp</strong></h3>
+<p>Geospatial vector data format for geographic information system (GIS) software.</p>
+<p>It is developed and regulated by Esri.</p>
+<div class="figure">
+<img src="Presentation/shp.png" />
+
+</div>
+<hr />
+</div>
+<div id="shapefile---.shp-1" class="section level3">
+<h3><strong>Shapefile - .shp</strong></h3>
+<div class="figure">
+<img src="Presentation/shp_mask.png" />
 
 </div>
 <hr />

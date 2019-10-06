@@ -1,0 +1,93 @@
+---
+title: "data_sources"
+output: html_document
+---
+
+***
+
+### **Earthdata**
+
+![](Presentation/earthdata.png)
+
+[LINK](https://earthdata.nasa.gov/)
+
+
+***
+
+### **KNMI**
+
+*The Royal Netherlands Meteorological Institute*
+
+![](Presentation/knmi.png)
+
+[LINK](http://climexp.knmi.nl/start.cgi)
+
+
+***
+
+### **Wordclim**
+
+![](Presentation/wordclim.png)
+
+[LINK](https://www.worldclim.org/)
+
+
+
+
+***
+
+### **ERA**
+
+*European Centre for Medium-Range Weather Forecasts*
+
+![](Presentation/era.png)
+
+[LINK](https://www.ecmwf.int/en/forecasts/datasets/browse-reanalysis-datasets)
+
+
+
+***
+
+### **GFS**
+
+*National Centers for Environmental Prediction (NCEP)*
+
+![](Presentation/gfs.png)
+
+[LINK](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
+
+
+
+***
+
+### **ESGF**
+
+*The Earth System Grid Federation (ESGF)*
+
+![](Presentation/esgf.png)
+
+[LINK](https://esgf-data.dkrz.de/projects/esgf-dkrz/)
+
+
+
+***
+
+### **CRU**
+
+*Climatic Research Unit-University of East Anglia*
+
+![](Presentation/cru.png)
+
+[LINK](http://www.cru.uea.ac.uk/)
+
+
+***
+
+### **E-OBS**
+
+*Europe daily gridded observational dataset*
+
+![](Presentation/eobs.png)
+[LINK](https://www.ecad.eu/download/ensembles/download.php)
+
+***
