@@ -1,0 +1,186 @@
+---
+output: html_document
+---
+
+***
+
+  - cdo
+  - nco
+  - NCL
+  
+***
+
+### **cdo**
+
+*Climate Data Operator*
+
+2019-06-13: 1.9.7
+
+![](Presentation/cdo.png)
+
+[LINK](https://code.mpimet.mpg.de/projects/cdo/embedded/cdo.pdf)
+
+
+***
+
+### **cdo**
+
+```
+era5_t2m.nc
+```
+
+![](Presentation/cdo1.png)
+
+
+***
+
+### **cdo**
+
+```
+cdo yearmonmean era5_t2m.nc era5_t2m_yearmonmean.nc
+era5_t2m_yearmonmean.nc
+```
+
+![](Presentation/cdo2.png)
+
+
+
+
+
+***
+
+### **cdo**
+
+```
+cdo splitmon era5_t2m.nc era5_t2m_splitmon
+era5_t2m_splitmon10.nc
+```
+
+![](Presentation/cdo3.png)
+
+
+
+
+***
+
+### **cdo**
+
+```
+cdo sellonlatbox,26,-45,36,42 era5_t2m.nc era5_t2m_TR.nc
+era5_t2m_TR.nc
+```
+
+![](Presentation/cdo4.png)
+
+
+
+
+
+***
+
+### **cdo**
+
+```
+cdo seasmean era5_t2m.nc era5_t2m_seasmean.nc
+era5_t2m_seasmean.nc
+```
+
+![](Presentation/cdo5.png)
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+***
+
+### **nco**
+
+*netCDF Operator*
+
+2019 Jul 01: 4.8.1 
+
+![](Presentation/nco.png)
+
+[PDF](http://nco.sourceforge.net/nco.pdf)
+
+
+
+***
+
+### **nco**
+
+```
+ncdiff era5_t2m_splitmon03.nc era5_t2m_splitmon04.nc era5_t2m_splitmon0304_ncdiff.nc
+era5_t2m_splitmon0304_ncdiff.nc
+```
+
+![](Presentation/nco_diff.png)
+
+
+
+***
+
+### **NCL**
+
+*NCAR (National Center for Atmospheric Research) Command Language*
+
+
+
+![](Presentation/ncll.png)
+
+[LINK](https://www.ncl.ucar.edu/)
+
+
+
+***
+
+### **NCL**
+
+![](Presentation/ncl1.png)
+
+
+***
+
+### **NCL**
+
+![](Presentation/ncl2.png)
+
+
+***
+
+### **NCL**
+
+![](Presentation/ncl0.png)
+
+***
+
+### **NCL - Vapor**
+
+![](Presentation/VAPOR_HAIL_ANIME.gif)
+
+
+***
+
+### **BONUS - ncview**
+
+*netCDF visual browser*
+
+![](Presentation/ncview.png)
+
+[LINK](http://meteora.ucsd.edu/~pierce/ncview_home_page.html)
+  
+
+***

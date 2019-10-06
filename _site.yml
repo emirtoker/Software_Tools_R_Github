@@ -21,6 +21,8 @@ navbar:
       href: unix_linux.html   
     - text: "Python"
       href: python.html   
+    - text: "NCL"
+      href: ncl.html  
     - text: "About"
       href: about.html     
 output:
