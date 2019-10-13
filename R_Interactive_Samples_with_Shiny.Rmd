@@ -317,7 +317,7 @@ forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
 ***
 ## animation
 
-```{r
+```{r}
 library(gapminder)
 library(ggplot2)
 library(gganimate)
