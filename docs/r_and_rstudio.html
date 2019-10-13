@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>R and RStudio</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Software Tools</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="book.html">Book</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="code.html">Code</a>
+</li>
+<li>
+  <a href="new_accounts.html">New Accounts</a>
+</li>
+<li>
+  <a href="unix_linux.html">GNU/Linux</a>
+</li>
+<li>
+  <a href="python.html">Python</a>
+</li>
+<li>
+  <a href="data_sources.html">Data Sources</a>
+</li>
+<li>
+  <a href="ncl.html">NCL</a>
+</li>
+<li>
+  <a href="r_and_rstudio.html">R and RStudio</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">R and RStudio</h1>
+
+</div>
+
+
+<hr />
+<ul>
+<li>What is R?</li>
+<li>R History</li>
+<li>R and CRAN</li>
+<li>What is RStudio?</li>
+<li>RStudio Products</li>
+<li>Fields of Usage</li>
+</ul>
+<hr />
+<div id="what-is-r" class="section level3">
+<h3><strong>What is R?</strong></h3>
+<p>R is a <strong>language</strong>. It is a free software environment for statistical computing and graphics.</p>
+<p><img src="Presentation/R_logo.jpeg" /> <img src="Presentation/gnu_logo_small.png" /></p>
+<p>It is a <strong>GNU project</strong>.</p>
+<p>UNIX, Windows and MacOS</p>
+<p><em>R version 3.6.1 has been released on 2019-07-05</em></p>
+<hr />
+</div>
+<div id="r-history" class="section level3">
+<h3><strong>R History</strong></h3>
+<ul>
+<li><strong>Bell Laboratories</strong> are used for industrial research and scientific development.</li>
+<li><strong>S</strong> is a statistical programming language, by John Chambers, Bell Laboratories, New Jersey, 1975–1976.</li>
+<li><strong>R</strong> was created by <strong>R</strong>oss Ihaka and <strong>R</strong>obert Gentleman, (statisticians), <strong>GNU</strong> public license, the University of Auckland, New Zealand, 1992.</li>
+</ul>
+<p><img src="Presentation/ross_lhaka.jpg" /> <img src="Presentation/robert_gentleman.jpg" /></p>
+<p>/ <em>Powerful but cheap graphics</em> - <em>R Core Team</em> - <em>Open Sources</em> /</p>
+<hr />
+</div>
+<div id="milestones-of-r" class="section level3">
+<h3><strong>Milestones of R</strong></h3>
+<ul>
+<li>1991 - Statistical Models in S (White Book) was published.</li>
+<li>1997 - The oldest R source was released on The Comprehensive R Archive Network (CRAN).</li>
+<li>1997 - 3 mirrors and 12 packages.</li>
+<li>1997 - R becomes an official part of the GNU Project.</li>
+<li>1999 - “<em>update.packages</em>” and “<em>install.packages</em>” functions.</li>
+<li>2001 - The first version for Mac OS X.</li>
+<li>2010 - Support for Windows 64 bit systems.</li>
+<li>2013 - Support for numeric index values 2^31 and larger on 64 bit systems.</li>
+<li>2017 - Just-in-time compilation (JIT) of functions and loops (10 to 20 times faster).</li>
+</ul>
+<p><em>almost 20 years, and more than 10,000 R packages</em></p>
+<hr />
+</div>
+<div id="r-download-and-cran" class="section level3">
+<h3><strong>R Download and CRAN</strong></h3>
+<p>R Homepage - <a href="https://www.r-project.org/">LINK</a></p>
+<p>The Comprehensive R Archive Network (CRAN) - <a href="https://cran.r-project.org/mirrors.html">LINK</a></p>
+<div class="figure">
+<img src="Presentation/cran_turkey.png" />
+
+</div>
+<p><em>please choose a location close to you</em></p>
+<hr />
+</div>
+<div id="r-download-and-cran-1" class="section level3">
+<h3><strong>R Download and CRAN</strong></h3>
+<p>Turkey - Middle East Technical University Northern Cyprus Campus, Mersin - <a href="https://cran.ncc.metu.edu.tr">LINK</a></p>
+<div class="figure">
+<img src="Presentation/cran_metu.png" />
+
+</div>
+<hr />
+</div>
+<div id="r" class="section level3">
+<h3><strong>R</strong></h3>
+<div class="figure">
+<img src="Presentation/r_terminal.png" />
+
+</div>
+<hr />
+</div>
+<div id="what-is-rstudio" class="section level3">
+<h3><strong>What is RStudio</strong></h3>
+<p>An <strong>Integrated Development Environment (IDE)</strong> for R.</p>
+<div class="figure">
+<img src="Presentation/rstudio_logo.png" />
+
+</div>
+<p><strong>RStudio Desktop</strong> and <strong>RStudio Server</strong></p>
+<ul>
+<li><em>Developer(s) : RStudio, Inc.</em></li>
+<li><em>Initial release : 28 February 2011</em></li>
+<li><em>Stable release : 1.2.5001 / 19 September 2019</em></li>
+<li><em>Written in : Java, C++, JavaScript</em></li>
+</ul>
+<hr />
+</div>
+<div id="rstudio-desktop" class="section level3">
+<h3><strong>RStudio Desktop</strong></h3>
+<div class="figure">
+<img src="Presentation/r_screen1.png" />
+
+</div>
+<hr />
+</div>
+<div id="rstudio-server" class="section level3">
+<h3><strong>RStudio Server</strong></h3>
+<p>R studio anywhere using a web browser <a href="https://rstudio.cloud/" class="uri">https://rstudio.cloud/</a></p>
+<div class="figure">
+<img src="Presentation/rstudio_cloud.png" />
+
+</div>
+<hr />
+</div>
+<div id="other-rstudio-products" class="section level3">
+<h3><strong>Other RStudio Products</strong></h3>
+<div class="figure">
+<img src="Presentation/rstudio_product.png" />
+
+</div>
+<p><a href="https://rstudio.com/" class="uri">https://rstudio.com/</a></p>
+<p>*** ### <strong>RStudio Desktop Download</strong></p>
+<div class="figure">
+<img src="Presentation/rstudio_down.png" />
+
+</div>
+<p>Download <a href="https://rstudio.com/products/rstudio/download/">LINK</a></p>
+<hr />
+</div>
+<div id="any-problem-about-installation" class="section level3">
+<h3>Any Problem About Installation ?</h3>
+<div class="figure">
+<img src="Presentation/R_and_R_Studio.png" />
+
+</div>
+<hr />
+</div>
+<div id="fields-of-usage" class="section level2">
+<h2><strong>Fields of Usage</strong></h2>
+<ul>
+<li><strong>Data analysis</strong>
+<ul>
+<li>Interpretation</li>
+<li>Visualization</li>
+<li>Manipulation</li>
+</ul></li>
+<li><strong>Statistical techniques</strong>
+<ul>
+<li>Linear and nonlinear regression (or modelling)</li>
+<li>Classical statistical tests</li>
+<li>Time-series analysis</li>
+<li>Classification and Clustering</li>
+<li>Correlation Analysis</li>
+<li>etc.</li>
+</ul></li>
+</ul>
+<hr />
+<div id="interpretation" class="section level3">
+<h3><strong>Interpretation</strong></h3>
+<p>The process of making sense out of a collection of data.</p>
+<div class="figure">
+<img src="Presentation/r_inter.png" />
+
+</div>
+<hr />
+</div>
+<div id="visualization" class="section level3">
+<h3><strong>Visualization</strong></h3>
+<p>Data visualization is the graphical representation of information and data.</p>
+<div class="figure">
+<img src="Presentation/r_visual.png" />
+
+</div>
+<hr />
+</div>
+<div id="visualization-1" class="section level3">
+<h3><strong>Visualization</strong></h3>
+<div class="figure">
+<img src="Presentation/r_storms.gif" />
+
+</div>
+<p><em>storms</em></p>
+<hr />
+</div>
+<div id="manipulation" class="section level3">
+<h3><strong>Manipulation</strong></h3>
+<p>The process of changing data to make it easier to read or be more organized.</p>
+<div class="figure">
+<img src="Presentation/r_dplyr.png" />
+
+</div>
+<p><em>R dplyr scheme</em></p>
+<hr />
+</div>
+<div id="linear-and-nonlinear-regression-or-modelling" class="section level3">
+<h3><strong>Linear and nonlinear Regression (or Modelling)</strong></h3>
+<p>Linear functions are those whose graph is a straight line.</p>
+<p>y = f(x) = a + bx</p>
+<p>Regression is a statistical method used to create a model.</p>
+<div class="figure">
+<img src="Presentation/r_linear.png" />
+
+</div>
+<hr />
+</div>
+<div id="classical-statistical-tests" class="section level3">
+<h3><strong>Classical statistical tests</strong></h3>
+<p>Describe the distribution of data and to determine the reliability of a sample drawn from a population.</p>
+<p><img src="Presentation/r_classic1.png" /> <img src="Presentation/r_classic2.png" /></p>
+<p><em><strong>Statistical significance tests</strong> is used to inform judgments regarding whether the hypothesis is false or not false</em></p>
+<hr />
+</div>
+<div id="time-series-analysis" class="section level3">
+<h3><strong>Time-series analysis</strong></h3>
+<p>Time series is a series of data points in which each data point is associated with a timestamp.</p>
+<div class="figure">
+<img src="Presentation/r_time.gif" />
+
+</div>
+<hr />
+</div>
+<div id="classification-and-clustering" class="section level3">
+<h3><strong>Classification and Clustering</strong></h3>
+<p>Classification and Clustering are characterize objects into groups by one or more features.</p>
+<div class="figure">
+<img src="Presentation/r_clust.jpg" />
+
+</div>
+<p><em><strong>Classification</strong> is used in a supervised learning technique which include predefined properties. <strong>Clustering</strong> is used in unsupervised learning based on group properties.</em></p>
+<hr />
+</div>
+<div id="correlation-analysis" class="section level3">
+<h3><strong>Correlation analysis</strong></h3>
+<p>The measure of the strength and direction of the linear relationship between two variables.</p>
+<div class="figure">
+<img src="Presentation/r_corr.png" />
+
+</div>
+<hr />
+</div>
+<div id="fields-of-usage-1" class="section level3">
+<h3><strong>Fields of Usage</strong></h3>
+<ul>
+<li><strong>Facebook</strong> – Update status and social network graph.</li>
+<li><strong>Google</strong> – Calculate Return on Investment (ROI), predict the economic activity, improve the efficiency of online advertising.</li>
+<li><strong>New York Times</strong> – Prepare graphics before printing.</li>
+<li><strong>Twitter</strong> – R is part of Twitter’s Data Science toolbox for sophisticated statistical modeling.</li>
+</ul>
+<div class="figure">
+<img src="Presentation/r_comp.png" />
+
+</div>
+<hr />
+</div>
+</div>
+<div id="preview-of-r-course" class="section level2">
+<h2><strong>Preview of R Course</strong></h2>
+<ul>
+<li><p>A Scientific Calculator</p></li>
+<li><p>Classes and Data Structures</p></li>
+<li><p>Create and Manipulation Data</p></li>
+<li><p>Reading, Writing and Plotting Data</p></li>
+<li><p>R Programming Structure</p></li>
+<li><p>Statistics and Probability</p></li>
+<li><p>Data Analysis Packages</p></li>
+</ul>
+<hr />
+</div>
+<div id="getting-started" class="section level2">
+<h2><strong>Getting Started</strong></h2>
+<ul>
+<li><p>Using the RStudio</p></li>
+<li><p>R for Basic Math</p></li>
+<li><p>Assigning Objects</p></li>
+<li><p>Comments</p></li>
+</ul>
+<hr />
+<div id="open-your-rstudio" class="section level3">
+<h3><strong>Open Your RStudio</strong></h3>
+<div class="figure">
+<img src="Presentation/r_screen1.png" />
+
+</div>
+<p><strong><em>R</em></strong> You Ready ?!</p>
+<hr />
+</div>
+</div>
+<div id="using-the-rstudio" class="section level2">
+<h2><strong>Using the RStudio</strong></h2>
+<ul>
+<li>Preferences</li>
+<li>Project</li>
+<li>File
+<ul>
+<li>Script</li>
+</ul></li>
+<li>Undo, Redo, Replace and Find</li>
+<li>Tools - New Terminal</li>
+<li>View/Show Screens</li>
+</ul>
+<hr />
+<div id="preferences" class="section level3">
+<h3><strong>Preferences</strong></h3>
+<p><em>RStudio - Preferences - Appearance - Editor Theme</em></p>
+<div class="figure">
+<img src="Presentation/r_screen2.png" />
+
+</div>
+<hr />
+</div>
+<div id="new-theme" class="section level3">
+<h3><strong>New Theme</strong></h3>
+<p><em>Functions, Parentheses, Quotation Marks - Material</em></p>
+<div class="figure">
+<img src="Presentation/r_screen3.png" />
+
+</div>
+<hr />
+</div>
+<div id="project" class="section level3">
+<h3><strong>Project</strong></h3>
+<p><em>File - New Project</em> <img src="Presentation/r_screen4.png" /> <em>Don’t Save Current Workspace - New Directory</em></p>
+<hr />
+</div>
+<div id="project-1" class="section level3">
+<h3><strong>Project</strong></h3>
+<div class="figure">
+<img src="Presentation/r_screen5.png" />
+
+</div>
+<p><em>New Project</em></p>
+<hr />
+</div>
+<div id="project-2" class="section level3">
+<h3><strong>Project</strong></h3>
+<div class="figure">
+<img src="Presentation/r_screen6.png" />
+
+</div>
+<p>Directory Name - Create Project</p>
+<hr />
+</div>
+<div id="new-project-is-ready" class="section level3">
+<h3><strong>NEW Project is Ready</strong></h3>
+<div class="figure">
+<img src="Presentation/r_screen7.png" />
+
+</div>
+<hr />
+</div>
+<div id="file" class="section level3">
+<h3><strong>File</strong></h3>
+<p><em>File - New File - Script</em></p>
+<div class="figure">
+<img src="Presentation/r_screen8.png" />
+
+</div>
+<hr />
+</div>
+<div id="file-1" class="section level3">
+<h3><strong>File</strong></h3>
+<p><em>File - New File - Script</em></p>
+<div class="figure">
+<img src="Presentation/r_screen9.png" />
+
+</div>
+<hr />
+</div>
+<div id="undo-redo-replace-and-find" class="section level3">
+<h3><strong>Undo, Redo, Replace and Find</strong></h3>
+<p><em>Edit</em></p>
+<div class="figure">
+<img src="Presentation/r_screen10.png" />
+
+</div>
+<hr />
+</div>
+<div id="tools---new-terminal" class="section level3">
+<h3><strong>Tools - New Terminal</strong></h3>
+<p><em>Tools - Terminal - New Terminal</em></p>
+<div class="figure">
+<img src="Presentation/r_screen11.png" />
+
+</div>
+<hr />
+</div>
+<div id="viewshow-screens" class="section level3">
+<h3><strong>View/Show Screens</strong></h3>
+<p><em>View - Zoom and Show …</em></p>
+<div class="figure">
+<img src="Presentation/r_screen12.png" />
+
+</div>
+<hr />
+</div>
+<div id="script" class="section level3">
+<h3><strong>Script</strong></h3>
+<p><em>Save, Run</em></p>
+<div class="figure">
+<img src="Presentation/r_screen13.png" />
+
+</div>
+<hr />
+</div>
+<div id="environment" class="section level3">
+<h3><strong>Environment</strong></h3>
+<p><em>Save, Import Dataset, Clean</em></p>
+<div class="figure">
+<img src="Presentation/r_screen14.png" />
+
+</div>
+<hr />
+</div>
+<div id="history" class="section level3">
+<h3><strong>History</strong></h3>
+<p><em>Save, Remove, Clean</em></p>
+<div class="figure">
+<img src="Presentation/r_screen15.png" />
+
+</div>
+<hr />
+</div>
+<div id="console" class="section level3">
+<h3><strong>Console</strong></h3>
+<p><em>Working Directory, Commands, Clean</em></p>
+<div class="figure">
+<img src="Presentation/r_screen16.png" />
+
+</div>
+<hr />
+</div>
+<div id="files" class="section level3">
+<h3><strong>Files</strong></h3>
+<p><em>New Folder, Delete, Rename, Copy</em></p>
+<div class="figure">
+<img src="Presentation/r_screen17.png" />
+
+</div>
+<hr />
+</div>
+<div id="plot" class="section level3">
+<h3><strong>Plot</strong></h3>
+<p><em>Before, Zoom, Export, Remove, Clean</em></p>
+<div class="figure">
+<img src="Presentation/r_screen18.png" />
+
+</div>
+<hr />
+</div>
+<div id="packages" class="section level3">
+<h3><strong>Packages</strong></h3>
+<p><em>Install, Update</em></p>
+<div class="figure">
+<img src="Presentation/r_screen19.png" />
+
+</div>
+<hr />
+</div>
+<div id="help" class="section level3">
+<h3><strong>Help</strong></h3>
+<p><em>Topic / Word Search</em></p>
+<div class="figure">
+<img src="Presentation/r_screen20.png" />
+
+</div>
+<hr />
+</div>
+</div>
+<div id="r-for-basic-math" class="section level2">
+<h2>R for Basic Math</h2>
+<p>addition (<strong>+</strong>), subtraction (<strong>-</strong>), multiplication (<strong><code>*</code></strong>), division (<strong>/</strong>)</p>
+<div class="figure">
+<img src="Presentation/r_screen21.png" />
+
+</div>
+<hr />
+<div id="r-for-basic-math-1" class="section level3">
+<h3>R for Basic Math</h3>
+<p>25 <strong><code>*</code></strong> 4 <strong>+</strong> 9 <strong>/</strong> 3 <strong>-</strong> 56</p>
+<div class="figure">
+<img src="Presentation/r_screen22.png" />
+
+</div>
+<hr />
+</div>
+</div>
+<div id="assigning-objects" class="section level2">
+<h2>Assigning Objects</h2>
+<p>The assignment arrow (<strong>&lt;-</strong>)</p>
+<div class="figure">
+<img src="Presentation/r_screen23.png" />
+
+</div>
+<hr />
+</div>
+<div id="comments" class="section level2">
+<h2>Comments</h2>
+<p>How to tell R to ignore a part of your code? (<strong>#</strong>)</p>
+<div class="figure">
+<img src="Presentation/r_screen24.png" />
+
+</div>
+<hr />
+<div id="comments-1" class="section level3">
+<h3>Comments</h3>
+<ul>
+<li>Help yourself and other people to reading the code and understand it faster:</li>
+</ul>
+<pre><code># This code will calculate the likelihood that it will rain tomorrow
+
+  complicated_rain_calculation_for_tomorrow()</code></pre>
+<ul>
+<li>Ignore a line of code and see how a program will run without it:</li>
+</ul>
+<pre><code># value &lt;- old_code()
+
+  value &lt;- new_code()</code></pre>
+</div>
+</div>
+<div id="save-your-script" class="section level2">
+<h2>Save Your Script</h2>
+<div class="figure">
+<img src="Presentation/r_screen25.png" />
+
+</div>
+<hr />
+</div>
+<div id="summary" class="section level2">
+<h2>SUMMARY</h2>
+<ul>
+<li><p>R is a language</p></li>
+<li><p>RStudio is an interface</p></li>
+<li><p>Script is a passive text</p></li>
+<li><p>Console is an interactive decoding area</p></li>
+<li><p>Math is pre-defined</p></li>
+<li><p>Assigment arrow <strong><em>&lt;-</em></strong></p></li>
+<li><p>Comments (hashtag) <strong><em>#</em></strong></p></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

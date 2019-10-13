@@ -1,0 +1,587 @@
+---
+title: "R and RStudio"
+output: html_document
+---
+
+
+***
+
+- What is R?
+- R History
+- R and CRAN
+- What is RStudio?
+- RStudio Products
+- Fields of Usage
+
+***
+
+### **What is R?**
+
+R is a **language**. It is a free software environment for statistical computing and graphics.
+
+![](Presentation/R_logo.jpeg) ![](Presentation/gnu_logo_small.png)
+
+It is a **GNU project**.
+
+UNIX, Windows and MacOS
+
+*R version 3.6.1 has been released on 2019-07-05*
+
+***
+
+### **R History**
+
+- **Bell Laboratories** are used for industrial research and scientific development.
+- **S** is a statistical programming language, by John Chambers, Bell Laboratories, New Jersey, 1975–1976.
+- **R** was created by **R**oss Ihaka and **R**obert Gentleman, (statisticians), **GNU** public license, the University of Auckland, New Zealand, 1992.
+
+![](Presentation/ross_lhaka.jpg) ![](Presentation/robert_gentleman.jpg)
+
+/
+*Powerful but cheap graphics*
+- *R Core Team*
+- *Open Sources*
+/
+
+***
+
+### **Milestones of R**
+
+- 1991 - Statistical Models in S (White Book) was published.
+- 1997 - The oldest R source was released on The Comprehensive R Archive Network (CRAN).
+- 1997 - 3 mirrors and 12 packages.
+- 1997 - R becomes an official part of the GNU Project.
+- 1999 - "*update.packages*" and "*install.packages*" functions.
+- 2001 - The first version for Mac OS X.
+- 2010 - Support for Windows 64 bit systems.
+- 2013 - Support for numeric index values 2^31 and larger on 64 bit systems.
+- 2017 - Just-in-time compilation (JIT) of functions and loops (10 to 20 times faster).
+
+*almost 20 years, and more than 10,000 R packages*
+
+***
+
+### **R Download and CRAN**
+
+R Homepage - [LINK](https://www.r-project.org/)
+
+The Comprehensive R Archive Network (CRAN) - [LINK](https://cran.r-project.org/mirrors.html)
+
+
+![](Presentation/cran_turkey.png)
+
+*please choose a location close to you*
+
+
+***
+
+### **R Download and CRAN**
+
+Turkey - Middle East Technical University Northern Cyprus Campus, Mersin - [LINK](https://cran.ncc.metu.edu.tr)
+
+![](Presentation/cran_metu.png)
+
+
+***
+
+### **R**
+
+![](Presentation/r_terminal.png) 
+
+
+***
+
+### **What is RStudio**
+
+An **Integrated Development Environment (IDE)** for R.
+
+![](Presentation/rstudio_logo.png)
+
+**RStudio Desktop** and **RStudio Server**
+
+- *Developer(s) : RStudio, Inc.*
+- *Initial release :	28 February 2011*
+- *Stable release : 1.2.5001 / 19 September 2019*
+- *Written in : Java, C++, JavaScript*
+
+
+***
+
+### **RStudio Desktop**
+
+![](Presentation/r_screen1.png)
+
+
+***
+
+### **RStudio Server**
+
+R studio anywhere using a web browser https://rstudio.cloud/
+
+![](Presentation/rstudio_cloud.png)
+
+
+***
+
+### **Other RStudio Products**
+
+![](Presentation/rstudio_product.png)
+
+[https://rstudio.com/](https://rstudio.com/)
+
+***  ### **RStudio Desktop Download**
+
+![](Presentation/rstudio_down.png)
+
+Download [LINK](https://rstudio.com/products/rstudio/download/)
+
+
+***
+
+### Any Problem About Installation ?
+
+![](Presentation/R_and_R_Studio.png)
+
+
+
+***
+
+## **Fields of Usage**
+
+
+- **Data analysis**
+    - Interpretation
+    - Visualization
+    - Manipulation
+
+- **Statistical techniques**
+    - Linear and nonlinear regression (or modelling)
+    - Classical statistical tests
+    - Time-series analysis
+    - Classification and Clustering 
+    - Correlation Analysis
+    - etc.
+
+
+***
+
+### **Interpretation**
+
+The process of making sense out of a collection of data.
+
+![](Presentation/r_inter.png)
+
+***
+
+### **Visualization**
+
+Data visualization is the graphical representation of information and data.
+
+![](Presentation/r_visual.png)
+
+
+***
+
+### **Visualization**
+
+![](Presentation/r_storms.gif)
+
+*storms*
+
+
+***
+
+### **Manipulation**
+
+The process of changing data to make it easier to read or be more organized.
+
+![](Presentation/r_dplyr.png)
+
+*R dplyr scheme*
+
+
+***
+
+### **Linear and nonlinear Regression (or Modelling)**
+
+Linear functions are those whose graph is a straight line.
+
+y = f(x) = a + bx
+
+Regression is a statistical method used to create a model.
+
+![](Presentation/r_linear.png)
+
+
+
+***
+
+### **Classical statistical tests**
+
+Describe the distribution of data and to determine the reliability of a sample drawn from a population.
+
+![](Presentation/r_classic1.png) ![](Presentation/r_classic2.png)
+
+***Statistical significance tests** is used to inform judgments regarding whether the hypothesis is false or not false*
+
+
+***
+
+### **Time-series analysis**
+
+Time series is a series of data points in which each data point is associated with a timestamp.
+
+![](Presentation/r_time.gif)
+
+
+
+***
+
+### **Classification and Clustering**
+
+Classification and Clustering are characterize objects into groups by one or more features. 
+
+![](Presentation/r_clust.jpg)
+
+***Classification** is used in a supervised learning technique which include predefined properties. **Clustering** is used in unsupervised learning based on group properties.*
+
+
+***
+
+### **Correlation analysis**
+
+The measure of the strength and direction of the linear relationship between two variables.
+
+![](Presentation/r_corr.png)
+
+
+
+***
+
+### **Fields of Usage**
+
+- **Facebook** – Update status and social network graph.
+- **Google** – Calculate Return on Investment (ROI), predict the economic activity, improve the efficiency of online advertising.
+- **New York Times** – Prepare graphics before printing.
+- **Twitter** – R is part of Twitter’s Data Science toolbox for sophisticated statistical modeling.
+
+![](Presentation/r_comp.png)
+
+
+
+
+
+
+
+
+***
+
+## **Preview of R Course**
+
+- A Scientific Calculator 
+
+- Classes and Data Structures 
+
+- Create and Manipulation Data
+
+- Reading, Writing and Plotting Data
+
+- R Programming Structure
+
+- Statistics and Probability
+
+- Data Analysis Packages
+
+
+
+***
+
+## **Getting Started**
+
+- Using the RStudio
+
+- R for Basic Math
+
+- Assigning Objects
+
+- Comments
+
+
+***
+
+### **Open Your RStudio**
+
+
+![](Presentation/r_screen1.png)
+
+***R*** You Ready ?!
+
+
+
+
+
+***
+
+## **Using the RStudio**
+
+ - Preferences
+ - Project
+ - File
+     - Script
+ - Undo, Redo, Replace and Find
+ - Tools - New Terminal
+ - View/Show Screens
+
+***
+
+### **Preferences**
+*RStudio - Preferences - Appearance - Editor Theme*
+
+![](Presentation/r_screen2.png)
+
+
+***
+
+### **New Theme**
+
+*Functions, Parentheses, Quotation Marks  - Material*
+
+![](Presentation/r_screen3.png)
+
+
+***
+
+### **Project**
+
+*File - New Project*
+![](Presentation/r_screen4.png)
+*Don't Save Current Workspace - New Directory*
+
+
+***
+
+### **Project**
+
+![](Presentation/r_screen5.png)
+
+
+*New Project*
+
+
+***
+
+### **Project**
+
+![](Presentation/r_screen6.png)
+
+Directory Name - Create Project
+
+
+***
+
+### **NEW Project is Ready**
+
+![](Presentation/r_screen7.png)
+
+
+***
+
+### **File**
+
+*File - New File - Script*
+
+![](Presentation/r_screen8.png)
+
+***
+
+### **File**
+
+*File - New File - Script*
+
+![](Presentation/r_screen9.png)
+
+
+***
+
+### **Undo, Redo, Replace and Find**
+
+*Edit*
+
+![](Presentation/r_screen10.png)
+
+***
+
+### **Tools - New Terminal**
+
+*Tools - Terminal - New Terminal*
+
+![](Presentation/r_screen11.png)
+
+
+
+
+    
+***
+
+### **View/Show Screens**
+
+*View - Zoom and Show ...*
+
+![](Presentation/r_screen12.png)
+
+
+***
+
+### **Script**
+
+*Save, Run*
+
+![](Presentation/r_screen13.png)
+
+***
+
+### **Environment**
+
+*Save, Import Dataset, Clean*
+
+![](Presentation/r_screen14.png)
+
+***
+
+### **History**
+
+*Save, Remove, Clean*
+
+![](Presentation/r_screen15.png)
+
+***
+
+### **Console**
+
+*Working Directory, Commands, Clean*
+
+![](Presentation/r_screen16.png)
+
+***
+
+### **Files**
+
+*New Folder, Delete, Rename, Copy*
+
+![](Presentation/r_screen17.png)
+
+***
+
+### **Plot**
+
+*Before, Zoom, Export, Remove, Clean*
+
+![](Presentation/r_screen18.png)
+
+***
+
+### **Packages**
+
+*Install, Update*
+
+![](Presentation/r_screen19.png)
+
+***
+
+### **Help**
+
+*Topic / Word Search*
+
+![](Presentation/r_screen20.png)
+
+
+
+
+
+***
+
+## R for Basic Math
+
+addition (**+**),
+subtraction (**-**),
+multiplication (**`*`**),
+division (**/**)
+
+![](Presentation/r_screen21.png)
+
+
+
+
+***
+
+### R for Basic Math
+
+25 **`*`** 4 **+** 9 **/** 3 **-** 56
+
+![](Presentation/r_screen22.png)
+
+
+
+***
+
+## Assigning Objects
+
+The assignment arrow (**<-**)
+
+![](Presentation/r_screen23.png)
+
+
+
+
+***
+
+## Comments
+
+How to tell R to ignore a part of your code? (**#**)
+
+![](Presentation/r_screen24.png)
+
+***
+
+### Comments
+
+- Help yourself and other people to reading the code and understand it faster:
+
+```
+# This code will calculate the likelihood that it will rain tomorrow
+
+  complicated_rain_calculation_for_tomorrow()
+```
+
+- Ignore a line of code and see how a program will run without it:
+
+```
+# value <- old_code()
+
+  value <- new_code()
+```
+
+## Save Your Script
+
+![](Presentation/r_screen25.png)
+
+
+
+***
+
+## SUMMARY
+
+- R is a language
+
+- RStudio is an interface
+
+- Script is a passive text
+
+- Console is an interactive decoding area
+
+- Math is pre-defined
+
+- Assigment arrow ***<-***
+
+- Comments (hashtag) ***#***
+

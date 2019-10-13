@@ -594,7 +594,7 @@ bash my_bash_script.sh
 
 Introduction to Gnu/Linux
 
-[LINK](https://create.kahoot.it/details/1932babe-f920-47bc-9216-802e5c3d294d)
+[LINK](https://create.kahoot.it/details/intro-to-linux/1932babe-f920-47bc-9216-802e5c3d294d)
 
 
 

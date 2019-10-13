@@ -252,7 +252,7 @@ Observations and a numerical model are combined objectively.
 
 
 
-## **Ensamble Data**
+## **Ensemble Data**
 
 Instead of making a single forecast, a set (or ensemble) of forecasts. 
 This set of forecasts aims to give an indication of the range of possible future states of the atmosphere.

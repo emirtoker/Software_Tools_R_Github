@@ -1,0 +1,624 @@
+---
+title: "Software Tools for Earth and Environmental Science - Week 4 -"
+subtitle: YSB 801E
+date: "October 11, 2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: blood
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(error = FALSE)
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## **Introduction to R**
+
+- **Syllabus, Last Week, Book and This Week**
+
+- **R and RStudio**
+
+- **Preview of R Course**
+
+- **Getting Started**
+
+- **Next Week**
+
+- **Seminar - EIES**
+
+- **Additional Course** *(Optional)*
+
+
+# **Syllabus, Last Week, Book and This Week**
+
+
+## **Syllabus**
+
+![](syllabus_4th_week.png)
+Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+
+
+## **Last Week**
+
+![](r_web.png)
+
+Week 3 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week3)
+
+## **4th Week - Extended Syllabus**
+
+![](week4_extended_syllabus.png)
+
+
+
+## **Book**
+
+**The Book of R** - The Language - Getting Started 
+
+(Part 1, Section 1, Pg. 3-14)
+
+![](The_Book_of_R_small.png) ![](book_chp1.png)
+
+The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
+
+
+
+
+
+# **R and RStudio**
+
+## **R and RStudio**
+
+- What is R?
+- R History
+- R and CRAN
+- What is RStudio?
+- RStudio Products
+- Fields of Usage
+
+
+## **What is R?**
+
+R is a **language**. It is a free software environment for statistical computing and graphics.
+
+![](R_logo.jpeg) ![](gnu_logo_small.png)
+
+It is a **GNU project**.
+
+UNIX, Windows and MacOS
+
+*R version 3.6.1 has been released on 2019-07-05*
+
+## **R History**
+
+- **Bell Laboratories** are used for industrial research and scientific development.
+- **S** is a statistical programming language, by John Chambers, Bell Laboratories, New Jersey, 1975–1976.
+- **R** was created by **R**oss Ihaka and **R**obert Gentleman, (statisticians), **GNU** public license, the University of Auckland, New Zealand, 1992.
+
+![](ross_lhaka.jpg) ![](robert_gentleman.jpg)
+
+/
+*Powerful but cheap graphics*
+- *R Core Team*
+- *Open Sources*
+/
+
+## **Milestones of R**
+
+- 1991 - Statistical Models in S (White Book) was published.
+- 1997 - The oldest R source was released on The Comprehensive R Archive Network (CRAN).
+- 1997 - 3 mirrors and 12 packages.
+- 1997 - R becomes an official part of the GNU Project.
+- 1999 - "*update.packages*" and "*install.packages*" functions.
+- 2001 - The first version for Mac OS X.
+- 2010 - Support for Windows 64 bit systems.
+- 2013 - Support for numeric index values 2^31 and larger on 64 bit systems.
+- 2017 - Just-in-time compilation (JIT) of functions and loops (10 to 20 times faster).
+
+*almost 20 years, and more than 10,000 R packages*
+
+## **R Download and CRAN**
+
+R Homepage - [LINK](https://www.r-project.org/)
+
+The Comprehensive R Archive Network (CRAN) - [LINK](https://cran.r-project.org/mirrors.html)
+
+
+![](cran_turkey.png)
+
+*please choose a location close to you*
+
+
+## **R Download and CRAN**
+
+Turkey - Middle East Technical University Northern Cyprus Campus, Mersin - [LINK](https://cran.ncc.metu.edu.tr)
+
+![](cran_metu.png)
+
+
+## **R**
+
+![](r_terminal.png) 
+
+
+## **What is RStudio**
+
+An **Integrated Development Environment (IDE)** for R.
+
+![](rstudio_logo.png)
+
+**RStudio Desktop** and **RStudio Server**
+
+- *Developer(s) : RStudio, Inc.*
+- *Initial release :	28 February 2011*
+- *Stable release : 1.2.5001 / 19 September 2019*
+- *Written in : Java, C++, JavaScript*
+
+
+## **RStudio Desktop**
+
+![](r_screen1.png)
+
+
+## **RStudio Server**
+
+R studio anywhere using a web browser https://rstudio.cloud/
+
+![](rstudio_cloud.png)
+
+
+## **Other RStudio Products**
+
+![](rstudio_product.png)
+
+[https://rstudio.com/](https://rstudio.com/)
+
+## **RStudio Desktop Download**
+
+![](rstudio_down.png)
+
+Download [LINK](https://rstudio.com/products/rstudio/download/)
+
+
+## Any Problem About Installation ?
+
+![](R_and_R_Studio.png)
+
+
+# **Fields of Usage**
+
+## **Fields of Usage**
+
+- **Data analysis**
+    - Interpretation
+    - Visualization
+    - Manipulation
+
+- **Statistical techniques**
+    - Linear and nonlinear regression (or modelling)
+    - Classical statistical tests
+    - Time-series analysis
+    - Classification and Clustering 
+    - Correlation Analysis
+    - etc.
+
+
+## **Interpretation**
+
+The process of making sense out of a collection of data.
+
+![](r_inter.png)
+
+## **Visualization**
+
+Data visualization is the graphical representation of information and data.
+
+![](r_visual.png)
+
+
+## **Visualization**
+
+![](r_storms.gif)
+
+*storms*
+
+
+## **Manipulation**
+
+The process of changing data to make it easier to read or be more organized.
+
+![](r_dplyr.png)
+
+*R dplyr scheme*
+
+
+## **Linear and nonlinear Regression (or Modelling)**
+
+Linear functions are those whose graph is a straight line.
+
+y = f(x) = a + bx
+
+Regression is a statistical method used to create a model.
+
+![](r_linear.png)
+
+
+
+## **Classical statistical tests**
+
+Describe the distribution of data and to determine the reliability of a sample drawn from a population.
+
+![](r_classic1.png) ![](r_classic2.png)
+
+***Statistical significance tests** is used to inform judgments regarding whether the hypothesis is false or not false*
+
+
+## **Time-series analysis**
+
+Time series is a series of data points in which each data point is associated with a timestamp.
+
+![](r_time.gif)
+
+
+
+## **Classification and Clustering**
+
+Classification and Clustering are characterize objects into groups by one or more features. 
+
+![](r_clust.jpg)
+
+***Classification** is used in a supervised learning technique which include predefined properties. **Clustering** is used in unsupervised learning based on group properties.*
+
+
+## **Correlation analysis**
+
+The measure of the strength and direction of the linear relationship between two variables.
+
+![](r_corr.png)
+
+
+
+## **Fields of Usage**
+
+- **Facebook** – Update status and social network graph.
+- **Google** – Calculate Return on Investment (ROI), predict the economic activity, improve the efficiency of online advertising.
+- **New York Times** – Prepare graphics before printing.
+- **Twitter** – R is part of Twitter’s Data Science toolbox for sophisticated statistical modeling.
+
+![](r_comp.png)
+
+
+
+
+
+
+
+# **Preview of R Course**
+
+## **Preview of R Course**
+
+- A Scientific Calculator 
+
+- Classes and Data Structures 
+
+- Create and Manipulation Data
+
+- Reading, Writing and Plotting Data
+
+- R Programming Structure
+
+- Statistics and Probability
+
+- Data Analysis Packages
+
+
+# **Getting Started**
+
+## **Getting Started**
+
+- Using the RStudio
+
+- R for Basic Math
+
+- Assigning Objects
+
+- Comments
+
+
+## **Open Your RStudio**
+
+
+![](r_screen1.png)
+
+***R*** You Ready ?!
+
+
+
+# **Using the RStudio**
+
+
+## **Using the RStudio**
+
+ - Preferences
+ - Project
+ - File
+     - Script
+ - Undo, Redo, Replace and Find
+ - Tools - New Terminal
+ - View/Show Screens
+
+## **Preferences**
+*RStudio - Preferences - Appearance - Editor Theme*
+
+![](r_screen2.png)
+
+
+## **New Theme**
+
+*Functions, Parentheses, Quotation Marks  - Material*
+
+![](r_screen3.png)
+
+
+## **Project**
+
+*File - New Project*
+![](r_screen4.png)
+*Don't Save Current Workspace - New Directory*
+
+
+## **Project**
+
+![](r_screen5.png)
+
+
+*New Project*
+
+
+## **Project**
+
+![](r_screen6.png)
+
+Directory Name - Create Project
+
+
+## **NEW Project is Ready**
+
+![](r_screen7.png)
+
+
+## **File**
+
+*File - New File - Script*
+
+![](r_screen8.png)
+
+## **File**
+
+*File - New File - Script*
+
+![](r_screen9.png)
+
+
+## **Undo, Redo, Replace and Find**
+
+*Edit*
+
+![](r_screen10.png)
+
+## **Tools - New Terminal**
+
+*Tools - Terminal - New Terminal*
+
+![](r_screen11.png)
+
+
+
+
+    
+## **View/Show Screens**
+
+*View - Zoom and Show ...*
+
+![](r_screen12.png)
+
+
+## **Script**
+
+*Save, Run*
+
+![](r_screen13.png)
+
+## **Environment**
+
+*Save, Import Dataset, Clean*
+
+![](r_screen14.png)
+
+## **History**
+
+*Save, Remove, Clean*
+
+![](r_screen15.png)
+
+## **Console**
+
+*Working Directory, Commands, Clean*
+
+![](r_screen16.png)
+
+## **Files**
+
+*New Folder, Delete, Rename, Copy*
+
+![](r_screen17.png)
+
+## **Plot**
+
+*Before, Zoom, Export, Remove, Clean*
+
+![](r_screen18.png)
+
+## **Packages**
+
+*Install, Update*
+
+![](r_screen19.png)
+
+## **Help**
+
+*Topic / Word Search*
+
+![](r_screen20.png)
+
+
+
+
+
+# R for Basic Math
+
+## R for Basic Math
+
+addition (**+**),
+subtraction (**-**),
+multiplication (**`*`**),
+division (**/**)
+
+![](r_screen21.png)
+
+
+
+
+## R for Basic Math
+
+25 **`*`** 4 **+** 9 **/** 3 **-** 56
+
+![](r_screen22.png)
+
+
+
+# Assigning Objects
+
+## Assigning Objects
+
+The assignment arrow (**<-**)
+
+![](r_screen23.png)
+
+
+
+
+# Comments
+
+## Comments
+
+How to tell R to ignore a part of your code? (**#**)
+
+![](r_screen24.png)
+
+## Comments
+
+- Help yourself and other people to reading the code and understand it faster:
+
+```
+# This code will calculate the likelihood that it will rain tomorrow
+
+  complicated_rain_calculation_for_tomorrow()
+```
+
+- Ignore a line of code and see how a program will run without it:
+
+```
+# value <- old_code()
+
+  value <- new_code()
+```
+
+## Save Your Script
+
+![](r_screen25.png)
+
+
+
+# SUMMARY
+
+## SUMMARY
+
+- R is a language
+
+- RStudio is an interface
+
+- Script is a passive text
+
+- Console is an interactive decoding area
+
+- Math is pre-defined
+
+- Assigment arrow ***<-***
+
+- Comments (hashtag) ***#***
+
+
+
+
+
+
+
+
+# **Next Week**
+
+## **Next Week - Syllabus**
+
+![](syllabus_5th.png)
+
+## **Next Week - 5th Week**
+
+- R Markdown and Notebook
+- Arithmetics
+- Help Functions and Install Packages
+- Classes
+- Vectors
+- Matrices
+- Arrays
+- Non-Numeric Values
+
+## **Next Week - Book**
+
+*PART 1 - The Language - Section 2,3 and 4*
+
+![](The_Book_of_R_small.png)   ![](r_book_week5.png)
+
+Pages : **23 - 36**
+
+
+## **Next Week - Homework**
+
+Introduction to R, Section 1, 2 and 3 (Part 14 to 21)
+
+![](udemy_hm1.png) ![](udemy_content_1.png)
+
+[Udemy](https://www.udemy.com/course/introduction-to-r/)
+
+
+## **Next Week - QUIZ**
+
+R - Basic and Vectors
+
+![](R_and_R_Studio.png)
+
+
+# **Seminar - EIES**
+
+## **Seminar - EIES**
+
+![](aybe_seminar.png)
+
+
+# **Additional Course** *(Optional)*
+
+# The End
+
+
