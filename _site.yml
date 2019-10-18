@@ -9,26 +9,28 @@ navbar:
       href: syllabus.html
     - text: "Book"
       href: book.html
-    - text: "Data"
-      href: data.html
-    - text: "Code"
-      href: code.html
-    - text: "New Accounts"
-      href: new_accounts.html
-    - text: "GNU/Linux"
-      href: unix_linux.html   
-    - text: "Python"
-      href: python.html 
-    - text: "Data Sources"
-      href: data_sources.html
-    - text: "NCL"
-      href: ncl.html  
-    - text: "R and RStudio"
-      href: r_and_rstudio.html
+    - text: "Topics"
+      menu:      
+        - text: "Data"
+          href: data.html
+        - text: "Code"
+          href: code.html
+        - text: "New Accounts"
+          href: new_accounts.html
+        - text: "GNU/Linux"
+          href: unix_linux.html   
+        - text: "Python"
+          href: python.html 
+        - text: "Data Sources"
+          href: data_sources.html
+        - text: "NCL"
+          href: ncl.html  
+        - text: "R and RStudio"
+          href: r_and_rstudio.html
     - text: "R Language"
       href: r_language.html
     - text: "About"
-      href: about.html     
+      href: about.html  
 output:
   html_document:
-    theme: cosmo
+    theme: darkly
