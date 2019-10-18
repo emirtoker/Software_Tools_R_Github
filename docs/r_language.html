@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>R Language</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Software Tools</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="book.html">Book</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="code.html">Code</a>
+</li>
+<li>
+  <a href="new_accounts.html">New Accounts</a>
+</li>
+<li>
+  <a href="unix_linux.html">GNU/Linux</a>
+</li>
+<li>
+  <a href="python.html">Python</a>
+</li>
+<li>
+  <a href="data_sources.html">Data Sources</a>
+</li>
+<li>
+  <a href="ncl.html">NCL</a>
+</li>
+<li>
+  <a href="r_and_rstudio.html">R and RStudio</a>
+</li>
+<li>
+  <a href="r_language.html">R Language</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">R Language</h1>
+
+</div>
+
+
+<hr />
+<ul>
+<li><p>Scientific Calculator</p></li>
+<li><p>Class</p></li>
+<li><p>Vectors</p></li>
+<li><p>Matrices</p></li>
+<li><p>Arrays</p></li>
+</ul>
+<hr />
+<div id="scientific-calculator" class="section level3">
+<h3><strong>Scientific Calculator</strong></h3>
+<p><strong>?Arithmetic</strong> or <strong>help(“Arithmetic”)</strong></p>
+<ul>
+<li><strong>^</strong> <em>(exponentiation)</em></li>
+<li><strong>sqrt</strong> <em>(the square root)</em></li>
+<li><strong>log</strong> <em>(logarithm)</em></li>
+<li><strong>exp</strong> <em>(exponential)</em></li>
+<li><strong>D</strong> <em>(derivative)</em></li>
+<li><strong>integrate</strong> <em>(integration)</em></li>
+<li><strong>sin</strong> <em>(sinus)</em></li>
+<li><strong>cos</strong> <em>(cosinus)</em></li>
+<li><strong>sum</strong> <em>(sum)</em></li>
+<li><strong>mean</strong> <em>(mean)</em></li>
+</ul>
+<p><em>example(integer)</em> , <em>demo(graphics)</em></p>
+<hr />
+</div>
+<div id="scientific-calculator-1" class="section level3">
+<h3><strong>Scientific Calculator</strong></h3>
+<pre class="r"><code>2+3</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>14/6</code></pre>
+<pre><code>## [1] 2.333333</code></pre>
+<pre class="r"><code>14/6+5</code></pre>
+<pre><code>## [1] 7.333333</code></pre>
+<pre class="r"><code>14/(6+5)</code></pre>
+<pre><code>## [1] 1.272727</code></pre>
+<pre class="r"><code>3^2</code></pre>
+<pre><code>## [1] 9</code></pre>
+<pre class="r"><code>2^3</code></pre>
+<pre><code>## [1] 8</code></pre>
+<pre class="r"><code>sqrt(x=9)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>sqrt(x=5.311)</code></pre>
+<pre><code>## [1] 2.304561</code></pre>
+<hr />
+</div>
+<div id="scientific-calculator-2" class="section level3">
+<h3><strong>Scientific Calculator</strong></h3>
+<div class="figure">
+<img src="Presentation/sci_math.png" />
+
+</div>
+<pre class="r"><code>f &lt;- expression(x^2+3*x)    # you can check ?expression
+D(f,&#39;x&#39;)                    # Calculate (first) derivative of f </code></pre>
+<pre><code>## 2 * x + 3</code></pre>
+<pre class="r"><code>                               # with respect to x</code></pre>
+<hr />
+</div>
+<div id="class" class="section level3">
+<h3><strong>Class</strong></h3>
+<ul>
+<li>Data Structures</li>
+<li>Data Types</li>
+</ul>
+<hr />
+</div>
+<div id="data-structures-r-objects" class="section level3">
+<h3><strong>Data Structures (R-Objects)</strong></h3>
+<ul>
+<li>(Atomic) Vectos</li>
+<li>Matrices</li>
+<li>Array</li>
+<li>Data Frame</li>
+<li>List</li>
+</ul>
+<hr />
+</div>
+<div id="data-structures-r-objects-1" class="section level3">
+<h3><strong>Data Structures (R-Objects)</strong></h3>
+<div class="figure">
+<img src="Presentation/data_structure.png" />
+
+</div>
+<hr />
+</div>
+<div id="data-structures-r-objects-2" class="section level3">
+<h3><strong>Data Structures (R-Objects)</strong></h3>
+<div class="figure">
+<img src="Presentation/data_structure1.png" />
+
+</div>
+<ul>
+<li><strong>Homogeneous</strong>: Vector(1d), Matrix(2d), Array(nd)</li>
+<li><strong>Heterogeneous</strong>: List(1d<strong>?</strong>), Data frame(2d)</li>
+</ul>
+<hr />
+</div>
+<div id="data-types" class="section level3">
+<h3><strong>Data Types</strong></h3>
+<ul>
+<li>Numeric (Double)</li>
+<li>Integer</li>
+<li>Complex</li>
+<li>Logical</li>
+<li>Character</li>
+<li>Special Values</li>
+<li>Date/Time</li>
+</ul>
+<p><em>Variables are defined with different data types</em></p>
+<p><strong>Also</strong></p>
+<p><em>Variables are assigned with R-Objects</em></p>
+<p><strong>—&gt;</strong> <em>The data type of the R-object</em></p>
+<hr />
+</div>
+<div id="data-types---numeric-double" class="section level3">
+<h3><strong>Data Types - Numeric (Double)</strong></h3>
+<p>Any number with <strong>(or without)</strong> a decimal point.</p>
+<pre class="r"><code>a &lt;- 3.8
+a</code></pre>
+<pre><code>## [1] 3.8</code></pre>
+<pre class="r"><code>class(a)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>b &lt;- 4
+b</code></pre>
+<pre><code>## [1] 4</code></pre>
+<pre class="r"><code>class(b)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>c &lt;- sqrt(2)
+c</code></pre>
+<pre><code>## [1] 1.414214</code></pre>
+<pre class="r"><code>class(c)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>d &lt;- 3.5:9.5
+d</code></pre>
+<pre><code>## [1] 3.5 4.5 5.5 6.5 7.5 8.5 9.5</code></pre>
+<pre class="r"><code>class(d)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>class(1)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<hr />
+</div>
+<div id="data-types---integer" class="section level3">
+<h3><strong>Data Types - Integer</strong></h3>
+<p>Kind of a sub-class of the numeric class.</p>
+<p>The suffix <strong>L</strong> tells R to store this as an integer.</p>
+<pre class="r"><code>a &lt;- 7
+a</code></pre>
+<pre><code>## [1] 7</code></pre>
+<pre class="r"><code>class(a)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>b &lt;- 7L
+b</code></pre>
+<pre><code>## [1] 7</code></pre>
+<pre class="r"><code>class(b)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>c &lt;- 5:9
+c</code></pre>
+<pre><code>## [1] 5 6 7 8 9</code></pre>
+<pre class="r"><code>class(c)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>d &lt;- 5.1:9.1
+d</code></pre>
+<pre><code>## [1] 5.1 6.1 7.1 8.1 9.1</code></pre>
+<pre class="r"><code>class(d)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>class(3.2L)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<hr />
+</div>
+<div id="numeric-and-integer" class="section level3">
+<h3><strong>Numeric and Integer</strong></h3>
+<p>pi</p>
+<p>sqrt(2)^2-2</p>
+<ul>
+<li><p>Numeric (64-bit) -&gt; big memery and calculations</p></li>
+<li><p>Integer (32-bit) -&gt; Constant lalues like ID</p></li>
+<li><p>6 digits after decimal</p></li>
+<li><p>16 significant digits</p></li>
+</ul>
+<hr />
+</div>
+<div id="data-types---complex" class="section level3">
+<h3><strong>Data Types - Complex</strong></h3>
+<p>Complex: x2 = −1 (imaginary number)</p>
+<pre class="{r"><code>a &lt;- i   # This will give error</code></pre>
+<pre class="r"><code>b &lt;- 1i
+b</code></pre>
+<pre><code>## [1] 0+1i</code></pre>
+<pre class="r"><code>class(b)</code></pre>
+<pre><code>## [1] &quot;complex&quot;</code></pre>
+<pre class="{r"><code>class(1+2i)
+class(2iL)</code></pre>
+<p>try</p>
+<pre class="r"><code>class(((1i^2)^2))</code></pre>
+<pre><code>## [1] &quot;complex&quot;</code></pre>
+<pre class="r"><code>is.complex((1i^2)^2)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>isTRUE(is.complex((1i^2)^2))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>(1i^2)^2</code></pre>
+<pre><code>## [1] 1+0i</code></pre>
+<hr />
+</div>
+<div id="data-types---logical" class="section level3">
+<h3><strong>Data Types - Logical</strong></h3>
+<p>TRUE or FALSE - Logical Operators</p>
+<ul>
+<li><strong>&lt;</strong> <em>(less than)</em></li>
+<li><strong>&lt;=</strong> <em>(less than or equal to)</em></li>
+<li><strong>&gt;</strong> <em>(greater than)</em></li>
+<li><strong>&gt;=</strong> <em>(greater than or equal to)</em></li>
+<li><strong>==</strong> <em>(exactly equal to)</em></li>
+<li><strong>!=</strong> <em>(not equal to)</em></li>
+<li><strong>!x</strong> <em>(Not x)</em></li>
+<li><strong>x | y</strong> <em>(x OR y)</em></li>
+<li><strong>x &amp; y</strong> <em>(x AND y)</em></li>
+<li><strong>isTRUE(x)</strong> <em>(test if X is TRUE)</em></li>
+</ul>
+<hr />
+</div>
+<div id="data-types---logical-1" class="section level3">
+<h3><strong>Data Types - Logical</strong></h3>
+<pre class="r"><code>5 &lt; 9</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>5 &lt; -9</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>a &lt;- 5 &lt; -9
+class(a)</code></pre>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<pre class="r"><code>1:10</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>1:10 &gt;= 5</code></pre>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>x &lt;- 1:10 &gt;= 5
+1:10 &lt; 2</code></pre>
+<pre><code>##  [1]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>y &lt;- 1:10 &lt; 2
+x | y</code></pre>
+<pre><code>##  [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>z &lt;- x | y
+z</code></pre>
+<pre><code>##  [1]  TRUE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>!z</code></pre>
+<pre><code>##  [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>class(z)</code></pre>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<pre class="r"><code>b &lt;- 4:8
+b</code></pre>
+<pre><code>## [1] 4 5 6 7 8</code></pre>
+<pre class="r"><code>c &lt;- 7:11
+c</code></pre>
+<pre><code>## [1]  7  8  9 10 11</code></pre>
+<pre class="r"><code>b != c</code></pre>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE</code></pre>
+<pre class="r"><code>d &lt;- 5:12
+b != d</code></pre>
+<pre><code>## Warning in b != d: longer object length is not a multiple of shorter object
+## length</code></pre>
+<pre><code>## [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<hr />
+</div>
+<div id="data-types---character" class="section level3">
+<h3><strong>Data Types - Character</strong></h3>
+<p>Data type consists of letters or words. String.</p>
+<p>single quotes: ‘…’ or double quotes &quot; … &quot;</p>
+<pre class="{r"><code>name &lt;- emir   # This will give an error</code></pre>
+<pre class="r"><code>name &lt;- &#39;emir&#39;
+name</code></pre>
+<pre><code>## [1] &quot;emir&quot;</code></pre>
+<pre class="r"><code>class(name)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>a &lt;- 23
+a</code></pre>
+<pre><code>## [1] 23</code></pre>
+<pre class="r"><code>class(a)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>b &lt;- &#39;23&#39;
+b</code></pre>
+<pre><code>## [1] &quot;23&quot;</code></pre>
+<pre class="r"><code>class(b)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>print(&#39;hello&#39;)</code></pre>
+<pre><code>## [1] &quot;hello&quot;</code></pre>
+<pre class="r"><code>cat(&#39;hello&#39;)</code></pre>
+<pre><code>## hello</code></pre>
+<pre class="r"><code>class(print(&#39;hello&#39;))</code></pre>
+<pre><code>## [1] &quot;hello&quot;</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>class(cat(&quot;hello&quot;))</code></pre>
+<pre><code>## hello</code></pre>
+<pre><code>## [1] &quot;NULL&quot;</code></pre>
+<hr />
+</div>
+<div id="special-values" class="section level3">
+<h3><strong>Special Values</strong></h3>
+<p>Null, Infinity, Not a Number, Not Available</p>
+<pre class="r"><code>NULL   # Null (“empty” entity)</code></pre>
+<pre><code>## NULL</code></pre>
+<pre class="r"><code>Inf    # Infinity</code></pre>
+<pre><code>## [1] Inf</code></pre>
+<pre class="r"><code>class(Inf)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>Inf*-9</code></pre>
+<pre><code>## [1] -Inf</code></pre>
+<pre class="r"><code>is.finite(Inf)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>1/0</code></pre>
+<pre><code>## [1] Inf</code></pre>
+<pre class="r"><code>NaN    # Not a Number</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<pre class="r"><code>class(NaN)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>-Inf+Inf</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<pre class="r"><code>is.nan(5^(-Inf/Inf))</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>0/0</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<pre class="r"><code>NA    # Not Available (“missing” entity)</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>class(NA)</code></pre>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<hr />
+</div>
+<div id="data-types---datetime" class="section level3">
+<h3><strong>Data Types - Date/Time</strong></h3>
+<pre class="r"><code>Sys.Date( ) </code></pre>
+<pre><code>## [1] &quot;2019-10-18&quot;</code></pre>
+<pre class="r"><code>date()</code></pre>
+<pre><code>## [1] &quot;Fri Oct 18 16:43:03 2019&quot;</code></pre>
+<pre class="r"><code>date &lt;- &quot;2007-06-22&quot;
+class(date)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>date1 &lt;- as.Date(date)    # Coercion
+class(b) </code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>date2 &lt;- as.Date(&quot;2004-02-13&quot;)
+date1 - date2</code></pre>
+<pre><code>## Time difference of 1225 days</code></pre>
+<pre class="r"><code>date_difference &lt;- date1 - date2
+class(date_difference)</code></pre>
+<pre><code>## [1] &quot;difftime&quot;</code></pre>
+<pre class="{r"><code>%d    day as a number (0-31)        01-31
+%a    abbreviated weekday         Mon
+%A    unabbreviated weekday       Monday
+%m    month (00-12)               00-12
+%b    abbreviated month           Jan
+%B    unabbreviated month         January
+%y    2-digit year                07
+%Y    4-digit year                2007</code></pre>
+<pre class="r"><code>today &lt;- Sys.Date()
+format(today, format=&quot;%B %d %Y&quot;)</code></pre>
+<pre><code>## [1] &quot;October 18 2019&quot;</code></pre>
+<hr />
+</div>
+<div id="coercion" class="section level3">
+<h3><strong>Coercion</strong></h3>
+<div class="figure">
+<img src="Presentation/coercion.png" />
+
+</div>
+<hr />
+</div>
+<div id="coercion-1" class="section level3">
+<h3><strong>Coercion</strong></h3>
+<div class="figure">
+<img src="Presentation/coercion_mini.png" />
+
+</div>
+<pre class="r"><code>3</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>class(3)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>as.numeric(3)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>as.character(3)</code></pre>
+<pre><code>## [1] &quot;3&quot;</code></pre>
+<pre class="r"><code>as.logical(3)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>FALSE</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>class(FALSE)</code></pre>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<pre class="r"><code>as.character(FALSE)</code></pre>
+<pre><code>## [1] &quot;FALSE&quot;</code></pre>
+<pre class="r"><code>as.numeric(FALSE)</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>as.numeric(TRUE)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>TRUE+TRUE</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>class(TRUE+TRUE)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<hr />
+</div>
+<div id="class---data-structure" class="section level2">
+<h2><strong>Class - Data Structure</strong></h2>
+<hr />
+<div id="data-structures" class="section level3">
+<h3><strong>Data Structures</strong></h3>
+<ul>
+<li><strong>Vector</strong></li>
+<li><strong>Array</strong></li>
+<li><strong>Matrix</strong></li>
+<li>Data Frame</li>
+<li>List</li>
+</ul>
+<hr />
+</div>
+<div id="atomic-vector" class="section level3">
+<h3><strong>(Atomic) Vector</strong></h3>
+<p>The simplest data structure in R</p>
+<div class="figure">
+<img src="Presentation/vector.png" />
+
+</div>
+<p>Vectors are a list-like structure that contain items of the <strong>same</strong> data type.</p>
+<pre class="r"><code>spring_month &lt;- &quot;April&quot;
+spring_month</code></pre>
+<pre><code>## [1] &quot;April&quot;</code></pre>
+<pre class="r"><code>spring_months &lt;- c(&quot;March&quot;, &quot;April&quot;,&quot;May&quot;,&quot;June&quot;)
+spring_months</code></pre>
+<pre><code>## [1] &quot;March&quot; &quot;April&quot; &quot;May&quot;   &quot;June&quot;</code></pre>
+<pre class="r"><code>class(spring_months)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p><strong>c</strong> means <strong>“combine”</strong></p>
+<hr />
+</div>
+<div id="atomic-vector-1" class="section level3">
+<h3><strong>(Atomic) Vector</strong></h3>
+<pre class="r"><code>myvec &lt;- c(1, 3, 1, 42)
+a &lt;- 35
+myvec2 &lt;- c(3L, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, a)
+myvec3 &lt;- c(myvec, myvec2)
+myvec3</code></pre>
+<pre><code>##  [1]    1.000000    3.000000    1.000000   42.000000    3.000000
+##  [6]    3.450000 1000.000000    8.000000    2.201271   35.000000</code></pre>
+<pre class="r"><code>x &lt;- c(&quot;all&quot;, &quot;b&quot;, &quot;olive&quot;)</code></pre>
+<p><strong>Length</strong> of a vector, <em>length(vector_name)</em></p>
+<pre class="r"><code>length(x)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<p><strong>Indexing</strong> element, <em>vector_name[element_position]</em></p>
+<pre class="r"><code>x[2]</code></pre>
+<pre><code>## [1] &quot;b&quot;</code></pre>
+<p><strong>Manipulating</strong> element of vector, <em>assigning arrow</em></p>
+<pre class="r"><code>x[2] &lt;- &quot;b_new&quot;
+x</code></pre>
+<pre><code>## [1] &quot;all&quot;   &quot;b_new&quot; &quot;olive&quot;</code></pre>
+<p><strong>Note</strong>: In R, counting elements start position <strong>1</strong>, not <strong>0</strong>.</p>
+<hr />
+</div>
+<div id="atomic-vector-2" class="section level3">
+<h3><strong>(Atomic) Vector</strong></h3>
+<pre class="r"><code>y &lt;- c( 1.2, 5, &quot;Rt&quot;, &quot;2000&quot;, 20, 4905)
+y [0]</code></pre>
+<pre><code>## character(0)</code></pre>
+<pre class="r"><code>class(y)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>y</code></pre>
+<pre><code>## [1] &quot;1.2&quot;  &quot;5&quot;    &quot;Rt&quot;   &quot;2000&quot; &quot;20&quot;   &quot;4905&quot;</code></pre>
+<p><strong>Sequences</strong></p>
+<pre class="r"><code>7:16.4</code></pre>
+<pre><code>##  [1]  7  8  9 10 11 12 13 14 15 16</code></pre>
+<pre class="r"><code>a &lt;- 7:16
+a</code></pre>
+<pre><code>##  [1]  7  8  9 10 11 12 13 14 15 16</code></pre>
+<pre class="r"><code>seq(from=7,to=16,by=3)</code></pre>
+<pre><code>## [1]  7 10 13 16</code></pre>
+<pre class="r"><code>seq(50,150,25)</code></pre>
+<pre><code>## [1]  50  75 100 125 150</code></pre>
+<pre class="r"><code>seq(50,149,25)</code></pre>
+<pre><code>## [1]  50  75 100 125</code></pre>
+<pre class="r"><code>seq(from=3,to=27,length.out=40)</code></pre>
+<pre><code>##  [1]  3.000000  3.615385  4.230769  4.846154  5.461538  6.076923  6.692308
+##  [8]  7.307692  7.923077  8.538462  9.153846  9.769231 10.384615 11.000000
+## [15] 11.615385 12.230769 12.846154 13.461538 14.076923 14.692308 15.307692
+## [22] 15.923077 16.538462 17.153846 17.769231 18.384615 19.000000 19.615385
+## [29] 20.230769 20.846154 21.461538 22.076923 22.692308 23.307692 23.923077
+## [36] 24.538462 25.153846 25.769231 26.384615 27.000000</code></pre>
+<p><strong>Round</strong></p>
+<pre class="r"><code>3/2</code></pre>
+<pre><code>## [1] 1.5</code></pre>
+<pre class="r"><code>round(3/2)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>round(5.1)</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>round(pi)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<hr />
+</div>
+<div id="atomic-vector-3" class="section level3">
+<h3><strong>(Atomic) Vector</strong></h3>
+<p><strong>Repetition</strong></p>
+<pre class="r"><code>rep(x=1, times=4)</code></pre>
+<pre><code>## [1] 1 1 1 1</code></pre>
+<pre class="r"><code>rep(x=c(3, 62, 8),times=3)</code></pre>
+<pre><code>## [1]  3 62  8  3 62  8  3 62  8</code></pre>
+<pre class="r"><code>rep(x=c(3, 62, 8),times=3,each=2)</code></pre>
+<pre><code>##  [1]  3  3 62 62  8  8  3  3 62 62  8  8  3  3 62 62  8  8</code></pre>
+<p><strong>Sorting</strong></p>
+<pre class="r"><code>sort(x=c(2.5, -1, -10, 3.44))    # decreasing=FALSE (default)</code></pre>
+<pre><code>## [1] -10.00  -1.00   2.50   3.44</code></pre>
+<pre class="r"><code>sort(x=c(2.5, -1,- 10, 3.44), decreasing=TRUE)</code></pre>
+<pre><code>## [1]   3.44   2.50  -1.00 -10.00</code></pre>
+<p><strong>Random - Uniform Distribution</strong></p>
+<pre class="r"><code>runif(15, min = 20, max = 45)</code></pre>
+<pre><code>##  [1] 24.65137 33.97378 25.81287 43.96779 41.18273 36.82117 31.91418
+##  [8] 42.75127 28.99546 20.25048 31.75223 26.00628 21.80399 26.66274
+## [15] 30.43266</code></pre>
+<pre class="r"><code>runif(15, 20, 45)</code></pre>
+<pre><code>##  [1] 24.63514 42.54405 34.07285 22.14598 34.81054 37.78726 21.94448
+##  [8] 35.80044 43.85152 40.42948 30.44434 38.77348 36.99140 34.41514
+## [15] 28.20590</code></pre>
+<pre class="r"><code>runif(25, 60, 50)</code></pre>
+<pre><code>## Warning in runif(25, 60, 50): NAs produced</code></pre>
+<pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+## [18] NaN NaN NaN NaN NaN NaN NaN NaN</code></pre>
+<p><strong>Random variable can be saved</strong></p>
+<pre class="r"><code>set.seed(1)
+runif(15, 20, 45)</code></pre>
+<pre><code>##  [1] 26.63772 29.30310 34.32133 42.70519 25.04205 42.45974 43.61688
+##  [8] 36.51994 35.72785 21.54466 25.14936 24.41392 37.17557 29.60259
+## [15] 39.24604</code></pre>
+<hr />
+</div>
+<div id="matrices" class="section level3">
+<h3><strong>Matrices</strong></h3>
+<p>Vectors indexed using two indices instead of one.</p>
+<p><img src="Presentation/matrices.png" /> <img src="Presentation/matrices1.png" /></p>
+<pre class="r"><code>n &lt;- runif(9,1,100)    
+n</code></pre>
+<pre><code>## [1] 50.27222 72.04423 99.19870 38.62348 77.96708 93.53582 22.00211 65.51570
+## [9] 13.42995</code></pre>
+<pre class="r"><code>matrix(n, nrow = 3, ncol = 3)</code></pre>
+<pre><code>##          [,1]     [,2]     [,3]
+## [1,] 50.27222 38.62348 22.00211
+## [2,] 72.04423 77.96708 65.51570
+## [3,] 99.19870 93.53582 13.42995</code></pre>
+<pre class="r"><code>n2 &lt;- runif(10,1,100)    
+matrix(n2, nrow = 3, ncol = 3)</code></pre>
+<pre><code>## Warning in matrix(n2, nrow = 3, ncol = 3): data length [10] is not a sub-
+## multiple or multiple of the number of rows [3]</code></pre>
+<pre><code>##           [,1]     [,2]     [,3]
+## [1,] 27.454846 38.85641 48.72593
+## [2,] 39.225295 87.09939 60.35702
+## [3,]  2.325643 34.69455 49.86059</code></pre>
+<hr />
+</div>
+<div id="matrices-1" class="section level3">
+<h3><strong>Matrices</strong></h3>
+<pre class="r"><code>x &lt;- as.numeric(seq(10,120,10))
+mx &lt;- matrix(x,3,4)                  # n, nrow, ncol
+mx</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]   10   40   70  100
+## [2,]   20   50   80  110
+## [3,]   30   60   90  120</code></pre>
+<pre class="r"><code>class(mx)</code></pre>
+<pre><code>## [1] &quot;matrix&quot;</code></pre>
+<pre class="r"><code>class(mx[1])</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>typeof(mx)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<pre class="r"><code>mx[1,]</code></pre>
+<pre><code>## [1]  10  40  70 100</code></pre>
+<pre class="r"><code>mx[,2]</code></pre>
+<pre><code>## [1] 40 50 60</code></pre>
+<pre class="r"><code>mx[,2:4]</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   40   70  100
+## [2,]   50   80  110
+## [3,]   60   90  120</code></pre>
+<pre class="r"><code>mx_new &lt;- mx[,2:4]
+mx</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]   10   40   70  100
+## [2,]   20   50   80  110
+## [3,]   30   60   90  120</code></pre>
+<pre class="r"><code>mx[2,3] &lt;- &quot;rose&quot;
+mx</code></pre>
+<pre><code>##      [,1] [,2] [,3]   [,4] 
+## [1,] &quot;10&quot; &quot;40&quot; &quot;70&quot;   &quot;100&quot;
+## [2,] &quot;20&quot; &quot;50&quot; &quot;rose&quot; &quot;110&quot;
+## [3,] &quot;30&quot; &quot;60&quot; &quot;90&quot;   &quot;120&quot;</code></pre>
+<pre class="r"><code>class(mx)</code></pre>
+<pre><code>## [1] &quot;matrix&quot;</code></pre>
+<pre class="r"><code>typeof(mx)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>mx_new &lt;- as.numeric(mx)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>mx_new</code></pre>
+<pre><code>##  [1]  10  20  30  40  50  60  70  NA  90 100 110 120</code></pre>
+<pre class="r"><code>class(mx_new)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>typeof(mx_new)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<hr />
+</div>
+<div id="matrices-2" class="section level3">
+<h3><strong>Matrices</strong></h3>
+<p><img src="Presentation/vector1a.png" /> <img src="Presentation/vector1b.png" /></p>
+<pre class="r"><code>m_mycol &lt;- matrix(c(1, 2, 3, 4, 5, 6),
+               nrow = 2,
+               ncol = 3,
+               byrow = FALSE)       # Default
+m_mycol </code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    5
+## [2,]    2    4    6</code></pre>
+<pre class="r"><code>m_byrow &lt;- matrix(c(1, 2, 3, 4, 5, 6),
+               nrow = 2,
+               ncol = 3,
+               byrow = TRUE)     
+m_byrow      </code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6</code></pre>
+<pre class="r"><code>t(m_byrow)</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6</code></pre>
+<pre class="r"><code>length(mx)</code></pre>
+<pre><code>## [1] 12</code></pre>
+<pre class="r"><code>dim(mx)</code></pre>
+<pre><code>## [1] 3 4</code></pre>
+<hr />
+</div>
+<div id="arrays" class="section level3">
+<h3><strong>Arrays</strong></h3>
+<div class="figure">
+<img src="Presentation/array.png" />
+
+</div>
+<pre class="r"><code>x &lt;- 1:24
+x</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+## [24] 24</code></pre>
+<pre class="r"><code>array(x, dim = c(4,3,2))    # raw, col, level</code></pre>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   13   17   21
+## [2,]   14   18   22
+## [3,]   15   19   23
+## [4,]   16   20   24</code></pre>
+<pre class="r"><code>arr &lt;- array(x, c(4,3,2))
+class(arr)</code></pre>
+<pre><code>## [1] &quot;array&quot;</code></pre>
+<pre class="r"><code>typeof(arr)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<hr />
+</div>
+<div id="arrays-1" class="section level3">
+<h3><strong>Arrays</strong></h3>
+<div class="figure">
+<img src="Presentation/concept_array.png" />
+
+</div>
+<pre class="r"><code>arr &lt;- array(data=10:33,dim=c(3,4,2))
+arr</code></pre>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3] [,4]
+## [1,]   10   13   16   19
+## [2,]   11   14   17   20
+## [3,]   12   15   18   21
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3] [,4]
+## [1,]   22   25   28   31
+## [2,]   23   26   29   32
+## [3,]   24   27   30   33</code></pre>
+<pre class="r"><code>arr[2,2,1]</code></pre>
+<pre><code>## [1] 14</code></pre>
+<pre class="r"><code>arr[-1,,]</code></pre>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3] [,4]
+## [1,]   11   14   17   20
+## [2,]   12   15   18   21
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3] [,4]
+## [1,]   23   26   29   32
+## [2,]   24   27   30   33</code></pre>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

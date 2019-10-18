@@ -25,6 +25,8 @@ navbar:
       href: ncl.html  
     - text: "R and RStudio"
       href: r_and_rstudio.html
+    - text: "R Language"
+      href: r_language.html
     - text: "About"
       href: about.html     
 output:

@@ -1,0 +1,327 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "--5th WEEK--"
+author: "Emir Toker"
+date: "18/10/2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(error = FALSE)
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## **R Language - Part 1**
+
+- **Syllabus, Last Week, Book and This Week**
+
+- **R - Script, Notebook and Markdown**
+
+- **GitHub**
+
+- **R Language**
+    - Class
+    - Vectors 
+    - Matrice
+    - Arrays
+
+- **PRACTICE and QUIZ**
+
+- **Next Week**
+
+
+# **Syllabus, Last Week, Book and This Week**
+
+
+## **Syllabus**
+
+![](syllabus_week5.png)
+Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+
+
+## **Last Week**
+
+![](page_week5.png)
+
+Week 4 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week4)
+
+- *assigment* **`<-`**
+- *comments* **`#`**
+
+## **Book**
+
+![](book_cover_week5.png) ![](book_week5.png)
+
+(Pg. 22-27)
+
+
+
+
+# **R Files**
+
+## **R Files**
+
+![](r_files.png)
+
+
+## **R Script**
+
+![](r_script_w5.png)
+
+## **R Notebook**
+
+![](my_r_notebook.png)
+
+## **R Notebook**
+
+![](my_r_notebook_1.png)
+
+
+## **R Notebook - HTML**
+
+![](my_r_notebook_html.png)
+
+## **R Notebook - PDF**
+
+![](my_r_notebook_pdf.png)
+
+
+## **R Notebook - WORD**
+
+![](my_r_notebook_word.png)
+
+
+## **R Markdown**
+
+![](r_markdown.png)
+
+
+## **BONUS - R Shiny**
+
+![](r_shiny.png)
+
+
+## **BONUS - R Shiny**
+
+![](r_shiny1.png)
+
+[LINK](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+
+
+## **BONUS - R HTML**
+
+![](page_week5.png)
+
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
+
+
+## **Your R Notebook**
+
+![](my_notebook.png)
+
+
+# **GitHub**
+
+## **GitHub**
+
+![](github1.png)
+
+[LINK](https://github.com/)
+
+## **GitHub**
+
+![](github2.png)
+
+## **GitHub**
+
+![](github3.png)
+
+## **GitHub**
+
+![](github4.png)
+
+
+
+
+# **R Language**
+
+## **R Language**
+
+- Scientific Calculator
+
+- Class
+
+- Vectors 
+
+- Matrices
+
+- Arrays
+
+
+[LINK](http://rpubs.com/emirtoker/software_tools_week5)
+
+
+
+
+# **Practice, Summary and QUIZ**
+
+
+## **Practice**
+
+**Scientific Calculator**
+![](practice_1_w5.png)
+
+
+## **Practice**
+
+**Scientific Calculator**
+
+Problem: Compute double, triple or higher order integrals
+
+![](integral_fig.png) ![](integral_fig1.png)
+
+```
+install.packages("cubature")
+library(cubature)
+
+f <- function(x) 1
+adaptIntegrate(f,lowerLimit = c(0,0,0),upperLimit = c(4,4,4))
+```
+
+```
+$integral
+[1] XX
+```
+
+## **Practice**
+
+**Create a Function**
+
+Problem: Take a sample belonged to population and sum
+
+```
+pop <- 1:6                    # This is my population
+samp <- sample(pop, size = 2) # This is my sample, I choose two var.
+sum(samp)
+```
+```
+pop
+samp
+```
+
+I want to create a new function named ***roll()***
+```
+roll <- function() {
+pop <- 1:6 
+samp <- sample(die, size = 2) 
+sum(samp)
+}
+```
+```
+roll()
+```
+
+
+## **Practice**
+
+**Create a Function**
+
+Problem: What if we removed one line of code from our function and changed the name ***pop*** to ***box*** ?
+
+```
+roll2 <- function() {
+samp <- sample(box, size = 2) 
+sum(samp)
+}
+```
+```
+roll2()
+```
+Re-create function
+```
+roll2 <- function(box) {
+samp <- sample(box, size = 2) 
+sum(samp)
+}
+```
+```
+roll2(box = 1:4)
+roll2(box = 1:6)
+roll2(1:20)
+```
+
+## **Practice**
+
+**Create a Function**
+
+![](practice_func.png)
+
+- You can add new options
+- { } and () are important
+
+
+## **Practice**
+
+1. Print your name as a character string.
+2. Print your age as a numeric type.
+3. Print your age as a character type.
+
+*print()*
+
+4. Create a numeric vector with your favorite numbers.
+5. Check the lenght of the vector, *lenght()*.
+6. Choose the last element (indexing) with []. 
+7. Create 4 × 2 matrice, fill with numbers
+8. Delete first row.
+9. Generate 48 random number and assign, *runif()*.
+9. Create and store a three-dimensional array with six layers of a
+4 × 2 matrice, and fill it with these random numbers.
+
+
+
+
+## **Summary**
+
+- Arithmetic Operators ( +, -, /, x )
+- Logical Operators ( <, >, ==, != ....)
+- Special Values ( NULL, Nan, NA, Inf)
+- Vector, Matrice, Array (1d and Homogeneous)
+- **class()**, **print()**, **seq()**, **runif()**
+- **c()**, **[]**
+- **?**xxx or **help(**xxx**)**
+- **install.packages()**, **library()**
+
+## **QUIZ**
+
+![](R_and_R_Studio.png)
+
+
+https://kahoot.it/
+
+
+# **Next Week**
+
+## **6th Week - R Language Part 2**
+![](syllabus_w6.png)
+List - Data Frame - Attributes - ATMOS
+
+## **Homework**
+
+Udemy – Introduction to R, Section 3 (Video 22-25)
+
+![](udemy_hm1.png)
+
+[LINK](https://www.udemy.com/course/introduction-to-r/)
+
+## **Quiz**
+
+![](R_and_R_Studio.png)
+
+List and Data Frame
+
