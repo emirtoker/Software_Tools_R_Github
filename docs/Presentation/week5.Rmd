@@ -110,7 +110,7 @@ Scroll down :)
 - Arrays
 
 
-[LINK](http://rpubs.com/emirtoker/software_tools_week5)
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_language.html)
 
 
 
