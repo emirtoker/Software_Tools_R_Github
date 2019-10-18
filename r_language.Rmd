@@ -699,3 +699,144 @@ arr[2,2,1]
 arr[-1,,]
 ```
 
+
+
+***
+
+## **Practice**
+
+**Scientific Calculator**
+![](Presentation/practice_1_w5.png)
+
+
+***
+
+### **Practice**
+
+**Scientific Calculator**
+
+Problem: Compute double, triple or higher order integrals
+
+![](Presentation/integral_fig.png) ![](Presentation/integral_fig1.png)
+
+```{r
+install.packages("cubature")
+library(cubature)
+
+f <- function(x) 1
+adaptIntegrate(f,lowerLimit = c(0,0,0),upperLimit = c(4,4,4))
+```
+```
+$integral
+[1] XX
+```
+
+***
+
+### **Practice**
+
+**Create a Function**
+
+Problem: Take a sample belonged to population and sum
+
+```{r}
+pop <- 1:6                    # This is my population
+samp <- sample(pop, size = 2) # This is my sample, I choose two var.
+sum(samp)
+```
+```{r}
+pop
+samp
+```
+
+I want to create a new function named ***roll()***
+```{r}
+roll <- function() {
+pop <- 1:6 
+samp <- sample(pop, size = 2) 
+sum(samp)
+}
+```
+```{r}
+roll()
+```
+
+
+***
+
+### **Practice**
+
+**Create a Function**
+
+Problem: What if we removed one line of code from our function and changed the name ***pop*** to ***box*** ?
+
+```{r}
+roll2 <- function() {
+samp <- sample(box, size = 2) 
+sum(samp)
+}
+```
+```{r
+roll2()    # This will  give error
+```
+Re-create function
+```{r}
+roll2 <- function(box) {
+samp <- sample(box, size = 2) 
+sum(samp)
+}
+```
+```{r}
+roll2(box = 1:4)
+roll2(box = 1:6)
+roll2(1:20)
+```
+
+***
+
+### **Practice**
+
+**Create a Function**
+
+![](Presentation/practice_func.png)
+
+- You can add new options
+- { } and () are important
+
+
+***
+
+### **Practice**
+
+1. Print your name as a character string.
+2. Print your age as a numeric type.
+3. Print your age as a character type.
+
+*print()*
+
+4. Create a numeric vector with your favorite numbers.
+5. Check the lenght of the vector, *lenght()*.
+6. Choose the last element (indexing) with []. 
+7. Create 4 × 2 matrice, fill with numbers
+8. Delete first row.
+9. Generate 48 random number and assign, *runif()*.
+9. Create and store a three-dimensional array with six layers of a
+4 × 2 matrice, and fill it with these random numbers.
+
+
+
+
+***
+
+## **Summary**
+
+- Arithmetic Operators ( +, -, /, x )
+- Logical Operators ( <, >, ==, != ....)
+- Special Values ( NULL, Nan, NA, Inf)
+- Vector, Matrice, Array (1d and Homogeneous)
+- **class()**, **print()**, **seq()**, **runif()**
+- **c()**, **[]**
+- **?**xxx or **help(**xxx**)**
+- **install.packages()**, **library()**
+
+***

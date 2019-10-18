@@ -67,63 +67,9 @@ Week 4 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week4)
 
 ## **R Files**
 
-![](r_files.png)
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_and_rstudio.html)
 
-
-## **R Script**
-
-![](r_script_w5.png)
-
-## **R Notebook**
-
-![](my_r_notebook.png)
-
-## **R Notebook**
-
-![](my_r_notebook_1.png)
-
-
-## **R Notebook - HTML**
-
-![](my_r_notebook_html.png)
-
-## **R Notebook - PDF**
-
-![](my_r_notebook_pdf.png)
-
-
-## **R Notebook - WORD**
-
-![](my_r_notebook_word.png)
-
-
-## **R Markdown**
-
-![](r_markdown.png)
-
-
-## **BONUS - R Shiny**
-
-![](r_shiny.png)
-
-
-## **BONUS - R Shiny**
-
-![](r_shiny1.png)
-
-[LINK](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
-
-
-## **BONUS - R HTML**
-
-![](page_week5.png)
-
-[LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
-
-
-## **Your R Notebook**
-
-![](my_notebook.png)
+Scroll down :)
 
 
 # **GitHub**
@@ -164,6 +110,7 @@ Week 4 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week4)
 - Arrays
 
 
+[LINK](http://rpubs.com/emirtoker/software_tools_week5)
 
 
 

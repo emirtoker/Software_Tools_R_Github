@@ -26,6 +26,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 4. [Week 4 - R and RStudio](http://rpubs.com/emirtoker/software_tools_week4)
 
+5. [Week 5 - R Language Part 1 (Vector, Matrice, Array)](http://rpubs.com/emirtoker/software_tools_week5)
+
+6. Week 6 - R Language Part 2 (Data Frame, List)
+
+7. Week 7 - R Language Part 3 (Read, Write, Plot Data File)
+
+
 ***
 
 **Interactive Trainings** 
@@ -42,9 +49,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-<!-- **KNMI Data - ERA5 2m-Temp - CDO and NCO**--> 
-<!-- WeTransfer - [era5_t2m.zip](https://we.tl/t-x55NHIxrGo)--> 
-<!-- ***--> 
+
+
+<!-- *KNMI Data - Global Annual ERA5 2m-Temp*
+<!-- WeTransfer - [era5_t2m.zip](https://we.tl/t-x55NHIxrGo)
+<!-- ***
 
 
 

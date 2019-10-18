@@ -585,3 +585,95 @@ How to tell R to ignore a part of your code? (**#**)
 
 - Comments (hashtag) ***#***
 
+
+
+
+***
+
+## **R Files**
+
+
+![](Presentation/r_files.png)
+
+
+***
+
+### **R Script**
+
+![](Presentation/r_script_w5.png)
+
+***
+
+### **R Notebook**
+
+![](Presentation/my_r_notebook.png)
+
+***
+
+### **R Notebook**
+
+![](Presentation/my_r_notebook_1.png)
+
+
+***
+
+### **R Notebook - HTML**
+
+![](Presentation/my_r_notebook_html.png)
+
+***
+
+### **R Notebook - PDF**
+
+![](Presentation/my_r_notebook_pdf.png)
+
+
+***
+
+### **R Notebook - WORD**
+
+![](Presentation/my_r_notebook_word.png)
+
+
+***
+
+### **R Markdown**
+
+![](Presentation/r_markdown.png)
+
+
+***
+
+###**BONUS - R Shiny**
+
+![](Presentation/r_shiny.png)
+
+
+***
+
+### **BONUS - R Shiny**
+
+![](Presentation/r_shiny1.png)
+
+[LINK](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
+
+
+***
+
+### **BONUS - R HTML**
+
+![](Presentation/page_week5.png)
+
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
+
+
+***
+
+### **Your R Notebook**
+
+![](Presentation/my_notebook.png)
+
+***
+
+
+
