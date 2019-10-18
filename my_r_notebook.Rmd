@@ -1,0 +1,29 @@
+---
+title: "Emir's R Notebook"
+date: "18/10/2019"
+---
+
+*** 
+
+## Software Tools
+
+#### 5th Week - R Language Part 1
+
+***
+
+**Topic 1 - Basic Math**
+
+sum operator 
+
+```{r}
+4+5
+```
+
+or *sum function*
+```{r}
+x <- 4:5
+sum(x)
+```
+
+
+
