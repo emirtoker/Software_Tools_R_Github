@@ -1,7 +1,10 @@
 ---
-title: "R and RStudio"
 output: html_document
 ---
+
+***
+
+# **R and RStudio**
 
 
 ***

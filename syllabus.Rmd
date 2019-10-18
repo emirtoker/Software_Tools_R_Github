@@ -7,7 +7,7 @@
 
 ![](Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png)
 
-<center>
+</center>
 
 ***
 
@@ -15,6 +15,14 @@
 
 **Extended Syllabus - ** [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
+</center>
+
+***
+
 <center>
+
+![](Presentation/week-book.png)
+
+</center>
 
 ***

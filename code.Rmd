@@ -11,6 +11,9 @@ knitr::opts_chunk$set(error = FALSE)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+***
+
+# **Code**
 
 ***
 
@@ -19,7 +22,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ***
 
-## **Code**
 
 - Operating Systems
 - Programming Languages

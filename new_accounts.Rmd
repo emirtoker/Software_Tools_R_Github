@@ -8,6 +8,11 @@ library(grid)
 
 ***
 
+# **New Accounts**
+
+
+***
+
 - Github, Researchgate, DOI Code, ORCID, Overleaf(LaTeX)
 - Mendeley, Panoply, Sublime Text, Filezilla
 - ArcGIS, QGIS
