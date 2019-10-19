@@ -67,8 +67,7 @@ sqrt(x=5.311)
 
 ```{r}
 f <- expression(x^2+3*x)    # you can check ?expression
-D(f,'x')                    # Calculate (first) derivative of f 
-                               # with respect to x
+D(f,'x')                    # Calculate (first) derivative of f with respect to x
 ```
 
 
