@@ -351,6 +351,9 @@ $(document).ready(function () {
 <div id="r-language" class="section level1">
 <h1><strong>R Language</strong></h1>
 <hr />
+<div id="r-language-part-1" class="section level2">
+<h2>R Language Part 1</h2>
+<hr />
 <ul>
 <li><p>Scientific Calculator</p></li>
 <li><p>Class</p></li>
@@ -678,9 +681,9 @@ b</code></pre>
 <div id="data-types---datetime" class="section level3">
 <h3><strong>Data Types - Date/Time</strong></h3>
 <pre class="r"><code>Sys.Date( ) </code></pre>
-<pre><code>## [1] &quot;2019-10-18&quot;</code></pre>
+<pre><code>## [1] &quot;2019-10-19&quot;</code></pre>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Fri Oct 18 21:54:07 2019&quot;</code></pre>
+<pre><code>## [1] &quot;Sat Oct 19 15:18:08 2019&quot;</code></pre>
 <pre class="r"><code>date &lt;- &quot;2007-06-22&quot;
 class(date)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -703,7 +706,7 @@ class(date_difference)</code></pre>
 %Y    4-digit year                2007</code></pre>
 <pre class="r"><code>today &lt;- Sys.Date()
 format(today, format=&quot;%B %d %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;October 18 2019&quot;</code></pre>
+<pre><code>## [1] &quot;October 19 2019&quot;</code></pre>
 <hr />
 </div>
 <div id="coercion" class="section level3">
@@ -745,6 +748,7 @@ format(today, format=&quot;%B %d %Y&quot;)</code></pre>
 <pre class="r"><code>class(TRUE+TRUE)</code></pre>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
 <hr />
+</div>
 </div>
 <div id="class---data-structure" class="section level2">
 <h2><strong>Class - Data Structure</strong></h2>
@@ -857,13 +861,13 @@ a</code></pre>
 <pre><code>## [1]   3.44   2.50  -1.00 -10.00</code></pre>
 <p><strong>Random - Uniform Distribution</strong></p>
 <pre class="r"><code>runif(15, min = 20, max = 45)</code></pre>
-<pre><code>##  [1] 38.14880 37.43205 21.13008 35.69670 29.50158 41.67917 37.32092
-##  [8] 38.73436 42.10084 42.58608 23.27163 21.14333 41.91831 30.59968
-## [15] 36.36592</code></pre>
+<pre><code>##  [1] 30.11800 44.07323 21.02740 43.29665 32.46739 30.19978 33.28395
+##  [8] 40.84754 36.10190 28.65187 32.96929 23.09918 43.97932 42.29273
+## [15] 29.68306</code></pre>
 <pre class="r"><code>runif(15, 20, 45)</code></pre>
-<pre><code>##  [1] 38.85815 22.95424 43.03756 26.73696 22.34809 41.35273 33.32872
-##  [8] 38.18692 42.51532 25.52805 24.29862 36.43130 22.14931 27.93837
-## [15] 41.68675</code></pre>
+<pre><code>##  [1] 35.98105 40.09722 40.05020 35.72670 36.71447 39.84999 35.20482
+##  [8] 33.85214 39.42727 33.47102 24.72304 37.85320 22.29917 44.01919
+## [15] 22.53365</code></pre>
 <pre class="r"><code>runif(25, 60, 50)</code></pre>
 <pre><code>## Warning in runif(25, 60, 50): NAs produced</code></pre>
 <pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
