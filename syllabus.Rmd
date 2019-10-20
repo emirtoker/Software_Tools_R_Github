@@ -26,3 +26,38 @@
 </center>
 
 ***
+
+#### **Reources**
+
+**Book**
+
+- The Book of R, A First Course in Programming and Statistics <span style="color:Teal">***(Main book for this course)***</span>
+- Efficient R Programming
+- Learn R for Applied Statistics
+- Learning R
+- Practical Data Science with R
+- R for Data Science
+- R for Dummies
+- R for Everyone, Advanced Analysis and Graphics
+- R in Action, Data Analaysis and Graphics with R
+- An Introduction to R <span style="color:Teal">***(R Official PDF)***</span>
+- The Art of R Programming
+
+**Course and Website**
+
+- http://www.r-tutor.com/r-introduction
+- https://www.r-bloggers.com/
+- https://cran.r-project.org/
+- http://www.datasciencemadesimple.com/r-tutorial/
+- https://www.udemy.com/
+- https://www.datacamp.com/home
+- https://courses.edx.org/
+- https://www.rdocumentation.org/
+- https://www.datacamp.com/community/tags/r-programming
+- https://rmarkdown.rstudio.com/
+- https://shiny.rstudio.com/tutorial/
+- https://rstudio.cloud/
+- https://commonmark.org/help/tutorial/
+
+***
+

@@ -60,6 +60,15 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- colors diff #00bc8c (Vivid cyan-lime green, başlıklara fare ile gelince) ----- #ffa500 (orange1) --> 
 
 
+<!-- <span style="color:Red">***---***</span><span style="color:DarkOrange">***---***</span><span style="color:Yellow">***---***</span><span style="color:DarkGreen">***---***</span><span style="color:Blue">***---***</span></span><span style="color:DarkViolet">***---***</span>  --> 
 
 
+
+
+
+
+<!-- DarkCyan  --> 
+<!-- SeaGreen  --> 
+<!-- SteelBlue  --> 
+<!-- Teal  --> 
 
