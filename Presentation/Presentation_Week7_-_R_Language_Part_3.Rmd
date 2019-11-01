@@ -809,6 +809,25 @@ plot(mydata_txt$temp, type="l" )
 ![](fig_temp.png)
 
 
+# **Workshop - Midterm Project**
+
 ## **Workshop - Midterm Project**
+
+- Open a new R notebook
+- Go to emir toker github page, (Presentation Folder)
+- Open "Midterm_Project.Rmd"
+- Click "Raw"
+- Copy all code and paste in your R notebook
+- Same way, open "18397_Cekmekoy_Omerli_15dk.txt" and paste file in your project directory.
+- Start to follow **Instructions**
+
+
+# **Next Week (not next, the other one)**
+
+## **Next Week (not next, the other one)**
+
+![](syllabus_7th.png)
+
+
 
 
