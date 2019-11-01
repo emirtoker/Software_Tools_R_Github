@@ -845,4 +845,746 @@ roll2(1:20)
 - **?**xxx or **help(**xxx**)**
 - **install.packages()**, **library()**
 
+
+
+
+
+***
+
+## **R Language - Part 1 & Part 2 (REPEAT)**
+
+ - **Basic Math, Assigment, Comment**
+ - **Data Types - Classes**
+     - Numeric
+     - Integer
+     - Logical
+     - Character
+ - **Data Structures - Objects**
+     - Vector
+     - Matrice
+     - Array
+     - Data Frame
+     - List
+ - **Special Values, Attributes**
+    
+***
+
+### **Getting Started**
+
+- Assignment; <span style="color:orangered">**<-**</span>
+- Comment; <span style="color:orangered">**#**</span>
+- Help; <span style="color:orangered">**?**</span>func .or. <span style="color:orangered">**help(**</span>func<span style="color:orangered">**)**</span>
+- Install Packages; <span style="color:orangered">**install.packages()**</span>
+- Call from Library; <span style="color:orangered">**library()**</span>
+- Basic Math; 
+    - addition; <span style="color:orangered">**+**</span>
+    - subtraction; <span style="color:orangered">**-**</span>
+    - multiplication; <span style="color:orangered">**`*`**</span>
+    - division; <span style="color:orangered">**/**</span>
+    - exponentiation; <span style="color:orangered">**^**</span>
+    - the square root; <span style="color:orangered">**sqrt**</span>
+    
+***
+
+### **Basic Math**
+
+![](Presentation/practice_1_w5.png)
+
+***
+
+### **Basic Math**
+
+![](Presentation/practice_1_w5.png)
+
+```{r, echo=TRUE}
+a <- 2.3
+(6*a+42)/(3^(4.2-3.62))
+
+isTRUE((6*a+42)/(3^(4.2-3.62))==29.50556)
+```
+
+
+***
+
+### **Scientific Math**
+
+**Problem**: Compute double, triple or higher order integrals
+
+![](Presentation/integral_fig.png)
+
+***
+
+### **Scientific Math**
+
+**Problem**: Compute double, triple or higher order integrals
+
+![](Presentation/integral_fig.png) ![](Presentation/integral_fig1.png)
+
+
+***
+
+### **Scientific Math**
+
+**Problem**: Compute double, triple or higher order integrals
+
+![](Presentation/integral_fig.png) ![](Presentation/integral_fig1.png)
+
+```{r, echo=TRUE}
+# install.packages("cubature")
+library(cubature)
+
+cube_f <- function(x) 1
+adaptIntegrate(cube_f,lowerLimit = c(0,0,0),upperLimit = c(4,4,4))
+```
+
+
+***
+
+### **Data Types - Classes**
+
+  - Numeric
+```{r echo=TRUE}
+# Any number with (or without) a decimal point.
+a <- 3
+```
+  - Integer
+```{r echo=TRUE}
+# Sub-class of the numeric class. The suffix L tells R to store.
+a <- 3L
+```
+  - Logical
+```{r echo=TRUE}
+# TRUE or FALSE - Logical Operators. < , > , == , >= , <= , != ... 
+a <- 3<2
+```
+  - Character
+```{r echo=TRUE}
+# Data type consists of letters or words. String. with quotes: " … "
+a <- "3"
+```
+
+<span style="color:orangered">**is.XXX()**</span> and <span style="color:orangered">**class()**</span>
+
+
+***
+
+### **Data Types - Classes**
+
+```
+name1 <- emir
+name1 <- "emir"
+name2 <- name1
+name3 <- "name1"
+
+number1 <- 32
+number2 <- "32"
+number3 <- 1:10
+number4 <- seq(1,10)
+
+var1 <- TRUE
+var2 <- "TRUE"
+
+answer1 <- is.logical(var1)
+answer2 <- var1 + answer1 / 3
+```
+
+```
+surname1 <- "toker"
+print(name1)
+print(surname1)
+
+print(name1,surname1)
+```
+<span style="color:orangered">**is.XXX()**</span> and <span style="color:orangered">**class()**</span>
+
+
+
+***
+
+### **Data Structures - (Atomic) Vector**
+
+```
+name <- "emir"
+surname <- "toker"
+
+print(c(name,surname))     # c means “combine”
+```
+
+**Vector** : The simplest data structure in R
+
+![](Presentation/vector.png)
+
+
+```
+name <- "emir"
+surname <- "toker"
+name_surname <- c(name,surname)
+length(name_surname)
+
+print(c("21","21"))   
+print(c("21",21))  
+print(c(21,21))   
+```
+
+***
+
+### **Data Structures - (Atomic) Vector**
+
+```
+spring_months <- c("March", "April","May","June")
+
+spring_months
+
+length(spring_months)
+
+dim(spring_months)
+
+spring_months[1]
+
+spring_months[3:4]
+
+str(spring_months) # Structure
+
+substr(spring_months, start = 1, stop = 3)  # Substrings
+
+strsplit(spring_months,"")
+
+gsub("a", "A", spring_months)   # Matching and Replacement
+```
+**?**str , **?**substr , **?**strsplit , **?**gsub
+
+
+
+***
+
+### **Data Structures - Matrice**
+
+Vectors indexed using two indices instead of one.
+
+![](Presentation/matrices.png) ![](Presentation/matrices1.png)
+
+**[ row, col ]**
+
+
+```{r, echo=TRUE}
+a <- c(1:3)
+# str(a) and dim(a) and length(a)
+b <- matrix(1:3, nrow = 1, ncol = 3)
+# str(b) and dim(b) and length(b)
+```
+
+
+***
+
+### **Data Structures - Matrix**
+
+
+![](Presentation/matrices.png)
+![](Presentation/vector1a.png)
+
+```{r, echo=TRUE}
+a <- c(1:3)
+b <- matrix(1:3, nrow = 1, ncol = 3)
+```
+```{r}
+a <- c(1:3)
+b <- matrix(1:3, nrow = 1, ncol = 3)
+a
+b
+```
+```{r, echo=TRUE}
+c <- matrix(1:9, nrow = 3, ncol = 3)
+```
+```{r}
+c <- matrix(1:9, nrow = 3, ncol = 3)
+c
+```
+```{r, echo=TRUE}
+d <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
+```
+```{r}
+d <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
+d
+```
+
+
+***
+
+### **Data Structures - Matrix**
+
+```{r, echo=TRUE}
+my_mat <- matrix(runif(n=20, min=0, max=100), nrow = 4,  ncol = 5)
+```
+```{r}
+my_mat <- matrix(runif(n=20, min=0, max=100), nrow = 4,  ncol = 5)
+my_mat
+```
+```{r, echo=TRUE}
+add <-  matrix(seq(from=10, to=60, by=10), nrow = 2, ncol = 3)
+```
+```{r}
+add <-  matrix(seq(from=10, to=60, by=10), nrow = 2, ncol = 3)
+add
+```
+```{r, echo=TRUE}
+my_mat[2:3,2:4] <- add
+```
+```{r}
+my_mat[2:3,2:4] <- add
+my_mat
+```
+
+
+
+***
+
+### **Data Structures - Array**
+
+
+```{r}
+arr <- array(1:24, dim = c(4,3,2)) #raw,col,level
+```
+```{r, echo=TRUE}
+str(arr)
+# dim(arr)
+# length(arr)
+```
+
+```{r, echo=TRUE}
+x <- 1:24
+```
+```{r}
+x <- 1:24
+x
+```
+```{r, echo=TRUE}
+arr <- array(x, dim = c(4,3,2)) #raw,col,level
+```
+```{r}
+arr <- array(x, dim = c(4,3,2))    # raw, col, level
+arr
+```
+
+***
+
+### **Data Structures - Array**
+
+![](Presentation/concept_array.png)
+
+**[ row, col, level ]**
+
+
+***
+
+### **Data Structures - Array**
+
+
+```{r, echo=TRUE}
+arr <- array(data=10:30,dim=c(2,5,2))
+```
+```{r}
+arr
+```
+```{r, echo=TRUE}
+arr[2,2:4,1:2]
+```
+```{r, echo=TRUE}
+arr[1,1:5,2]
+```
+
+
+***
+
+### **Data Structures - Array**
+
+
+```{r, echo=TRUE}
+array <- array(data=seq(2,144,2),dim=c(3,6,4))
+```
+```{r}
+array
+```
+
+```
+array[1,1,1:4]
+array[1,1,]
+array[1,1,4:1]
+array[1,1,c(1:4!=2)]
+
+array[1,1,2]
+array[1,1,which(x==2)]
+array[1,1,which(x<=2)]
+
+array[1,1,2:4]
+array[1,1,-1]
+array[1,1,c(-1,-2)]
+
+array[1,2:5,2]
+array[1,c(2,3,4,5),2]
+array[1,c(2,5),2]
+```
+```
+array[1,c(2,5),2:3]
+array[,c(2,5),2:3]
+```
+**[ row, col, level ]**
+
+
+
+***
+
+### **Data Structures (R-Objects)**
+
+![](Presentation/data_structure.png) 
+
+
+***
+
+### **Data Structures (R-Objects)**
+
+![](Presentation/data_structure1.png)
+
+
+***
+
+### **BONUS - Data Structures - Factor**
+
+- Factors are a special variable type for storing categorical variables. 
+
+- They sometimes behave like strings, and sometimes like integers.
+
+```
+gender = c(male", "female", "male", "male", "female")
+gender
+class(gender)
+str(gender)
+gender[2]
+
+
+gender_factor <- factor(c("male", "female", "male", "male", "female"))
+gender_factor
+class(gender_factor)
+str(gender_factor)
+gender_factor[2]
+```
+
+
+
+***
+
+### **Data Structures - Data Frame**
+
+![](Presentation/data_frame.png)
+
+- Each element is of the same length, like a matrix.
+- A column can have different types.
+- BUT, all the elements within a column are the same type. 
+
+
+
+
+***
+
+### **Data Structures - Data Frame**
+
+```
+person=c("Peter","Lois","Meg","Chris","Stewie")
+age=c(42,40,17,14,1)
+sex=factor(c("M","F","F","M","M"))
+married=c(TRUE,TRUE,FALSE,FALSE,FALSE)
+
+den <- matrix(c(person,married),5,2)
+den <- matrix(c(age,married),5,2)
+den <- matrix(c(person,age),5,2)
+den <- matrix(c(person,sex),5,2)
+```
+no need to **Combine**
+```
+df <- data.frame(person,married)
+df
+
+class(df)
+dim(df)
+length(df)
+str(df)
+df$
+df$person
+as.character(df$person)
+
+df <- data.frame(person,age,sex,married,stringsAsFactors=FALSE)
+df
+str(df)
+```
+
+***
+
+### **Data Structures - Data Frame**
+
+```
+person="Brian"
+age=7
+sex=factor("M")
+married=FALSE
+
+new_record_row <- data.frame(person,age,sex,married)
+new_df <- rbind(df,newrecord) # Combine R Objects by Rows
+
+
+surname=c("Yilmaz","Zeki","Sahin","Caliskan","Uslu","Guzel")
+new_record_col <- data.frame(surname, stringsAsFactors=FALSE)
+new_df2 <- cbind(new_df, new_record_col) # Combine R Objects by Columns
+
+new_df2
+new_df2[c(5,6),]
+new_df2[c(5,6),] <- new_df2[c(6,5),]
+```
+```
+new_df2[5]
+
+a <- 9:14
+a
+a[2]
+a[2,]
+b <- matrix(a,2,3)
+b
+b[2]
+b[2,]
+```
+
+
+
+***
+
+### **Data Structures - Data Frame**
+
+
+```
+new_df2
+new_df2[1]
+length(new_df2[1])
+dim(new_df2[1])
+
+
+new_df2[[1]]
+length(new_df2[[1]])
+dim(new_df2[[1]])
+
+new_df2[[1]][2]
+new_df2[[1]][2:5]
+
+new_df2$person[2]
+new_df2$person[2:5]
+```
+
+```
+new_df2
+new_df2[2:3,1:5]
+new_df2[2:3,]
+
+new_df2[2,1]
+new_df2[2:2,1:1]
+
+attributes(new_df2)
+```
+
+
+
+
+***
+
+### **Data Structures - List**
+
+![](Presentation/data_structure_copy.png)  ![](Presentation/data_structure1_copy.png)
+
+
+- Lists are like atomic vectors because they group data into a one-dimensional set. 
+- Lists are like data frame because they can group different types of data.
+- BUT, the length of elements is NOT important.
+
+***
+
+### **Data Structures - List**
+
+
+![](Presentation/list2.png) ![](Presentation/list_1.jpg) 
+
+```
+matrix <- matrix(data=1:4,nrow=2,ncol=2)
+vector <- c(T,F,T,T)
+var <- "hello"
+data_frame <- new_df2
+
+list  <- list(matrix,vector,var,data_frame)
+class(list)
+str(list)
+dim(list)
+length(list)
+```
+
+***
+
+## **R Language - Part 3**
+    
+ - **Read**
+ 
+ - **Write**
+ 
+ - **Plot**
+
+***
+
+### **Read**
+
+```
+library(help="datasets")
+```
+```
+list.files("/Users/emirtoker/Desktop/Dersler/Memurluk/Software_Tools_for_Earth_&_Environmental_Science/Software_Tools_R_Github/Presentation")
+```
+```
+file.choose()
+```
+```
+read.table(file = "18397_Cekmekoy_Omerli_15dk.txt")
+
+read.table(file = "18397_Cekmekoy_Omerli_15dk.txt", 
+          header=TRUE, sep=";")
+          
+read.table(file = "18397_Cekmekoy_Omerli_15dk.txt", 
+          header=TRUE, sep=";", na.strings="-9999")
+
+mydata_txt <- read.table(file = "18397_Cekmekoy_Omerli_15dk.txt",
+                        header=TRUE, 
+                        sep=";",
+                        na.strings="-9999")
+              
+str(mydata_txt)
+```
+```
+mydata_csv <- read.csv(file="18397_Cekmekoy_Omerli.csv",
+                      header=TRUE,
+                      na.strings="-9999")
+                      
+str(mydata_csv)
+
+```
+
+***
+
+### **Read and Write**
+
+```
+url <- "https://web.itu.edu.tr/tokerem/18397_Cekmekoy_Omerli_15dk.txt"
+urldata_txt <- read.table(url,
+                          header=TRUE, 
+                          sep=";",
+                          na.strings="-9999")
+```
+Write .TXT and .CSV
+```
+write.table(x=urldata_txt,file="somenewfile.txt")
+
+write.table(x=urldata_txt,file="somenewfile.txt",
+           sep=";",na="-9999",quote=FALSE,row.names=FALSE)
+
+new_df2
+write.table(x=new_df2,file="dffile.txt",
+            sep=";",na="-9999",quote=FALSE,row.names=FALSE)
+            
+write.table(x=new_df2,file="dffile.csv",
+            sep=";",na="-9999",quote=FALSE,row.names=FALSE)
+
+```
+
+***
+
+### **Plot**
+
+```
+foo <- c(1.1,2,3.5,3.9,4.2)
+bar <- c(2,2.2,-1.3,0,0.2)
+plot(foo,bar)
+```
+
+- **type** the supplied coordinates (for example, as stand-alone points or joined by lines or both dots and lines).
+- **main, xlab, ylab** Options to include plot title, the horizontal axis label, and the vertical axis label, respectively.
+- **col** Color (or colors) to use for plotting points and lines.
+- **lty** Stands for line type. (for example, solid, dotted, or dashed).
+- **lwd** This controls the thickness of plotted lines.
+- **xlim, ylim** limits for the horizontal range and vertical range (respectively)
+
+***
+
+### **Plot**
+
+```
+plot(foo,bar)
+plot(foo,bar,type="l")
+plot(foo,bar,type="b",main="My lovely plot",xlab="x axis label", ylab="location y")
+plot(foo,bar,type="b",main="My lovely plot",xlab="",ylab="",col="red")
+```
+
+
+![](Presentation/fig.png)
+
+```
+x <- 1:20
+y <- c(-1.49,3.37,2.59,-2.78,-3.94,-0.92,6.43,8.51,3.41,-8.23,
+-12.01,-6.58,2.87,14.12,9.63,-4.58,-14.78,-11.67,1.17,15.62)
+plot(x,y,type="n",main="")
+abline(h=c(-5,5),col="red",lty=2,lwd=2)
+segments(x0=c(5,15),y0=c(-5,-5),x1=c(5,15),y1=c(5,5),col="red",lty=3,
+lwd=2)
+points(x[y>=5],y[y>=5],pch=4,col="darkmagenta",cex=2)
+points(x[y<=-5],y[y<=-5],pch=3,col="darkgreen",cex=2)
+points(x[(x>=5&x<=15)&(y>-5&y<5)],y[(x>=5&x<=15)&(y>-5&y<5)],pch=19,
+col="blue")
+points(x[(x<5|x>15)&(y>-5&y<5)],y[(x<5|x>15)&(y>-5&y<5)])
+lines(x,y,lty=4)
+arrows(x0=8,y0=14,x1=11,y1=2.5)
+text(x=8,y=15,labels="sweet spot")
+legend("bottomleft",
+legend=c("overall process","sweet","standard",
+"too big","too small","sweet y range","sweet x range"),
+pch=c(NA,19,1,4,3,NA,NA),lty=c(4,NA,NA,NA,NA,2,3),
+col=c("black","blue","black","darkmagenta","darkgreen","red","red"),
+lwd=c(1,NA,NA,NA,NA,2,2),pt.cex=c(NA,1,1,2,2,NA,NA))
+```
+
+***
+
+### **Plot**
+
+```
+mydata_txt <- read.table(file = "18397_Cekmekoy_Omerli_15dk.txt",
+                        header=TRUE, 
+                        sep=";",
+                        na.strings="-9999")
+
+mydata_txt
+
+plot(mydata_txt$temp, type="l" )
+```
+
+![](Presentation/fig_temp.png)
+
+
+***
+
+## **Workshop - Midterm Project**
+
+- Open a new R notebook
+- Go to course home page, (Midterm Project)
+- Click **Rmd** and Open "Midterm_Project.Rmd"
+- Copy all code and paste in your R notebook
+- Same way, open "18397_Cekmekoy_Omerli_15dk.txt" and paste file in your project directory.
+- Start to follow **Instructions**
+
+***
+
+[LINK- MidTerm Project - Rmd](https://web.itu.edu.tr/tokerem/MidTerm_Project.Rmd)
+
+[LINK- Station Data - txt](https://web.itu.edu.tr/tokerem/18397_Cekmekoy_Omerli_15dk.txt)
+
+
 ***

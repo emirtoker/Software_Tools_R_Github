@@ -26,20 +26,33 @@ knitr::opts_chunk$set(echo = TRUE)
 
 4. [R and RStudio](http://rpubs.com/emirtoker/software_tools_week4)
 
-5. [R Language Part 1 (Vector, Matrice, Array)](http://rpubs.com/emirtoker/software_tools_week5)
+5. [R Language Part 1 (Class, Vector, Matrice, Array)](http://rpubs.com/emirtoker/software_tools_week5)
 
-6. R Language Part 2 (Data Frame, List)
+6. [R Language Part 2 (Data Frame, List & Read, Write, Plot)](http://rpubs.com/emirtoker/software_tools_week7)
 
-7. R Language Part 3 (Read, Write, Plot Data File)
+7. R Programming Part 1
 
+8. R Programming Part 2
+
+9. R Statistics
+
+10. R Probability
+
+11. R Advance - Packages
 
 ***
 
-**MidTerm Project** - [pdf](https://web.itu.edu.tr/tokerem/MidTerm_Project.pdf) - 
-                      [Rmd](https://web.itu.edu.tr/tokerem/MidTerm_Project.Rmd)
-                      
-**Station Data** - [txt](https://web.itu.edu.tr/tokerem/18397_Cekmekoy_Omerli_15dk.txt)
+**MidTerm Project** 
+ 
+- R Notebook - [Rmd](https://web.itu.edu.tr/tokerem/MidTerm_Project.Rmd)
+- R Notebook - [pdf](https://web.itu.edu.tr/tokerem/MidTerm_Project.pdf)
+- R Notebook - [html](https://web.itu.edu.tr/tokerem/MidTerm_Project.html)
 
+***
+
+**Data**
+
+- **Station Data** - [txt](https://web.itu.edu.tr/tokerem/18397_Cekmekoy_Omerli_15dk.txt)
 
 ***
 
