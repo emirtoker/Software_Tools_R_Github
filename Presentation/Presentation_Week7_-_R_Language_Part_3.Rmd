@@ -678,7 +678,7 @@ list.files("/Users/emirtoker/Desktop/Dersler/Memurluk/Software_Tools_for_Earth_&
 file.choose()
 ```
 ```
-read.table(file = "18397_Cekmekoy_Omerli_15dk_copy.txt")
+read.table(file = "18397_Cekmekoy_Omerli_15dk.txt")
 
 read.table(file = "18397_Cekmekoy_Omerli_15dk.txt", 
           header=TRUE, sep=";")
@@ -814,9 +814,8 @@ plot(mydata_txt$temp, type="l" )
 ## **Workshop - Midterm Project**
 
 - Open a new R notebook
-- Go to emir toker github page, (Presentation Folder)
-- Open "Midterm_Project.Rmd"
-- Click "Raw"
+- Go to course home page, (Midterm Project)
+- Click **Rmd** and Open "Midterm_Project.Rmd"
 - Copy all code and paste in your R notebook
 - Same way, open "18397_Cekmekoy_Omerli_15dk.txt" and paste file in your project directory.
 - Start to follow **Instructions**
@@ -826,7 +825,7 @@ plot(mydata_txt$temp, type="l" )
 
 ## **Next Week (not next, the other one)**
 
-![](syllabus_7th.png)
+![](syllabus7_son.png)
 
 
 
