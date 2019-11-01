@@ -1,0 +1,7 @@
+person;age;sex;married;surname
+Peter;42;M;TRUE;Yilmaz
+Lois;40;F;TRUE;Zeki
+Meg;17;F;FALSE;Sahin
+Chris;14;M;FALSE;Caliskan
+Brian;7;M;FALSE;Guzel
+Stewie;1;M;FALSE;Ulu

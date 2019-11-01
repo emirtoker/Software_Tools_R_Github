@@ -363,6 +363,28 @@ $(document).ready(function () {
 <pre class="r"><code>x &lt;- 4:5
 sum(x)</code></pre>
 <pre><code>## [1] 9</code></pre>
+<pre class="r"><code>x &lt;- 1:20
+y &lt;- c(-1.49,3.37,2.59,-2.78,-3.94,-0.92,6.43,8.51,3.41,-8.23,
+-12.01,-6.58,2.87,14.12,9.63,-4.58,-14.78,-11.67,1.17,15.62)
+plot(x,y,type=&quot;n&quot;,main=&quot;&quot;)
+abline(h=c(-5,5),col=&quot;red&quot;,lty=2,lwd=2)
+segments(x0=c(5,15),y0=c(-5,-5),x1=c(5,15),y1=c(5,5),col=&quot;red&quot;,lty=3,
+lwd=2)
+points(x[y&gt;=5],y[y&gt;=5],pch=4,col=&quot;darkmagenta&quot;,cex=2)
+points(x[y&lt;=-5],y[y&lt;=-5],pch=3,col=&quot;darkgreen&quot;,cex=2)
+points(x[(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)],y[(x&gt;=5&amp;x&lt;=15)&amp;(y&gt;-5&amp;y&lt;5)],pch=19,
+col=&quot;blue&quot;)
+points(x[(x&lt;5|x&gt;15)&amp;(y&gt;-5&amp;y&lt;5)],y[(x&lt;5|x&gt;15)&amp;(y&gt;-5&amp;y&lt;5)])
+lines(x,y,lty=4)
+arrows(x0=8,y0=14,x1=11,y1=2.5)
+text(x=8,y=15,labels=&quot;sweet spot&quot;)
+legend(&quot;bottomleft&quot;,
+legend=c(&quot;overall process&quot;,&quot;sweet&quot;,&quot;standard&quot;,
+&quot;too big&quot;,&quot;too small&quot;,&quot;sweet y range&quot;,&quot;sweet x range&quot;),
+pch=c(NA,19,1,4,3,NA,NA),lty=c(4,NA,NA,NA,NA,2,3),
+col=c(&quot;black&quot;,&quot;blue&quot;,&quot;black&quot;,&quot;darkmagenta&quot;,&quot;darkgreen&quot;,&quot;red&quot;,&quot;red&quot;),
+lwd=c(1,NA,NA,NA,NA,2,2),pt.cex=c(NA,1,1,2,2,NA,NA))</code></pre>
+<p><img src="my_r_notebook_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 </div>
 
