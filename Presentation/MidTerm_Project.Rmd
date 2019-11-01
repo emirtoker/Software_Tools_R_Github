@@ -1,7 +1,8 @@
 ---
 title: "Emir's R Notebook"
-subtitle: "MidTerm Project"
+output: pdf_document
 date: "01/11/2019"
+subtitle: MidTerm Project
 ---
 
 *** 
@@ -69,7 +70,7 @@ date: "01/11/2019"
 ```
 
 
-**Part 4 - Matrice**
+**Part 5 - Matrice**
 
 - Create a new **matrice** with 4 rows and 5 colomns, using **random** variables.
 - Select the grid located in 2nd row and 3rd coloms. Change it with **TRUE** (assigment).
@@ -88,7 +89,7 @@ date: "01/11/2019"
 ```
 
 
-**Part 4 - Array**
+**Part 6 - Array**
 
 - Create a new **vector** which has 4 elements, **character**.
 - Create a new **matrice** with 2 rows and 4 colomns, **character**.
@@ -113,7 +114,7 @@ date: "01/11/2019"
 ```
 
 
-**Part 5 - Data Frame**
+**Part 7 - Data Frame**
 
 - **Read** and assign the data "18397_Cekmekoy_Omerli_15dk.txt". *(header=TRUE, sep = ";")*
 (for example, <*my_txt_data*>)
