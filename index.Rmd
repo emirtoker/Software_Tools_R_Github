@@ -35,6 +35,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
+**MidTerm Project** - [PDF](https://web.itu.edu.tr/tokerem/MidTerm_Project.pdf) - 
+                      [Rmd](https://web.itu.edu.tr/tokerem/MidTerm_Project.Rmd)
+
+
+
+***
+
 **Interactive Trainings** 
 
 1. [Getting Started with R](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
