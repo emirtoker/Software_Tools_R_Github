@@ -35,9 +35,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-**MidTerm Project** - [PDF](https://web.itu.edu.tr/tokerem/MidTerm_Project.pdf) - 
+**MidTerm Project** - [pdf](https://web.itu.edu.tr/tokerem/MidTerm_Project.pdf) - 
                       [Rmd](https://web.itu.edu.tr/tokerem/MidTerm_Project.Rmd)
-
+                      
+**Station Data** - [txt](https://web.itu.edu.tr/tokerem/18397_Cekmekoy_Omerli_15dk.txt)
 
 
 ***
