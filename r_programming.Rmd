@@ -1,0 +1,409 @@
+---
+output: html_document
+---
+
+***
+
+# **R Programming - Conditions**
+
+
+
+- **Comparison Operators **
+    - equal (**==**)
+    - not equal (**!=**)
+    - greater or equal to (**>=**)
+    - lower or equal to (**<=**)
+
+
+- **Logical Operators **
+    - the and operator (**&**)
+    - the or operator (**|**)
+    - the not operator (**!**)
+
+- ***if*** (Stand-Alone) Statement
+- ***else*** Statement
+- ***ifelse*** Statement
+
+
+```
+TRUE & TRUE  
+TRUE & FALSE
+TRUE | FALSE 
+!TRUE
+
+2 == 3
+5 < 6
+
+c(1,4) >= 6
+
+9 != 8
+
+5 < 6 & 9 != 8
+```
+```
+score <- 80
+exam_no <- 2
+
+score >= 75 | exam_no == 1
+
+score>=75 & score<90 | exam_no==1
+```
+
+***
+
+### ***if*** (Stand-Alone) Statement
+
+The ***if statement*** executes a chunk of code if and only if a defined condition is **TRUE**, which looks something like this:
+
+![](Presentation/if1.png)
+
+
+
+```{r, echo=TRUE}
+if(TRUE) message("It was true!")
+
+if(FALSE) message("It wasn't true!")
+```
+
+```{r, echo=TRUE}
+a <- 3
+num <- 4
+
+if ( a <= num ) {
+a <- a ^ 2
+}
+
+a
+```
+
+
+
+***
+
+### ***if*** (Stand-Alone) Statement
+
+![](Presentation/if1a.png)
+
+```{r, echo=TRUE}
+num <- -1
+
+if ( num < 0 ) {
+  print("num is negative.")
+  print("Don't worry, I'll fix it.") 
+  num <- num * -1
+  print("Now num is positive.")
+}
+num
+```
+
+
+***
+
+### ***if*** (Stand-Alone) Statement
+
+![](Presentation/if1b.png)
+
+***
+
+### ***if*** (Stand-Alone) Statement
+
+![](Presentation/if1c.png)
+
+
+
+***
+
+### ***else*** - Statement
+
+If you want something different to happen when the condition
+is **FALSE**, you can add an else declaration.
+
+![](Presentation/if2.png)
+
+
+
+
+```{r, echo=TRUE}
+if(FALSE)
+    {
+      message("This won't execute...")
+} else
+    {
+      message("but this will.")
+}
+```
+
+
+```{r, echo=TRUE}
+a <- 3.5
+dec <- 0.5
+
+if (dec <= 0.5) {
+  adec <- dec + 1
+} else {
+  adec <- dec
+}
+
+adec
+```
+
+
+***
+
+### -***else ***-  and -***else if***- Statement
+
+![](Presentation/if2a.png)
+
+If your situation has more than two mutually exclusive cases, 
+use **else** and **if** statements together.
+
+```{r, echo=TRUE}
+a <- 1 
+b <- 1 
+
+if (a > b) { 
+  print("A wins!")
+} else if (a < b) { 
+  print("B wins!")
+} else {
+  print("Tie.")
+}
+```
+
+
+***
+
+###  Nesting and Stacking Statements
+
+An ***if statement*** can be placed in another ***if statement***.
+In the editor, modify the mynumber example once more as follows:
+
+![](Presentation/if3.png)
+
+
+***
+
+### Nesting and Stacking Statements
+
+![](Presentation/if3a.png)
+
+***
+
+###  Nesting and Stacking Statements
+
+![](Presentation/if3b.png)
+
+***
+
+###  Nesting and Stacking Statements
+
+![](Presentation/if3c.png)
+
+
+***
+
+###  Nesting and Stacking Statements
+
+![](Presentation/if3d.png)
+
+
+***
+
+###  Practice - Conditions - TRUE and FALSE
+
+
+
+1. **Print** this **if** it is **TRUE.**
+"This message will print!"
+
+```
+if (...) {
+  print(...)
+} 
+```
+2. Go to sleep if it is TRUE, else wake up.
+
+```
+if (...) {
+   print("Go to sleep!")
+} else {
+   print("Wake up!")
+}
+```
+
+3. The variable message to *"I execute this when true!"* when the condition is **TRUE**.
+
+```
+if (...) {
+  message <- "..."
+  print(message)
+} else {
+  message <- "I execute this when false!"
+  print(...)
+}
+```
+
+
+***
+
+###  Practice - Conditions - Logical Op
+
+**Problem** : You are a CAR, and you are going on the road, BUT ;
+
+```{r, echo=T}
+Car_Stop_Light <- 'orange'
+Number_of_Pedestrians <- 2
+```
+
+Remember rules
+
+```
+if (...) {
+  print(...);
+} else {
+  print(...);
+}
+```
+
+***
+
+### Practice - Conditions - Logical Op
+
+**ANSWER** : You are a CAR, and you are going on the road, BUT ;
+
+```{r, echo=T}
+Car_Stop_Light <- 'orange'
+Number_of_Pedestrians <- 2
+```
+
+Remember rules
+
+```{r, echo=T}
+if (Car_Stop_Light == 'green' & Number_of_Pedestrians ==0) {
+  print('Go!');
+} else {
+  print('STOP');
+}
+```
+
+
+***
+
+###  Practice - Conditions - Logical Op
+
+**Problem** : You want to enjoy, and let's say the day is;
+
+```{r, echo=T}
+day <- "Saturday"
+```
+
+It is okay, you can fun **if** it is **weekend**.
+```
+if (...) {
+  print('Enjoy the weekend!')
+} else {
+  print('Do some work.')
+}
+```
+
+
+***
+
+### Practice - Conditions - Logical Op
+
+**ANSWER** : You want to enjoy, and let's say the day is;
+
+```{r, echo=T}
+day <- "Saturday"
+```
+
+It is okay, you can fun **if** it is **weekend**.
+```{r, echo=T}
+if (day == 'Saturday' | day == 'Sunday') {
+  print('Enjoy the weekend!')
+} else {
+  print('Do some work.')
+}
+```
+
+
+
+***
+
+###  Practice - Conditions - Logical Op
+
+**Problem** : You want to go out and your question is **"Should I take an umbrella?"**
+
+- Check to see, if **"weather"** is **"equal"** to **"cloudy"** and, whether there is a **"high_chance_of_rain"**.
+- **If** it is **both**, the code should assign the value of the variable **message** to be **"Take umbrella!"**
+- **Otherwise**, the code should assign the value of the variable **message** to **"No need for umbrella!"**
+- **Print** the **message** variable after the conditional statement. 
+- Based on the condition, what should its value be?
+
+**Note** : There are two variables in your code, 
+**"weather"** and **"high_chance_of_rain"**
+
+***
+
+### Practice - Conditions - Logical Op
+
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+message <- 'Should I take an umbrella?'
+
+weather <- "cloudy"
+
+high_chance_of_rain <- TRUE
+```
+
+***
+
+### Practice - Conditions - Logical Op
+
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+message <- 'Should I take an umbrella?'
+
+weather <- "cloudy"
+
+high_chance_of_rain <- TRUE
+```
+
+```
+if (...) {
+  message <- 'Take umbrella!'
+  print(message)
+} else { 
+  message <- 'No need for umbrella!'
+  print(message)
+  }
+```
+
+***
+
+### Practice - Conditions - Logical Op
+
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+message <- 'Should I take an umbrella?'
+
+weather <- "cloudy"
+
+high_chance_of_rain <- TRUE
+
+if (weather == "cloudy" & high_chance_of_rain == TRUE) {
+  message <- 'Take umbrella!'
+  print(message)
+} else { 
+  message <- 'No need for umbrella!'
+  print(message)
+  }
+```
+
+

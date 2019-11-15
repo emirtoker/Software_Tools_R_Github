@@ -27,8 +27,14 @@ navbar:
           href: ncl.html  
         - text: "R and RStudio"
           href: r_and_rstudio.html
-    - text: "R Language"
-      href: r_language.html
+    - text: "R"
+      menu:      
+        - text: "R Language"
+          href: r_language.html
+        - text: "R Programming"
+          href: r_programming.html     
+    - text: "DataCamp"
+      href: datacamp.html
     - text: "About"
       href: about.html  
 output:

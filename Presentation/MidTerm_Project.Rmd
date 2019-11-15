@@ -1,6 +1,8 @@
 ---
 title: "Emir's R Notebook"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 date: "01/11/2019"
 subtitle: MidTerm Project
 ---
@@ -93,9 +95,9 @@ subtitle: MidTerm Project
 
 - Create a new **vector** which has 4 elements, **character**.
 - Create a new **matrice** with 2 rows and 4 colomns, **character**.
-- Combine them, and create a new **array** with 2 rows, 4 columns and 2 layers. 
-(first row must be vector, second and third rows must be matrix for each layer)
-- Add **+2** for each values of 2nd layer of **matrix**.
+- Combine them, and create a new **array** with 3 rows, 4 columns and 2 layers. 
+- Create a new **array** with 2 rows and 4 colomns, **numeric**.
+- Add **+2** for each values of 2nd layer of **array**.
 - Check the **dimension**, **structure**, **length** and **class** of your matrix.
 - Print values **which** is greater than or equal to 5
 
