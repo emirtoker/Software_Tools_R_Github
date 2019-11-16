@@ -10,6 +10,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
+![](dc_logo5.png) **DataCamp** - [Home](https://www.datacamp.com/home) & [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)
+
+***
+
 **R Repository** -  [Github](https://github.com/emirtoker/Software_Tools_R_Github)
 
 **Ninova** - [YSB 801E - CRN:15163](https://ninova.itu.edu.tr/members/ogrenci.sinif.default.aspx?eId=12600&sinifId=40084)
