@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 6. [R Language Part 2 (Data Frame, List & Read, Write, Plot)](http://rpubs.com/emirtoker/software_tools_week7)
 
-7. R Programming Part 1
+7. [R Programming Part 1 (Conditions - if, else, else if)](http://rpubs.com/emirtoker/software_tools_week9)
 
 8. R Programming Part 2
 
