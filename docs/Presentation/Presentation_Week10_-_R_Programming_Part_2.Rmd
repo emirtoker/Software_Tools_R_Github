@@ -61,6 +61,96 @@ output:
 
 - Read Data with **utils** (R utility functions)
 
+## **Practice - R Language**
+
+Manage Working Directory
+
+- <span style="color:blue">**getwd()**</span> - ***get** **w**orking **d**irectory*
+- <span style="color:blue">**list.files()**</span>
+
+```{r}
+getwd()
+list.files()
+```
+
+## **Practice - R Language**
+
+Manage Working Directory
+
+- <span style="color:blue">**setwd()**</span> - ***set** **w**orking **d**irectory*
+
+```{r}
+# 1
+setwd("/Users/emirtoker/Downloads/")
+# 2
+getwd()
+list.files()
+file.path("~","Users","emirtoker","Downloads","-this_is_my_file.csv")
+```
+
+
+## **Practice - R Language**
+
+Find the Data
+
+- <span style="color:blue">**file.path()**</span>
+
+```{r}
+# Option 1
+# setwd("/Users/emirtoker/Downloads/")
+# read.csv("-this_is_my_file.csv")
+
+# Option 2
+path <- file.path("~","Users","emirtoker","Downloads","-this_is_my_file.csv")
+path
+# read.csv(path)
+```
+
+
+## **Practice - R Language**
+
+Read Data 
+
+*with **utils** (R utility functions)*
+
+- <span style="color:blue">**read.csv()**</span> - ***C**omma **S**eperated **V**alue*
+- <span style="color:blue">**read.delim()**</span> - *Tab Delimited Data*
+- <span style="color:blue">**read.table()**</span> - *Exocit file format*
+
+## **Practice - R Language**
+
+Read Data with **utils** (R utility functions)
+
+<span style="color:blue">**read.csv()**</span> -  ***C**omma **S**eperated **V**alue*
+
+![](rcsv.png)
+
+## **Practice - R Language**
+
+Read Data with **utils** (R utility functions)
+
+<span style="color:blue">**read.delim()**</span> - *Tab Delimited Data*
+
+![](rdelim.png)
+
+## **Practice - R Language**
+
+Read Data with **utils** (R utility functions)
+
+<span style="color:blue">**read.table()**</span> - *Exocit file format*
+
+![](rtb1.png) ![](rtb2.png) 
+
+
+
+## **Practice - R Language**
+
+Manage Directory, Find and Read Data
+
+**Instructions**
+-
+
+
 # **Practice - R Programming**
 ## **Practice - R Programming**
 
