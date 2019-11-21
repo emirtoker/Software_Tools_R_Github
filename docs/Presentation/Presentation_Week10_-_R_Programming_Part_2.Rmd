@@ -1,0 +1,83 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "-- 10th WEEK --"
+author: "Emir Toker"
+date: "14/11/2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: beige
+---
+
+## **R Promgramming - Part 2**
+
+- **Syllabus and Book**
+- **DataCamp Class**
+- **Practice - R Language**
+- **Practice - R Programming**
+
+<span style="color:brown">**Coffee Break**</span>
+
+- **R Programming - <span style="color:blue">*for*</span> Loops**
+- **R Programming - <span style="color:blue">*while*</span> Loops** 
+- **R Programming - <span style="color:blue">*apply*</span> Loops**
+
+<span style="color:brown">**QUIZ**</span>
+
+- **Next Week**
+
+
+
+
+# **Syllabus, Book**
+## **Syllabus**
+![](week100.png)
+
+## **Book**
+![](week10_book.png)
+
+## Homework-1 and Midterm Project ?
+
+# **DataCamp Class**
+## **DataCamp Class**
+![](dt10w.png)
+
+## **DataCamp Class**
+![](dc11.png)
+<span style="color:brown">`(1$ = 5,75 TL)`</span>
+
+29$ `*` 5,75 TL `*` 6 Months `*` 1 Student= <span style="color:brown">**833,75 TL** </span>
+
+833,75 TL `*` 25 Students = <span style="color:brown">**20.843,75 TL** </span>
+
+
+# **Practice - R Language**
+## **Practice - R Language**
+
+**Objectives**
+
+- Manage Working Directory
+
+- Find the Data
+
+- Read Data with **utils** (R utility functions)
+
+# **Practice - R Programming**
+## **Practice - R Programming**
+
+
+<span style="color:brown">**Coffee Break**</span>
+
+# **R Programming - <span style="color:blue">*for*</span> Loops**
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+# **R Programming - <span style="color:blue">*while*</span> Loops** 
+## **R Programming - <span style="color:blue">*while*</span> Loops** 
+
+# **R Programming - <span style="color:blue">*apply*</span> Loops**
+## **R Programming - <span style="color:blue">*apply*</span> Loops**
+
+
+<span style="color:brown">**QUIZ**</span>
+
+- **Next Week**
+
