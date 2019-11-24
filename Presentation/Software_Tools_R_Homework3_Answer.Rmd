@@ -1,0 +1,78 @@
+---
+title: "Software Tools, R - Homework3 - Answer"
+output: html_notebook
+---
+
+**Due date** : 29 Now 2019, 18:00
+
+***
+
+#### <span style="color:green">**Objectives**</span>
+
+- Function
+- Condition Statments
+- Loops
+
+***
+
+#### <span style="color:brown">**Questions**</span>
+
+
+***
+
+**1** - A dependent function chain is defined as $h(x)=\frac{log(x)-1}{\sqrt{x}}$, $g(x)={e^\sqrt{h(x)}}$ and $f(x)=sing(x)^{cosg(x)}$.  Create a function and solve $f(x)$ for each x <- 4:250. Print and plot $f(x)$.
+
+```{r}
+chain <- function() { 
+x <- 4:250
+hx <- (log(x)-1)/sqrt(x)
+gx <- exp(sqrt(hx))
+fx <- sin(gx)^(cos(gx))
+print(fx)
+plot(fx)
+}
+```
+
+***
+
+**2** - Create a function that calculates number of exceedence of a specified threshold in an random x vector. If the number of exceedence is higher than threshold than print a sentence, else print another sentence for warning.
+
+```{r}
+exeedence <- function(n, min, max, threshold) { 
+  x <- runif(n,min,max)
+  print(x)
+  print(x > 500)
+  number <- sum(x > 500)
+  if (number > 20) {
+    print("More than 20 samples are higher than 500")
+  }else {
+    print("20 samples are lower than 500")
+  }
+}
+```
+
+***
+
+**3** - Create a function calculates the sum of digits of any integer. For instance, sum of digits of 385102 is 3 + 8 + 5 + 1 + 2 = 19. While sum is lower than 50, then add 10 to sum and print a warning sentence.
+
+```{r}
+sumofdig <- function(x) { 
+sum <- sum(as.integer(strsplit(as.character(x), "")[[1]]))
+while (sum < 50) {
+  print("sum is lower than 50, so I am going to add more 10")
+  sum <- sum + 10
+  message("new sum is : ",sum)
+  }
+}
+```
+
+
+***
+
+***For questions, please use Ninova***
+
+***
+
+*I inspired from Ismail SEZEN*
+
+***

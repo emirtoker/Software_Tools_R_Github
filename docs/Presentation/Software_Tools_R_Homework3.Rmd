@@ -1,0 +1,64 @@
+---
+title: "Software Tools, R - Homework3"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+**Due date** : 01 Dec 2019, 23:00
+
+***
+
+#### <span style="color:green">**Objectives**</span>
+
+- Function
+- Condition Statments
+- Loops
+
+***
+
+#### <span style="color:brown">**Questions**</span>
+
+***
+
+**1** - A dependent function chain is defined as $h(x)=\frac{log(x)-1}{\sqrt{x}}$, $g(x)=e^{\sqrt{h(x)}}$ and $f(x)=sing(x)^{cosg(x)}$.  Create a function and solve $f(x)$ for each x <- 4:250. Print and plot $f(x)$.
+
+```{r}
+exeedence <- function() { 
+x <- 4:250
+# Fill here
+plot(fx)
+}
+```
+
+***
+
+**2** - Create a function that calculates number of exceedence of a specified threshold in an random x vector. If the number of exceedence is higher than threshold than print a sentence, else print another sentence for warning.
+
+```{r}
+exeedence <- function(n, min, max, threshold) { 
+# Fill here
+# You can use runif() function
+}
+```
+
+***
+
+**3** - Create a function calculates the sum of digits of any integer. For instance, sum of digits of 385102 is 3 + 8 + 5 + 1 + 2 = 19. While sum is lower than 50, then add 10 to sum and print a warning sentence.
+
+```{r}
+sumofdig <- function(x) { 
+# Fill here
+# You can use strsplit() function
+}
+```
+
+***
+
+***For questions or problems, please use Ninova***
+
+***
+
+*I inspired from Ismail SEZEN*
+
+***

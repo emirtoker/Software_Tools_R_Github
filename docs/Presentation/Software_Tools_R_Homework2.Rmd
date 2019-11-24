@@ -1,0 +1,135 @@
+---
+title: "Software Tools, R - Homework2"
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+**Due date** : 29 Now 2019, 18:00
+
+***
+
+#### <span style="color:green">**Objectives**</span>
+
+- Manage Working Directory
+- Download, Copy, Paste and Find the Data
+- Read Data with **utils** (R utility functions) *(**utily** is one of the default packages of R)*
+- Identify and Indexing Data
+- Use Condition Statements
+- Plot the Data
+
+
+<span style="color:brown">**Hints**</span> : You can use these functions and the main web page of our course - [LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_programming.html)
+
+```
+getwd()
+setwd()
+list.files()
+file.path()
+
+read.csv()
+read.delim()
+read.table()
+
+attributes()
+attr()
+colMeans()
+plot()
+
+if (condition) {
+
+} else {
+
+}
+```
+
+***
+
+# **Instructions**
+
+###**PART-1 Manage Directory, Find and Read Data**
+
+1. Go to main webpage of course
+2. Open Data "Istanbul_Goztepe_Mean_Temperature_1839-2013_Monthly" (.dat) LINK
+3. Copy and Paste it in your "Downloads" directory in a text file with ".dat" extension
+4. Open your R Studio
+
+<span style="color:brown">WAY 1</span> - **GO TO FILE**
+
+5. Check your Project Name and your Working directory
+6. Go to "Downloads" directory in R Studio
+7. List files and Read Data with three different read functions (read.csv(), read.delim(), read.table() )
+8. Choose the best 
+9. Assign your data as "temp_1"
+
+<span style="color:brown">WAY 2</span> - **CALL THE FILE**
+
+10. Go Back to your Working directory
+11. Define your file path with file.path()
+12. Assign the path a new variable as "path_my_file"
+13. Use your best read() function
+14. Read the file with "path_my_file"
+15. Assign your data as "temp_2"
+
+<span style="color:brown">WAY 3</span> - **IMPORT THE FILE**
+
+16. Use "Import Datase"
+17. Assign your data as "temp_3"
+
+<span style="color:brown">WAY 4</span> - **DOWNLOAD THE FILE**
+
+18. Copy the LINK of data
+19. Use your best read() function
+20. Read the file with this function and LINK
+21. Assign your data as "temp_4"
+
+<span style="color:brown">Last step</span>
+
+22. Choose your favorite " temp_1 or _2 or _3 or _4" and assign as just "**temp**"
+
+
+###**PART-2 Play with the Data**
+
+<span style="color:brown">Meet with the Data</span>
+
+1. Look at structure
+2. Learn attributes and dimensions
+3. Rename attributes
+
+<span style="color:brown">Clear NA and Choose Colomn</span>
+
+4. Print "temp"
+5. Delete rows which include NA ( na.omit() )
+6. Assign it as "temp_b"
+7. Select summer season 
+8. Assign it as "temp_b_summer"
+
+<span style="color:brown">Use Condition Statements - if</span>
+
+9. Compare June Mean Temperature and July Mean Temperature
+10. IF June Mean Temperature is LOWER than July then print "June has LOWER Mean Temperature."
+
+<span style="color:brown"> Use Condition Statements - else</span>
+
+11. ELSE print "June has HIGHER Mean Temperature"
+12. Calculate mean of each month ( colMeans() )
+
+<span style="color:brown">Plot</span>
+
+13. Plot temperature for June
+14. Add title and unit
+15. Edit x-axis, which years are they ?
+16. What about July and August ? Plot them.
+17. Is there any strangeness thing, what do you think ? Compare three plots.
+
+***
+
+***For questions or problems, please use Ninova***
+
+***
+
+
+
+
