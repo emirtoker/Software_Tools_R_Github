@@ -31,16 +31,17 @@
 
 **Book**
 
-- The Book of R, A First Course in Programming and Statistics <span style="color:Teal">***(Main book for this course)***</span>
+- The Book of R, A First Course in Programming and Statistics - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)  <span style="color:Teal">***(Main book for this course)***</span>
+- Hands-On Programming with R - [PDF](https://web.itu.edu.tr/~tokerem/Hands-On_R.pdf)
+- Learning R - [PDF](https://web.itu.edu.tr/~tokerem/Learning_R.pdf)
 - Efficient R Programming
 - Learn R for Applied Statistics
-- Learning R
 - Practical Data Science with R
 - R for Data Science
 - R for Dummies
 - R for Everyone, Advanced Analysis and Graphics
 - R in Action, Data Analaysis and Graphics with R
-- An Introduction to R <span style="color:Teal">***(R Official PDF)***</span>
+- An Introduction to R - [PDF](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf) <span style="color:Teal">***(R Official PDF)***</span>
 - The Art of R Programming
 
 **Course and Website**
