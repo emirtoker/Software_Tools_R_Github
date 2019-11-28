@@ -93,6 +93,9 @@ output:
 35. Install and load "ncdf4" and "RNetCDF" package
 
 
+## NETCDF
+
+![](netcdf_1.png)
 
 
 # **R Advance - <span style="color:orange">*ncdf4*</span> & <span style="color:orange">*RNetCDF*</span> Packages**
