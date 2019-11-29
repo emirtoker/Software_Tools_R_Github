@@ -338,6 +338,9 @@ $(document).ready(function () {
     <li>
       <a href="r_programming.html">R Programming</a>
     </li>
+    <li>
+      <a href="r_statistics.html">R Statistics</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -695,9 +698,9 @@ b</code></pre>
 <div id="data-types---datetime" class="section level3">
 <h3><strong>Data Types - Date/Time</strong></h3>
 <pre class="r"><code>Sys.Date( ) </code></pre>
-<pre><code>## [1] &quot;2019-11-15&quot;</code></pre>
+<pre><code>## [1] &quot;2019-11-29&quot;</code></pre>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Fri Nov 15 16:11:15 2019&quot;</code></pre>
+<pre><code>## [1] &quot;Fri Nov 29 18:11:37 2019&quot;</code></pre>
 <pre class="r"><code>date &lt;- &quot;2007-06-22&quot;
 class(date)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -720,7 +723,7 @@ class(date_difference)</code></pre>
 %Y    4-digit year                2007</code></pre>
 <pre class="r"><code>today &lt;- Sys.Date()
 format(today, format=&quot;%B %d %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;November 15 2019&quot;</code></pre>
+<pre><code>## [1] &quot;November 29 2019&quot;</code></pre>
 <hr />
 </div>
 <div id="coercion" class="section level3">
@@ -875,13 +878,13 @@ a</code></pre>
 <pre><code>## [1]   3.44   2.50  -1.00 -10.00</code></pre>
 <p><strong>Random - Uniform Distribution</strong></p>
 <pre class="r"><code>runif(15, min = 20, max = 45)</code></pre>
-<pre><code>##  [1] 33.95000 23.64671 42.80239 24.30157 43.76165 36.18556 26.38434
-##  [8] 28.67117 32.27631 36.92150 36.52353 39.84793 44.78786 29.18951
-## [15] 26.61474</code></pre>
+<pre><code>##  [1] 21.40378 23.96728 36.23522 25.25350 44.33071 25.17595 39.13315
+##  [8] 43.67434 26.13771 20.17746 32.48731 20.60877 44.58586 44.92039
+## [15] 31.33987</code></pre>
 <pre class="r"><code>runif(15, 20, 45)</code></pre>
-<pre><code>##  [1] 28.76605 30.95809 25.53043 40.10234 21.66959 37.83003 34.94927
-##  [8] 33.09239 29.34622 26.08091 36.40322 39.88259 31.18594 32.40185
-## [15] 39.12296</code></pre>
+<pre><code>##  [1] 30.81824 32.49394 37.52873 23.32280 37.71817 22.16804 40.66727
+##  [8] 43.15705 39.03473 20.76975 43.30605 35.58218 37.96398 25.35089
+## [15] 34.61207</code></pre>
 <pre class="r"><code>runif(25, 60, 50)</code></pre>
 <pre><code>## Warning in runif(25, 60, 50): NAs produced</code></pre>
 <pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
