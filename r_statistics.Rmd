@@ -1,0 +1,481 @@
+---
+output: html_document
+---
+***
+
+# **1. R Elemantary Statistics** 
+# **2. Basic Data Visualization** 
+
+***
+
+###  **R Elemantary Statistics**
+
+
+![](Presentation/pop_sample.png)
+
+***
+
+**Centrality**: <span style="color:orangered">**Mean**</span>, Median, Mode
+
+- Measures of centrality are commonly used to explain large collections of data by describing where numeric observations are centered.
+
+![](Presentation/art_mean.png)
+
+
+***
+
+**Centrality**: Mean, <span style="color:orangered">**Median**</span>, Mode
+
+- **Median** : “middle magnitude” of your observations
+
+![](Presentation/median.png)
+
+
+0 . 0 . <span style="color:orangered">0</span> . 0 . 0
+
+o . o . <span style="color:orangered">o . o</span> . o . o
+
+
+***
+
+**Centrality**: Mean, Median, <span style="color:orangered">**Mode**</span>
+
+- **Mode** : Simply the “most common” observation.
+
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4
+
+![](Presentation/mod.png)
+
+![](Presentation/art_mean_a.png)
+
+2 , 2 , 2 , 2.2 , 3 , 3 , 4, 4.4 ( n=8 , n/2 = 4)
+
+![](Presentation/median_a.png)
+
+
+***
+
+**Centrality**: Mean, Median, Mode
+
+
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+
+- mean(xdata)
+- median(xdata)
+- min(xdata)
+- max(xdata)
+- range(xdata)
+
+
+***
+
+<span style="color:orangered">**Quantiles, Percentiles**</span>, and the Five-Number Summary
+
+- A quantile is a value indicates an observation rank when compared to all the other present observations.
+- For example, the **median** is itself a **quantile**. It’s the 0.5th quantile. 
+- Alternatively, quantiles can be expressed as a **percentile.**
+
+<span style="color:orangered">**The median = the 0.5th quantile = The 50th percentile**</span>
+
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4
+
+2 , 2 , 2 , <span style="color:orangered">2.2 , 3</span> , 3 , 4, 4.4
+
+0.5th quantile = median = 2.6
+
+***
+
+<span style="color:orangered">**Quantiles, Percentiles**</span>, and the Five-Number Summary
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+quantile(xdata,prob=0.8) # the 0.8th quan- tile (or 80th percentile)
+
+quantile(xdata,prob=c(0,0.25,0.5,0.75,1))
+
+summary(xdata) # A quartile is a type of quantile.
+```
+
+
+***
+
+Quantiles, Percentiles, and <span style="color:orangered">**the Five-Number Summary**</span>
+
+![](Presentation/five_number_summary.png)
+
+A **quartile** is a type of quantile.
+
+***
+
+**Spread**: Variance, Standard Deviation, and the Interquartile Range
+
+- How dispersed your data are. For this, measures of spread are needed.
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+
+mean(xdata)
+mean(ydata)
+```
+
+
+
+***
+
+```{r fig.height=3, fig.width=8}
+plot(xdata,type="n",xlab="",ylab="data vector",yaxt="n",bty="n")
+abline(h=c(3,3.5),lty=2,col="red")
+abline(v=2.825,lwd=2,lty=3)
+text(c(0.8,0.8),c(3,3.5),labels=c("x","y"))
+points(jitter(c(xdata,ydata)),c(rep(3,length(xdata)), rep(3.5,length(ydata))))
+```
+
+the observations in *ydata* are more “spread out”
+
+
+***
+
+**Spread**: <span style="color:orangered">**Variance**</span>, Standard Deviation, and the Interquartile Range
+
+- The sample **variance** measures the degree of the spread of numeric observations around their arithmetic mean.
+
+![](Presentation/var1.png)
+
+![](Presentation/var2.png)
+
+***
+
+**Spread**: <span style="color:orangered">**Variance**</span>, Standard Deviation, and the Interquartile Range
+
+2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4 ( mean = 2.825)
+
+![](Presentation/var3.png)
+
+***
+
+**Spread**: Variance, <span style="color:orangered">**Standard Deviation**</span>, and the Interquartile Range
+
+- The standard deviation is simply the square root of the variance. The scale of the original observations.
+
+![](Presentation/sd1.png)
+
+![](Presentation/sd2.png)
+
+**0.953 represents the average distance of each observation from the mean**
+
+
+***
+
+**Spread**: Variance, Standard Deviation, and <span style="color:orangered">**the Interquartile Range**</span>,
+
+- Unlike the variance and standard deviation, the interquartile range (IQR) is **not** computed with respect to the sample mean.
+
+![](Presentation/qrt.png)
+
+- IQR is computed as the difference between the upper and lower quartiles of your data
+
+
+***
+
+**Spread**: Variance, Standard Deviation, and the Interquartile Range
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+
+var(xdata)
+sd(xdata)
+IQR(xdata)
+```
+
+
+***
+
+![](Presentation/summary_a.png)
+
+***
+
+![](Presentation/summary_b.png)
+
+![](Presentation/summary_c.gif)
+
+
+***
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+- Investigate the relationship between two numeric variables to assess trends
+- The *covariance* expresses how much two numeric variables “change together” and the nature of that relationship, whether it is positive or negative. 
+
+![](Presentation/covar_a.png)
+
+***
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+x = {x1,x2,...,xn}
+
+y = {y1,y2,...,yn}
+
+for i = 1,. . . ,n
+
+![](Presentation/covar_b.png)
+
+
+When you get a positive result for rxy, it shows that there is a positive lin- ear relationship. When rxy = 0, this indicates that there is no linear relationship. 
+
+
+***
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+x = {2,4.4,3,3,2,2.2,2,4}
+
+y = {1,4.4,1,3,2,2.2,2,7}
+
+mean x and y = 2.825
+
+![](Presentation/covar_c.png)
+
+positive relationship
+
+
+***
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+- Correlation allows you to interpret the covariance further by identifying the strength of any association.
+
+![](Presentation/corr_1.png)
+
+
+***
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+- Most common of these is Pearson’s product-moment correlation coefficient. (R default)
+
+- The correlation coefficient estimates the nature of the linear relationship between two sets of observations
+
+![](Presentation/corr_a.png)
+
+−1 ≤ *ρ*xy ≤ 1
+
+ρxy = 1, which is a perfect positive linear relationship
+
+
+***
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+x = {2,4.4,3,3,2,2.2,2,4}
+
+y = {1,4.4,1,3,2,2.2,2,7}
+
+(mean x and y = 2.825)
+
+(*s*x = 0.953 and *s*y = 2.013)
+
+(*r*xy = 1.479)
+
+![](Presentation/corr_b.png)
+
+*ρ*xy is positive
+
+
+***
+
+Covariance and Correlation
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+
+cov(xdata,ydata)
+
+cor(xdata,ydata)
+```
+
+
+
+***
+
+Covariance and Correlation
+
+```{r fig.height=4, fig.width=4}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+plot(xdata,ydata,pch=13,cex=1.5)
+```
+
+
+
+***
+
+![](Presentation/corr_2.png)
+
+
+***
+
+![](Presentation/corr_3.svg)
+
+
+![](Presentation/corr_4.png)
+
+
+
+***
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r}
+station_data <- read.csv("https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt", header=T, sep = ";")
+
+head(station_data)
+
+```
+
+
+***
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+head(station_data$temp)
+barplot(station_data$temp)
+```
+
+
+***
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+table(station_data$temp)
+
+f_temp <- table(station_data$temp)
+```
+
+
+***
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+barplot(f_temp)
+```
+
+
+***
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=8}
+barplot(f_temp,beside=TRUE,horiz=TRUE,las=1,
+        main="Frequency of Station Temperature",
+        names.arg=c("T"),legend.text=c("TEMP-f"),
+        args.legend=list(x="bottomright"))
+```
+
+
+***
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=8}
+library(ggplot2)
+qplot(factor(station_data$temp),geom="bar")
+```
+
+
+***
+
+Barplots and <span style="color:orangered">**Pie Charts**</span>
+
+```
+head(station_data$precipitation)
+
+pie(table(station_data$precipitation),labels=c("V1","V2","V3","V4","V5"),col=c("white","blue","green","orange"),main="pie chart for precipitation")
+```
+
+![](Presentation/prepie.png)
+
+
+***
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+hist(station_data$temp)
+```
+
+
+
+***
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+hist(station_data$tem,breaks=seq(19,32,1),col="green",main="Temp",xlab="HP")
+abline(v=c(mean(station_data$temp),median(station_data$temp)), col=c("blue","red"),lty=c(2,3),lwd=2)
+legend("topright",legend=c("mean T","median T"),lty=c(2,3),lwd=2,col=c("blue","red"))
+```
+
+***
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+qplot(station_data$temp,geom="blank",main="Temp Hist",xlab="Temp")+ 
+  geom_histogram(color="black",fill="white",breaks=seq(19,32,1),closed="right") + 
+  geom_vline(mapping=aes(xintercept=c(mean(station_data$tem), median(station_data$tem)), linetype=factor(c("mean","median"))) , col=c("blue","red"),show.legend=TRUE)+ 
+  scale_linetype_manual(values=c(2,3)) + 
+  labs(linetype="")
+```
+
+
+
+***
+
+<span style="color:orangered">**Boxplot**</span>
+
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$temp)
+```
+
+***
+
+<span style="color:orangered">**Boxplot**</span>
+
+![](Presentation/hist_5.png)
+
+
+***
+
+<span style="color:orangered">**Scatter Plots**</span>
+
+```{r fig.height=4, fig.width=4}
+plot(station_data$temp,station_data$relative_humidity)
+```
+
+
+
+***
+
+<span style="color:orangered">**Scatter Plots**</span>
+
+```{r fig.height=4, fig.width=4}
+head(station_data[,7:10])
+```
+
+
+***
+
+```{r fig.height=5, fig.width=6}
+library("GGally")
+ggpairs(station_data[,7:10],axisLabels="internal")
+```
+
+***

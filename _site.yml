@@ -33,6 +33,8 @@ navbar:
           href: r_language.html
         - text: "R Programming"
           href: r_programming.html     
+        - text: "R Statistics"
+          href: r_statistics.html   
     - text: "DataCamp"
       href: datacamp.html
     - text: "About"
