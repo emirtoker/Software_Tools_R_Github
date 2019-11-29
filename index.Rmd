@@ -26,6 +26,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html)
 
+- Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html)
+
 ***
 
 **Presentations**
