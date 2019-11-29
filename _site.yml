@@ -27,6 +27,8 @@ navbar:
           href: ncl.html  
         - text: "R and RStudio"
           href: r_and_rstudio.html
+        - text: "DataCamp"
+          href: datacamp.html
     - text: "R"
       menu:      
         - text: "R Language"
@@ -35,8 +37,8 @@ navbar:
           href: r_programming.html     
         - text: "R Statistics"
           href: r_statistics.html   
-    - text: "DataCamp"
-      href: datacamp.html
+    - text: "NetCDF"
+      href: netcdf.html
     - text: "About"
       href: about.html  
 output:
