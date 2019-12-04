@@ -32,23 +32,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Presentations**
 
-1. [Syllabus, Data and Code](http://rpubs.com/emirtoker/software_tools_week1)
+1. Syllabus, Data and Code - [Slide](http://rpubs.com/emirtoker/software_tools_week1)
 
-2. [Unix, GNU/Linux and Python](http://rpubs.com/emirtoker/software_tools_week2)
+2. Unix, GNU/Linux and Python - [Slide](http://rpubs.com/emirtoker/software_tools_week2)
 
-3. [Data Formats, Sources, Download and NCL](http://rpubs.com/emirtoker/software_tools_week3)
+3. Data Formats, Sources, Download and NCL - [Slide](http://rpubs.com/emirtoker/software_tools_week3)
 
-4. [R and RStudio](http://rpubs.com/emirtoker/software_tools_week4)
+4. R and RStudio - [Slide](http://rpubs.com/emirtoker/software_tools_week4)
 
-5. [R Language Part 1 (Class, Vector, Matrice, Array)](http://rpubs.com/emirtoker/software_tools_week5)
+5. R Language Part 1 (Class, Vector, Matrice, Array) - [Slide](http://rpubs.com/emirtoker/software_tools_week5)
 
-6. [R Language Part 2 (Data Frame, List & Read, Write, Plot)](http://rpubs.com/emirtoker/software_tools_week7)
+6. R Language Part 2 (Data Frame, List & Read, Write, Plot) - [Slide](http://rpubs.com/emirtoker/software_tools_week7)
 
-7. [R Programming Part 1 (Conditions - if, else, else if)](http://rpubs.com/emirtoker/software_tools_week9)
+7. R Programming Part 1 (Conditions - if, else, else if) - [Slide](http://rpubs.com/emirtoker/software_tools_week9)
 
-8. [R Programming Part 2 (Loops - repeat, while, for, apply group)](http://rpubs.com/emir/software_tools_week10)
+8. R Programming Part 2 (Loops - repeat, while, for, apply group) - [Slide](http://rpubs.com/emir/software_tools_week10)
 
-9. R Statistics
+9. R Statistics - [Slide](http://rpubs.com/emirtok/software_tools_week11)
 
 10. R Probability
 
