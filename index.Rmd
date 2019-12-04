@@ -10,8 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-**R Repository** -  [Github](https://github.com/emirtoker/Software_Tools_R_Github)
-
+**R Repository** -  [Github](https://github.com/emirtoker/Software_Tools_R_Github)             
 **Ninova** - [YSB 801E - CRN:15163](https://ninova.itu.edu.tr/members/ogrenci.sinif.default.aspx?eId=12600&sinifId=40084)
 
 ***
@@ -23,9 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 **Homeworks** 
 
 - HW2 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.nb.html)
-
 - HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html)
-
 - Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html)
 
 ***
@@ -33,44 +30,34 @@ knitr::opts_chunk$set(echo = TRUE)
 **Presentations**
 
 1. Syllabus, Data and Code - [Slide](http://rpubs.com/emirtoker/software_tools_week1)
-
 2. Unix, GNU/Linux and Python - [Slide](http://rpubs.com/emirtoker/software_tools_week2)
-
 3. Data Formats, Sources, Download and NCL - [Slide](http://rpubs.com/emirtoker/software_tools_week3)
-
 4. R and RStudio - [Slide](http://rpubs.com/emirtoker/software_tools_week4)
-
 5. R Language Part 1 (Class, Vector, Matrice, Array) - [Slide](http://rpubs.com/emirtoker/software_tools_week5)
-
 6. R Language Part 2 (Data Frame, List & Read, Write, Plot) - [Slide](http://rpubs.com/emirtoker/software_tools_week7)
-
 7. R Programming Part 1 (Conditions - if, else, else if) - [Slide](http://rpubs.com/emirtoker/software_tools_week9)
-
 8. R Programming Part 2 (Loops - repeat, while, for, apply group) - [Slide](http://rpubs.com/emir/software_tools_week10)
-
 9. R Statistics - [Slide](http://rpubs.com/emirtok/software_tools_week11)
-
 10. R Probability
-
 11. R Advance - Packages
 
 ***
 
 **Data**
 
-- Station Data
+- **Station Data**
     - Istanbul_Cekmekoy_Omerli_26072017-29072017_15min - [txt](https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt)
     - Istanbul_Goztepe_Precipitation_1846-2013_Monthly - [dat](https://web.itu.edu.tr/~tokerem/Goztepe_IST_Prcp_1846-2013_Monthly.dat)
     - Istanbul_Goztepe_Mean_Temperature_1839-2013_Monthly - [dat](https://web.itu.edu.tr/~tokerem/Goztepe_IST_Temp_1839-2013_Monthly.dat)
     - Istanbul_Mean_Temp_1929-2004_Daily_(European_Climate_Assessment) - [dat](https://web.itu.edu.tr/~tokerem/Istanbul_Mean_Temp_1929-2004_Daily_European_Climate_Assessment.dat)
-
-- Instrumental Climate Data
+<br/><br/>
+- **Instrumental Climate Data**
     - CRU_TR_Near-Surface_Temp_16-01-1901_16-12-2012_Monthly - [nc](https://web.itu.edu.tr/~tokerem/cru_1901_2012_tmp_TR.nc)
-
-- Re-Analysis Data
+<br/><br/>
+- **Re-Analysis Data**
     - ERA5_TR_2m_Temp_15-01-1979-15-06-2019_Monthly - [nc](https://web.itu.edu.tr/~tokerem/era5_t2m_TR.nc)
-    
-- Shapefile
+<br/><br/>
+- **Shapefile**
     - Turkey_Country_Border - [shp (zip)](https://web.itu.edu.tr/~tokerem/turkiye.zip)
     
 ***
@@ -78,13 +65,9 @@ knitr::opts_chunk$set(echo = TRUE)
 **Interactive Trainings** 
 
 1. [Getting Started with R](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
-
 2. R Language
-
 3. R Visualization and Import Data 
-
 4. R Programming
-
 5. R Statistics and Probability
 
 ***
