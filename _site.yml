@@ -39,6 +39,8 @@ navbar:
           href: r_statistics.html   
     - text: "NetCDF"
       href: netcdf.html
+    - text: "Additional Course"
+      href: additional_course.html
     - text: "About"
       href: about.html  
 output:

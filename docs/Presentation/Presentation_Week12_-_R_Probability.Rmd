@@ -1,0 +1,938 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "-- 12th WEEK --"
+author: "Emir Toker"
+date: "06/12/2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: serif
+---
+
+## **R Probability**
+
+- **Syllabus and Book**
+- **DataCamp Class**
+- **R - Elemantary Statistics**
+- **Basic Data Visualization** 
+- **R - Probability**
+
+<span style="color:brown">**Coffee Break**</span>
+
+- **R - Common Probability Distributions**
+- **Practice** : Write A Function
+
+<span style="color:brown">**QUIZ**</span>
+
+**Next Week**
+
+
+
+# **Syllabus and Book**
+
+
+## **Syllabus**
+
+![](syl_w12.png)
+
+## **Book**
+
+![](book_w12_a.png) ![](book_w12_b.png)
+
+
+
+# **DataCamp Class**
+## **DataCamp Class**
+
+![](dc_w12.png)
+
+[LINK](https://www.datacamp.com/enterprise/software-tools-introduction-to-r)
+
+
+
+
+#  **R - Elemantary Statistics**
+##  **R - Elemantary Statistics**
+
+![](pop_sample.png)
+
+##  **R - Elemantary Statistics**
+
+**Centrality**: <span style="color:orangered">**Mean**</span>, Median, Mode
+
+- Measures of centrality are commonly used to explain large collections of data by describing where numeric observations are centered.
+
+![](art_mean.png)
+
+
+##  **R - Elemantary Statistics**
+
+**Centrality**: Mean, <span style="color:orangered">**Median**</span>, Mode
+
+- **Median** : “middle magnitude” of your observations
+
+![](median.png)
+
+0 . 0 . <span style="color:orangered">0</span> . 0 . 0
+
+o . o . <span style="color:orangered">o . o</span> . o . o
+
+
+
+
+##  **R - Elemantary Statistics**
+
+**Centrality**: Mean, Median, <span style="color:orangered">**Mode**</span>
+
+- **Mode** : Simply the “most common” observation.
+
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4
+
+![](mod.png)
+![](art_mean_a.png)
+
+2 , 2 , 2 , 2.2 , 3 , 3 , 4, 4.4 ( n=8 , n/2 = 4)
+![](median_a.png)
+
+
+##  **R - Elemantary Statistics**
+
+**Centrality**: Mean, Median, Mode
+
+
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+
+- mean(xdata)
+- median(xdata)
+- min(xdata)
+- max(xdata)
+- range(xdata)
+
+
+
+##  **R - Elemantary Statistics**
+
+<span style="color:orangered">**Quantiles, Percentiles**</span>, and the Five-Number Summary
+
+- A quantile is a value indicates an observation rank when compared to all the other present observations.
+- For example, the **median** is itself a **quantile**. It’s the 0.5th quantile. 
+- Alternatively, quantiles can be expressed as a **percentile.**
+
+<span style="color:orangered">**The median = the 0.5th quantile = The 50th percentile**</span>
+
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4
+
+2 , 2 , 2 , <span style="color:orangered">2.2 , 3</span> , 3 , 4, 4.4
+
+0.5th quantile = median = 2.6
+
+##  **R - Elemantary Statistics**
+
+<span style="color:orangered">**Quantiles, Percentiles**</span>, and the Five-Number Summary
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+quantile(xdata,prob=0.8) # the 0.8th quan- tile (or 80th percentile)
+
+quantile(xdata,prob=c(0,0.25,0.5,0.75,1))
+
+summary(xdata) # A quartile is a type of quantile.
+```
+
+
+##  **R - Elemantary Statistics**
+
+Quantiles, Percentiles, and <span style="color:orangered">**the Five-Number Summary**</span>
+
+![](five_number_summary.png)
+
+A **quartile** is a type of quantile.
+
+
+##  **R - Elemantary Statistics**
+
+**Quantiles** , Percentiles, and the Five-Number Summary
+
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+
+- quantile(xdata)
+- summary(xdata)
+
+
+##  **R - Elemantary Statistics**
+
+**Spread**: Variance, Standard Deviation, and the Interquartile Range
+
+- How dispersed your data are. For this, measures of spread are needed.
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+
+mean(xdata)
+mean(ydata)
+```
+
+
+
+##  **R - Elemantary Statistics**
+
+```{r fig.height=3, fig.width=8}
+plot(xdata,type="n",xlab="",ylab="data vector",yaxt="n",bty="n")
+abline(h=c(3,3.5),lty=2,col="red")
+abline(v=2.825,lwd=2,lty=3)
+text(c(0.8,0.8),c(3,3.5),labels=c("x","y"))
+points(jitter(c(xdata,ydata)),c(rep(3,length(xdata)), rep(3.5,length(ydata))))
+```
+
+the observations in *ydata* are more “spread out”
+
+
+##  **R - Elemantary Statistics**
+
+**Spread**: <span style="color:orangered">**Variance**</span>, Standard Deviation, and the Interquartile Range
+
+- The sample **variance** measures the degree of the spread of numeric observations around their arithmetic mean.
+
+![](var1.png)
+![](var2.png)
+
+##  **R - Elemantary Statistics**
+
+**Spread**: <span style="color:orangered">**Variance**</span>, Standard Deviation, and the Interquartile Range
+
+2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4 ( mean = 2.825)
+
+![](var3.png)
+
+##  **R - Elemantary Statistics**
+
+**Spread**: Variance, <span style="color:orangered">**Standard Deviation**</span>, and the Interquartile Range
+
+- The standard deviation is simply the square root of the variance. The scale of the original observations.
+
+![](sd1.png)
+![](sd2.png)
+
+**0.953 represents the average distance of each observation from the mean**
+
+
+
+##  **R - Elemantary Statistics**
+
+**Spread**: Variance, Standard Deviation, and <span style="color:orangered">**the Interquartile Range**</span>,
+
+- Unlike the variance and standard deviation, the interquartile range (IQR) is **not** computed with respect to the sample mean.
+
+![](qrt.png)
+
+- IQR is computed as the difference between the upper and lower quartiles of your data
+
+
+##  **R - Elemantary Statistics**
+
+**Spread**: Variance, Standard Deviation, and the Interquartile Range
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+
+var(xdata)
+sd(xdata)
+IQR(xdata)
+```
+
+
+##  **R - Elemantary Statistics**
+
+![](summary_a.png)
+
+##  **R - Elemantary Statistics**
+
+![](summary_b.png)
+
+![](summary_c.gif)
+
+
+##  **R - Elemantary Statistics**
+
+**Spread**: Variance, Standard Deviation, and the Interquartile Range
+
+
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+
+- var()
+- sd()
+- IQR()
+
+
+
+##  **R - Elemantary Statistics**
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+- Investigate the relationship between two numeric variables to assess trends
+- The *covariance* expresses how much two numeric variables “change together” and the nature of that relationship, whether it is positive or negative. 
+
+![](covar_a.png)
+
+##  **R - Elemantary Statistics**
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+x = {x1,x2,...,xn}
+
+y = {y1,y2,...,yn}
+
+for i = 1,. . . ,n
+
+![](covar_b.png)
+
+
+When you get a positive result for rxy, it shows that there is a positive lin- ear relationship. When rxy = 0, this indicates that there is no linear relationship. 
+
+
+##  **R - Elemantary Statistics**
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+x = {2,4.4,3,3,2,2.2,2,4}
+
+y = {1,4.4,1,3,2,2.2,2,7}
+
+mean x and y = 2.825
+
+![](covar_c.png)
+positive relationship
+
+##  **R - Elemantary Statistics**
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+```{r fig.height=4, fig.width=4}
+x <- c(2,4.4,3,3,2,2.2,2,4)
+y <- c(1,4.4,1,3,2,2.2,2,7)
+plot(x,y, col="red", pch=13,cex=1.5 )
+```
+
+
+##  **R - Elemantary Statistics**
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+- Correlation allows you to interpret the covariance further by identifying the strength of any association.
+
+![](corr_1.png)
+
+
+##  **R - Elemantary Statistics**
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+- Most common of these is Pearson’s product-moment correlation coefficient. (R default)
+
+- The correlation coefficient estimates the nature of the linear relationship between two sets of observations
+
+![](corr_a.png)
+
+−1 ≤ *ρ*xy ≤ 1
+
+ρxy = 1, which is a perfect positive linear relationship
+
+
+##  **R - Elemantary Statistics**
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+x = {2,4.4,3,3,2,2.2,2,4}
+
+y = {1,4.4,1,3,2,2.2,2,7}
+
+(mean x and y = 2.825)
+
+(*s*x = 0.953 and *s*y = 2.013)
+
+(*r*xy = 1.479)
+
+![](corr_b.png)
+
+*ρ*xy is positive
+
+
+##  **R - Elemantary Statistics**
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+```{r fig.height=4, fig.width=4}
+x <- c(2,4.4,3,3,2,2.2,2,4)
+y <- c(1,4.4,1,3,2,2.2,2,7)
+plot(x,y, col="red", pch=13,cex=1.5)
+abline(lm(y ~ x))
+```
+
+
+
+##  **R - Elemantary Statistics**
+
+Covariance and Correlation
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+
+cov(xdata,ydata)
+
+cor(xdata,ydata)
+```
+
+
+
+##  **R - Elemantary Statistics**
+
+Covariance and Correlation
+
+- cov( , )
+- cor( , )
+
+
+##  **R - Elemantary Statistics**
+
+![](corr_2.png)
+
+
+##  **R - Elemantary Statistics**
+
+![](corr_3.svg)
+
+
+![](corr_4.png)
+
+
+
+
+
+#  **Basic Data Visualization** 
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r}
+station_data <- read.csv("https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt", header=T, sep = ";")
+
+head(station_data)
+
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+head(station_data$temp)
+barplot(station_data$temp)
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r}
+station_data$temp
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+table(station_data$temp)
+
+f_temp <- table(station_data$temp)
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+barplot(f_temp)
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=8}
+barplot(f_temp,beside=TRUE,horiz=TRUE,las=1,
+        main="Frequency of Station Temperature",
+        names.arg=c("T"),legend.text=c("TEMP-f"),
+        args.legend=list(x="bottomright"))
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=8}
+library(ggplot2)
+qplot(factor(station_data$temp),geom="bar")
+```
+
+
+##  **Basic Data Visualization** 
+
+Barplots and <span style="color:orangered">**Pie Charts**</span>
+
+```
+head(station_data$precipitation)
+
+pie(table(station_data$precipitation),labels=c("V1","V2","V3","V4","V5"),col=c("white","blue","green","orange"),main="pie chart for precipitation")
+```
+
+![](prepie.png)
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+hist(station_data$temp)
+```
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+hist(station_data$tem,breaks=seq(19,32,1),col="green",main="Temp",xlab="HP")
+abline(v=c(mean(station_data$temp),median(station_data$temp)), col=c("blue","red"),lty=c(2,3),lwd=2)
+legend("topright",legend=c("mean T","median T"),lty=c(2,3),lwd=2,col=c("blue","red"))
+```
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+qplot(station_data$temp,geom="blank",main="Temp Hist",xlab="Temp")+ 
+  geom_histogram(color="black",fill="white",breaks=seq(19,32,1),closed="right") + 
+  geom_vline(mapping=aes(xintercept=c(mean(station_data$tem), median(station_data$tem)), linetype=factor(c("mean","median"))) , col=c("blue","red"),show.legend=TRUE)+ 
+  scale_linetype_manual(values=c(2,3)) + 
+  labs(linetype="")
+```
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Boxplot**</span>
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$temp)
+```
+</div>
+
+<div class="column-right0">
+```{r fig.height=4, fig.width=4}
+mean(station_data$temp)
+median(station_data$temp)
+quantile(station_data$temp)
+# summary(station_data$temp)
+```
+</div>
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Histogram and Boxplot**</span>
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+```{r fig.height=4, fig.width=4}
+hist(station_data$temp)
+abline(v=median(station_data$temp),col="red")
+```
+</div>
+
+<div class="column-right0">
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$temp,horizontal = T)
+abline(v=median(station_data$temp),col="red")
+```
+</div>
+
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Boxplot**</span>
+
+![](hist_5.png)
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Scatter Plots**</span>
+
+```{r fig.height=4, fig.width=4}
+plot(station_data$temp,station_data$relative_humidity)
+```
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Scatter Plots**</span>
+
+```{r fig.height=4, fig.width=4}
+head(station_data[,7:10])
+```
+
+
+##  **Basic Data Visualization** 
+
+```{r fig.height=5, fig.width=6}
+library("GGally")
+ggpairs(station_data[,7:10],axisLabels="internal")
+```
+
+
+
+
+
+# **R - Probability**
+
+## **R - Probability**
+
+
+A **probability** is a number that describes the *“magnitude of chance”* associated with making a particular observation or statement. 
+
+![](zar_a.png)
+
+It’s always a number **between 0 and 1** (inclusive) and is often expressed as a fraction.
+
+
+##
+
+![](zar_2.png)
+
+##
+
+```{r fig.height=5}
+X.outcomes <- c(2:12)
+X.prob <- c((1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab="x",ylab="Pr(X = x)", main = "probability distribution")
+```
+
+
+##
+
+```{r fig.height=5}
+X.outcomes <- c(2:12)
+X.prob <- c((1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36))
+X.cumul <- cumsum(X.prob)
+barplot(X.cumul,names.arg=X.outcomes,space=0,xlab="x",ylab="Pr(X <= x)", main = "cumulative probability distribution")
+```
+
+
+##
+
+```{r fig.height=5}
+X.outcomes <- c(2:12)
+X.prob <- c((1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab="x",ylab="Pr(X = x)", main = "probability distribution")
+abline(v=c(0.5:10.5))
+```
+
+## PDF - Probability Density Function
+
+<style>
+
+.column-right1{
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+.column-left1{
+  float: left;
+  width: 60%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left1">
+![](zar_2.png)
+</div>
+
+<div class="column-right1">
+![](formula.png)
+```
+lower < 7 < upper
+
+X >= 2  &  X <= 7
+(X[lower] - 1)/36
+
+X > 7 & X <= 12
+13 - X[upper])/36
+```
+</div>
+
+
+
+##
+
+```{r fig.height=4, fig.width=6}
+X.outcomes <- c(1,2,3,4,5,6,7,8,9,10,11,12,13)
+
+lower <- X.outcomes >= 2 & X.outcomes <= 7
+upper <- X.outcomes > 7 & X.outcomes <= 12
+
+fx <- rep(0,length(X.outcomes))
+fx[lower] <- (X.outcomes[lower] - 1)/36
+fx[upper] <- (13 - X.outcomes[upper])/36
+
+plot(X.outcomes,fx,type="l",ylab="f(x)", xlim = c(0,14), main = "probability density function")
+abline(h=0,col="gray",lty=2)
+```
+
+
+
+##
+
+```{r fig.height=4, fig.width=6}
+fx.specific <- (4.5-1)/36
+
+fx.specific.area <- 3.5*fx.specific*0.5
+
+fx.specific.vertices <- rbind(c(1,0),c(4.5,0),c(4.5,fx.specific))
+
+plot(X.outcomes,fx,type="l",ylab="f(x)", xlim = c(0,14), main = "probability density function")
+abline(h=0,col="gray",lty=2)
+polygon(fx.specific.vertices,col="gray",border=NA)
+abline(v=4.5,lty=3)
+text(4,0.01,labels=fx.specific.area)
+```
+
+## **R - Probability - <span style="color:orangered">*Shape*</span>**
+
+- **Symmetry** : Draw a vertical line down the center, and it is equally reflected with 0.5 probability.
+
+- **Skew** : If a distribution is asymmetric, look at the “**tail**” of a distribution. *Positive* or *right* *skew* indicates a tail extending longer to the right of center.
+
+- **Modality** : Modality describes the number of easily identifiable peaks in the distribution of interest. *Unimodal*, *bimodal*, and *trimodal...*
+
+
+##
+
+![](shape_r.png)
+
+##
+
+```{r}
+table(station_data$temp)
+
+df_temp_table <- data.frame(table(station_data$temp))
+df_temp_table
+```
+
+
+##
+
+```{r fig.height=6}
+barplot(df_temp_table$Freq/121,names.arg=df_temp_table$Var1)
+```
+
+
+
+
+
+# **R - Common Probability Distributions**
+
+## **R - Common Probability Mass Functions**
+
+For discrete random variables
+
+- **Bernoulli Distribution** : has only two possible outcomes, such as success or failure.
+
+![](ber_1.png)
+
+![](ber_2.png)
+
+
+## **Bernoulli Distribution**
+```{r fig.height=4, fig.width=6}
+x<-1
+p <- 0.6
+
+b_fx <- p^x*((1-p)^(1-x))
+
+barplot(c(1-p,p),names.arg=c(0,1))
+```
+
+
+
+## **R - Common Probability Mass Functions**
+
+For discrete random variables
+
+- **Binomial Distribution** : The *binomial* *distribution* is the distribution of successes in **n** number of trials involving binary discrete random variables.
+
+![](binomial_r.png)
+
+
+## **Binomial Distribution**
+
+There are four functions associated with Binomial distributions. 
+
+- dbinom(x, size, prob)
+- pbinom(x, size, prob)
+- qbinom(p, size, prob)
+- rbinom(n, size, prob)
+-
+- **x** is a vector of numbers.
+- **p** is a vector of probabilities.
+- **n** is number of observations.
+- **size** is the number of trials.
+- **prob** is the probability of success of each trial.
+
+## **Binomial Distribution - dbinom**
+
+It is a density or distribution function.
+
+```{r}
+x <- 1
+size <- 8
+prob <- 1/2
+dbinom(x , size , prob)
+
+x <- 4
+dbinom(x , size , prob)
+
+x <- 0:8
+dbinom(x , size , prob)
+```
+
+
+## **Binomial Distribution - dbinom**
+
+```{r fig.height=5}
+bin <- dbinom(x = 0:8 , size = 8 , prob = 0.5)
+plot(x=0:8, y = bin)
+```
+
+
+
+
+## **Binomial Distribution - dbinom**
+
+```{r fig.height=4}
+X.outcomes <- c(1:13)
+X.prob <- c((0/36),(1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36),(0/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab="x",ylab="Pr(X = x)", main = "probability distribution")
+```
+
+## **Binomial Distribution - dbinom**
+
+```{r fig.height=4}
+X.outcomes <- c(1:13)
+X.prob <- c((0/36),(1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36),(0/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab="x",ylab="Pr(X = x)", main = "probability distribution")
+
+lines(dbinom(x = 0:12, size = 36, prob = 1/6), col= "red")
+```
+
+
+## **R - Common Probability Mass Functions**
+
+- **Poisson Distribution** : important and rarely seen event.
+
+![](poisson_r.png)
+
+λp should be interpreted as the “mean number of occurrences”
+
+
+## **Poisson Distribution**
+
+There are three functions associated with Binomial distributions. 
+
+- dpois(x, lambda)
+- ppois(q, lambda, lower.tail)
+- qpois(p, lambda, lower.tail)
+- rpois(n, lambda)
+-
+- **x** : successes in a period
+- **λ** : the expected number of events
+- **lower.tail**  = TRUE for left tail
+- **q** vector of quantiles
+- **n** number of random values to return
+- **p** vector of probabilities
+
+
+## **Poisson Distribution**
+
+```{r fig.height=5}
+plot(dpois(0:10,2.22),type = "o", col="red")
+lines(dpois(0:10,4.22), type = "o", col = "blue")
+lines(dpois(0:10,7.22), type = "o", col = "green")
+```
+
+
+
+# Next Week
+
+##
+
+- **R - Common Probability Density Functions**
+
+    - Uniform
+    - Normal
+    - Student’s t-distribution
+    - Exponential
+    - (gamma, beta, log-normal)
+
+- **Practice : Write A Function** 
+
+- **Practice : Netcdf Packages** 
+
+- **QUIZ**
+
+
+
+

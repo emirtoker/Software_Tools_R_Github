@@ -1,0 +1,736 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "-- 12th WEEK --"
+author: "Emir Toker"
+date: "06/12/2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: simple
+---
+
+
+## Ek ders
+
+- Data Frame
+- List
+- Factor
+- Table
+- Structures and Attributes
+- Netcdf Structure
+
+Break
+
+- Which
+- apply Group
+- Functions
+- String Manipulation
+
+
+
+
+# Data Frame
+## Data Frame
+
+![](data_frame.png)
+ Heterojen, sütunların satır sayısı birbirine eşit
+
+## Data Frame
+
+```{r}
+v1 <- c("ahmet","mehmet","hüseyin")
+v2 <- c( TRUE, FALSE, FALSE)
+m1 <- matrix(1:6 , 3, 2)
+
+df1 <- data.frame(v1,v2,m1)
+df1
+```
+
+```
+df1[1]
+df1[[1]]
+str(df1)
+
+df1 <- data.frame(v1,v2,m1,stringsAsFactors = F)
+df1[1]
+df1[[1]]
+str(df1)
+df1$v1
+
+```
+
+## Data Frame
+
+```{r}
+df1
+```
+
+```
+df1[1:4]
+df1[1:4,3]
+df1[1:6,3]
+df1[3,1:4]
+```
+
+```{r}
+df1$v2
+```
+
+```
+as.character(df1$v2)
+df1$v2
+df1$v2 <- as.character(df1$v2)
+as.numeric(df1$v2)
+```
+
+
+
+## Data Frame
+
+```{r}
+attributes(df1)
+```
+
+```
+attributes(df1)$names
+attr(df1,"names")
+
+attr(df1,"names") <- c("isim","logic","sayi1","sayi2")
+df1
+attr(df1,"$row.names") <- c("a","b","c")
+df1
+
+```
+
+
+
+## Data Frame
+
+```{r}
+read.csv("https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt")
+```
+
+
+## Data Frame
+
+```{r}
+read.csv("https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt", sep = ";")
+
+sta1 <- read.csv("https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt", sep = ";")
+```
+
+## Data Frame
+
+```{r}
+str(sta1)
+```
+
+## Data Frame
+
+```{r}
+attributes(sta1)
+```
+
+## Data Frame
+
+```{r}
+sta1[25:121,2:10]
+
+sta2 <- sta1[25:121,2:10]
+```
+
+
+## Data Frame
+
+```{r fig.height=5}
+plot(sta2$temp)
+```
+
+
+## Data Frame
+
+```{r fig.height=5}
+plot(sta2$precipitation)
+```
+
+
+## Data Frame
+
+```{r fig.height=5}
+sta2$temp<20
+
+which(sta2$temp<20)
+
+temp_min_indis <- which(sta2$temp<20)
+```
+
+
+## Data Frame
+
+```{r fig.height=5}
+temp_min_indis
+
+sta2$precipitation[temp_min_indis]
+
+sta2$precipitation[sta2$temp<20]
+
+max(sta2$precipitation)
+```
+
+
+## Data Frame
+
+```{r fig.height=5}
+plot(sta2$temp,sta2$precipitation)
+```
+
+
+## Data Frame
+
+```{r fig.height=5}
+cov(sta2$temp,sta2$precipitation)
+cor(sta2$temp,sta2$precipitation)
+```
+
+
+
+# List
+
+## List
+![](list2.png)
+
+## List
+
+```{r}
+v1 <- c("ahmet","mehmet","hüseyin")
+v2 <- c( TRUE, FALSE, FALSE)
+m1 <- matrix(1:6 , 3, 2)
+df1 <- data.frame(v1,v2,m1)
+
+l1 <- list(v1,v2,m1,df1)
+l1
+```
+
+
+## List
+
+```{r}
+l1[1]
+l1[1][1]
+l1[[1]]
+l1[[1]][1]
+```
+
+## List
+
+```{r}
+l1[1:2]
+```
+```
+l1[1:2,2:3]
+```
+```{r}
+str(l1)
+```
+
+
+
+## List
+
+```{r}
+attributes(l1)
+
+l1[4]
+```
+
+```
+df2 <- l1[4]
+df2
+
+df2 <- l1[[4]]
+df2
+```
+
+
+
+
+# Factor
+## Factor
+
+```{r}
+char1 <- c("a","b","c","a","d","d","a")
+fac1 <- factor(char1)
+fac1
+fac1[4]
+
+num1 <- c(1,4,2,5,7,3,2,1,1,1,2)
+fac2 <- factor(num1)
+fac2
+```
+
+
+# Table
+## Table
+
+```{r}
+char1 <- c("a","b","c","a","d","d","a")
+tab1 <- table(char1)
+tab1
+tab1[2]
+
+num1 <- c(1,4,2,5,7,3,2,1,1,1,2)
+tab2 <- table(num1)
+tab2
+```
+
+
+
+
+# Netcdf Structure
+## Netcdf Structure
+
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/netcdf.html)
+
+# Break
+
+
+# Which
+## 
+
+```{r}
+which(letters == "g")
+
+num1 <- c(1,4,2,5,7,3,2,1,1,1,2)
+which(num1 != 1)
+
+which(num1 != c(1,2))
+
+which(num1 != 1 & num1 != 2)
+```
+
+
+## 
+
+```{r}
+head(sta1)
+
+which((sta1$hour == 18) & (sta1$minutes == 15))
+
+```
+
+
+## 
+
+```{r}
+m2 <- matrix(1:16,4,4)
+m2
+
+which.min(m2)
+
+which(m2-7 > 0)
+```
+
+
+##
+
+```{r}
+which(m2-7 > 0, arr.ind=TRUE)
+
+which(m2-7 > 0, arr.ind=TRUE, useNames = FALSE)
+```
+
+
+##
+
+```{r}
+which(ll <- c(TRUE, FALSE, TRUE, NA, FALSE, FALSE, TRUE))
+
+ll
+
+seq(ll)
+
+letters[seq(ll)]
+```
+
+
+
+
+
+# apply Group
+
+## apply 
+
+apply(X, MARGIN, FUN)
+
+**takes data frame or matrix as an input**
+
+- **x**: an array or matrix
+- **MARGIN**:  take a value or range between 1 and 2 to define where to apply the function:
+      - **MARGIN**=1`: the manipulation is performed on rows
+      - **MARGIN**=2`: the manipulation is performed on columns
+      - **MARGIN**=c(1,2)` the manipulation is performed on rows and columns
+- **FUN**: tells which function to apply. Built functions like mean, median, sum, min, max..
+
+**gives output in vector, list or array**
+
+## apply 
+
+![](apply_1.png)
+
+## apply 
+
+
+```{r}
+m1 <- matrix( 1:10 , nrow=5, ncol=6)
+m1
+a_m1 <- apply(m1, 2, sum)
+a_m1
+```
+
+## apply 
+
+```{r}
+a_m1
+```
+
+![](apply1.png)
+
+
+
+## lapply 
+
+lapply(X, FUN)
+
+**takes list, vector or data frame as input **
+
+- **X**: A vector or an object
+- **FUN**: Function applied to each element of x	
+
+lapply() function does not need MARGIN
+
+**gives output in list**
+
+## lapply 
+
+
+```{r}
+v1
+lapply(v1,max)
+```
+
+
+## lapply 
+
+
+```{r}
+l1
+```
+
+
+## lapply 
+
+
+```{r}
+#l1
+lapply(l1, FUN = dim)
+```
+
+
+## lapply 
+
+```{r}
+#l1
+lapply(l1,"[",1)
+```
+
+
+## lapply 
+
+![](lapply2.png)
+
+## lapply 
+
+
+```{r}
+l2 <- list(x = 1:5, y = 6:10, z = 11:15)
+lapply(l2, FUN = median)
+```
+
+
+## lapply 
+
+
+```{r}
+head(cars)
+df3 <- cars
+
+lapply(df3, min)
+```
+
+
+## sapply 
+
+sapply(X, FUN)
+
+**takes list, vector or data frame as input**
+
+- **X**: A vector or an object
+- **FUN**: Function applied to each element of x
+
+**gives output in vector or matrix**
+
+
+## sapply 
+
+
+```{r}
+#head(cars)
+#df3 <- cars
+
+lapply(df3, min)
+
+sapply(df3, min)
+```
+
+
+## tapply 
+
+tapply(X, INDEX, FUN = NULL)
+
+ for each factor variable in a vector
+
+- **X**: An object, usually a vector
+- **INDEX**: A list containing factor
+- **FUN**: Function applied to each element of x
+
+
+## tapply 
+
+
+```{r}
+iris
+```
+
+
+
+## tapply 
+
+```{r}
+tapply(iris$Sepal.Width, iris$Species, median)
+```
+
+
+## mapply 
+
+**mapply** - For when you have several data structures (e.g. vectors, lists) and you want to apply a function to the 1st elements of each, and then the 2nd elements of each
+
+```{r}
+sum(1:5, 1:5, 1:5)
+
+rep(1:4, 4:1)   # replicates
+```
+
+## mapply 
+
+```{r}
+mapply(sum, 1:5, 1:5, 1:5) 
+
+mapply(rep, 1:4, 4:1)   # replicates
+```
+
+
+## sweep
+
+```{r}
+m3 <- matrix(4:15,4,3)
+m3
+m3_mean <- apply(m3, 2, mean)
+m3_mean
+m3_sd <- apply(m3, 2, sd)
+m3_sd
+```
+
+
+## sweep
+
+```{r}
+m3_a <- sweep(m3, 2, m3_mean,"-")
+m3_a
+
+m3_b <- sweep(m3_a, 2, m3_sd, "/")
+m3_b
+```
+
+
+
+## aggregate
+
+```{r}
+sta2
+```
+
+
+## aggregate
+
+```{r}
+aggregate(sta2$temp, by=sta2["hour"], FUN=sum)
+```
+
+
+
+
+
+
+
+
+# Functions
+## Functions
+
+```{r}
+celsius_to_kelvin <- function(temp_C) {
+  temp_K <- temp_C + 273.15
+  return(temp_K)
+}
+
+celsius_to_kelvin(19.5)
+
+
+sum.of.squares <- function(x,y) {
+  x^2 + y^2
+}
+
+sum.of.squares(3,5)
+
+```
+
+
+## Functions
+
+```{r fig.height=4}
+red.plot <- function(x, y) {
+  plot(x, y, col="red")
+}
+
+red.plot(runif(20), runif(20))
+```
+
+
+## Functions
+
+```{r fig.height=4}
+red.plot <- function(x, y, ...) {
+  plot(x, y, col="red", ...)
+}
+
+red.plot(runif(20), runif(20), xlab="My x axis", ylab="My y axis", main="redddd")
+```
+
+
+## Functions
+
+```{r fig.height=4}
+red.plot <- function(x, y, ...) {
+  plot(x, y, col="red", ...)
+}
+
+red.plot(sta1$temp, sta1$relative_humidity, xlab="My x axis", ylab="My y axis", main="redddd")
+```
+
+
+
+## Functions
+
+```{r fig.height=4}
+
+lets_guess <- function(x)  
+{  
+  n=28
+  if(missing(x)) print("enter a value");
+  if(x<0 | x>40) print("value must be 0<=x<=40)")
+  else if(x<n) print("enter a higher value")
+  else if(x>n) print("enter a lower value")
+  else if(x==n) print(c("you got it ",x))
+  else print("what are you doing? guess a number")
+}
+```
+
+
+
+
+
+
+# String Manipulation
+## String Manipulation
+
+- grep()
+- nchar()
+- paste()
+- sprintf()
+- substr()
+- strsplit()
+- regex()
+- gregexpr()
+
+## String Manipulation
+
+
+```{r}
+grep("b+", c("abc", "bda", "cca a", "abd"))
+
+str <- "Big Data at DataFlair"
+nchar(str)
+
+paste("Hadoop", "Spark", "and", "Flink")
+
+paste("Hadoop", "Spark", "and", "Flink",sep = "")
+```
+
+
+
+
+
+## String Manipulation
+
+
+```{r}
+num <- "12345678"
+substr(num, 4, 5)
+
+str = "Splitting sentence into words"
+strsplit(str, " ")
+strsplit(str, "i")
+
+```
+
+
+## String Manipulation
+
+
+```{r}
+x <- "Learning To MANIPULATE strinGS in R"
+
+tolower(x)
+
+toupper(x)
+
+x <- "This is A string."
+
+chartr(old = "A", new = "a", x)
+```
+
+
+## String Manipulation
+
+
+```{r}
+y <- "Tomorrow I plzn do lezrn zbout dexduzl znzlysis."
+
+chartr(old = "dz", new = "ta", y)
+
+streets <- c("Main", "Elm", "Riverbend", "Mario", "Frederick")
+abbreviate(streets)
+abbreviate(streets, minlength = 2)
+
+```
+
+
+

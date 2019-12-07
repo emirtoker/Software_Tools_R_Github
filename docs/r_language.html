@@ -350,6 +350,9 @@ $(document).ready(function () {
   <a href="netcdf.html">NetCDF</a>
 </li>
 <li>
+  <a href="additional_course.html">Additional Course</a>
+</li>
+<li>
   <a href="about.html">About</a>
 </li>
       </ul>
@@ -701,9 +704,9 @@ b</code></pre>
 <div id="data-types---datetime" class="section level3">
 <h3><strong>Data Types - Date/Time</strong></h3>
 <pre class="r"><code>Sys.Date( ) </code></pre>
-<pre><code>## [1] &quot;2019-11-29&quot;</code></pre>
+<pre><code>## [1] &quot;2019-12-07&quot;</code></pre>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Fri Nov 29 18:49:31 2019&quot;</code></pre>
+<pre><code>## [1] &quot;Sat Dec  7 20:00:31 2019&quot;</code></pre>
 <pre class="r"><code>date &lt;- &quot;2007-06-22&quot;
 class(date)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -726,7 +729,7 @@ class(date_difference)</code></pre>
 %Y    4-digit year                2007</code></pre>
 <pre class="r"><code>today &lt;- Sys.Date()
 format(today, format=&quot;%B %d %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;November 29 2019&quot;</code></pre>
+<pre><code>## [1] &quot;December 07 2019&quot;</code></pre>
 <hr />
 </div>
 <div id="coercion" class="section level3">
@@ -881,13 +884,13 @@ a</code></pre>
 <pre><code>## [1]   3.44   2.50  -1.00 -10.00</code></pre>
 <p><strong>Random - Uniform Distribution</strong></p>
 <pre class="r"><code>runif(15, min = 20, max = 45)</code></pre>
-<pre><code>##  [1] 31.18328 43.06922 39.72476 33.20980 42.32997 23.78081 28.95855
-##  [8] 29.97994 24.56780 28.58051 31.54510 25.59295 26.22649 35.19138
-## [15] 34.24313</code></pre>
+<pre><code>##  [1] 39.45223 41.56453 40.92077 35.36806 33.84879 32.63306 42.09543
+##  [8] 44.75914 28.70768 37.45697 39.09340 21.14811 39.37238 40.89060
+## [15] 23.36600</code></pre>
 <pre class="r"><code>runif(15, 20, 45)</code></pre>
-<pre><code>##  [1] 27.47961 43.26466 21.28781 35.04926 39.06555 42.28170 25.79439
-##  [8] 44.27973 30.42625 26.66434 29.15939 33.51073 22.24236 42.89204
-## [15] 25.73266</code></pre>
+<pre><code>##  [1] 34.02231 44.41970 21.43025 40.55482 23.49121 32.94720 42.15198
+##  [8] 21.82878 44.18870 25.27883 27.35574 32.47176 38.06060 39.50825
+## [15] 40.84975</code></pre>
 <pre class="r"><code>runif(25, 60, 50)</code></pre>
 <pre><code>## Warning in runif(25, 60, 50): NAs produced</code></pre>
 <pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
