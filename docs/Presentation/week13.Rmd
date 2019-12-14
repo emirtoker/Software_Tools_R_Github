@@ -1,0 +1,83 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "-- 13th WEEK --"
+author: "Emir Toker"
+date: "13/12/2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: serif
+---
+
+## **R Probability**
+
+- **Syllabus and Book**
+- **DataCamp Class**
+- **Additional Course**
+- **R - Common Probability Distributions**
+- **Practice** : Write A Function for outliers
+
+<span style="color:brown">**Coffee Break**</span>
+
+- **R - NETCDF**
+
+<span style="color:brown">**QUIZ**</span>
+
+**Next Week**
+
+
+# **Syllabus and Book**
+## **Syllabus and Book**
+
+![](syllabus_13.png)
+
+## **Book**
+
+![](book_w12_a.png) ![](book_w12_b.png)
+
+
+
+
+
+# **DataCamp Class**
+## **DataCamp Class**
+
+![](dt_13.png)
+
+[LINK](https://www.datacamp.com/enterprise/software-tools-introduction-to-r/assignments)
+
+
+# **Additional Course**
+
+## **Additional Course**
+
+
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/additional_course.html)
+
+
+# **R - Common Probability Distributions**
+
+## **R - Common Probability Distributions**
+
+![](https://emirtoker.github.io/Software_Tools_R_Github/r_probability.html)
+
+
+#<span style="color:brown">**Coffee Break**</span>
+
+
+# **R - NETCDF**
+
+## **R - NETCDF**
+
+![NetCDF - Web LINK](https://emirtoker.github.io/Software_Tools_R_Github/netcdf.html)
+
+
+
+
+# <span style="color:brown">**QUIZ**</span>
+
+## <span style="color:brown">**QUIZ**</span>
+
+(https://kahoot.it/)
+
+# **Next Week**
+
