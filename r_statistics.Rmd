@@ -1,6 +1,8 @@
 ---
+title: "R Statistics"
 output: html_document
 ---
+
 ***
 
 # **1. R Elemantary Statistics** 

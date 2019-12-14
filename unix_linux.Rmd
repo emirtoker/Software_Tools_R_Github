@@ -1,11 +1,7 @@
 ---
-title: ""
+title: "Unix, GNU/Linux and Terminal"
 output: html_document
 ---
-
-***
-
-# **Unix, GNU/Linux and Terminal**
 
 ***
 

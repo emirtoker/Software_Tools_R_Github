@@ -1,11 +1,7 @@
 ---
-title: ""
+title: "Python and Jupyter"
 output: html_document
 ---
-
-***
-
-# **Python and Jupyter**
 
 ***
 

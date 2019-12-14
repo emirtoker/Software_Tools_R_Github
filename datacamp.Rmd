@@ -1,9 +1,7 @@
 ---
+title: "DataCamp - Class"
+output: html_document
 ---
-
-***
-
-# **DataCamp - Class**
 
 ***
 ![](Presentation/dc1.png)

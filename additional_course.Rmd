@@ -1,9 +1,9 @@
 ---
+title: "Additional Course"
 output: html_document
 ---
 
-
-# Additional Course
+***
 
 - Data Frame
 - List

@@ -1,10 +1,7 @@
 ---
+title: "NCL"
 output: html_document
 ---
-
-***
-
-# **NCL**
 
 ***
 

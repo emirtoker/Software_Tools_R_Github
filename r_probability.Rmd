@@ -1,11 +1,9 @@
 ---
+title: "R Probability"
 output: html_document
 ---
 
 ***
-
-## **R - Probability**
-
 
 A **probability** is a number that describes the *“magnitude of chance”* associated with making a particular observation or statement. 
 
