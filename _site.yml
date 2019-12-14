@@ -30,13 +30,15 @@ navbar:
         - text: "DataCamp"
           href: datacamp.html
     - text: "R"
-      menu:      
+      menu:
         - text: "R Language"
           href: r_language.html
         - text: "R Programming"
           href: r_programming.html     
         - text: "R Statistics"
           href: r_statistics.html   
+        - text: "R Probability"
+          href: r_probability.html  
     - text: "NetCDF"
       href: netcdf.html
     - text: "Additional Course"

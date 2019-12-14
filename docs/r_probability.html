@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>r_probability.utf8.md</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/darkly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Software Tools</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="syllabus.html">Syllabus</a>
+</li>
+<li>
+  <a href="book.html">Book</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Topics
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="data.html">Data</a>
+    </li>
+    <li>
+      <a href="code.html">Code</a>
+    </li>
+    <li>
+      <a href="new_accounts.html">New Accounts</a>
+    </li>
+    <li>
+      <a href="unix_linux.html">GNU/Linux</a>
+    </li>
+    <li>
+      <a href="python.html">Python</a>
+    </li>
+    <li>
+      <a href="data_sources.html">Data Sources</a>
+    </li>
+    <li>
+      <a href="ncl.html">NCL</a>
+    </li>
+    <li>
+      <a href="r_and_rstudio.html">R and RStudio</a>
+    </li>
+    <li>
+      <a href="datacamp.html">DataCamp</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    R
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="r_language.html">R Language</a>
+    </li>
+    <li>
+      <a href="r_programming.html">R Programming</a>
+    </li>
+    <li>
+      <a href="r_statistics.html">R Statistics</a>
+    </li>
+    <li>
+      <a href="r_probability.html">R Probability</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="netcdf.html">NetCDF</a>
+</li>
+<li>
+  <a href="additional_course.html">Additional Course</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<hr />
+<div id="r---probability" class="section level2">
+<h2><strong>R - Probability</strong></h2>
+<p>A <strong>probability</strong> is a number that describes the <em>“magnitude of chance”</em> associated with making a particular observation or statement.</p>
+<p><img src="Presentation/zar_a.png" /></p>
+<p>It’s always a number <strong>between 0 and 1</strong> (inclusive) and is often expressed as a fraction.</p>
+<hr />
+<p><img src="Presentation/zar_2.png" /></p>
+<hr />
+<pre class="r"><code>X.outcomes &lt;- c(2:12)
+X.prob &lt;- c((1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab=&quot;x&quot;,ylab=&quot;Pr(X = x)&quot;, main = &quot;probability distribution&quot;)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>X.outcomes &lt;- c(2:12)
+X.prob &lt;- c((1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36))
+X.cumul &lt;- cumsum(X.prob)
+barplot(X.cumul,names.arg=X.outcomes,space=0,xlab=&quot;x&quot;,ylab=&quot;Pr(X &lt;= x)&quot;, main = &quot;cumulative probability distribution&quot;)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>X.outcomes &lt;- c(2:12)
+X.prob &lt;- c((1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab=&quot;x&quot;,ylab=&quot;Pr(X = x)&quot;, main = &quot;probability distribution&quot;)
+abline(v=c(0.5:10.5))</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<hr />
+<div id="pdf---probability-density-function" class="section level3">
+<h3>PDF - Probability Density Function</h3>
+<p><img src="Presentation/zar_2.png" /></p>
+<p><img src="Presentation/formula.png" /></p>
+<pre><code>lower &lt; 7 &lt; upper
+
+X &gt;= 2  &amp;  X &lt;= 7
+(X[lower] - 1)/36
+
+X &gt; 7 &amp; X &lt;= 12
+13 - X[upper])/36</code></pre>
+<hr />
+<pre class="r"><code>X.outcomes &lt;- c(1,2,3,4,5,6,7,8,9,10,11,12,13)
+
+lower &lt;- X.outcomes &gt;= 2 &amp; X.outcomes &lt;= 7
+upper &lt;- X.outcomes &gt; 7 &amp; X.outcomes &lt;= 12
+
+fx &lt;- rep(0,length(X.outcomes))
+fx[lower] &lt;- (X.outcomes[lower] - 1)/36
+fx[upper] &lt;- (13 - X.outcomes[upper])/36
+
+plot(X.outcomes,fx,type=&quot;l&quot;,ylab=&quot;f(x)&quot;, xlim = c(0,14), main = &quot;probability density function&quot;)
+abline(h=0,col=&quot;gray&quot;,lty=2)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-4-1.png" width="576" /></p>
+<hr />
+<pre class="r"><code>fx.specific &lt;- (4.5-1)/36
+
+fx.specific.area &lt;- 3.5*fx.specific*0.5
+
+fx.specific.vertices &lt;- rbind(c(1,0),c(4.5,0),c(4.5,fx.specific))
+
+plot(X.outcomes,fx,type=&quot;l&quot;,ylab=&quot;f(x)&quot;, xlim = c(0,14), main = &quot;probability density function&quot;)
+abline(h=0,col=&quot;gray&quot;,lty=2)
+polygon(fx.specific.vertices,col=&quot;gray&quot;,border=NA)
+abline(v=4.5,lty=3)
+text(4,0.01,labels=fx.specific.area)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-5-1.png" width="576" /></p>
+<hr />
+</div>
+<div id="r---probability---shape" class="section level3">
+<h3><strong>R - Probability - <span style="color:orangered"><em>Shape</em></span></strong></h3>
+<ul>
+<li><p><strong>Symmetry</strong> : Draw a vertical line down the center, and it is equally reflected with 0.5 probability.</p></li>
+<li><p><strong>Skew</strong> : If a distribution is asymmetric, look at the “<strong>tail</strong>” of a distribution. <em>Positive</em> or <em>right</em> <em>skew</em> indicates a tail extending longer to the right of center.</p></li>
+<li><p><strong>Modality</strong> : Modality describes the number of easily identifiable peaks in the distribution of interest. <em>Unimodal</em>, <em>bimodal</em>, and <em>trimodal…</em></p></li>
+</ul>
+<hr />
+<p><img src="Presentation/shape_r.png" /></p>
+<hr />
+<pre class="r"><code>station_data &lt;- read.table(&quot;https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt&quot;, sep = &quot;;&quot;, header = T)
+
+table(station_data$temp)</code></pre>
+<pre><code>## 
+## 19.2 19.5 20.1 20.4 20.5 20.6 20.7 20.8 20.9   21 21.2 21.4 21.6 21.7 21.9 
+##    1    1    1    4    6    4    2    6    2    1    2    3    1    2    1 
+## 22.1 22.2 22.3 22.4 22.5 22.6 22.7 22.8   23 23.1 23.2 23.6 23.8 23.9 24.2 
+##    1    5    3    3    8    7    1    1    2    1    3    1    2    2    2 
+## 25.1 25.4 25.5 25.6 25.8 26.1 26.2 26.6 26.9 27.1 27.4 27.6 27.8   28 28.4 
+##    1    1    1    1    1    1    1    1    1    1    1    1    1    1    2 
+## 28.5 28.8   29 29.2 29.3 29.4 29.5 29.6   30 30.1 30.2 30.4 30.8 30.9   31 
+##    1    1    2    2    2    1    1    1    1    2    1    4    1    3    1 
+## 31.2 31.5 
+##    1    1</code></pre>
+<pre class="r"><code>df_temp_table &lt;- data.frame(table(station_data$temp))
+df_temp_table</code></pre>
+<pre><code>##    Var1 Freq
+## 1  19.2    1
+## 2  19.5    1
+## 3  20.1    1
+## 4  20.4    4
+## 5  20.5    6
+## 6  20.6    4
+## 7  20.7    2
+## 8  20.8    6
+## 9  20.9    2
+## 10   21    1
+## 11 21.2    2
+## 12 21.4    3
+## 13 21.6    1
+## 14 21.7    2
+## 15 21.9    1
+## 16 22.1    1
+## 17 22.2    5
+## 18 22.3    3
+## 19 22.4    3
+## 20 22.5    8
+## 21 22.6    7
+## 22 22.7    1
+## 23 22.8    1
+## 24   23    2
+## 25 23.1    1
+## 26 23.2    3
+## 27 23.6    1
+## 28 23.8    2
+## 29 23.9    2
+## 30 24.2    2
+## 31 25.1    1
+## 32 25.4    1
+## 33 25.5    1
+## 34 25.6    1
+## 35 25.8    1
+## 36 26.1    1
+## 37 26.2    1
+## 38 26.6    1
+## 39 26.9    1
+## 40 27.1    1
+## 41 27.4    1
+## 42 27.6    1
+## 43 27.8    1
+## 44   28    1
+## 45 28.4    2
+## 46 28.5    1
+## 47 28.8    1
+## 48   29    2
+## 49 29.2    2
+## 50 29.3    2
+## 51 29.4    1
+## 52 29.5    1
+## 53 29.6    1
+## 54   30    1
+## 55 30.1    2
+## 56 30.2    1
+## 57 30.4    4
+## 58 30.8    1
+## 59 30.9    3
+## 60   31    1
+## 61 31.2    1
+## 62 31.5    1</code></pre>
+<hr />
+<pre class="r"><code>barplot(df_temp_table$Freq/121,names.arg=df_temp_table$Var1)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="r---common-probability-mass-functions" class="section level3">
+<h3><strong>R - Common Probability Mass Functions</strong></h3>
+<p>For discrete random variables</p>
+<ul>
+<li><strong>Bernoulli Distribution</strong> : has only two possible outcomes, such as success or failure.</li>
+</ul>
+<p><img src="Presentation/ber_1.png" /></p>
+<p><img src="Presentation/ber_2.png" /></p>
+<hr />
+</div>
+<div id="bernoulli-distribution" class="section level3">
+<h3><strong>Bernoulli Distribution</strong></h3>
+<pre class="r"><code>x&lt;-1
+p &lt;- 0.6
+
+b_fx &lt;- p^x*((1-p)^(1-x))
+
+barplot(c(1-p,p),names.arg=c(0,1))</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-8-1.png" width="576" /></p>
+<hr />
+</div>
+<div id="r---common-probability-mass-functions-1" class="section level3">
+<h3><strong>R - Common Probability Mass Functions</strong></h3>
+<p>For discrete random variables</p>
+<ul>
+<li><strong>Binomial Distribution</strong> : The <em>binomial</em> <em>distribution</em> is the distribution of successes in <strong>n</strong> number of trials involving binary discrete random variables.</li>
+</ul>
+<p><img src="Presentation/binomial_r.png" /></p>
+<hr />
+</div>
+<div id="binomial-distribution" class="section level3">
+<h3><strong>Binomial Distribution</strong></h3>
+<p>There are four functions associated with Binomial distributions.</p>
+<ul>
+<li>dbinom(x, size, prob)</li>
+<li>pbinom(x, size, prob)</li>
+<li>qbinom(p, size, prob)</li>
+<li>rbinom(n, size, prob)</li>
+<li></li>
+<li><strong>x</strong> is a vector of numbers.</li>
+<li><strong>p</strong> is a vector of probabilities.</li>
+<li><strong>n</strong> is number of observations.</li>
+<li><strong>size</strong> is the number of trials.</li>
+<li><strong>prob</strong> is the probability of success of each trial.</li>
+</ul>
+<hr />
+</div>
+<div id="binomial-distribution---dbinom" class="section level3">
+<h3><strong>Binomial Distribution - dbinom</strong></h3>
+<p>It is a density or distribution function.</p>
+<pre class="r"><code>x &lt;- 1
+size &lt;- 8
+prob &lt;- 1/2
+dbinom(x , size , prob)</code></pre>
+<pre><code>## [1] 0.03125</code></pre>
+<pre class="r"><code>x &lt;- 4
+dbinom(x , size , prob)</code></pre>
+<pre><code>## [1] 0.2734375</code></pre>
+<pre class="r"><code>x &lt;- 0:8
+dbinom(x , size , prob)</code></pre>
+<pre><code>## [1] 0.00390625 0.03125000 0.10937500 0.21875000 0.27343750 0.21875000
+## [7] 0.10937500 0.03125000 0.00390625</code></pre>
+<hr />
+<pre class="r"><code>bin &lt;- dbinom(x = 0:8 , size = 8 , prob = 0.5)
+plot(x=0:8, y = bin)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>X.outcomes &lt;- c(1:13)
+X.prob &lt;- c((0/36),(1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36),(0/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab=&quot;x&quot;,ylab=&quot;Pr(X = x)&quot;, main = &quot;probability distribution&quot;)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>X.outcomes &lt;- c(1:13)
+X.prob &lt;- c((0/36),(1/36),(2/36),(3/36),(4/36),(5/36),(6/36),(5/36),(4/36),(3/36),(2/36),(1/36),(0/36))
+barplot(X.prob,ylim=c(0,0.20),names.arg=X.outcomes,space=0,xlab=&quot;x&quot;,ylab=&quot;Pr(X = x)&quot;, main = &quot;probability distribution&quot;)
+
+lines(dbinom(x = 0:12, size = 36, prob = 1/6), col= &quot;red&quot;)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="r---common-probability-mass-functions-2" class="section level3">
+<h3><strong>R - Common Probability Mass Functions</strong></h3>
+<ul>
+<li><strong>Poisson Distribution</strong> : important and rarely seen event.</li>
+</ul>
+<p><img src="Presentation/poisson_r.png" /></p>
+<p>λp should be interpreted as the “mean number of occurrences”</p>
+<hr />
+</div>
+<div id="poisson-distribution" class="section level3">
+<h3><strong>Poisson Distribution</strong></h3>
+<p>There are three functions associated with Binomial distributions.</p>
+<ul>
+<li>dpois(x, lambda)</li>
+<li>ppois(q, lambda, lower.tail)</li>
+<li>qpois(p, lambda, lower.tail)</li>
+<li>rpois(n, lambda)</li>
+<li></li>
+<li><strong>x</strong> : successes in a period</li>
+<li><strong>λ</strong> : the expected number of events</li>
+<li><strong>lower.tail</strong> = TRUE for left tail</li>
+<li><strong>q</strong> vector of quantiles</li>
+<li><strong>n</strong> number of random values to return</li>
+<li><strong>p</strong> vector of probabilities</li>
+</ul>
+<hr />
+<pre class="r"><code>plot(dpois(0:10,2.22),type = &quot;o&quot;, col=&quot;red&quot;)
+lines(dpois(0:10,4.22), type = &quot;o&quot;, col = &quot;blue&quot;)
+lines(dpois(0:10,7.22), type = &quot;o&quot;, col = &quot;green&quot;)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<hr />
+<p><strong>R - Common Probability Density Functions</strong></p>
+<pre><code>- Uniform
+- Normal
+- Student’s t-distribution
+- Exponential
+- (gamma, beta, log-normal)</code></pre>
+<hr />
+</div>
+<div id="uniform" class="section level3">
+<h3><strong>Uniform</strong></h3>
+<p>The <strong>uniform</strong> distribution is a simple density function that describes a continuous random variable whose interval of possible values offers no fluctuations in probability.</p>
+<p><img src="Presentation/unif_a.png" /></p>
+<hr />
+<p><img src="Presentation/unif_b.png" /></p>
+<p><img src="Presentation/unif_a.png" /></p>
+<hr />
+<ul>
+<li>runif()</li>
+<li>dunif()</li>
+<li>punif()</li>
+<li>qunif()</li>
+</ul>
+<hr />
+<pre class="r"><code>runif(n = 10,-0.4,1.1)</code></pre>
+<pre><code>##  [1] 0.79444846 1.02590575 0.86172771 0.09510426 0.44119597 0.67788550
+##  [7] 0.84364748 0.79979042 0.69982195 0.23687271</code></pre>
+<pre class="r"><code>r1 &lt;- runif(n = 10,-0.4,1.1)
+table(r1)</code></pre>
+<pre><code>## r1
+##  -0.36305262320675  -0.26417560337577 0.0494614048162475 
+##                  1                  1                  1 
+## 0.0828472837107256  0.110665947571397  0.464143047132529 
+##                  1                  1                  1 
+##  0.570710018184036  0.623240687791258  0.693286393210292 
+##                  1                  1                  1 
+##  0.888681203383021 
+##                  1</code></pre>
+<pre class="r"><code>t1 &lt;- table(r1)</code></pre>
+<hr />
+<pre class="r"><code>barplot(t1)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>barplot(table(runif(n = 100,-0.4,1.1)))</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>barplot(table(runif(n = 1000,-0.4,1.1)))</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>dunif(x=c(-2,-0.33,0,0.5,1.05,1.2),min=-0.4,max=1.1)</code></pre>
+<pre><code>## [1] 0.0000000 0.6666667 0.6666667 0.6666667 0.6666667 0.0000000</code></pre>
+<pre class="r"><code>d1 &lt;- dunif(x=c(-2,-0.33,0,0.5,1.05,1.2),min=-0.4,max=1.1)
+barplot(d1,names.arg=c(-2,-0.33,0,0.5,1.05,1.2))</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>d2 &lt;- dunif(x=c(-2,runif(998,-0.4,1.1),1.2),min=-0.4,max=1.1)
+barplot(d2)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<hr />
+<p>Characterized by a distinctive “bell-shaped” curve, it’s also referred to as the <strong>Gaussian</strong> distribution.</p>
+<p><img src="Presentation/normal_1.png" /></p>
+<p><img src="Presentation/normal_2.png" /></p>
+<hr />
+</div>
+<div id="normal" class="section level3">
+<h3><strong>Normal</strong></h3>
+<p><img src="Presentation/normal.png" /></p>
+<p><img src="Presentation/normal_1.png" /></p>
+<p><img src="Presentation/normal_2.png" /></p>
+<hr />
+<div id="standart-normal" class="section level4">
+<h4><strong>Standart Normal</strong></h4>
+<p><img src="Presentation/normal_1.png" /></p>
+<p><img src="Presentation/normal_3.png" /></p>
+<hr />
+<p><strong>0.95 −2σ to +2σ</strong> and <strong>0.99 −3σ tp +3σ</strong></p>
+<p><img src="Presentation/normal_3.png" /></p>
+<hr />
+<ul>
+<li>rnorm()</li>
+<li>dnorm()</li>
+<li>pnorm()</li>
+</ul>
+<hr />
+<pre class="r"><code>r1 &lt;- rnorm(50,mean = 0, sd = 1)
+r1</code></pre>
+<pre><code>##  [1]  0.13632190 -1.54564285 -0.29006986  0.07952042  0.10216162
+##  [6] -2.05870119 -0.59826475 -0.81835796  0.09311720 -0.10523874
+## [11] -0.42240931  1.00239467  0.02975819 -0.72228847  1.05584386
+## [16]  0.37004927  0.50369814 -0.63587461 -1.07130725  2.08104961
+## [21] -0.55457406  1.36120562 -1.39482761  0.21882743  0.40509180
+## [26]  0.97558666  0.74809313 -1.87559434 -0.40726308 -0.27589373
+## [31] -0.95674285 -0.94650634 -1.11955645  0.10351829 -1.69709854
+## [36] -0.92635797  0.98181390  0.39517809 -0.53823774  0.09731913
+## [41]  0.35966470  1.75251617 -0.17211293 -0.27188822  0.28826485
+## [46] -1.52356972 -0.68334020 -2.35424650  0.88283695 -0.88650757</code></pre>
+<hr />
+<pre class="r"><code>plot(r1)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>hist(r1)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>barplot(r1)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>barplot(table(r1))</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>dnorm(r1, mean = 0, sd = 1)</code></pre>
+<pre><code>##  [1] 0.39525255 0.12082109 0.38250682 0.39768292 0.39686582 0.04792760
+##  [7] 0.33357122 0.28542003 0.39721645 0.39673920 0.36489219 0.24139129
+## [13] 0.39876568 0.30734363 0.22847199 0.37254153 0.35141253 0.32591887
+## [19] 0.22474516 0.04576104 0.34207861 0.15796546 0.15081361 0.38950396
+## [25] 0.36751608 0.24787686 0.30156787 0.06870965 0.36719210 0.38404436
+## [31] 0.25243109 0.25490212 0.21317500 0.39681046 0.09451372 0.25975716
+## [37] 0.24637074 0.36897684 0.34514576 0.39705755 0.37395572 0.08589798
+## [43] 0.39307692 0.38446592 0.38270652 0.12498383 0.31587287 0.02496759
+## [49] 0.27018751 0.26931156</code></pre>
+<pre class="r"><code>fx3 &lt;- dnorm(r1)</code></pre>
+<hr />
+<pre class="r"><code>plot(r1,fx3)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="practice-write-a-function-for-outliers" class="section level3">
+<h3><strong>Practice</strong> : Write A Function for outliers</h3>
+<hr />
+</div>
+<div id="outliers" class="section level3">
+<h3><strong>outliers</strong></h3>
+<pre class="r"><code>foo &lt;- c(0.6,-0.6,0.1,-0.2,-1.0,0.4,0.3,-1.8,1.1,6.0)</code></pre>
+<hr />
+<p><img src="Presentation/summary_b.png" /></p>
+<pre class="r"><code>summary(foo)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   -1.80   -0.50    0.20    0.49    0.55    6.00</code></pre>
+<hr />
+<pre class="r"><code>plot(foo,rep(0,10),yaxt=&quot;n&quot;,ylab=&quot;&quot;,bty=&quot;n&quot;,cex=2,cex.axis=1.5,cex.lab=1.5)
+abline(h=0,col=&quot;gray&quot;,lty=2)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>plot(foo,rep(0,10),yaxt=&quot;n&quot;,ylab=&quot;&quot;,bty=&quot;n&quot;,cex=2,cex.axis=1.5,cex.lab=1.5)
+abline(h=0,col=&quot;gray&quot;,lty=2)
+arrows(5,0.5,5.9,0.1,lwd=2)
+text(5,0.7,labels=&quot;outlier?&quot;,cex=3)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<hr />
+<p><img src="Presentation/summary_b.png" /></p>
+<p>boxplot()</p>
+<hr />
+<pre class="r"><code>boxplot(foo)</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<hr />
+<pre class="r"><code>mean(foo)</code></pre>
+<pre><code>## [1] 0.49</code></pre>
+<pre class="r"><code>mean(foo[-10])</code></pre>
+<pre><code>## [1] -0.1222222</code></pre>
+<hr />
+</div>
+<div id="function" class="section level3">
+<h3><strong>Function</strong></h3>
+<pre><code>baz &lt;- c(-0.3,0.9,2.8,2.3,1.2,12,-4.1,-0.4,4.1,-2.3)</code></pre>
+<ul>
+<li>Mean, Median, Range</li>
+<li>Variance, Standart Deviation</li>
+<li>Plot, hist</li>
+<li>Barplot with table() function</li>
+<li>summary() function</li>
+<li>boxplot</li>
+<li>if there is <em>outliers</em>, print</li>
+</ul>
+<p><strong>Condition for outliers is</strong></p>
+<p>OUTLIERS &lt; MEAN-(3<code>*</code>IQR)</p>
+<p>or</p>
+<p>OUTLIERS &gt; MEAN+(3<code>*</code>IQR)</p>
+<hr />
+<pre class="r"><code>baz &lt;- c(-0.3,0.9,2.8,2.3,1.2,12,-4.1,-0.4,4.1,-2.3,1.2)
+
+statistic_function &lt;- function(baz) {
+
+  
+}</code></pre>
+<hr />
+<pre class="r"><code>statistic_function &lt;- function(baz) {
+  print(c(mean(baz),&quot;mean&quot;))
+  print(c(median(baz),&quot;median&quot;))
+  print(c(range(baz),&quot;range&quot;))
+  
+}
+
+statistic_function(baz)</code></pre>
+<pre><code>## [1] &quot;1.58181818181818&quot; &quot;mean&quot;            
+## [1] &quot;1.2&quot;    &quot;median&quot;
+## [1] &quot;-4.1&quot;  &quot;12&quot;    &quot;range&quot;</code></pre>
+<hr />
+<pre class="r"><code>statistic_function &lt;- function(baz) {
+  print(c(mean(baz),&quot;mean&quot;))
+  print(c(median(baz),&quot;median&quot;))
+  print(c(range(baz),&quot;range&quot;))
+  print(c(var(baz),&quot;var&quot;))
+  print(c(sd(baz),&quot;sd&quot;))
+
+}
+
+statistic_function(baz)</code></pre>
+<pre><code>## [1] &quot;1.58181818181818&quot; &quot;mean&quot;            
+## [1] &quot;1.2&quot;    &quot;median&quot;
+## [1] &quot;-4.1&quot;  &quot;12&quot;    &quot;range&quot;
+## [1] &quot;17.2456363636364&quot; &quot;var&quot;             
+## [1] &quot;4.15278657814682&quot; &quot;sd&quot;</code></pre>
+<hr />
+<pre class="r"><code>statistic_function &lt;- function(baz) {
+  print(c(mean(baz),&quot;mean&quot;))
+  print(c(median(baz),&quot;median&quot;))
+  print(c(range(baz),&quot;range&quot;))
+  print(c(var(baz),&quot;var&quot;))
+  print(c(sd(baz),&quot;sd&quot;))
+  plot(baz)
+  hist(baz)
+}
+
+statistic_function(baz)</code></pre>
+<pre><code>## [1] &quot;1.58181818181818&quot; &quot;mean&quot;            
+## [1] &quot;1.2&quot;    &quot;median&quot;
+## [1] &quot;-4.1&quot;  &quot;12&quot;    &quot;range&quot;
+## [1] &quot;17.2456363636364&quot; &quot;var&quot;             
+## [1] &quot;4.15278657814682&quot; &quot;sd&quot;</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-36-1.png" width="672" /><img src="r_probability_files/figure-html/unnamed-chunk-36-2.png" width="672" /></p>
+<hr />
+<pre class="r"><code>statistic_function &lt;- function(baz) {
+  print(c(mean(baz),&quot;mean&quot;))
+  print(c(median(baz),&quot;median&quot;))
+  print(c(range(baz),&quot;range&quot;))
+  print(c(var(baz),&quot;var&quot;))
+  print(c(sd(baz),&quot;sd&quot;))
+  plot(baz)
+  hist(baz)
+  barplot(table(baz))
+  print(c(summary(baz),&quot;summary&quot;))
+  boxplot(baz)
+  
+}
+
+statistic_function(baz)</code></pre>
+<pre><code>## [1] &quot;1.58181818181818&quot; &quot;mean&quot;            
+## [1] &quot;1.2&quot;    &quot;median&quot;
+## [1] &quot;-4.1&quot;  &quot;12&quot;    &quot;range&quot;
+## [1] &quot;17.2456363636364&quot; &quot;var&quot;             
+## [1] &quot;4.15278657814682&quot; &quot;sd&quot;</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-37-1.png" width="672" /><img src="r_probability_files/figure-html/unnamed-chunk-37-2.png" width="672" /><img src="r_probability_files/figure-html/unnamed-chunk-37-3.png" width="672" /></p>
+<pre><code>##               Min.            1st Qu.             Median 
+##             &quot;-4.1&quot;            &quot;-0.35&quot;              &quot;1.2&quot; 
+##               Mean            3rd Qu.               Max. 
+## &quot;1.58181818181818&quot;             &quot;2.55&quot;               &quot;12&quot; 
+##                    
+##          &quot;summary&quot;</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-37-4.png" width="672" /></p>
+<hr />
+<pre class="r"><code>statistic_function &lt;- function(baz) {
+  print(c(mean(baz),&quot;mean&quot;))
+  print(c(median(baz),&quot;median&quot;))
+  print(c(range(baz),&quot;range&quot;))
+  print(c(var(baz),&quot;var&quot;))
+  print(c(sd(baz),&quot;sd&quot;))
+  plot(baz)
+  hist(baz)
+  barplot(table(baz))
+  print(c(summary(baz),&quot;summary&quot;))
+  boxplot(baz)
+  for (i in 1:length(baz)) {
+      if (baz[i]&lt;mean(baz)-3*IQR(baz) | baz[i]&gt;mean(baz)+3*IQR(baz)) {
+        print(&quot;there is outliers&quot;)
+        print(c(baz[i] , &quot;outlier&quot;) )
+        print(which(baz==baz[i]))
+      }
+  }
+}
+
+statistic_function(baz)</code></pre>
+<pre><code>## [1] &quot;1.58181818181818&quot; &quot;mean&quot;            
+## [1] &quot;1.2&quot;    &quot;median&quot;
+## [1] &quot;-4.1&quot;  &quot;12&quot;    &quot;range&quot;
+## [1] &quot;17.2456363636364&quot; &quot;var&quot;             
+## [1] &quot;4.15278657814682&quot; &quot;sd&quot;</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-38-1.png" width="672" /><img src="r_probability_files/figure-html/unnamed-chunk-38-2.png" width="672" /><img src="r_probability_files/figure-html/unnamed-chunk-38-3.png" width="672" /></p>
+<pre><code>##               Min.            1st Qu.             Median 
+##             &quot;-4.1&quot;            &quot;-0.35&quot;              &quot;1.2&quot; 
+##               Mean            3rd Qu.               Max. 
+## &quot;1.58181818181818&quot;             &quot;2.55&quot;               &quot;12&quot; 
+##                    
+##          &quot;summary&quot;</code></pre>
+<p><img src="r_probability_files/figure-html/unnamed-chunk-38-4.png" width="672" /></p>
+<pre><code>## [1] &quot;there is outliers&quot;
+## [1] &quot;12&quot;      &quot;outlier&quot;
+## [1] 6</code></pre>
+<hr />
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

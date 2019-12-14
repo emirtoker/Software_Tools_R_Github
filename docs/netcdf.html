@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>netcdf.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -344,6 +344,9 @@ $(document).ready(function () {
     <li>
       <a href="r_statistics.html">R Statistics</a>
     </li>
+    <li>
+      <a href="r_probability.html">R Probability</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -378,32 +381,20 @@ $(document).ready(function () {
 <div id="r-advance---ncdf4-rnetcdf-packages" class="section level1">
 <h1><strong>R Advance - <span style="color:orangered"><em>ncdf4</em></span> &amp; <span style="color:orangered"><em>RNetCDF</em></span> Packages</strong></h1>
 <hr />
-<div class="figure">
-<img src="Presentation/netcdf_1.png" />
-
-</div>
+<p><img src="Presentation/netcdf_1.png" /></p>
 <hr />
 <div id="netcdf---data" class="section level2">
 <h2>NETCDF - Data</h2>
 <p>CRU_TR_Near-Surface_Temp_16-01-1901_16-12-2012_Monthly</p>
-<div class="figure">
-<img src="Presentation/pnply_a.png" />
-
-</div>
+<p><img src="Presentation/pnply_a.png" /></p>
 <p><a href="https://www.giss.nasa.gov/tools/panoply/">PANOPLY</a></p>
 <hr />
 <p>CRU_TR_Near-Surface_Temp_16-01-1901_16-12-2012_Monthly</p>
-<div class="figure">
-<img src="Presentation/pnply_b.png" />
-
-</div>
+<p><img src="Presentation/pnply_b.png" /></p>
 <hr />
 <div id="r-advance---ncdf4-package" class="section level3">
 <h3><strong>R Advance - <span style="color:orangered"><em>ncdf4</em></span> Package</strong></h3>
-<div class="figure">
-<img src="Presentation/ncdf4_a.png" />
-
-</div>
+<p><img src="Presentation/ncdf4_a.png" /></p>
 <hr />
 <ul>
 <li>ncdf4_open &lt;- <span style="color:brown"><strong>nc_open</strong></span>(“cru_1901_2012_tmp_TR.nc”)</li>
@@ -456,10 +447,7 @@ tmp.1307101049.dtb
 </div>
 <div id="r-advance---rnetcdf-package" class="section level3">
 <h3><strong>R Advance - <span style="color:orangered"><em>RNetCDF</em></span> Package</strong></h3>
-<div class="figure">
-<img src="Presentation/rncdf_a.png" />
-
-</div>
+<p><img src="Presentation/rncdf_a.png" /></p>
 <hr />
 <ul>
 <li>rnetcdf_open &lt;- <span style="color:brown"><strong>open.nc</strong></span>(“cru_1901_2012_tmp_TR.nc”)</li>
@@ -579,10 +567,7 @@ rnetcdf_time&lt;- var.get.nc(rnetcdf_open, &quot;time&quot;)</code></pre>
 
 - image(ncdf4_lon, ncdf4_lat, ncdf4_tmp_mean)
 </code></pre>
-<div class="figure">
-<img src="Presentation/Tr_temp_mean.png" />
-
-</div>
+<p><img src="Presentation/Tr_temp_mean.png" /></p>
 <hr />
 <pre><code>- install.packages(&quot;maptools&quot;)
 - library(&quot;maptools&quot;)
@@ -592,10 +577,7 @@ rnetcdf_time&lt;- var.get.nc(rnetcdf_open, &quot;time&quot;)</code></pre>
 - image(rnetcdf_lon, rnetcdf_lat, ncdf4_tmp_mean)
 
 - plot(turkey_shp, add = T)</code></pre>
-<div class="figure">
-<img src="Presentation/shp_tr_mean.png" />
-
-</div>
+<p><img src="Presentation/shp_tr_mean.png" /></p>
 <pre><code>- library(&quot;fields&quot;)
 
 - image.plot( rnetcdf_lon, rnetcdf_lat, ncdf4_tmp_mean, 
@@ -604,10 +586,7 @@ rnetcdf_time&lt;- var.get.nc(rnetcdf_open, &quot;time&quot;)</code></pre>
               main = &quot;Mean Temperature for Turkey&quot; )
 
 - plot(turkiye.shp, add = T) </code></pre>
-<div class="figure">
-<img src="Presentation/Shp_mean_temp.png" />
-
-</div>
+<p><img src="Presentation/Shp_mean_temp.png" /></p>
 <hr />
 </div>
 </div>

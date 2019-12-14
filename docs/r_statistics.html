@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>r_statistics.utf8.md</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -344,6 +344,9 @@ $(document).ready(function () {
     <li>
       <a href="r_statistics.html">R Statistics</a>
     </li>
+    <li>
+      <a href="r_probability.html">R Probability</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -380,28 +383,19 @@ $(document).ready(function () {
 <hr />
 <div id="r-elemantary-statistics-1" class="section level3">
 <h3><strong>R Elemantary Statistics</strong></h3>
-<div class="figure">
-<img src="Presentation/pop_sample.png" />
-
-</div>
+<p><img src="Presentation/pop_sample.png" /></p>
 <hr />
 <p><strong>Centrality</strong>: <span style="color:orangered"><strong>Mean</strong></span>, Median, Mode</p>
 <ul>
 <li>Measures of centrality are commonly used to explain large collections of data by describing where numeric observations are centered.</li>
 </ul>
-<div class="figure">
-<img src="Presentation/art_mean.png" />
-
-</div>
+<p><img src="Presentation/art_mean.png" /></p>
 <hr />
 <p><strong>Centrality</strong>: Mean, <span style="color:orangered"><strong>Median</strong></span>, Mode</p>
 <ul>
 <li><strong>Median</strong> : “middle magnitude” of your observations</li>
 </ul>
-<div class="figure">
-<img src="Presentation/median.png" />
-
-</div>
+<p><img src="Presentation/median.png" /></p>
 <p>0 . 0 . <span style="color:orangered">0</span> . 0 . 0</p>
 <p>o . o . <span style="color:orangered">o . o</span> . o . o</p>
 <hr />
@@ -410,19 +404,10 @@ $(document).ready(function () {
 <li><strong>Mode</strong> : Simply the “most common” observation.</li>
 </ul>
 <p>Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4</p>
-<div class="figure">
-<img src="Presentation/mod.png" />
-
-</div>
-<div class="figure">
-<img src="Presentation/art_mean_a.png" />
-
-</div>
+<p><img src="Presentation/mod.png" /></p>
+<p><img src="Presentation/art_mean_a.png" /></p>
 <p>2 , 2 , 2 , 2.2 , 3 , 3 , 4, 4.4 ( n=8 , n/2 = 4)</p>
-<div class="figure">
-<img src="Presentation/median_a.png" />
-
-</div>
+<p><img src="Presentation/median_a.png" /></p>
 <hr />
 <p><strong>Centrality</strong>: Mean, Median, Mode</p>
 <p>xdata &lt;- c(2,4.4,3,3,2,2.2,2,4)</p>
@@ -458,10 +443,7 @@ quantile(xdata,prob=0.8) # the 0.8th quan- tile (or 80th percentile)</code></pre
 ##   2.000   2.000   2.600   2.825   3.250   4.400</code></pre>
 <hr />
 <p>Quantiles, Percentiles, and <span style="color:orangered"><strong>the Five-Number Summary</strong></span></p>
-<div class="figure">
-<img src="Presentation/five_number_summary.png" />
-
-</div>
+<p><img src="Presentation/five_number_summary.png" /></p>
 <p>A <strong>quartile</strong> is a type of quantile.</p>
 <hr />
 <p><strong>Spread</strong>: Variance, Standard Deviation, and the Interquartile Range</p>
@@ -488,44 +470,26 @@ points(jitter(c(xdata,ydata)),c(rep(3,length(xdata)), rep(3.5,length(ydata))))</
 <ul>
 <li>The sample <strong>variance</strong> measures the degree of the spread of numeric observations around their arithmetic mean.</li>
 </ul>
-<div class="figure">
-<img src="Presentation/var1.png" />
-
-</div>
-<div class="figure">
-<img src="Presentation/var2.png" />
-
-</div>
+<p><img src="Presentation/var1.png" /></p>
+<p><img src="Presentation/var2.png" /></p>
 <hr />
 <p><strong>Spread</strong>: <span style="color:orangered"><strong>Variance</strong></span>, Standard Deviation, and the Interquartile Range</p>
 <p>2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4 ( mean = 2.825)</p>
-<div class="figure">
-<img src="Presentation/var3.png" />
-
-</div>
+<p><img src="Presentation/var3.png" /></p>
 <hr />
 <p><strong>Spread</strong>: Variance, <span style="color:orangered"><strong>Standard Deviation</strong></span>, and the Interquartile Range</p>
 <ul>
 <li>The standard deviation is simply the square root of the variance. The scale of the original observations.</li>
 </ul>
-<div class="figure">
-<img src="Presentation/sd1.png" />
-
-</div>
-<div class="figure">
-<img src="Presentation/sd2.png" />
-
-</div>
+<p><img src="Presentation/sd1.png" /></p>
+<p><img src="Presentation/sd2.png" /></p>
 <p><strong>0.953 represents the average distance of each observation from the mean</strong></p>
 <hr />
 <p><strong>Spread</strong>: Variance, Standard Deviation, and <span style="color:orangered"><strong>the Interquartile Range</strong></span>,</p>
 <ul>
 <li>Unlike the variance and standard deviation, the interquartile range (IQR) is <strong>not</strong> computed with respect to the sample mean.</li>
 </ul>
-<div class="figure">
-<img src="Presentation/qrt.png" />
-
-</div>
+<p><img src="Presentation/qrt.png" /></p>
 <ul>
 <li>IQR is computed as the difference between the upper and lower quartiles of your data</li>
 </ul>
@@ -540,68 +504,44 @@ var(xdata)</code></pre>
 <pre class="r"><code>IQR(xdata)</code></pre>
 <pre><code>## [1] 1.25</code></pre>
 <hr />
-<div class="figure">
-<img src="Presentation/summary_a.png" />
-
-</div>
+<p><img src="Presentation/summary_a.png" /></p>
 <hr />
-<div class="figure">
-<img src="Presentation/summary_b.png" />
-
-</div>
-<div class="figure">
-<img src="Presentation/summary_c.gif" />
-
-</div>
+<p><img src="Presentation/summary_b.png" /></p>
+<p><img src="Presentation/summary_c.gif" /></p>
 <hr />
 <p><span style="color:orangered"><strong>Covariance</strong></span> and Correlation</p>
 <ul>
 <li>Investigate the relationship between two numeric variables to assess trends</li>
 <li>The <em>covariance</em> expresses how much two numeric variables “change together” and the nature of that relationship, whether it is positive or negative.</li>
 </ul>
-<div class="figure">
-<img src="Presentation/covar_a.png" />
-
-</div>
+<p><img src="Presentation/covar_a.png" /></p>
 <hr />
 <p><span style="color:orangered"><strong>Covariance</strong></span> and Correlation</p>
 <p>x = {x1,x2,…,xn}</p>
 <p>y = {y1,y2,…,yn}</p>
 <p>for i = 1,. . . ,n</p>
-<div class="figure">
-<img src="Presentation/covar_b.png" />
-
-</div>
+<p><img src="Presentation/covar_b.png" /></p>
 <p>When you get a positive result for rxy, it shows that there is a positive lin- ear relationship. When rxy = 0, this indicates that there is no linear relationship.</p>
 <hr />
 <p><span style="color:orangered"><strong>Covariance</strong></span> and Correlation</p>
 <p>x = {2,4.4,3,3,2,2.2,2,4}</p>
 <p>y = {1,4.4,1,3,2,2.2,2,7}</p>
 <p>mean x and y = 2.825</p>
-<div class="figure">
-<img src="Presentation/covar_c.png" />
-
-</div>
+<p><img src="Presentation/covar_c.png" /></p>
 <p>positive relationship</p>
 <hr />
 <p>Covariance and <span style="color:orangered"><strong>Correlation</strong></span></p>
 <ul>
 <li>Correlation allows you to interpret the covariance further by identifying the strength of any association.</li>
 </ul>
-<div class="figure">
-<img src="Presentation/corr_1.png" />
-
-</div>
+<p><img src="Presentation/corr_1.png" /></p>
 <hr />
 <p>Covariance and <span style="color:orangered"><strong>Correlation</strong></span></p>
 <ul>
 <li><p>Most common of these is Pearson’s product-moment correlation coefficient. (R default)</p></li>
 <li><p>The correlation coefficient estimates the nature of the linear relationship between two sets of observations</p></li>
 </ul>
-<div class="figure">
-<img src="Presentation/corr_a.png" />
-
-</div>
+<p><img src="Presentation/corr_a.png" /></p>
 <p>−1 ≤ <em>ρ</em>xy ≤ 1</p>
 <p>ρxy = 1, which is a perfect positive linear relationship</p>
 <hr />
@@ -611,10 +551,7 @@ var(xdata)</code></pre>
 <p>(mean x and y = 2.825)</p>
 <p>(<em>s</em>x = 0.953 and <em>s</em>y = 2.013)</p>
 <p>(<em>r</em>xy = 1.479)</p>
-<div class="figure">
-<img src="Presentation/corr_b.png" />
-
-</div>
+<p><img src="Presentation/corr_b.png" /></p>
 <p><em>ρ</em>xy is positive</p>
 <hr />
 <p>Covariance and Correlation</p>
@@ -632,19 +569,10 @@ ydata &lt;- c(1,4.4,1,3,2,2.2,2,7)
 plot(xdata,ydata,pch=13,cex=1.5)</code></pre>
 <p><img src="r_statistics_files/figure-html/unnamed-chunk-6-1.png" width="384" /></p>
 <hr />
-<div class="figure">
-<img src="Presentation/corr_2.png" />
-
-</div>
+<p><img src="Presentation/corr_2.png" /></p>
 <hr />
-<div class="figure">
-<img src="Presentation/corr_3.svg" />
-
-</div>
-<div class="figure">
-<img src="Presentation/corr_4.png" />
-
-</div>
+<p><img src="Presentation/corr_3.svg" /></p>
+<p><img src="Presentation/corr_4.png" /></p>
 <hr />
 </div>
 <div id="basic-data-visualization-1" class="section level2">
@@ -710,10 +638,7 @@ head(station_data)</code></pre>
 <pre><code>head(station_data$precipitation)
 
 pie(table(station_data$precipitation),labels=c(&quot;V1&quot;,&quot;V2&quot;,&quot;V3&quot;,&quot;V4&quot;,&quot;V5&quot;),col=c(&quot;white&quot;,&quot;blue&quot;,&quot;green&quot;,&quot;orange&quot;),main=&quot;pie chart for precipitation&quot;)</code></pre>
-<div class="figure">
-<img src="Presentation/prepie.png" />
-
-</div>
+<p><img src="Presentation/prepie.png" /></p>
 <hr />
 <p><span style="color:orangered"><strong>Histogram</strong></span></p>
 <pre class="r"><code>hist(station_data$temp)</code></pre>
@@ -738,10 +663,7 @@ legend(&quot;topright&quot;,legend=c(&quot;mean T&quot;,&quot;median T&quot;),lt
 <p><img src="r_statistics_files/figure-html/unnamed-chunk-16-1.png" width="384" /></p>
 <hr />
 <p><span style="color:orangered"><strong>Boxplot</strong></span></p>
-<div class="figure">
-<img src="Presentation/hist_5.png" />
-
-</div>
+<p><img src="Presentation/hist_5.png" /></p>
 <hr />
 <p><span style="color:orangered"><strong>Scatter Plots</strong></span></p>
 <pre class="r"><code>plot(station_data$temp,station_data$relative_humidity)</code></pre>
