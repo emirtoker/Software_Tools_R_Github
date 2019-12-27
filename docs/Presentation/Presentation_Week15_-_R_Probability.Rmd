@@ -59,7 +59,7 @@ https://emirtoker.github.io/Software_Tools_R_Github/index.html
 3. Don't talk to anybody for 1 hour.
 4. We have 1 hour to complete the first 20 steps.
 5. Mail me the <span style="color:orange">**Project_1**</span>, when you complete the first 20 steps. (tokerem@itu.edu.tr)
-6. Continue for other steps. You have 2 hours for next 20.
+6. Continue for other steps. You have 2 hours for next 15.
 7. Mail me the <span style="color:orange">**Project_2**</span>, with all. (tokerem@itu.edu.tr)
 
 

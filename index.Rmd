@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R"
 author: "Emir Toker"
-output: html_document
+output: html_document 
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ***
 [ANKET](https://forms.gle/9STHrJstFuE7mVzq8)
 
-Final Project - <!-- [Rmd](https://web.itu.edu.tr/tokerem/Final_Project.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Final_Project.pdf) - [html](https://web.itu.edu.tr/tokerem/Final_Project.html) --> 
+Final Project - [Rmd](https://web.itu.edu.tr/tokerem/Final_Project.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Final_Project.pdf) - [html](https://web.itu.edu.tr/tokerem/Final_Project.html) 
 
 ***
 
