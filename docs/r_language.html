@@ -696,9 +696,9 @@ b</code></pre>
 <div id="data-types---datetime" class="section level3">
 <h3><strong>Data Types - Date/Time</strong></h3>
 <pre class="r"><code>Sys.Date( ) </code></pre>
-<pre><code>## [1] &quot;2019-12-14&quot;</code></pre>
+<pre><code>## [1] &quot;2020-10-22&quot;</code></pre>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Sat Dec 14 15:14:07 2019&quot;</code></pre>
+<pre><code>## [1] &quot;Thu Oct 22 01:31:51 2020&quot;</code></pre>
 <pre class="r"><code>date &lt;- &quot;2007-06-22&quot;
 class(date)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -721,7 +721,7 @@ class(date_difference)</code></pre>
 %Y    4-digit year                2007</code></pre>
 <pre class="r"><code>today &lt;- Sys.Date()
 format(today, format=&quot;%B %d %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;December 14 2019&quot;</code></pre>
+<pre><code>## [1] &quot;October 22 2020&quot;</code></pre>
 <hr />
 </div>
 <div id="coercion" class="section level3">
@@ -867,13 +867,13 @@ a</code></pre>
 <pre><code>## [1]   3.44   2.50  -1.00 -10.00</code></pre>
 <p><strong>Random - Uniform Distribution</strong></p>
 <pre class="r"><code>runif(15, min = 20, max = 45)</code></pre>
-<pre><code>##  [1] 44.27325 41.23335 33.19841 21.45420 21.89346 42.22492 32.95189
-##  [8] 27.56542 23.51183 38.61990 39.67961 20.55473 26.65108 29.81638
-## [15] 42.64498</code></pre>
+<pre><code>##  [1] 37.33403 43.27645 43.85245 40.93802 26.44975 23.31924 21.45879
+##  [8] 23.21350 39.94376 44.62040 36.69073 43.46085 35.03261 41.99214
+## [15] 36.66242</code></pre>
 <pre class="r"><code>runif(15, 20, 45)</code></pre>
-<pre><code>##  [1] 43.62195 43.40961 40.39260 21.04748 20.66195 42.45466 28.08936
-##  [8] 41.83962 22.70068 40.02848 21.22583 27.01165 37.74072 38.51085
-## [15] 42.40013</code></pre>
+<pre><code>##  [1] 26.63005 42.79384 41.57672 31.05458 41.36726 41.98817 29.52497
+##  [8] 37.82627 34.39444 32.72802 38.40542 24.09379 43.23531 34.73173
+## [15] 20.85018</code></pre>
 <pre class="r"><code>runif(25, 60, 50)</code></pre>
 <pre><code>## Warning in runif(25, 60, 50): NAs produced</code></pre>
 <pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
