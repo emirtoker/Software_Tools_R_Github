@@ -44,11 +44,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Syllabus**
 
-![](Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png)
+![](../Software_Tools_for_Earth_and_Environmental_Science_Syllabus_2020_21_Fall.png)
 
 ## **Extended Syllabus**
 
-![](extended_syllabus.png) 
+![](extended_syllabus_2020_21.png) 
 
 [LINK](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
@@ -60,14 +60,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Flow**
 
-![](book_flow.png)
+![](book_flow_2020_21.png)
 
 [LINK](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 
 ## **Course Github-Web Page**
 
-![](course_github.png)
+![](course_github_2020_21.png)
 
 [LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
 

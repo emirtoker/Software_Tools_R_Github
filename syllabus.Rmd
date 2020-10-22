@@ -23,7 +23,7 @@ output: html_document
 
 <center>
 
-![](Presentation/week-book.png)
+![](Presentation/book_flow_2020_21.png)
 
 </center>
 
