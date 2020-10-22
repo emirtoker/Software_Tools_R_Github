@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-![](dc_logo5.png) **DataCamp** - [Home](https://www.datacamp.com/home) & [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) & [Intermediate R](https://www.datacamp.com/courses/intermediate-r)
+![](dc_logo6.png) - [Home](https://www.datacamp.com/home) & [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) & [Intermediate R](https://www.datacamp.com/courses/intermediate-r)
 
 ***
 
