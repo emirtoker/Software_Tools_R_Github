@@ -352,3 +352,36 @@ The Internet of Things (IoT) is a system of interrelated computing devices, mech
 - Stackoverflow, Wolfram-alpha, Dropbox, Wetransfer
 
 [LINK](https://emirtoker.github.io/Software_Tools_R_Github/new_accounts.html)
+
+
+
+# **BY THE WAY**
+
+
+## **I prepared this slide in R**
+
+![](slide_in_r.png)
+
+## **Also our course webside is prepared in R**
+
+![](web_in_r.png)
+
+
+## **See you**
+
+I will share these in Ninova
+
+I let you know what we will do at the next week
+
+- Quiz
+- Homework
+
+Also you can check the Extended Abstract
+
+**
+
+Question ?
+
+**
+
+**- THE END -**
