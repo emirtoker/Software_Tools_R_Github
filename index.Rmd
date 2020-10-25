@@ -8,11 +8,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-<!-- ***
-  [ANKET](https://forms.gle/9STHrJstFuE7mVzq8) --> 
-
-<!--  Final Project - [Rmd](https://web.itu.edu.tr/tokerem/Final_Project.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Final_Project.pdf) - [html](https://web.itu.edu.tr/tokerem/Final_Project.html) -->
-
 ***
 
 **R Repository** -  [Github](https://github.com/emirtoker/Software_Tools_R_Github)             
@@ -27,8 +22,9 @@ knitr::opts_chunk$set(echo = TRUE)
 **Homeworks** 
 
 - HW2 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.nb.html)
-- HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html) - [Answer](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3_Answer.nb.html)
-- Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html) 
+- HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html) 
+<!--  [Answer](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3_Answer.nb.html)
+- Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html) -->
 
 ***
 
@@ -76,6 +72,13 @@ knitr::opts_chunk$set(echo = TRUE)
 5. <span style="color:grey">R Statistics and Probability</span>
 
 ***
+
+
+
+<!-- ***
+  [ANKET](https://forms.gle/9STHrJstFuE7mVzq8) --> 
+
+<!--  Final Project - [Rmd](https://web.itu.edu.tr/tokerem/Final_Project.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Final_Project.pdf) - [html](https://web.itu.edu.tr/tokerem/Final_Project.html) -->
 
 
 

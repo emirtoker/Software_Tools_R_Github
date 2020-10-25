@@ -34,6 +34,8 @@ knitr::opts_chunk$set(echo = FALSE)
 
 * Introduction to software tools.
 
+* Background for data analysis course
+
 * Traditional 5-step process for the scientific method
 
 1. Observation
@@ -69,7 +71,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](course_github_2020_21.png)
 
-[LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
+
+
+
+Google -> 'emir toker github' -> Software_Tools_R_Github
+
+Then, at the bottom of the page you will see the course [LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
 
 # **Data**
 
@@ -79,7 +86,6 @@ knitr::opts_chunk$set(echo = FALSE)
 - Data Collection and Generation
 - Data Types, Formats and Sources
 - Download and Get the Data
-- Interpretation and Visualization
 - Popular Terms About Data
 
 ## What is the Data and Metadata?
@@ -92,11 +98,23 @@ Metadata is information about data.
 
 ## Metadata
 
+![](metadata00.png)
+
+## Metadata
+
 ![](metadata0.png)
 
 ## Metadata
 
+![](metadata02.png)
+
+## Metadata
+
 ![](metadata1.png)
+
+## Metadata
+
+![](metadata1a.png)
 
 ## Data Collection and Generation
 
@@ -110,7 +128,13 @@ Data collection is the process of gathering and measuring information on targete
 
 ## Data Types
 
-![](what_data.svg)
+In computer science and computer programming, a **data type** or simply **type** is an attribute of data.
+
+![](r-programming-data-types.png) ![](what_data.svg){ width=30% }
+
+What is the programmer's purpose? 
+
+What is the nature of the data?
 
 ## Data Formats
 
@@ -130,17 +154,13 @@ The location where data that is being used comes from.
 
 ## Download and Get the Data
 
-![](download.png) 
+You can just click the **DOWNLOAD** button.
+
+![](download.png){ width=10% }
+
+What if the size of data is very big and you need numerous data files like hundreds or thousands.
 
 ![](wget.jpg)
-
-## Interpretation and Visualization
-
-Interpretation is the process of making sense of numerical data that has been collected, analyzed, and presented. 
-
-Visualization is the graphical representation of information and data.
-
-![](visual.jpg)
 
 
 ## Popular Terms About Data
@@ -174,20 +194,41 @@ Apache Point, New Mexico, US, 1995
 
 ALMA, Atacama, Antofagasta Region, Chile
 
+## Apache Point, New Mexico, US, 1995
+
+After **one month**, the 'apache point' collected astronomical data as much as we have since the beginning of the earth.
+
+After **ten years**, it collected data as much as we have. (not only astronomically, all data)
+
+![](apache_point.jpg)
+
+Important because of the golden rate.
+
+## ALMA, Atacama, Antofagasta Region, Chile, 2011
+
+66 high-precision antennas (over 100 tons for each), like 1 big teleschope. The antennas can be moved across the desert plateau over distances from 150 m to 16 km.
+
+ ![](alma.jpg){ width=37% }  ![](alma_transporter.jpg){ width=28% }   ![](alma_correlator.jpg){ width=30% }
+
+Atacama Large Millimeter/submillimeter Array, ALMA Transporter (130-ton) and Correlator (1.5 trillion/sec)
+
+In 5 days it collects data as much as we have. Also we found the Black Body. 
+
 ## Data Mining
 
 Data mining is the process of discovering patterns in large data sets.
 
-![](mining1.jpg)  ![](mining.jpg)
+![](mining1.jpg){ width=42% } ![](mining.jpg)
 
 ## Data Assimilation and Manipulation
 
 Data assimilation is a mathematical discipline that seeks to optimally combine theory with observations. 
 
-![](data_assim.jpeg)
+![](data_assim_00.png){ width=40% }  ![](data_manip.jpg){ width=31% } 
 
 Data manipulation; inserting, deleting, and modifying data in a database.
 
+Chemical and Physical
 
 ## Data Science
 
@@ -208,8 +249,13 @@ Data science is a multi-disciplinary field that uses scientific methods, process
 
 ## **Code**
 
-![](code.png)
+words, letters, figures, or symbols
 
+![](code.png){ width=30% }
+
+telegraph key /	morse alphabet / morse code (1835)
+
+In computing *->* program instructions.
 
 ## **Code**
 
@@ -231,7 +277,20 @@ Microsoft Windows, Apple macOS, Linux
 
 ## Programming Languages
 
-![](languages.png)
+Programming language is a formal language and used in computer programming to implement algorithms.
+
+
+![](languages.png){ width=38% }
+
+Top 20 (256) most popular programming (2019-2020)
+
+## Interpretation and Visualization
+
+Interpretation is the process of making sense of the data that has been collected, analyzed, and presented. 
+
+Visualization is the graphical representation of information and data.
+
+![](visual.jpg)
 
 
 ##  Algorithm 
@@ -298,4 +357,219 @@ The Internet of Things (IoT) is a system of interrelated computing devices, mech
 - Meted, Coursera, Udemy, Datacamp, Edx, Khanacademy
 - Stackoverflow, Wolfram-alpha, Dropbox, Wetransfer
 
-[LINK](https://emirtoker.github.io/Software_Tools_R_Github/new_accounts.html)
+
+## Github
+
+![](github.png)
+
+[LINK](https://github.com)
+
+## Researchgate
+
+![](researchgate.png)
+
+[LINK](https://www.researchgate.net)
+
+## DOI Code  - (digital object identifier) - Zenodo
+
+![](zenodo-doi.png)
+
+[LINK](https://zenodo.org/)
+
+
+## ORCID
+
+![](orcid.png)
+
+[LINK](https://orcid.org/)
+
+
+## Overleaf(LaTeX)
+
+![](overleaf.png)
+
+[LINK](https://www.overleaf.com/)
+
+
+## Mendeley
+
+![](mendeley.png)
+
+[LINK](https://www.mendeley.com)
+
+
+## Panoply
+
+![](panoply.png)
+
+[LINK](https://www.giss.nasa.gov/tools/panoply/)
+
+
+## Sublime Text
+
+![](sublimetext.png)
+
+[LINK](https://www.sublimetext.com/)
+
+
+## Filezilla
+
+![](filezilla.png)
+
+[LINK](https://filezilla-project.org/)
+
+
+## ArcGIS
+
+![](arcgis.png)
+
+[LINK](https://www.arcgis.com/index.html)
+
+
+## QGIS
+
+![](qgis.png)
+
+[LINK](https://qgis.org/en/site/)
+
+
+## Anaconda
+
+![](anaconda.png)
+
+[LINK](https://www.anaconda.com)
+
+
+## Jupyter
+
+![](jupyter.png)
+
+[LINK](https://jupyter.org/install)
+
+
+## Cygwin
+
+![](cygwin.png)
+
+
+[LINK](https://www.cygwin.com/)
+
+
+## R Studio
+
+![](rstudio.png)
+
+[LINK](https://www.rstudio.com/)
+
+
+## NCL
+
+![](ncl.png)
+
+[LINK](https://www.ncl.ucar.edu/)
+
+
+##  Meted
+
+![](meted.png)
+
+[LINK](https://www.meted.ucar.edu/)
+
+## Coursera
+
+![](coursera.png)
+
+[LINK](https://www.coursera.org)
+
+
+## Udemy
+
+![](udemy.png)
+
+[LINK](https://www.udemy.com/)
+
+## Datacamp
+
+![](datacamp01.png)
+
+[LINK](https://www.datacamp.com/home)
+
+## Edx
+
+![](edx.png)
+
+[LINK](https://www.edx.org)
+
+## Khan academy
+
+![](khanacademy.png)
+
+[LINK](https://www.khanacademy.org/)
+
+## Stack overflow
+
+![](stackoverflow.png)
+
+[LINK](https://stackoverflow.com/)
+
+
+## Wolfram alpha
+
+![](wolfram-alpha.png)
+
+
+[LINK](https://www.wolframalpha.com/)
+
+
+## Dropbox
+
+![](dropbox.png)
+
+[LINK](https://www.dropbox.com/)
+
+
+## Wetransfer
+
+![](wetransfer.png)
+
+[LINK](https://wetransfer.com/)
+
+
+## TeamViewer
+
+![](teamviewer.png)
+
+[LINK](https://www.teamviewer.com/en-us/?t=1570379454764)
+
+
+
+# **BY THE WAY**
+
+
+## **I prepared this slide in R**
+
+![](slide_in_r.png)
+
+## **Also our course webside is prepared in R**
+
+![](web_in_r.png)
+
+
+## **See you**
+
+I will share these in Ninova
+
+I let you know what we will do at the next week
+
+- Quiz
+- Homework
+
+Also you can check the Extended Abstract
+
+**
+
+Question ?
+
+**
+
+**- THE END -**

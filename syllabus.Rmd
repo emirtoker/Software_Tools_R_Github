@@ -15,7 +15,7 @@ output: html_document
 
 <center>
 
-**Extended Syllabus - ** [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+**Extended Syllabus - ** [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_for_Earth_and_Environmental_Science_Syllabus_2020_21_Fall.pdf)
 
 </center>
 
@@ -24,6 +24,14 @@ output: html_document
 <center>
 
 ![](Presentation/book_flow_2020_21.png)
+
+</center>
+
+***
+
+<center>
+
+![](Presentation/hw_quiz_flow_2020_21.png)
 
 </center>
 

@@ -79,7 +79,6 @@ knitr::opts_chunk$set(echo = FALSE)
 - Data Collection and Generation
 - Data Types, Formats and Sources
 - Download and Get the Data
-- Interpretation and Visualization
 - Popular Terms About Data
 
 ## What is the Data and Metadata?
@@ -92,11 +91,24 @@ Metadata is information about data.
 
 ## Metadata
 
+![](metadata00.png)
+
+## Metadata
+
 ![](metadata0.png)
 
 ## Metadata
 
+![](metadata02.png)
+
+## Metadata
+
 ![](metadata1.png)
+
+## Metadata
+
+![](metadata1a.png)
+
 
 ## Data Collection and Generation
 
@@ -130,7 +142,11 @@ The location where data that is being used comes from.
 
 ## Download and Get the Data
 
-![](download.png) 
+You can just click the **DOWNLOAD** button.
+
+![](download.png){ width=10% }
+
+What if the size of data is very big and you need numerous data files like hundreds or thousands.
 
 ![](wget.jpg)
 
@@ -174,20 +190,43 @@ Apache Point, New Mexico, US, 1995
 
 ALMA, Atacama, Antofagasta Region, Chile
 
+## Apache Point, New Mexico, US, 1995
+
+After **one month**, the 'apache point' collected astronomical data as much as we have since the beginning of the earth.
+
+After **ten years**, it collected data as much as we have. (not only astronomically, all data)
+
+![](apache_point.jpg)
+
+Important because of the golden rate.
+
+## ALMA, Atacama, Antofagasta Region, Chile, 2011
+
+66 high-precision antennas (over 100 tons for each), like 1 big teleschope. The antennas can be moved across the desert plateau over distances from 150 m to 16 km.
+
+ ![](alma.jpg){ width=37% }  ![](alma_transporter.jpg){ width=28% }   ![](alma_correlator.jpg){ width=30% }
+
+Atacama Large Millimeter/submillimeter Array, ALMA Transporter (130-ton) and Correlator (1.5 trillion/sec)
+
+In 5 days it collects data as much as we have. Also we found the Black Body. 
+
+
+
 ## Data Mining
 
 Data mining is the process of discovering patterns in large data sets.
 
-![](mining1.jpg)  ![](mining.jpg)
+![](mining1.jpg){ width=42% } ![](mining.jpg)
 
 ## Data Assimilation and Manipulation
 
 Data assimilation is a mathematical discipline that seeks to optimally combine theory with observations. 
 
-![](data_assim.jpeg)
+![](data_assim_00.png){ width=40% }  ![](data_manip.jpg){ width=31% } 
 
 Data manipulation; inserting, deleting, and modifying data in a database.
 
+Chemical and Physical
 
 ## Data Science
 
@@ -208,8 +247,13 @@ Data science is a multi-disciplinary field that uses scientific methods, process
 
 ## **Code**
 
-![](code.png)
+words, letters, figures, or symbols
 
+![](code.png){ width=30% }
+
+telegraph key /	morse alphabet / morse code (1835)
+
+In computing *->* program instructions.
 
 ## **Code**
 
@@ -231,8 +275,17 @@ Microsoft Windows, Apple macOS, Linux
 
 ## Programming Languages
 
-![](languages.png)
+![](languages.png){ width=38% }
 
+Top 20 (256) most popular programming (2019-2020)
+
+## Interpretation and Visualization
+
+Interpretation is the process of making sense of the data that has been collected, analyzed, and presented. 
+
+Visualization is the graphical representation of information and data.
+
+![](visual.jpg)
 
 ##  Algorithm 
 
