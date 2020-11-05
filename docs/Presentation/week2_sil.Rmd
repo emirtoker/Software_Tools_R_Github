@@ -1,7 +1,7 @@
 ---
 title: "Software Tools for Earth and Environmental Science - Week 2"
 subtitle: YSB 801E
-date: "September 27, 2019"
+date: "October 30, 2020"
 output: 
   revealjs::revealjs_presentation:
     theme: solarized
@@ -18,20 +18,44 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Linux and Python**
 
-- **Syllabus, Book and Last Week**
+- **Syllabus, Book and WebPage**
 
-- **Unix, Gnu/Linux and Terminal**
+- **Unix, Gnu and Gnu/Linux**
+
+- **Terminal**
+
+- **Basic GNU/Linux Commands**
+
+- <span style="color:purple">**Quiz**</span>
 
 - **Python and Jupyter**
 
+- **Next Week**
 
-# **Syllabus, Book and Last Week**
+
+# **Syllabus, Book and WebPage**
 
 
 ## **Syllabus**
 
-![](syllabus.png)
-Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+![](../Software_Tools_for_Earth_and_Environmental_Science_Syllabus_2020_21_Fall.png)
+
+
+
+## **Syllabus**
+
+![](syllabus_20-21_1st_week.png)
+
+
+## **Syllabus**
+
+![](syllabus_20-21_2nd_week.png)
+
+## **Extended Syllabus**
+
+![](extended_syll_2nd_week.png)
+
+Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_for_Earth_and_Environmental_Science_Syllabus_2020_21_Fall.pdf)
 
 ## **Book**
 
@@ -39,12 +63,53 @@ Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.
 
 The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
 
-## **Last Week**
+## **WebPage**
 
-![](last_week.png)
+![](course_github_2020_21.png)
+
 Course Home Page [LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
 
 Week 1 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week1)
+
+## **Good News**
+
+![](dc_00.png)
+
+DataCamp - [LINK](https://learn.datacamp.com/)
+
+## **DataCamp**
+
+![](dc_01.png)
+
+## **DataCamp**
+
+![](dc_02.png)
+
+## **The Value of DataCamp Class**
+
+- 1 $ -> 8 TL
+
+- Standard -> 12$ / month
+
+- Course -> 6 month
+
+- People -> 30
+
+
+8 TL * 12$ * 6 month * 30 people
+
+**17.280 TL**
+
+
+![](moto_bike.png)
+
+## **DataCamp**
+
+![](dc_03.png)
+
+Filtered course for R -> 147 courses
+
+We will have new assignments
 
 
 # **Unix, Gnu/Linux and Terminal**

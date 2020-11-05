@@ -17,12 +17,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ![](dc_logo6.png) - [Home](https://www.datacamp.com/home) & [Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r) & [Intermediate R](https://www.datacamp.com/courses/intermediate-r)
 
-***
+<!-- ***
 
-**Homeworks** 
+ **Homeworks** 
 
-- HW2 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.nb.html)
-- HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html) 
+ - HW2 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework2.nb.html)
+- HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html) -->
 <!--  [Answer](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3_Answer.nb.html)
 - Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html) -->
 
