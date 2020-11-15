@@ -584,7 +584,7 @@ R - Getting Started
 
 ![](R_and_R_Studio.png)
 
-<span style="color:pink">**kahoo.it**</span> 
+<span style="color:pink">**kahoot.it**</span> 
 
 
 
@@ -639,7 +639,7 @@ R - Basic and Vectors
 
 ![](R_and_R_Studio.png)
 
-<span style="color:pink">**kahoo.it**</span> 
+<span style="color:pink">**kahoot.it**</span> 
 
 
 

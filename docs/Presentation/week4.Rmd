@@ -1,7 +1,7 @@
 ---
 title: "Software Tools for Earth and Environmental Science - Week 4 -"
 subtitle: YSB 801E
-date: "October 11, 2019"
+date: "November 13, 2020"
 output: 
   revealjs::revealjs_presentation:
     theme: blood
@@ -22,15 +22,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - **R and RStudio**
 
+- **Fields of Usage**
+
 - **Preview of R Course**
 
 - **Getting Started**
 
+- **QUIZ**
+
 - **Next Week**
-
-- **Seminar - EIES**
-
-- **Additional Course** *(Optional)*
 
 
 # **Syllabus, Last Week, Book and This Week**
@@ -38,19 +38,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Syllabus**
 
-![](syllabus_4th_week.png)
+![](4th_w_21-21.png)
 Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 
 ## **Last Week**
 
-![](r_web.png)
+![](git_4w.png)
 
-Week 3 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week3)
-
-## **4th Week - Extended Syllabus**
-
-![](week4_extended_syllabus.png)
+Week 3 - Presentation [LINK](http://rpubs.com/emir/software_tools_week3)
 
 
 
@@ -63,6 +59,24 @@ Week 3 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week3)
 ![](The_Book_of_R_small.png) ![](book_chp1.png)
 
 The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
+
+
+## **Homework for Today**
+
+- **Download R and R Studio**
+- <span style="color:green">**datacamp**</span> - **Introduction to R** - Intro to basics
+
+![](4w_dt_intro_r.png) 
+
+
+
+##  **QUIZ**
+
+R Language - Getting Started
+
+![](R_and_R_Studio.png)
+
+
 
 
 
@@ -133,13 +147,23 @@ The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
 Pages : **23 - 36**
 
 
+
 ## **Next Week - Homework**
 
-Introduction to R, Section 1, 2 and 3 (Part 14 to 21)
+<span style="color:red">**udemy**</span> - Introduction to R, Section 1, 2 and 3 (Part 14 to 21)
 
 ![](udemy_hm1.png) ![](udemy_content_1.png)
 
-[Udemy](https://www.udemy.com/course/introduction-to-r/)
+LINK - [udemy](https://www.udemy.com/course/introduction-to-r/)
+
+
+## **Next Week - Homework**
+
+<span style="color:green">**datacamp**</span> - 2)Vectors and 3)Matrices
+
+![](dt_w2_hw.png)
+
+LINK - [datacamp](https://learn.datacamp.com/courses/free-introduction-to-r/)
 
 
 ## **Next Week - QUIZ**
@@ -148,16 +172,5 @@ R - Basic and Vectors
 
 ![](R_and_R_Studio.png)
 
-
-# **Seminar - EIES**
-
-## **Seminar - EIES**
-
-![](aybe_seminar.png)
-
-
-# **Additional Course** *(Optional)*
-
-# The End
 
 

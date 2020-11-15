@@ -24,7 +24,7 @@ It is a **GNU project**.
 
 UNIX, Windows and MacOS
 
-*R version 3.6.1 has been released on 2019-07-05*
+*R version 4.0.3 has been released on 2020-10-10*
 
 ***
 
@@ -37,9 +37,8 @@ UNIX, Windows and MacOS
 ![](Presentation/ross_lhaka.jpg) ![](Presentation/robert_gentleman.jpg)
 
 /
-*Powerful but cheap graphics*
-- *R Core Team*
-- *Open Sources*
+*Powerful but cheap graphics* - *Open Sources*
+
 /
 
 ***
@@ -67,7 +66,7 @@ R Homepage - [LINK](https://www.r-project.org/)
 The Comprehensive R Archive Network (CRAN) - [LINK](https://cran.r-project.org/mirrors.html)
 
 
-![](Presentation/cran_turkey.png)
+![](Presentation/cran_turkey_20-21.png)
 
 *please choose a location close to you*
 
@@ -78,14 +77,14 @@ The Comprehensive R Archive Network (CRAN) - [LINK](https://cran.r-project.org/m
 
 Turkey - Middle East Technical University Northern Cyprus Campus, Mersin - [LINK](https://cran.ncc.metu.edu.tr)
 
-![](Presentation/cran_metu.png)
+![](Presentation/4w_r_20-21.png)
 
 
 ***
 
 ### **R**
 
-![](Presentation/r_terminal.png) 
+![](Presentation/4w_r_term.png) 
 
 
 ***
@@ -100,7 +99,7 @@ An **Integrated Development Environment (IDE)** for R.
 
 - *Developer(s) : RStudio, Inc.*
 - *Initial release :	28 February 2011*
-- *Stable release : 1.2.5001 / 19 September 2019*
+- *Stable release : 1.3.1903 / 18 September 2020*
 - *Written in : Java, C++, JavaScript*
 
 
@@ -177,6 +176,20 @@ The process of making sense out of a collection of data.
 Data visualization is the graphical representation of information and data.
 
 ![](Presentation/r_visual.png)
+
+***
+
+### **Visualization**
+
+![](Presentation/w4_1_dolar_table.png)
+
+
+***
+
+### **Visualization**
+
+![](Presentation/w4_1_dolar.png)
+
 
 
 ***
@@ -461,6 +474,9 @@ Directory Name - Create Project
 
 ![](Presentation/r_screen16.png)
 
+ - getwd() == pwd (linux command)
+ - setwd("...") == cd (linux command)
+ 
 ***
 
 ### **Files**
@@ -549,7 +565,7 @@ How to tell R to ignore a part of your code? (**#**)
 ```
 # This code will calculate the likelihood that it will rain tomorrow
 
-  complicated_rain_calculation_for_tomorrow()
+  rain_calculation()
 ```
 
 - Ignore a line of code and see how a program will run without it:
