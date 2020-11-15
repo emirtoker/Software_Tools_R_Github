@@ -37,13 +37,13 @@ Metadata is information about data.
 
 #### **Sample 1**
 
-![](Presentation/metadata0.png)
+![](Presentation/metadata02.png)
 
 /
 
 #### **Sample 2**
 
-![](Presentation/metadata1.png)
+![](Presentation/metadata1a.png)
 
 ***
 
@@ -220,6 +220,12 @@ Rasters are made up of a matrix of pixels (also called cells), each containing a
 
 ### **Vector vs Raster**
 
+![](Presentation/vector-raster.gif)
+
+***
+
+### **Vector vs Raster**
+
 ![](Presentation/raster_0.gif)
 
 
@@ -235,8 +241,17 @@ Rasters are made up of a matrix of pixels (also called cells), each containing a
 ### **Vector vs Raster**
 
 ![](Presentation/raster_vs_vector.png)
+***
 
+### **Vector and Raster Formats**
 
+![](Presentation/vec_ras.jpg)
+
+***
+
+### **Vector and Raster**
+
+What do you think about the advantages and disadvantages of vector and raster types? 
 
 
 ***
@@ -258,6 +273,17 @@ Rasters are made up of a matrix of pixels (also called cells), each containing a
 
 ![](Presentation/grid_diff.jpg)
 
+***
+
+### **Grid - Spatial Resolution**
+
+![](Presentation/ipcc_res.png){width=55%} ![](Presentation/res_spatial.gif){width=30%}
+
+
+IPCC = Intergovernmental Panel on Climate Change ( 500, 250, 180, 110 km )
+
+Coarse (low) and Finer (high) resolution
+
 
 ***
 
@@ -267,6 +293,23 @@ NWP uses mathematical models of the atmosphere and oceans to predict the weather
 
 
 ![](Presentation/nwp_1.png) ![](Presentation/nwp_2.png)
+
+
+***
+
+### **Questions**
+
+- **What if you have not enough money or capacity to calculate the processes in high-resolution grids, globally?**
+
+- *Hints: Regional Climate Models (RGM), Nested Grid or Domains etc.*
+
+- **What should we do in polar regions? Which grid system would be better?**
+
+- *Hints:Projection, Re-Shaped Grid etc.*
+
+- **What are the other grid problems?**
+
+- *Hint: Coastal region, Clouds etc.*
 
 
 ***
@@ -296,7 +339,10 @@ The information collected by a primary source.
 
 The process of making predictions of the future based on past and present data. 
 
-![](Presentation/forecast.png)
+![](Presentation/forecast_co2.png)
+
+
+![](Presentation/mauna_loa.png)
 
 
 ***
@@ -423,6 +469,9 @@ It is developed and regulated by Esri.
 
 ![](Presentation/shp_mask.png)
 
+Global to Continental
+
+What kind of shapefile could they have used?
 
 ***
 

@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Data Sources-Download and NCL**
 
-- **Syllabus, Book and Last Week**
+- **Syllabus**
 
 - **Linux - Repeat and Practice**
 
@@ -35,7 +35,7 @@ knitr::opts_chunk$set(echo = FALSE)
 - **Next Week**
 
 
-# **Syllabus, Book and Last Week**
+# **Syllabus**
 
 
 ## **Syllabus**
@@ -43,24 +43,35 @@ knitr::opts_chunk$set(echo = FALSE)
 ![](sly_20-21_3rd.png)
 Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
-## **Book**
-
-![](The_Book_of_R.png)
-
-The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
-
 ## **Last Week**
 
-![](last_week_2nd.png)
+![](wp_week3.png)
 Course Home Page [LINK](https://emirtoker.github.io/Software_Tools_R_Github/index.html)
-
-Week 2 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week2)
+ 
+- Week 1 - Slide [LINK](http://rpubs.com/emirtoker/software_tools_week1)
+- Week 2 - Slide [LINK](http://rpubs.com/emirtoker/software_tools_week2)
 
 ## **3th Week - Extended Syllabus**
 
-![](extended_syllabus_3th_week.png)
+![](ex_syl_w3.png)
+
+
+## **Ek Ders (Extra Class/Additional Course)**
+
+We will repeat and discuss the first three weeks of the course in Turkish. Ninova -> Announcement
+
+![](ek_anket.png){ width=35% }
+
+Questionnaire - [LINK](https://doodle.com/poll/wetw363s5w79t3ib?utm_source=poll&utm_medium=link)
+
 
 # **Linux - Repeat and Practice**
+
+## **At First - Split Screen**
+
+![](split_screen.png){ width=80% }
+
+Can you split your screen? (two different windows are on the same screen - Presentation and Web Browser)
 
 
 ## **Repeat - Linux**
@@ -70,6 +81,7 @@ Week 2 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week2)
 
 [webminal.org](https://www.webminal.org/)
 
+Log In -> Terminal -> 'Launch It' -> Log In
 
 ## **Repeat and Practice**
 
@@ -100,7 +112,7 @@ Week 2 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week2)
 5. **Create a new file** *(touch it, file name : `<my_new_file>`)*
 6. **Open your file with text editor** *(vi `<my_new_file>`)*
 7. **Activate Insert mode** *(with i)*
-8. **Write this line: <echo hello there>**
+8. **Write this line:** echo what am i doing here
 9. **Write/Save and Quit** *(:wq)*
 10. **Change your new file name** *(move `<my_new_file.sh>`)*
 11. **Run the script `<my_new_file.sh>`** *(bash .sh)*
@@ -109,11 +121,12 @@ Week 2 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week2)
 
 
     
+## **DataCamp - Shell**
+
     
+![](dc_bash.png)
     
-    
-    
-    
+[LINK](https://learn.datacamp.com/courses/introduction-to-bash-scripting)
     
     
 
@@ -131,11 +144,11 @@ Data are things, known or assumed as facts, making the basis of reasoning or cal
 
 Metadata is information about data.
 
-![](metadata0.png)
+![](metadata02.png)
 
 ## **What is Metadata?**
 
-![](metadata1.png)
+![](metadata1a.png)
 
 
 
@@ -183,10 +196,8 @@ Rasters are made up of a matrix of pixels (also called cells), each containing a
 
 ![](raster_dataset.png)
 
-
 ## **Vector vs Raster**
-
-![](raster_0.gif)
+![](vector-raster.gif)
 
 
 ## **Vector vs Raster**
@@ -199,7 +210,20 @@ Rasters are made up of a matrix of pixels (also called cells), each containing a
 ![](raster_vs_vector.png)
 
 
+## **Vector to Raster**
 
+![](raster_0.gif)
+
+## **Vector and Raster Formats**
+
+![](vec_ras.jpg)
+
+
+## **Vector and Raster**
+
+What do you think about the advantages and disadvantages of vector and raster types? 
+
+Write on Ninova -> Message Board
 
 ## **Gridded Data**
 
@@ -216,13 +240,41 @@ Rasters are made up of a matrix of pixels (also called cells), each containing a
 
 ![](grid_diff.jpg)
 
+## **Grid - Spatial Resolution**
+
+![](ipcc_res.png){width=55%} ![](res_spatial.gif){width=30%}
+
+
+IPCC = Intergovernmental Panel on Climate Change ( 500, 250, 180, 110 km )
+
+Coarse (low) and Finer (high) resolution
 
 ## **BONUS - Numerical weather prediction (NWP)**
 
 NWP uses mathematical models of the atmosphere and oceans to predict the weather based on current weather conditions.
 
-
 ![](nwp_1.png) ![](nwp_2.png)
+
+## **BONUS - Numerical weather prediction (NWP)**
+
+![](noaa_earth.png){width=45%} ![](noaa_earth.png){width=45%}
+
+Which one is the model and which one is the satellite ?
+
+
+## **Questions**
+
+- **What if you have not enough money or capacity to calculate the processes in high-resolution grids, globally?**
+
+- *Hints: Regional Climate Models (RGM), Nested Grid or Domains etc.*
+
+- **What should we do in polar regions? Which grid system would be better?**
+
+- *Hints:Projection, Re-Shaped Grid etc.*
+
+- **What are the other grid problems?**
+
+- *Hint: Coastal region, Clouds etc.*
 
 
 ## **Data Set**
@@ -246,7 +298,7 @@ The information collected by a primary source.
 
 The process of making predictions of the future based on past and present data. 
 
-![](forecast.png)
+![](forecast_co2.png){width=70%} ![](mauna_loa.png){width=25%}
 
 
 ## **Re-Analysis Data**
@@ -351,7 +403,9 @@ It is developed and regulated by Esri.
 
 ![](shp_mask.png)
 
+Global to Continental
 
+What kind of shapefile could they have used?
 
 
 # **Data Sources**
@@ -366,10 +420,12 @@ It is developed and regulated by Esri.
   - ESGF
   - CRU
   - E-OBS
+  - CPC
+  - NOAA
   
 ## **Earthdata**
 
-![](earthdata.png)
+![](ed_20-21.png)
 
 [LINK](https://earthdata.nasa.gov/)
 
@@ -378,14 +434,14 @@ It is developed and regulated by Esri.
 
 *The Royal Netherlands Meteorological Institute*
 
-![](knmi.png)
+![](knmi_20-21.png)
 
 [LINK](http://climexp.knmi.nl/start.cgi)
 
 
 ## **Wordclim**
 
-![](wordclim.png)
+![](wc_01_20-21.png){width=25%} ![](wc_20-21_02.png){width=70%} 
 
 [LINK](https://www.worldclim.org/)
 
@@ -406,7 +462,7 @@ It is developed and regulated by Esri.
 
 *National Centers for Environmental Prediction (NCEP)*
 
-![](gfs.png)
+![](gfs.png){width=85%} 
 
 [LINK](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
 
@@ -416,7 +472,7 @@ It is developed and regulated by Esri.
 
 *The Earth System Grid Federation (ESGF)*
 
-![](esgf.png)
+![](esgf.png){width=85%} 
 
 [LINK](https://esgf-data.dkrz.de/projects/esgf-dkrz/)
 
@@ -426,7 +482,7 @@ It is developed and regulated by Esri.
 
 *Climatic Research Unit-University of East Anglia*
 
-![](cru.png)
+![](cru_20-21.png)
 
 [LINK](http://www.cru.uea.ac.uk/)
 
@@ -435,44 +491,240 @@ It is developed and regulated by Esri.
 
 *Europe daily gridded observational dataset*
 
-![](eobs.png)
+![](eobs_20-21.png)
 [LINK](https://www.ecad.eu/download/ensembles/download.php)
 
 
+## **CPC**
+
+*Global daily gridded observational dataset*
+
+![](CPC.png)
+
+Climate Prediction Center - [LINK](https://www.ecad.eu/download/ensembles/download.php)
+
+## **NOAA-NCDC**
+
+![](noaa.png)
+
+National Oceanic and Atmospheric Administration (NOAA)
+
+National Climatic Data Center (NCDC)
+
+[LINK](https://www.ncdc.noaa.gov/)
 
 
+## **Bonus - Visualize Data**
+
+
+![](gfs_v.png){width=85%} 
+
+GFS Data- [LINK](http://www1.wetter3.de/hinw_er.html)
+
+## **Bonus - Visualize Data**
+
+![](era_v.png)
+
+ERA Data- [LINK](https://www.ecmwf.int/en/forecasts/charts/catalogue/)
+
+## **Bonus - Visualize Data**
+
+![](windy_v.png)
+
+ECMWF, GFS, OBS Data - [LINK](https://www.windy.com/)
+
+## **Bonus - Visualize Data**
+
+![](meteo_earth.png)
+
+ECMWF - [LINK](http://www.meteoearth.com/)
+
+
+## **Bonus - Visualize Data**
+
+![](earth_v.png)
+
+GFS - [LINK](https://earth.nullschool.net/)
+
+
+## **Bonus - Visualize Data**
+
+![](clim_re_v.png)
+
+GFS - [LINK](https://climatereanalyzer.org/)
 
 # **Data Download**
 
 ## **Data Download**
 
   - Click
-  - ftp, sftp, https, ssh
-  - wget
+  - ftp, sftp, https
+  - ssh, nfs, smb
+  - wget, curl
 
 
 ## **Click**
 
-![](knmi.png)
+![](knmi_20-21_00.png)
 
 [KNMI Climate Explorer](http://climexp.knmi.nl/start.cgi)
 
+Monthly reanalysis fields
+
+## **Click - ERA**
+
+![](knmi_20-21_01.png)
+
+## **Click - ERA 2m Temperature**
+
+![](knmi_20-21_02.png)
+
+## **Click - ERA 2m Temperature**
+
+![](knmi_20-21_03.png)
+
+Scroll Down
+
+## **Click - ERA 2m Temperature - Netcdf**
+
+![](knmi_20-21_04.png)
 
 
-## **ftp, sftp, https**
+## **Connect to Download or Edit**
+
+Connect-Download Remotely
 
 - ftp - File Transfer Protocol 
 - sftp - Secure File Transfer Protocol
 - https - Hypertext Transfer Protocol Secure
+
+Connect-Edit (also download) Remotely
+
 - ssh - Secure Shell
+- nfs - Network File System
+- smb - Samba (ftp-like)
 
-## **BONUS - FileZilla**
+## **ftp**
+
+![](noaa_01.png)
+
+## **ftp-NOAA**
+
+![](noaa_02.png)
+
+Land-Based Station -> Datasets -> Integrated Surface Databased (ISD)
+
+## **ftp-NOAA**
+
+![](noaa_03.png)
+
+## **ftp-NOAA**
+
+![](noaa_04.png)
+
+We will see it in 'wget' section
+
+## **ftp-NOAA**
+
+![](noaa_05.png)
+
+ISD/Global Hourly 
+
+## **ftp-NOAA**
+
+![](noaa_06.png)
+
+ftp://ftp.ncei.noaa.gov/pub/data/noaa/
+
+## **ftp-NOAA with FileZilla**
+
+![](noaa_07.png)
+
+
+## **BONUS - FileZilla - sftp**
+
+ITU Portal - https://portal.itu.edu.tr/apps/default/
+
+![](fz_02.png)
+
+Check your ITU Cloud quota
+
+## **BONUS - FileZilla - sftp**
 
 ```
-ssh.itu.edu.tr
+ssh.itu.edu.tr or sftp://ssh.itu.edu.tr
+tokerem (your ITU account)
+password (your ITU password)
 ```
 
-![](filezil.png)
+![](fz_00.png)
+
+
+## **BONUS - FileZilla - sftp**
+
+![](rapor_00.png)
+
+## **BONUS - FileZilla - sftp**
+
+![](rapor_01.png)
+
+## **BONUS - FileZilla - sftp**
+
+![](fz_01.png)
+
+
+
+## **BONUS - FileZilla - sftp**
+
+Your Official Website
+
+https://web.itu.edu.tr/~tokerem/
+
+![](fz_03.png)
+
+I showed this page to DataCamp
+
+## **wget or curl**
+
+wget
+
+  - GNU Wget (or just Wget)
+  - World Wide Web and get
+  - It supports downloading via HTTP, HTTPS, and FTP.
+  
+![](wget_00.png)
+
+## **wget or curl**
+
+cURL
+
+- Client URL
+- URL : Uniform Resource Locator. (reference web pages (http), file transfer (ftp), email (mailto), database access (JDBC) etc.)
+
+![](curl_00.png)
+
+
+## **wget-noaa**
+
+![](noaa_04a.png)
+
+## **wget-noaa**
+
+![](noaa_04b.png)
+
+## **wget-noaa**
+
+![](noaa_04c.png)
+
+
+## **wget-noaa**
+
+![](noaa_04d.png)
+
+## **wget-noaa**
+
+![](noaa_04e.png)
+
 
 
 
@@ -480,24 +732,24 @@ ssh.itu.edu.tr
 
 ## **cdo, nco and NCL**
 
+Operators (like Packages)
+
   - cdo
   - nco
+  
+Language
+
   - NCL
 
 
-
-## **cdo**
-
-*Climate Data Operator*
-
-2019-06-13: 1.9.7
-
-![](cdo.png)
-
-[LINK](https://code.mpimet.mpg.de/projects/cdo/embedded/cdo.pdf)
+## **Panoply ?**
 
 
-## **cdo**
+![](panoply_00.png)
+
+I have downloaded ERA5 2m-Temperature already.
+
+## **Panoply**
 
 ```
 era5_t2m.nc
@@ -506,10 +758,62 @@ era5_t2m.nc
 ![](cdo1.png)
 
 
+
+## **era5_t2m**
+
+I want to  
+
+  - Calculate the mean of all months of each year separately
+  
+  - Split the data as 12 different files for all months
+  
+  - Cut/Crop the Turkey from global file
+  
+  - Calculate the mean of all seasons of each year separately
+
+
+- Differences between two files
+
+Normally I should use a programming language to open, read and manipulate the data like R, Python, NCL or etc.
+
+## **cdo**
+
+*Climate Data Operator*
+
+2019-10: 1.9.8
+
+![](cdo.png)
+
+[LINK](https://code.mpimet.mpg.de/projects/cdo/embedded/cdo.pdf)
+
+
+## **cdo**
+
+- Calculate the mean of all months of each year separately:
+**yearmonmean**
+
+- Split the data as 12 different files for all months: **splitmon**
+
+- Cut/Crop the global file for just Turkey: **sellonlatbox**
+
+- Calculate the mean of all seasons of each year separately: **seasmean**
+
+
+## **cdo**
+
+You can use it in Terminal or Python. (Download it with Anaconda or Cygwin)
+
+![](cdo_00.png)
+
+![](cdo_01.png)
+
+
+
 ## **cdo**
 
 ```
 cdo yearmonmean era5_t2m.nc era5_t2m_yearmonmean.nc
+
 era5_t2m_yearmonmean.nc
 ```
 
@@ -523,6 +827,7 @@ era5_t2m_yearmonmean.nc
 
 ```
 cdo splitmon era5_t2m.nc era5_t2m_splitmon
+
 era5_t2m_splitmon10.nc
 ```
 
@@ -535,6 +840,7 @@ era5_t2m_splitmon10.nc
 
 ```
 cdo sellonlatbox,26,-45,36,42 era5_t2m.nc era5_t2m_TR.nc
+
 era5_t2m_TR.nc
 ```
 
@@ -548,6 +854,7 @@ era5_t2m_TR.nc
 
 ```
 cdo seasmean era5_t2m.nc era5_t2m_seasmean.nc
+
 era5_t2m_seasmean.nc
 ```
 
@@ -574,7 +881,7 @@ era5_t2m_seasmean.nc
 
 *netCDF Operator*
 
-2019 Jul 01: 4.8.1 
+2020 Nov: 4.9.6 
 
 ![](nco.png)
 
@@ -595,29 +902,32 @@ era5_t2m_splitmon0304_ncdiff.nc
 
 ## **NCL**
 
-*NCAR (National Center for Atmospheric Research) Command Language*
-
+*NCAR (National Center for Atmospheric Research) Command Language* - [LINK](https://www.ncl.ucar.edu/)
 
 
 ![](ncll.png)
 
-[LINK](https://www.ncl.ucar.edu/)
-
-
 
 ## **NCL**
+
+You can use it in Terminal and Python ( also download with Anaconda)
+
+![](ncl_00.png)
+
+
+## **NCL + Sublime Text**
 
 ![](ncl1.png)
 
 
 ## **NCL**
 
-![](ncl2.png)
-
+![](ncl_04.png){ width=20% } ![](ncl_03.png ){ width=58% }
 
 ## **NCL**
 
-![](ncl0.png)
+
+![](ncl_01.png){ width=20% } ![](ncl_02.png){ width=58% }
 
 ## **NCL - Vapor**
 
@@ -633,20 +943,24 @@ era5_t2m_splitmon0304_ncdiff.nc
 [LINK](http://meteora.ucsd.edu/~pierce/ncview_home_page.html)
   
 
+## **BONUS - DataCamp - Conda Course**
 
-  
-  
+Conda Essentials
+
+![](dt_conda.png)
+
+[LINK](https://learn.datacamp.com/courses/conda-essentials)
   
 
 # **Next (4th) Week**
 
 ## **Syllabus**
 
-![](syllabus.png)
+![](syl_w4_20-21.png)
 
 ## **Extended Syllabus**
 
-![](extended_syllabus_3th_week.png) ![](extended_4th_week.png)
+![](w4_ex_sly.png)
 
 
 ## **BOOK**
@@ -668,18 +982,25 @@ The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
 
 <span style="color:red">**Udemy**</span> - R Basics - [LINK](https://www.udemy.com/course/r-basics/)
 
-![](udemy1.png) ![](datacamp1.png)
+![](udemy_20-21.png){ width=44% } ![](dt_r_intro_20-21.png){ width=52% }
 
 - **Introduction to R** 
 
-<span style="color:red">**Datacamp**</span> - Introduction to R - Intro to basics
-(FREE) - [LINK](https://www.datacamp.com/courses/free-introduction-to-r)
+<span style="color:green">**Datacamp**</span> - Introduction to R - Intro to basics - [LINK](https://www.datacamp.com/courses/free-introduction-to-r)
 
 
+## **Getting Started with R** 
+
+I created a basic Interactive Training with R-Shinny (Inspired from code_academy and ismail sezen)
+
+![](Int_wp.png)
+
+[LINK](https://emir-toker.shinyapps.io/R_Interactive_Training_and_Quiz/)
 
 
+## **Getting Started with R** 
 
-
+![](Int_wp_00.png)
 
 
 ## **QUIZ**
@@ -688,3 +1009,8 @@ The Book of R - [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
 
 ![](R_and_R_Studio.png)
 
+
+
+## **See you**
+
+at EK DERS

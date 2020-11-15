@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -22,6 +22,17 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -83,7 +94,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -232,6 +242,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -243,18 +254,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -316,6 +315,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="data_sources.html">Data Sources</a>
+    </li>
+    <li>
+      <a href="data_download.html">Data Download</a>
     </li>
     <li>
       <a href="ncl.html">NCL</a>
@@ -396,12 +398,12 @@ $(document).ready(function () {
 <h2><strong>Metadata</strong></h2>
 <div id="sample-1" class="section level4">
 <h4><strong>Sample 1</strong></h4>
-<p><img src="Presentation/metadata0.png" /></p>
+<p><img src="Presentation/metadata02.png" /></p>
 <p>/</p>
 </div>
 <div id="sample-2" class="section level4">
 <h4><strong>Sample 2</strong></h4>
-<p><img src="Presentation/metadata1.png" /></p>
+<p><img src="Presentation/metadata1a.png" /></p>
 <hr />
 </div>
 </div>
@@ -512,7 +514,7 @@ $(document).ready(function () {
 <div id="data-types-1" class="section level3">
 <h3><strong>Data Types</strong></h3>
 <ul>
-<li>Vector
+<li><p>Vector</p>
 <ul>
 <li>Point</li>
 <li>Line</li>
@@ -544,17 +546,31 @@ $(document).ready(function () {
 </div>
 <div id="vector-vs-raster" class="section level3">
 <h3><strong>Vector vs Raster</strong></h3>
-<p><img src="Presentation/raster_0.gif" /></p>
+<p><img src="Presentation/vector-raster.gif" /></p>
 <hr />
 </div>
 <div id="vector-vs-raster-1" class="section level3">
 <h3><strong>Vector vs Raster</strong></h3>
-<p><img src="Presentation/vector_vs_raster.png" /></p>
+<p><img src="Presentation/raster_0.gif" /></p>
 <hr />
 </div>
 <div id="vector-vs-raster-2" class="section level3">
 <h3><strong>Vector vs Raster</strong></h3>
-<p><img src="Presentation/raster_vs_vector.png" /></p>
+<p><img src="Presentation/vector_vs_raster.png" /></p>
+<hr />
+</div>
+<div id="vector-vs-raster-3" class="section level3">
+<h3><strong>Vector vs Raster</strong></h3>
+<p><img src="Presentation/raster_vs_vector.png" /> ***</p>
+</div>
+<div id="vector-and-raster-formats" class="section level3">
+<h3><strong>Vector and Raster Formats</strong></h3>
+<p><img src="Presentation/vec_ras.jpg" /></p>
+<hr />
+</div>
+<div id="vector-and-raster" class="section level3">
+<h3><strong>Vector and Raster</strong></h3>
+<p>What do you think about the advantages and disadvantages of vector and raster types?</p>
 <hr />
 </div>
 <div id="gridded-data" class="section level3">
@@ -573,10 +589,29 @@ $(document).ready(function () {
 <p><img src="Presentation/grid_diff.jpg" /></p>
 <hr />
 </div>
+<div id="grid---spatial-resolution" class="section level3">
+<h3><strong>Grid - Spatial Resolution</strong></h3>
+<p><img src="Presentation/ipcc_res.png" style="width:55.0%" /> <img src="Presentation/res_spatial.gif" style="width:30.0%" /></p>
+<p>IPCC = Intergovernmental Panel on Climate Change ( 500, 250, 180, 110 km )</p>
+<p>Coarse (low) and Finer (high) resolution</p>
+<hr />
+</div>
 <div id="bonus---numerical-weather-prediction-nwp" class="section level3">
 <h3><strong>BONUS - Numerical weather prediction (NWP)</strong></h3>
 <p>NWP uses mathematical models of the atmosphere and oceans to predict the weather based on current weather conditions.</p>
 <p><img src="Presentation/nwp_1.png" /> <img src="Presentation/nwp_2.png" /></p>
+<hr />
+</div>
+<div id="questions" class="section level3">
+<h3><strong>Questions</strong></h3>
+<ul>
+<li><p><strong>What if you have not enough money or capacity to calculate the processes in high-resolution grids, globally?</strong></p></li>
+<li><p><em>Hints: Regional Climate Models (RGM), Nested Grid or Domains etc.</em></p></li>
+<li><p><strong>What should we do in polar regions? Which grid system would be better?</strong></p></li>
+<li><p><em>Hints:Projection, Re-Shaped Grid etc.</em></p></li>
+<li><p><strong>What are the other grid problems?</strong></p></li>
+<li><p><em>Hint: Coastal region, Clouds etc.</em></p></li>
+</ul>
 <hr />
 </div>
 <div id="data-set" class="section level3">
@@ -598,7 +633,8 @@ $(document).ready(function () {
 <div id="forecast" class="section level3">
 <h3><strong>Forecast</strong></h3>
 <p>The process of making predictions of the future based on past and present data.</p>
-<p><img src="Presentation/forecast.png" /></p>
+<p><img src="Presentation/forecast_co2.png" /></p>
+<p><img src="Presentation/mauna_loa.png" /></p>
 <hr />
 </div>
 <div id="re-analysis-data" class="section level3">
@@ -681,6 +717,8 @@ $(document).ready(function () {
 <div id="shapefile---.shp-1" class="section level3">
 <h3><strong>Shapefile - .shp</strong></h3>
 <p><img src="Presentation/shp_mask.png" /></p>
+<p>Global to Continental</p>
+<p>What kind of shapefile could they have used?</p>
 <hr />
 </div>
 </div>
@@ -694,7 +732,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -702,6 +740,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

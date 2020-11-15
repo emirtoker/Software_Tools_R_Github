@@ -1,0 +1,238 @@
+---
+title: "Data Download"
+output: html_document
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(error = FALSE)
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+***
+
+
+  - Click
+  - ftp, sftp, https
+  - ssh, nfs, smb
+  - wget, curl
+
+
+***
+
+### **Click**
+
+![](Presentation/knmi_20-21_00.png)
+
+[KNMI Climate Explorer](http://climexp.knmi.nl/start.cgi)
+
+Monthly reanalysis fields
+
+***
+
+### **Click - ERA**
+
+![](Presentation/knmi_20-21_01.png)
+
+***
+
+### **Click - ERA 2m Temperature**
+
+![](Presentation/knmi_20-21_02.png)
+
+***
+
+### **Click - ERA 2m Temperature**
+
+![](Presentation/knmi_20-21_03.png)
+
+Scroll Down
+
+***
+
+### **Click - ERA 2m Temperature - Netcdf**
+
+![](Presentation/knmi_20-21_04.png)
+
+
+***
+
+### **Connect to Download or Edit**
+
+Connect-Download Remotely
+
+- ftp - File Transfer Protocol 
+- sftp - Secure File Transfer Protocol
+- https - Hypertext Transfer Protocol Secure
+
+Connect-Edit (also download) Remotely
+
+- ssh - Secure Shell
+- nfs - Network File System
+- smb - Samba (ftp-like)
+
+***
+
+### **ftp**
+
+![](Presentation/noaa_01.png)
+
+***
+
+### **ftp-NOAA**
+
+![](Presentation/noaa_02.png)
+
+Land-Based Station -> Datasets -> Integrated Surface Databased (ISD)
+
+***
+
+### **ftp-NOAA**
+
+![](Presentation/noaa_03.png)
+
+***
+
+### **ftp-NOAA**
+
+![](Presentation/noaa_04.png)
+
+We will see it in 'wget' section
+
+***
+
+### **ftp-NOAA**
+
+![](Presentation/noaa_05.png)
+
+ISD/Global Hourly 
+
+***
+
+### **ftp-NOAA**
+
+![](Presentation/noaa_06.png)
+
+ftp://ftp.ncei.noaa.gov/pub/data/noaa/
+
+***
+
+### **ftp-NOAA with FileZilla**
+
+![](Presentation/noaa_07.png)
+
+
+***
+
+### **BONUS - FileZilla - sftp**
+
+ITU Portal - https://portal.itu.edu.tr/apps/default/
+
+![](Presentation/fz_02.png)
+
+Check your ITU Cloud quota
+
+***
+
+### **BONUS - FileZilla - sftp**
+
+```
+ssh.itu.edu.tr or sftp://ssh.itu.edu.tr
+tokerem (your ITU account)
+password (your ITU password)
+```
+
+![](Presentation/fz_00.png)
+
+
+***
+
+### **BONUS - FileZilla - sftp**
+
+![](Presentation/rapor_00.png)
+
+***
+
+### **BONUS - FileZilla - sftp**
+
+![](Presentation/rapor_01.png)
+
+***
+
+### **BONUS - FileZilla - sftp**
+
+![](Presentation/fz_01.png)
+
+
+
+***
+
+### **BONUS - FileZilla - sftp**
+
+Your Official Website
+
+https://web.itu.edu.tr/~tokerem/
+
+![](Presentation/fz_03.png)
+
+I showed this page to DataCamp
+
+***
+
+### **wget or curl**
+
+wget
+
+  - GNU Wget (or just Wget)
+  - World Wide Web and get
+  - It supports downloading via HTTP, HTTPS, and FTP.
+  
+![](Presentation/wget_00.png)
+
+***
+
+### **wget or curl**
+
+cURL
+
+- Client URL
+- URL : Uniform Resource Locator. (reference web pages (http), file transfer (ftp), email (mailto), database access (JDBC) etc.)
+
+![](Presentation/curl_00.png)
+
+
+***
+
+### **wget-noaa**
+
+![](Presentation/noaa_04a.png)
+
+***
+
+### **wget-noaa**
+
+![](Presentation/noaa_04b.png)
+
+***
+
+### **wget-noaa**
+
+![](Presentation/noaa_04c.png)
+
+
+***
+
+### **wget-noaa**
+
+![](Presentation/noaa_04d.png)
+
+***
+
+### **wget-noaa**
+
+![](Presentation/noaa_04e.png)
+
+***

@@ -14,13 +14,15 @@ output: html_document
   - ESGF
   - CRU
   - E-OBS
+  - CPC
+  - NOAA
 
 
 ***
 
 ### **Earthdata**
 
-![](Presentation/earthdata.png)
+![](Presentation/ed_20-21.png)
 
 [LINK](https://earthdata.nasa.gov/)
 
@@ -31,7 +33,7 @@ output: html_document
 
 *The Royal Netherlands Meteorological Institute*
 
-![](Presentation/knmi.png)
+![](Presentation/knmi_20-21.png)
 
 [LINK](http://climexp.knmi.nl/start.cgi)
 
@@ -40,7 +42,7 @@ output: html_document
 
 ### **Wordclim**
 
-![](Presentation/wordclim.png)
+![](Presentation/wc_20-21_02.png)
 
 [LINK](https://www.worldclim.org/)
 
@@ -89,7 +91,7 @@ output: html_document
 
 *Climatic Research Unit-University of East Anglia*
 
-![](Presentation/cru.png)
+![](Presentation/cru_20-21.png)
 
 [LINK](http://www.cru.uea.ac.uk/)
 
@@ -100,7 +102,90 @@ output: html_document
 
 *Europe daily gridded observational dataset*
 
-![](Presentation/eobs.png)
+![](Presentation/eobs_20-21.png)
 [LINK](https://www.ecad.eu/download/ensembles/download.php)
 
 ***
+
+### **CPC**
+
+*Global daily gridded observational dataset*
+
+![](Presentation/CPC.png)
+
+Climate Prediction Center - [LINK](https://www.ecad.eu/download/ensembles/download.php)
+
+
+***
+
+### **NOAA-NCDC**
+
+![](Presentation/noaa.png)
+
+
+National Oceanic and Atmospheric Administration (NOAA)
+
+National Climatic Data Center (NCDC)
+
+[LINK](https://www.ncdc.noaa.gov/)
+
+
+***
+
+### **Bonus - Visualize Data**
+
+![](Presentation/gfs_v.png)
+
+GFS Data- [LINK](http://www1.wetter3.de/hinw_er.html)
+
+
+***
+
+## **Bonus - Visualize Data**
+
+![](Presentation/era_v.png)
+
+ERA Data- [LINK](https://www.ecmwf.int/en/forecasts/charts/catalogue/)
+
+
+***
+
+### **Bonus - Visualize Data**
+
+![](Presentation/windy_v.png)
+
+ECMWF, GFS, OBS Data - [LINK](https://www.windy.com/)
+
+
+***
+
+### **Bonus - Visualize Data**
+
+![](Presentation/meteo_earth.png)
+
+ECMWF - [LINK](http://www.meteoearth.com/)
+
+
+***
+
+### **Bonus - Visualize Data**
+
+![](Presentation/earth_v.png)
+
+GFS - [LINK](https://earth.nullschool.net/)
+
+
+***
+
+### **Bonus - Visualize Data**
+
+![](Presentation/clim_re_v.png)
+
+GFS - [LINK](https://climatereanalyzer.org/)
+
+
+
+***
+
+
+

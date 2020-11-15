@@ -32,7 +32,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 1. Syllabus, Data and Code - [Slide](http://rpubs.com/emirtoker/software_tools_week1)
 2. Unix, GNU/Linux and Python - [Slide](http://rpubs.com/emirtoker/software_tools_week2)
-3. Data Formats, Sources, Download and NCL - [Slide](http://rpubs.com/emirtoker/software_tools_week3)
+3. Data Formats, Sources, Download and NCL - [Slide](https://rpubs.com/emir/software_tools_week3)
 4. R and RStudio - [Slide](http://rpubs.com/emirtoker/software_tools_week4)
 5. R Language Part 1 (Class, Vector, Matrice, Array) - [Slide](http://rpubs.com/emirtoker/software_tools_week5)
 6. R Language Part 2 (Data Frame, List & Read, Write, Plot) - [Slide](http://rpubs.com/emirtoker/software_tools_week7)
@@ -86,7 +86,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- WeTransfer - [era5_t2m.zip](https://we.tl/t-x55NHIxrGo)--> 
 <!-- ***--> 
 
-<!--⁨Macintosh HD⁩ ▸ ⁨Library⁩ ▸ ⁨Frameworks⁩ ▸ ⁨R.framework⁩ ▸ ⁨Versions⁩ ▸ ⁨3.5⁩ ▸ ⁨Resources⁩ ▸ ⁨library⁩ ▸ ⁨rmarkdown⁩ ▸ ⁨rmd⁩ ▸ ⁨h⁩ ▸ ⁨bootstrap⁩ ▸ ⁨css⁩--> 
+<!--⁨Macintosh HD⁩ ▸ ⁨Library⁩ ▸ ⁨Frameworks⁩ ▸ ⁨R.framework⁩ ▸ ⁨Versions⁩ ▸ ⁨4.0⁩ ▸ ⁨Resources⁩ ▸ ⁨library⁩ ▸ ⁨rmarkdown⁩ ▸ ⁨rmd⁩ ▸ ⁨h⁩ ▸ ⁨bootstrap⁩ ▸ ⁨css⁩--> 
 <!-- colors diff #0ce3ac (Vivid cyan-lime green, linkler gözüken) -----  #ff4500 (orange-Red) --> 
 <!-- colors diff #00bc8c (Vivid cyan-lime green, başlıklara fare ile gelince) ----- #ffa500 (orange1) --> 
 

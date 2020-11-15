@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Emir Toker" />
@@ -23,6 +23,17 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -84,7 +95,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -233,6 +243,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -244,18 +255,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -317,6 +316,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="data_sources.html">Data Sources</a>
+    </li>
+    <li>
+      <a href="data_download.html">Data Download</a>
     </li>
     <li>
       <a href="ncl.html">NCL</a>
@@ -395,7 +397,7 @@ $(document).ready(function () {
 <ol style="list-style-type: decimal">
 <li>Syllabus, Data and Code - <a href="http://rpubs.com/emirtoker/software_tools_week1">Slide</a></li>
 <li>Unix, GNU/Linux and Python - <a href="http://rpubs.com/emirtoker/software_tools_week2">Slide</a></li>
-<li>Data Formats, Sources, Download and NCL - <a href="http://rpubs.com/emirtoker/software_tools_week3">Slide</a></li>
+<li>Data Formats, Sources, Download and NCL - <a href="https://rpubs.com/emir/software_tools_week3">Slide</a></li>
 <li>R and RStudio - <a href="http://rpubs.com/emirtoker/software_tools_week4">Slide</a></li>
 <li>R Language Part 1 (Class, Vector, Matrice, Array) - <a href="http://rpubs.com/emirtoker/software_tools_week5">Slide</a></li>
 <li>R Language Part 2 (Data Frame, List &amp; Read, Write, Plot) - <a href="http://rpubs.com/emirtoker/software_tools_week7">Slide</a></li>
@@ -444,7 +446,7 @@ $(document).ready(function () {
 <!-- **KNMI Data - ERA5 2m-Temp - CDO and NCO**-->
 <!-- WeTransfer - [era5_t2m.zip](https://we.tl/t-x55NHIxrGo)-->
 <!-- ***-->
-<!--⁨Macintosh HD⁩ ▸ ⁨Library⁩ ▸ ⁨Frameworks⁩ ▸ ⁨R.framework⁩ ▸ ⁨Versions⁩ ▸ ⁨3.5⁩ ▸ ⁨Resources⁩ ▸ ⁨library⁩ ▸ ⁨rmarkdown⁩ ▸ ⁨rmd⁩ ▸ ⁨h⁩ ▸ ⁨bootstrap⁩ ▸ ⁨css⁩-->
+<!--⁨Macintosh HD⁩ ▸ ⁨Library⁩ ▸ ⁨Frameworks⁩ ▸ ⁨R.framework⁩ ▸ ⁨Versions⁩ ▸ ⁨4.0⁩ ▸ ⁨Resources⁩ ▸ ⁨library⁩ ▸ ⁨rmarkdown⁩ ▸ ⁨rmd⁩ ▸ ⁨h⁩ ▸ ⁨bootstrap⁩ ▸ ⁨css⁩-->
 <!-- colors diff #0ce3ac (Vivid cyan-lime green, linkler gözüken) -----  #ff4500 (orange-Red) -->
 <!-- colors diff #00bc8c (Vivid cyan-lime green, başlıklara fare ile gelince) ----- #ffa500 (orange1) -->
 <!-- <span style="color:Red">***---***</span><span style="color:DarkOrange">***---***</span><span style="color:Yellow">***---***</span><span style="color:DarkGreen">***---***</span><span style="color:Blue">***---***</span></span><span style="color:DarkViolet">***---***</span>  -->
@@ -462,7 +464,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -470,6 +472,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

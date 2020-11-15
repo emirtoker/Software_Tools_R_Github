@@ -5,21 +5,96 @@ output: html_document
 
 ***
 
+Operators (like Packages)
+
   - cdo
   - nco
+  
+Language
+
   - NCL
   
+
+***
+
+### **Panoply ?**
+
+
+![](Presentation/panoply_00.png)
+
+I have downloaded ERA5 2m-Temperature already.
+
+***
+
+### **Panoply**
+
+```
+era5_t2m.nc
+```
+
+![](Presentation/cdo1.png)
+
+
+***
+
+### **era5_t2m**
+
+I want to  
+
+  - Calculate the mean of all months of each year separately
+  
+  - Split the data as 12 different files for all months
+  
+  - Cut/Crop the Turkey from global file
+  
+  - Calculate the mean of all seasons of each year separately
+
+
+- Differences between two files
+
+Normally I should use a programming language to open, read and manipulate the data like R, Python, NCL or etc.
+
+
+
 ***
 
 ### **cdo**
 
 *Climate Data Operator*
 
-2019-06-13: 1.9.7
+2019-10: 1.9.8
 
 ![](Presentation/cdo.png)
 
 [LINK](https://code.mpimet.mpg.de/projects/cdo/embedded/cdo.pdf)
+
+
+
+***
+
+### **cdo**
+
+- Calculate the mean of all months of each year separately:
+**yearmonmean**
+
+- Split the data as 12 different files for all months: **splitmon**
+
+- Cut/Crop the global file for just Turkey: **sellonlatbox**
+
+- Calculate the mean of all seasons of each year separately: **seasmean**
+
+***
+
+### **cdo**
+
+You can use it in Terminal or Python. (Download it with Anaconda or Cygwin)
+
+![](Presentation/cdo_00.png)
+
+
+![](Presentation/cdo_01.png)
+
+
 
 
 ***
@@ -39,6 +114,7 @@ era5_t2m.nc
 
 ```
 cdo yearmonmean era5_t2m.nc era5_t2m_yearmonmean.nc
+
 era5_t2m_yearmonmean.nc
 ```
 
@@ -54,6 +130,7 @@ era5_t2m_yearmonmean.nc
 
 ```
 cdo splitmon era5_t2m.nc era5_t2m_splitmon
+
 era5_t2m_splitmon10.nc
 ```
 
@@ -68,6 +145,7 @@ era5_t2m_splitmon10.nc
 
 ```
 cdo sellonlatbox,26,-45,36,42 era5_t2m.nc era5_t2m_TR.nc
+
 era5_t2m_TR.nc
 ```
 
@@ -83,6 +161,7 @@ era5_t2m_TR.nc
 
 ```
 cdo seasmean era5_t2m.nc era5_t2m_seasmean.nc
+
 era5_t2m_seasmean.nc
 ```
 
@@ -111,7 +190,7 @@ era5_t2m_seasmean.nc
 
 *netCDF Operator*
 
-2019 Jul 01: 4.8.1 
+2020 Nov: 4.9.6 
 
 ![](Presentation/nco.png)
 
@@ -136,35 +215,43 @@ era5_t2m_splitmon0304_ncdiff.nc
 
 ### **NCL**
 
-*NCAR (National Center for Atmospheric Research) Command Language*
+*NCAR (National Center for Atmospheric Research) Command Language* - [LINK](https://www.ncl.ucar.edu/)
 
 
 
 ![](Presentation/ncll.png)
 
-[LINK](https://www.ncl.ucar.edu/)
-
-
 
 ***
 
 ### **NCL**
+
+You can use it in Terminal and Python ( also download with Anaconda)
+
+![](Presentation/ncl_00.png)
+
+
+***
+
+### **NCL + Sublime Text**
 
 ![](Presentation/ncl1.png)
 
+***
+
+### **NCL**
+
+![](Presentation/ncl_04.png){ width=20% } ![](Presentation/ncl_03.png ){ width=58% }
+
+
 
 ***
 
 ### **NCL**
 
-![](Presentation/ncl2.png)
+![](Presentation/ncl_01.png){ width=20% } ![](Presentation/ncl_02.png){ width=58% }
 
 
-***
-
-### **NCL**
-
-![](Presentation/ncl0.png)
 
 ***
 

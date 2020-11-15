@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -22,6 +22,17 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -83,7 +94,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -232,6 +242,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -243,18 +254,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -318,6 +317,9 @@ $(document).ready(function () {
       <a href="data_sources.html">Data Sources</a>
     </li>
     <li>
+      <a href="data_download.html">Data Download</a>
+    </li>
+    <li>
       <a href="ncl.html">NCL</a>
     </li>
     <li>
@@ -376,50 +378,100 @@ $(document).ready(function () {
 
 
 <hr />
+<p>Operators (like Packages)</p>
 <ul>
 <li>cdo</li>
 <li>nco</li>
+</ul>
+<p>Language</p>
+<ul>
 <li>NCL</li>
 </ul>
 <hr />
+<div id="panoply" class="section level3">
+<h3><strong>Panoply ?</strong></h3>
+<p><img src="Presentation/panoply_00.png" /></p>
+<p>I have downloaded ERA5 2m-Temperature already.</p>
+<hr />
+</div>
+<div id="panoply-1" class="section level3">
+<h3><strong>Panoply</strong></h3>
+<pre><code>era5_t2m.nc</code></pre>
+<p><img src="Presentation/cdo1.png" /></p>
+<hr />
+</div>
+<div id="era5_t2m" class="section level3">
+<h3><strong>era5_t2m</strong></h3>
+<p>I want to</p>
+<ul>
+<li><p>Calculate the mean of all months of each year separately</p></li>
+<li><p>Split the data as 12 different files for all months</p></li>
+<li><p>Cut/Crop the Turkey from global file</p></li>
+<li><p>Calculate the mean of all seasons of each year separately</p></li>
+<li><p>Differences between two files</p></li>
+</ul>
+<p>Normally I should use a programming language to open, read and manipulate the data like R, Python, NCL or etc.</p>
+<hr />
+</div>
 <div id="cdo" class="section level3">
 <h3><strong>cdo</strong></h3>
 <p><em>Climate Data Operator</em></p>
-<p>2019-06-13: 1.9.7</p>
+<p>2019-10: 1.9.8</p>
 <p><img src="Presentation/cdo.png" /></p>
 <p><a href="https://code.mpimet.mpg.de/projects/cdo/embedded/cdo.pdf">LINK</a></p>
 <hr />
 </div>
 <div id="cdo-1" class="section level3">
 <h3><strong>cdo</strong></h3>
-<pre><code>era5_t2m.nc</code></pre>
-<p><img src="Presentation/cdo1.png" /></p>
+<ul>
+<li><p>Calculate the mean of all months of each year separately: <strong>yearmonmean</strong></p></li>
+<li><p>Split the data as 12 different files for all months: <strong>splitmon</strong></p></li>
+<li><p>Cut/Crop the global file for just Turkey: <strong>sellonlatbox</strong></p></li>
+<li><p>Calculate the mean of all seasons of each year separately: <strong>seasmean</strong></p></li>
+</ul>
 <hr />
 </div>
 <div id="cdo-2" class="section level3">
 <h3><strong>cdo</strong></h3>
-<pre><code>cdo yearmonmean era5_t2m.nc era5_t2m_yearmonmean.nc
-era5_t2m_yearmonmean.nc</code></pre>
-<p><img src="Presentation/cdo2.png" /></p>
+<p>You can use it in Terminal or Python. (Download it with Anaconda or Cygwin)</p>
+<p><img src="Presentation/cdo_00.png" /></p>
+<p><img src="Presentation/cdo_01.png" /></p>
 <hr />
 </div>
 <div id="cdo-3" class="section level3">
 <h3><strong>cdo</strong></h3>
-<pre><code>cdo splitmon era5_t2m.nc era5_t2m_splitmon
-era5_t2m_splitmon10.nc</code></pre>
-<p><img src="Presentation/cdo3.png" /></p>
+<pre><code>era5_t2m.nc</code></pre>
+<p><img src="Presentation/cdo1.png" /></p>
 <hr />
 </div>
 <div id="cdo-4" class="section level3">
 <h3><strong>cdo</strong></h3>
-<pre><code>cdo sellonlatbox,26,-45,36,42 era5_t2m.nc era5_t2m_TR.nc
-era5_t2m_TR.nc</code></pre>
-<p><img src="Presentation/cdo4.png" /></p>
+<pre><code>cdo yearmonmean era5_t2m.nc era5_t2m_yearmonmean.nc
+
+era5_t2m_yearmonmean.nc</code></pre>
+<p><img src="Presentation/cdo2.png" /></p>
 <hr />
 </div>
 <div id="cdo-5" class="section level3">
 <h3><strong>cdo</strong></h3>
+<pre><code>cdo splitmon era5_t2m.nc era5_t2m_splitmon
+
+era5_t2m_splitmon10.nc</code></pre>
+<p><img src="Presentation/cdo3.png" /></p>
+<hr />
+</div>
+<div id="cdo-6" class="section level3">
+<h3><strong>cdo</strong></h3>
+<pre><code>cdo sellonlatbox,26,-45,36,42 era5_t2m.nc era5_t2m_TR.nc
+
+era5_t2m_TR.nc</code></pre>
+<p><img src="Presentation/cdo4.png" /></p>
+<hr />
+</div>
+<div id="cdo-7" class="section level3">
+<h3><strong>cdo</strong></h3>
 <pre><code>cdo seasmean era5_t2m.nc era5_t2m_seasmean.nc
+
 era5_t2m_seasmean.nc</code></pre>
 <p><img src="Presentation/cdo5.png" /></p>
 <hr />
@@ -427,7 +479,7 @@ era5_t2m_seasmean.nc</code></pre>
 <div id="nco" class="section level3">
 <h3><strong>nco</strong></h3>
 <p><em>netCDF Operator</em></p>
-<p>2019 Jul 01: 4.8.1</p>
+<p>2020 Nov: 4.9.6</p>
 <p><img src="Presentation/nco.png" /></p>
 <p><a href="http://nco.sourceforge.net/nco.pdf">PDF</a></p>
 <hr />
@@ -441,24 +493,29 @@ era5_t2m_splitmon0304_ncdiff.nc</code></pre>
 </div>
 <div id="ncl" class="section level3">
 <h3><strong>NCL</strong></h3>
-<p><em>NCAR (National Center for Atmospheric Research) Command Language</em></p>
+<p><em>NCAR (National Center for Atmospheric Research) Command Language</em> - <a href="https://www.ncl.ucar.edu/">LINK</a></p>
 <p><img src="Presentation/ncll.png" /></p>
-<p><a href="https://www.ncl.ucar.edu/">LINK</a></p>
 <hr />
 </div>
 <div id="ncl-1" class="section level3">
 <h3><strong>NCL</strong></h3>
+<p>You can use it in Terminal and Python ( also download with Anaconda)</p>
+<p><img src="Presentation/ncl_00.png" /></p>
+<hr />
+</div>
+<div id="ncl-sublime-text" class="section level3">
+<h3><strong>NCL + Sublime Text</strong></h3>
 <p><img src="Presentation/ncl1.png" /></p>
 <hr />
 </div>
 <div id="ncl-2" class="section level3">
 <h3><strong>NCL</strong></h3>
-<p><img src="Presentation/ncl2.png" /></p>
+<p><img src="Presentation/ncl_04.png" style="width:20.0%" /> <img src="Presentation/ncl_03.png" style="width:58.0%" /></p>
 <hr />
 </div>
 <div id="ncl-3" class="section level3">
 <h3><strong>NCL</strong></h3>
-<p><img src="Presentation/ncl0.png" /></p>
+<p><img src="Presentation/ncl_01.png" style="width:20.0%" /> <img src="Presentation/ncl_02.png" style="width:58.0%" /></p>
 <hr />
 </div>
 <div id="ncl---vapor" class="section level3">
@@ -483,7 +540,7 @@ era5_t2m_splitmon0304_ncdiff.nc</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -491,6 +548,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

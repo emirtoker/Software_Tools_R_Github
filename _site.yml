@@ -23,6 +23,8 @@ navbar:
           href: python.html 
         - text: "Data Sources"
           href: data_sources.html
+        - text: "Data Download"
+          href: data_download.html
         - text: "NCL"
           href: ncl.html  
         - text: "R and RStudio"
