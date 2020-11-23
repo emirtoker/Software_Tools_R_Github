@@ -2,7 +2,7 @@
 title: "Software Tools for Earth and Environmental Science"
 subtitle:  "--5th WEEK--"
 author: "Emir Toker"
-date: "18/10/2019"
+date: "20/11/2020"
 output: 
   revealjs::revealjs_presentation:
     theme: white
@@ -31,7 +31,7 @@ knitr::opts_chunk$set(echo = FALSE)
     - Matrice
     - Arrays
 
-- **PRACTICE and QUIZ**
+- **PRACTICE, SUMMARY and QUIZ**
 
 - **Next Week**
 
@@ -41,13 +41,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Syllabus**
 
-![](syllabus_week5.png)
+![](w5_syll.png)
 Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 
 ## **Last Week**
 
-![](page_week5.png)
+![](w5_last_w.png)
 
 Week 4 - Presentation [LINK](http://rpubs.com/emirtoker/software_tools_week4)
 
@@ -82,15 +82,15 @@ Scroll down :)
 
 ## **GitHub**
 
-![](github2.png)
+![](w5_github2.png)
 
 ## **GitHub**
 
-![](github3.png)
+![](w5_github3.png)
 
 ## **GitHub**
 
-![](github4.png)
+![](w5_github4.png)
 
 
 
@@ -145,6 +145,23 @@ $integral
 [1] XX
 ```
 
+## **BONUS**
+
+**What is Function ?**
+
+A function is a set of statements organized together to perform a specific task
+
+ex: **mean()** (arithmetic mean)
+```
+x <- c(1,2,3)
+mean(x)
+```
+
+```
+(1+2+3) / 3
+```
+
+
 ## **Practice**
 
 **Create a Function**
@@ -163,9 +180,9 @@ samp
 
 I want to create a new function named ***roll()***
 ```
-roll <- function() {
+roll <- function(pop) {
 pop <- 1:6 
-samp <- sample(die, size = 2) 
+samp <- sample(pop, size = 2) 
 sum(samp)
 }
 ```
@@ -174,22 +191,12 @@ roll()
 ```
 
 
+
 ## **Practice**
 
-**Create a Function**
+**Problem**: I want to define population myself, in every time.
+*remove pre-defined population and changed the name* ***pop*** *to* ***box*** *?*
 
-Problem: What if we removed one line of code from our function and changed the name ***pop*** to ***box*** ?
-
-```
-roll2 <- function() {
-samp <- sample(box, size = 2) 
-sum(samp)
-}
-```
-```
-roll2()
-```
-Re-create function
 ```
 roll2 <- function(box) {
 samp <- sample(box, size = 2) 
@@ -197,9 +204,15 @@ sum(samp)
 }
 ```
 ```
-roll2(box = 1:4)
+roll2(box)
+```
+box ?
+```
+box = 1:6
+roll2(box)
+
 roll2(box = 1:6)
-roll2(1:20)
+roll2(1:6)
 ```
 
 ## **Practice**
@@ -224,10 +237,11 @@ roll2(1:20)
 5. Check the lenght of the vector, *lenght()*.
 6. Choose the last element (indexing) with []. 
 7. Create 4 × 2 matrice, fill with numbers
-8. Delete first row.
-9. Generate 48 random number and assign, *runif()*.
+8. Delete first row. (minus indexing)
+9. Generate 48 random number and assign it, *runif()*.
 9. Create and store a three-dimensional array with six layers of a
 4 × 2 matrice, and fill it with these random numbers.
+
 
 
 
@@ -245,6 +259,9 @@ roll2(1:20)
 
 ## **QUIZ**
 
+R Language - Part-I
+
+
 ![](R_and_R_Studio.png)
 
 
@@ -254,7 +271,7 @@ https://kahoot.it/
 # **Next Week**
 
 ## **6th Week - R Language Part 2**
-![](syllabus_w6.png)
+![](w5_next_w.png)
 List - Data Frame - Attributes - ATMOS
 
 ## **Homework**
@@ -265,7 +282,27 @@ Udemy – Introduction to R, Section 3 (Video 22-25)
 
 [LINK](https://www.udemy.com/course/introduction-to-r/)
 
+
+## **Homework**
+
+
+![](w5_dc.png)
+
+LINK - [datacamp](https://learn.datacamp.com/courses/free-introduction-to-r/)
+
+
+## **Take Home - HOMEWORK-I**
+
+![](my_notebook.png){width=60%} 
+
+- Create a new R notebook
+- Write your name
+- Create a new vector, matrice and array
+- Create a new function
+
 ## **Quiz**
+
+R Language - Part-II
 
 ![](R_and_R_Studio.png)
 

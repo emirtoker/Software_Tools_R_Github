@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -22,6 +22,17 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -83,7 +94,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -232,6 +242,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -243,18 +254,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -316,6 +315,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="data_sources.html">Data Sources</a>
+    </li>
+    <li>
+      <a href="data_download.html">Data Download</a>
     </li>
     <li>
       <a href="ncl.html">NCL</a>
@@ -402,7 +404,7 @@ $(document).ready(function () {
 <li><strong>sum</strong> <em>(sum)</em></li>
 <li><strong>mean</strong> <em>(mean)</em></li>
 </ul>
-<p><em>example(integer)</em> , <em>demo(graphics)</em></p>
+<p><em>example(exp)</em> , <em>demo(graphics)</em></p>
 <hr />
 </div>
 <div id="scientific-calculator-1" class="section level3">
@@ -436,33 +438,8 @@ D(f,&#39;x&#39;)                    # Calculate (first) derivative of f with res
 <div id="class" class="section level3">
 <h3><strong>Class</strong></h3>
 <ul>
-<li>Data Structures</li>
 <li>Data Types</li>
-</ul>
-<hr />
-</div>
-<div id="data-structures-r-objects" class="section level3">
-<h3><strong>Data Structures (R-Objects)</strong></h3>
-<ul>
-<li>(Atomic) Vectos</li>
-<li>Matrices</li>
-<li>Array</li>
-<li>Data Frame</li>
-<li>List</li>
-</ul>
-<hr />
-</div>
-<div id="data-structures-r-objects-1" class="section level3">
-<h3><strong>Data Structures (R-Objects)</strong></h3>
-<p><img src="Presentation/data_structure.png" /></p>
-<hr />
-</div>
-<div id="data-structures-r-objects-2" class="section level3">
-<h3><strong>Data Structures (R-Objects)</strong></h3>
-<p><img src="Presentation/data_structure1.png" /></p>
-<ul>
-<li><strong>Homogeneous</strong>: Vector(1d), Matrix(2d), Array(nd)</li>
-<li><strong>Heterogeneous</strong>: List(1d<strong>?</strong>), Data frame(2d)</li>
+<li>Data Structures</li>
 </ul>
 <hr />
 </div>
@@ -633,7 +610,7 @@ b != d</code></pre>
 <div id="data-types---character" class="section level3">
 <h3><strong>Data Types - Character</strong></h3>
 <p>Data type consists of letters or words. String.</p>
-<p>single quotes: ’ … ’ or double quotes &quot; … &quot;</p>
+<p>single quotes: ’ … ’ or double quotes " … "</p>
 <pre class="{r"><code>name &lt;- emir   # This will give an error</code></pre>
 <pre class="r"><code>name &lt;- &#39;emir&#39;
 name</code></pre>
@@ -696,9 +673,9 @@ b</code></pre>
 <div id="data-types---datetime" class="section level3">
 <h3><strong>Data Types - Date/Time</strong></h3>
 <pre class="r"><code>Sys.Date( ) </code></pre>
-<pre><code>## [1] &quot;2020-10-22&quot;</code></pre>
+<pre><code>## [1] &quot;2020-11-23&quot;</code></pre>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Thu Oct 22 01:31:51 2020&quot;</code></pre>
+<pre><code>## [1] &quot;Mon Nov 23 22:34:16 2020&quot;</code></pre>
 <pre class="r"><code>date &lt;- &quot;2007-06-22&quot;
 class(date)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -721,7 +698,7 @@ class(date_difference)</code></pre>
 %Y    4-digit year                2007</code></pre>
 <pre class="r"><code>today &lt;- Sys.Date()
 format(today, format=&quot;%B %d %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;October 22 2020&quot;</code></pre>
+<pre><code>## [1] &quot;November 23 2020&quot;</code></pre>
 <hr />
 </div>
 <div id="coercion" class="section level3">
@@ -762,6 +739,31 @@ format(today, format=&quot;%B %d %Y&quot;)</code></pre>
 <div id="class---data-structure" class="section level2">
 <h2><strong>Class - Data Structure</strong></h2>
 <hr />
+<div id="data-structures-r-objects" class="section level3">
+<h3><strong>Data Structures (R-Objects)</strong></h3>
+<ul>
+<li>(Atomic) Vectos</li>
+<li>Matrices</li>
+<li>Array</li>
+<li>Data Frame</li>
+<li>List</li>
+</ul>
+<hr />
+</div>
+<div id="data-structures-r-objects-1" class="section level3">
+<h3><strong>Data Structures (R-Objects)</strong></h3>
+<p><img src="Presentation/data_structure.png" /></p>
+<hr />
+</div>
+<div id="data-structures-r-objects-2" class="section level3">
+<h3><strong>Data Structures (R-Objects)</strong></h3>
+<p><img src="Presentation/data_structure1.png" /></p>
+<ul>
+<li><strong>Homogeneous</strong>: Vector(1d), Matrix(2d), Array(nd)</li>
+<li><strong>Heterogeneous</strong>: List(1d<strong>?</strong>), Data frame(2d)</li>
+</ul>
+<hr />
+</div>
 <div id="data-structures" class="section level3">
 <h3><strong>Data Structures</strong></h3>
 <ul>
@@ -796,8 +798,8 @@ a &lt;- 35
 myvec2 &lt;- c(3L, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, a)
 myvec3 &lt;- c(myvec, myvec2)
 myvec3</code></pre>
-<pre><code>##  [1]    1.000000    3.000000    1.000000   42.000000    3.000000
-##  [6]    3.450000 1000.000000    8.000000    2.201271   35.000000</code></pre>
+<pre><code>##  [1]    1.000000    3.000000    1.000000   42.000000    3.000000    3.450000
+##  [7] 1000.000000    8.000000    2.201271   35.000000</code></pre>
 <pre class="r"><code>x &lt;- c(&quot;all&quot;, &quot;b&quot;, &quot;olive&quot;)</code></pre>
 <p><strong>Length</strong> of a vector, <em>length(vector_name)</em></p>
 <pre class="r"><code>length(x)</code></pre>
@@ -867,23 +869,20 @@ a</code></pre>
 <pre><code>## [1]   3.44   2.50  -1.00 -10.00</code></pre>
 <p><strong>Random - Uniform Distribution</strong></p>
 <pre class="r"><code>runif(15, min = 20, max = 45)</code></pre>
-<pre><code>##  [1] 37.33403 43.27645 43.85245 40.93802 26.44975 23.31924 21.45879
-##  [8] 23.21350 39.94376 44.62040 36.69073 43.46085 35.03261 41.99214
-## [15] 36.66242</code></pre>
+<pre><code>##  [1] 37.04042 43.37424 40.08237 26.96973 27.53236 40.91039 33.57566 41.48256
+##  [9] 26.48270 33.74773 37.60712 25.47775 28.09938 31.04453 36.17936</code></pre>
 <pre class="r"><code>runif(15, 20, 45)</code></pre>
-<pre><code>##  [1] 26.63005 42.79384 41.57672 31.05458 41.36726 41.98817 29.52497
-##  [8] 37.82627 34.39444 32.72802 38.40542 24.09379 43.23531 34.73173
-## [15] 20.85018</code></pre>
+<pre><code>##  [1] 31.47747 43.14423 22.88327 38.80597 26.23251 42.08163 42.71179 31.50986
+##  [9] 27.05411 38.55242 24.81184 21.02419 32.10145 34.46467 35.96013</code></pre>
 <pre class="r"><code>runif(25, 60, 50)</code></pre>
 <pre><code>## Warning in runif(25, 60, 50): NAs produced</code></pre>
-<pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
-## [18] NaN NaN NaN NaN NaN NaN NaN NaN</code></pre>
+<pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+## [20] NaN NaN NaN NaN NaN NaN</code></pre>
 <p><strong>Random variable can be saved</strong></p>
 <pre class="r"><code>set.seed(1)
 runif(15, 20, 45)</code></pre>
-<pre><code>##  [1] 26.63772 29.30310 34.32133 42.70519 25.04205 42.45974 43.61688
-##  [8] 36.51994 35.72785 21.54466 25.14936 24.41392 37.17557 29.60259
-## [15] 39.24604</code></pre>
+<pre><code>##  [1] 26.63772 29.30310 34.32133 42.70519 25.04205 42.45974 43.61688 36.51994
+##  [9] 35.72785 21.54466 25.14936 24.41392 37.17557 29.60259 39.24604</code></pre>
 <hr />
 </div>
 <div id="matrices" class="section level3">
@@ -919,7 +918,7 @@ mx</code></pre>
 ## [2,]   20   50   80  110
 ## [3,]   30   60   90  120</code></pre>
 <pre class="r"><code>class(mx)</code></pre>
-<pre><code>## [1] &quot;matrix&quot;</code></pre>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
 <pre class="r"><code>class(mx[1])</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <pre class="r"><code>typeof(mx)</code></pre>
@@ -946,7 +945,7 @@ mx</code></pre>
 ## [2,] &quot;20&quot; &quot;50&quot; &quot;rose&quot; &quot;110&quot;
 ## [3,] &quot;30&quot; &quot;60&quot; &quot;90&quot;   &quot;120&quot;</code></pre>
 <pre class="r"><code>class(mx)</code></pre>
-<pre><code>## [1] &quot;matrix&quot;</code></pre>
+<pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
 <pre class="r"><code>typeof(mx)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <pre class="r"><code>mx_new &lt;- as.numeric(mx)</code></pre>
@@ -994,8 +993,7 @@ m_byrow      </code></pre>
 <p><img src="Presentation/array.png" /></p>
 <pre class="r"><code>x &lt;- 1:24
 x</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-## [24] 24</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24</code></pre>
 <pre class="r"><code>array(x, dim = c(4,3,2))    # raw, col, level</code></pre>
 <pre><code>## , , 1
 ## 
@@ -1079,11 +1077,11 @@ adaptIntegrate(f,lowerLimit = c(0,0,0),upperLimit = c(4,4,4))</code></pre>
 <pre class="r"><code>pop &lt;- 1:6                    # This is my population
 samp &lt;- sample(pop, size = 2) # This is my sample, I choose two var.
 sum(samp)</code></pre>
-<pre><code>## [1] 9</code></pre>
+<pre><code>## [1] 5</code></pre>
 <pre class="r"><code>pop</code></pre>
 <pre><code>## [1] 1 2 3 4 5 6</code></pre>
 <pre class="r"><code>samp</code></pre>
-<pre><code>## [1] 5 4</code></pre>
+<pre><code>## [1] 1 4</code></pre>
 <p>I want to create a new function named <strong><em>roll()</em></strong></p>
 <pre class="r"><code>roll &lt;- function() {
 pop &lt;- 1:6 
@@ -1091,7 +1089,7 @@ samp &lt;- sample(pop, size = 2)
 sum(samp)
 }</code></pre>
 <pre class="r"><code>roll()</code></pre>
-<pre><code>## [1] 6</code></pre>
+<pre><code>## [1] 5</code></pre>
 <hr />
 </div>
 <div id="practice-3" class="section level3">
@@ -1109,11 +1107,11 @@ samp &lt;- sample(box, size = 2)
 sum(samp)
 }</code></pre>
 <pre class="r"><code>roll2(box = 1:4)</code></pre>
-<pre><code>## [1] 5</code></pre>
+<pre><code>## [1] 6</code></pre>
 <pre class="r"><code>roll2(box = 1:6)</code></pre>
-<pre><code>## [1] 9</code></pre>
+<pre><code>## [1] 10</code></pre>
 <pre class="r"><code>roll2(1:20)</code></pre>
-<pre><code>## [1] 27</code></pre>
+<pre><code>## [1] 32</code></pre>
 <hr />
 </div>
 <div id="practice-4" class="section level3">
@@ -1387,11 +1385,11 @@ d</code></pre>
 <pre class="r"><code>my_mat &lt;- matrix(runif(n=20, min=0, max=100), nrow = 4,  ncol = 5)</code></pre>
 <pre class="r"><code>my_mat &lt;- matrix(runif(n=20, min=0, max=100), nrow = 4,  ncol = 5)
 my_mat</code></pre>
-<pre><code>##          [,1]      [,2]     [,3]     [,4]     [,5]
-## [1,] 65.08705  8.424691 34.66835 86.43395 43.46595
-## [2,] 25.80168 87.532133 33.37749 38.99895 71.25147
-## [3,] 47.85452 33.907294 47.63512 77.73207 39.99944
-## [4,] 76.63107 83.944035 89.21983 96.06180 32.53522</code></pre>
+<pre><code>##           [,1]     [,2]     [,3]     [,4]     [,5]
+## [1,]  8.424691 34.66835 86.43395 43.46595 75.70871
+## [2,] 87.532133 33.37749 38.99895 71.25147 20.26923
+## [3,] 33.907294 47.63512 77.73207 39.99944 71.11212
+## [4,] 83.944035 89.21983 96.06180 32.53522 12.16919</code></pre>
 <pre class="r"><code>add &lt;-  matrix(seq(from=10, to=60, by=10), nrow = 2, ncol = 3)</code></pre>
 <pre class="r"><code>add &lt;-  matrix(seq(from=10, to=60, by=10), nrow = 2, ncol = 3)
 add</code></pre>
@@ -1401,11 +1399,11 @@ add</code></pre>
 <pre class="r"><code>my_mat[2:3,2:4] &lt;- add</code></pre>
 <pre class="r"><code>my_mat[2:3,2:4] &lt;- add
 my_mat</code></pre>
-<pre><code>##          [,1]      [,2]     [,3]     [,4]     [,5]
-## [1,] 65.08705  8.424691 34.66835 86.43395 43.46595
-## [2,] 25.80168 10.000000 30.00000 50.00000 71.25147
-## [3,] 47.85452 20.000000 40.00000 60.00000 39.99944
-## [4,] 76.63107 83.944035 89.21983 96.06180 32.53522</code></pre>
+<pre><code>##           [,1]     [,2]     [,3]     [,4]     [,5]
+## [1,]  8.424691 34.66835 86.43395 43.46595 75.70871
+## [2,] 87.532133 10.00000 30.00000 50.00000 20.26923
+## [3,] 33.907294 20.00000 40.00000 60.00000 71.11212
+## [4,] 83.944035 89.21983 96.06180 32.53522 12.16919</code></pre>
 <hr />
 </div>
 <div id="data-structures---array" class="section level3">
@@ -1418,8 +1416,7 @@ my_mat</code></pre>
 <pre class="r"><code>x &lt;- 1:24</code></pre>
 <pre class="r"><code>x &lt;- 1:24
 x</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-## [24] 24</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24</code></pre>
 <pre class="r"><code>arr &lt;- array(x, dim = c(4,3,2)) #raw,col,level</code></pre>
 <pre class="r"><code>arr &lt;- array(x, dim = c(4,3,2))    # raw, col, level
 arr</code></pre>
@@ -1931,14 +1928,14 @@ myvec2</code></pre>
 <p>matrix(data = ,nrow = ,ncol = )</p>
 <pre class="r"><code>data &lt;- runif(9,1,100)    
 data</code></pre>
-<pre><code>## [1] 75.951628 21.066533 71.401001 13.047500 25.303363 15.187134 24.723312
-## [8]  6.834503 64.586538</code></pre>
+<pre><code>## [1] 25.303363 15.187134 24.723312  6.834503 64.586538 87.750652 78.112553
+## [8] 79.933574 46.072171</code></pre>
 <pre class="r"><code>matrix &lt;- matrix(data, nrow = 3, ncol = 3)
 matrix</code></pre>
-<pre><code>##          [,1]     [,2]      [,3]
-## [1,] 75.95163 13.04750 24.723312
-## [2,] 21.06653 25.30336  6.834503
-## [3,] 71.40100 15.18713 64.586538</code></pre>
+<pre><code>##          [,1]      [,2]     [,3]
+## [1,] 25.30336  6.834503 78.11255
+## [2,] 15.18713 64.586538 79.93357
+## [3,] 24.72331 87.750652 46.07217</code></pre>
 <pre class="r"><code>print(c(length(matrix),dim(matrix)))</code></pre>
 <pre><code>## [1] 9 3 3</code></pre>
 <hr />
@@ -2013,7 +2010,7 @@ df</code></pre>
 ## 5 Stewie   1   M   FALSE</code></pre>
 <pre class="r"><code>str(df)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    5 obs. of  4 variables:
-##  $ person : Factor w/ 5 levels &quot;Chris&quot;,&quot;Lois&quot;,..: 4 2 3 1 5
+##  $ person : chr  &quot;Peter&quot; &quot;Lois&quot; &quot;Meg&quot; &quot;Chris&quot; ...
 ##  $ age    : num  42 40 17 14 1
 ##  $ sex    : Factor w/ 2 levels &quot;F&quot;,&quot;M&quot;: 2 1 1 2 2
 ##  $ married: logi  TRUE TRUE FALSE FALSE FALSE</code></pre>
@@ -2454,14 +2451,13 @@ mydata</code></pre>
 ## [1] &quot;data.frame&quot;
 ## 
 ## $row.names
-##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
-##  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
-##  [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
-##  [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
-##  [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
-##  [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101 102
-## [103] 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119
-## [120] 120 121</code></pre>
+##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+##  [19]  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36
+##  [37]  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54
+##  [55]  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72
+##  [73]  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90
+##  [91]  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108
+## [109] 109 110 111 112 113 114 115 116 117 118 119 120 121</code></pre>
 <hr />
 </div>
 <div id="practice---r-language-4" class="section level3">
@@ -2471,15 +2467,15 @@ mydata</code></pre>
 </ol>
 <pre class="r"><code>temp_data &lt;- mydata$temp
 temp_data</code></pre>
-<pre><code>##   [1] 23.9 23.9 23.8 23.8 23.6 23.2 23.2 23.1 23.0 22.8 22.5 22.4 22.2 22.3
-##  [15] 22.2 21.7 21.9 21.7 21.6 22.2 22.2 22.1 22.3 22.5 22.3 22.2 22.5 22.6
-##  [29] 22.6 22.6 22.6 22.7 22.6 22.5 22.6 22.5 22.5 22.4 22.5 22.4 22.5 22.6
-##  [43] 23.0 23.2 24.2 25.1 25.5 26.1 27.1 26.9 27.6 28.0 28.4 28.5 29.3 30.2
-##  [57] 30.1 30.1 30.4 30.4 30.8 30.9 31.0 31.5 31.2 30.9 30.9 30.4 30.4 30.0
-##  [71] 29.2 29.5 29.4 29.3 29.6 28.8 29.0 29.0 29.2 28.4 27.8 27.4 26.6 26.2
-##  [85] 25.8 25.6 25.4 24.2 19.2 19.5 20.1 20.8 21.2 21.4 21.4 21.4 21.2 21.0
-##  [99] 20.8 20.9 20.8 20.7 20.8 20.8 20.9 20.6 20.6 20.5 20.7 20.8 20.4 20.4
-## [113] 20.6 20.5 20.4 20.5 20.5 20.6 20.5 20.5 20.4</code></pre>
+<pre><code>##   [1] 23.9 23.9 23.8 23.8 23.6 23.2 23.2 23.1 23.0 22.8 22.5 22.4 22.2 22.3 22.2
+##  [16] 21.7 21.9 21.7 21.6 22.2 22.2 22.1 22.3 22.5 22.3 22.2 22.5 22.6 22.6 22.6
+##  [31] 22.6 22.7 22.6 22.5 22.6 22.5 22.5 22.4 22.5 22.4 22.5 22.6 23.0 23.2 24.2
+##  [46] 25.1 25.5 26.1 27.1 26.9 27.6 28.0 28.4 28.5 29.3 30.2 30.1 30.1 30.4 30.4
+##  [61] 30.8 30.9 31.0 31.5 31.2 30.9 30.9 30.4 30.4 30.0 29.2 29.5 29.4 29.3 29.6
+##  [76] 28.8 29.0 29.0 29.2 28.4 27.8 27.4 26.6 26.2 25.8 25.6 25.4 24.2 19.2 19.5
+##  [91] 20.1 20.8 21.2 21.4 21.4 21.4 21.2 21.0 20.8 20.9 20.8 20.7 20.8 20.8 20.9
+## [106] 20.6 20.6 20.5 20.7 20.8 20.4 20.4 20.6 20.5 20.4 20.5 20.5 20.6 20.5 20.5
+## [121] 20.4</code></pre>
 <hr />
 </div>
 <div id="practice---r-language-5" class="section level3">
@@ -2516,15 +2512,15 @@ temp_data[which(temp_data==19.2)] &lt;- NA
 temp_data[89] &lt;- NA
 
 print(temp_data)</code></pre>
-<pre><code>##   [1] 23.9 23.9 23.8 23.8 23.6 23.2 23.2 23.1 23.0 22.8 22.5 22.4 22.2 22.3
-##  [15] 22.2 21.7 21.9 21.7 21.6 22.2 22.2 22.1 22.3 22.5 22.3 22.2 22.5 22.6
-##  [29] 22.6 22.6 22.6 22.7 22.6 22.5 22.6 22.5 22.5 22.4 22.5 22.4 22.5 22.6
-##  [43] 23.0 23.2 24.2 25.1 25.5 26.1 27.1 26.9 27.6 28.0 28.4 28.5 29.3 30.2
-##  [57] 30.1 30.1 30.4 30.4 30.8 30.9 31.0 31.5 31.2 30.9 30.9 30.4 30.4 30.0
-##  [71] 29.2 29.5 29.4 29.3 29.6 28.8 29.0 29.0 29.2 28.4 27.8 27.4 26.6 26.2
-##  [85] 25.8 25.6 25.4 24.2   NA 19.5 20.1 20.8 21.2 21.4 21.4 21.4 21.2 21.0
-##  [99] 20.8 20.9 20.8 20.7 20.8 20.8 20.9 20.6 20.6 20.5 20.7 20.8 20.4 20.4
-## [113] 20.6 20.5 20.4 20.5 20.5 20.6 20.5 20.5 20.4</code></pre>
+<pre><code>##   [1] 23.9 23.9 23.8 23.8 23.6 23.2 23.2 23.1 23.0 22.8 22.5 22.4 22.2 22.3 22.2
+##  [16] 21.7 21.9 21.7 21.6 22.2 22.2 22.1 22.3 22.5 22.3 22.2 22.5 22.6 22.6 22.6
+##  [31] 22.6 22.7 22.6 22.5 22.6 22.5 22.5 22.4 22.5 22.4 22.5 22.6 23.0 23.2 24.2
+##  [46] 25.1 25.5 26.1 27.1 26.9 27.6 28.0 28.4 28.5 29.3 30.2 30.1 30.1 30.4 30.4
+##  [61] 30.8 30.9 31.0 31.5 31.2 30.9 30.9 30.4 30.4 30.0 29.2 29.5 29.4 29.3 29.6
+##  [76] 28.8 29.0 29.0 29.2 28.4 27.8 27.4 26.6 26.2 25.8 25.6 25.4 24.2   NA 19.5
+##  [91] 20.1 20.8 21.2 21.4 21.4 21.4 21.2 21.0 20.8 20.9 20.8 20.7 20.8 20.8 20.9
+## [106] 20.6 20.6 20.5 20.7 20.8 20.4 20.4 20.6 20.5 20.4 20.5 20.5 20.6 20.5 20.5
+## [121] 20.4</code></pre>
 <hr />
 </div>
 <div id="practice---r-language-8" class="section level3">
@@ -2808,9 +2804,9 @@ pop</code></pre>
 <pre><code>## [1] 1 2 3 4 5 6</code></pre>
 <pre class="r"><code>samp &lt;- sample(pop, size = 2) # This is my sample, I choose two var.
 samp</code></pre>
-<pre><code>## [1] 6 4</code></pre>
+<pre><code>## [1] 4 5</code></pre>
 <pre class="r"><code>sum(samp)</code></pre>
-<pre><code>## [1] 10</code></pre>
+<pre><code>## [1] 9</code></pre>
 <hr />
 <div id="practice---create-a-function-1" class="section level3">
 <h3><strong>Practice - Create a Function</strong></h3>
@@ -2829,8 +2825,8 @@ print(samp)
 sum(samp)
 }</code></pre>
 <pre class="r"><code>roll()</code></pre>
-<pre><code>## [1] 5 3</code></pre>
-<pre><code>## [1] 8</code></pre>
+<pre><code>## [1] 4 6</code></pre>
+<pre><code>## [1] 10</code></pre>
 <hr />
 </div>
 <div id="practice---create-a-function-2" class="section level3">
@@ -2850,8 +2846,8 @@ sum(samp)
 }
 
 roll_2(pop = 1:27)</code></pre>
-<pre><code>## [1] 12 22</code></pre>
-<pre><code>## [1] 34</code></pre>
+<pre><code>## [1] 16  1</code></pre>
+<pre><code>## [1] 17</code></pre>
 <hr />
 </div>
 <div id="practice---create-a-function-3" class="section level3">
@@ -2874,7 +2870,7 @@ roll_2(pop = 1:27)</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -2882,6 +2878,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

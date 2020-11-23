@@ -37,7 +37,7 @@ output: html_document
 - **sum** *(sum)*
 - **mean** *(mean)*
 
-*example(integer)* , *demo(graphics)*
+*example(exp)* , *demo(graphics)*
 
 
 ***
@@ -72,38 +72,8 @@ D(f,'x')                    # Calculate (first) derivative of f with respect to 
 
 ### **Class**
 
-- Data Structures
 - Data Types
-
-
-***
-
-### **Data Structures (R-Objects)**
-
-- (Atomic) Vectos
-- Matrices
-- Array
-- Data Frame
-- List
-
-
-
-***
-
-### **Data Structures (R-Objects)**
-
-![](Presentation/data_structure.png) 
-
-***
-
-### **Data Structures (R-Objects)**
-
-![](Presentation/data_structure1.png)
-
-- **Homogeneous**: Vector(1d), Matrix(2d), Array(nd)
-- **Heterogeneous**: List(1d**?**), Data frame(2d)
-
-
+- Data Structures
 
 
 
@@ -446,6 +416,32 @@ class(TRUE+TRUE)
 
 ## **Class - Data Structure**
 
+***
+
+### **Data Structures (R-Objects)**
+
+- (Atomic) Vectos
+- Matrices
+- Array
+- Data Frame
+- List
+
+
+
+***
+
+### **Data Structures (R-Objects)**
+
+![](Presentation/data_structure.png) 
+
+***
+
+### **Data Structures (R-Objects)**
+
+![](Presentation/data_structure1.png)
+
+- **Homogeneous**: Vector(1d), Matrix(2d), Array(nd)
+- **Heterogeneous**: List(1d**?**), Data frame(2d)
 
 ***
 

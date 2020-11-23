@@ -11,6 +11,7 @@ output: html_document
 - What is RStudio?
 - RStudio Products
 - Fields of Usage
+- R Files (Notebook, Markdown)
 
 ***
 
@@ -608,26 +609,126 @@ How to tell R to ignore a part of your code? (**#**)
 ## **R Files**
 
 
-![](Presentation/r_files.png)
+![](Presentation/w5_r_files.png)
 
 
 ***
 
 ### **R Script**
 
-![](Presentation/r_script_w5.png)
+![](Presentation/w5_r_script_01.png)
+
+
+
 
 ***
 
 ### **R Notebook**
 
-![](Presentation/my_r_notebook.png)
+![](Presentation/w5_r_ntb.png)
+
+
+
 
 ***
 
 ### **R Notebook**
 
-![](Presentation/my_r_notebook_1.png)
+![](Presentation/w5_r_ntb_01.png)
+
+
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_02.png)
+
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_04.png)
+
+
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_05.png)
+
+
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_06.png)
+
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_07.png)
+
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_08.png)
+
+
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_08_0.png)
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_08_1.png)
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_08a.png)
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_08b.png)
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_09.png)
+
+
+***
+
+### **R Notebook**
+
+![](Presentation/w5_r_ntb_09a.png)
+
 
 
 ***
@@ -649,12 +750,52 @@ How to tell R to ignore a part of your code? (**#**)
 
 ![](Presentation/my_r_notebook_word.png)
 
+***
+
+### **R Markdown**
+
+![](Presentation/w5_r_rmd_00.png)
 
 ***
 
 ### **R Markdown**
 
-![](Presentation/r_markdown.png)
+![](Presentation/w5_r_rmd_01.png)
+
+***
+
+### **R Markdown**
+
+![](Presentation/w5_r_rmd_02.png)
+
+***
+
+### **R Markdown**
+
+![](Presentation/w5_r_rmd_03.png)
+
+
+***
+
+### **R Markdown**
+
+![](Presentation/w5_r_rmd_04.png)
+
+***
+
+### **R Markdown**
+
+![](Presentation/w5_r_rmd_05.png)
+
+***
+
+### **R Markdown**
+
+![](Presentation/w5_r_rmd_06.png)
+
+
+
+
 
 
 ***
