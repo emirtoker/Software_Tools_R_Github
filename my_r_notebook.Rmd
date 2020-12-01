@@ -1,6 +1,7 @@
 ---
 title: "Emir's R Notebook"
 date: "18/10/2019"
+output: pdf_document
 ---
 
 *** 
