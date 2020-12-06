@@ -1,0 +1,186 @@
+---
+title: "Software Tools, R - MidTerm Project"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+**Due date** : 18 Now 2020, 23:59
+
+***
+
+#### <span style="color:green">**Objectives**</span>
+
+- Manage Working Directory, R-Files and R-Projects
+- Download, Copy, Paste and Find the Data
+- Read and Write Data
+- Identify and Indexing Data
+- Use Logical Operators
+- Create a Function
+- Plot the Data
+
+
+<span style="color:brown">**Hints**</span> : You can use these functions and the main web page of our course - [LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_language.html)
+
+```
+getwd()
+setwd()
+list.files()
+file.path()
+
+read.csv()
+read.delim()
+read.table()
+
+class()
+str()
+length()
+sim()
+attributes()
+attr()
+typeof()
+
+mean()
+sum()
+colMeans()
+rowMeans()
+
+na.omit()
+
+plot()
+View()
+```
+
+***
+
+# **Instructions**
+
+### **PART-1 Download, Get or Find and Read Data**
+
+<span style="color:brown">R-STUDIO AND DATA</span>
+
+1. Go to the [webpage](https://emirtoker.github.io/Software_Tools_R_Github/index.html) of the course
+2. Open Data "Istanbul_Goztepe_Mean_Temperature_1839-2013_Monthly" (.dat) by click the LINK
+3. Copy and Paste it in your "Downloads" directory in a text file with ".dat" extension
+4. Open your R-Studio, Create an R-Project, Create an R-Script (*you will write and save your all codes from now in this script*), and try to read the data file with each of these ways:
+
+<span style="color:brown">WAY 1</span> - **GO TO FILE**
+
+5. Check your Project Name and your Working directory
+6. Go to "Downloads" directory in R-Studio, using console
+7. List files and Read Data with three different read functions ( *read.csv(), read.delim(), read.table()*)
+8. Choose the best for you ( *or change the options if it is necessary, regarding header or separators* )
+9. Assign your data as "temp_1"
+
+<span style="color:brown">WAY 2</span> - **CALL THE FILE**
+
+10. Go Back to your Working directory
+11. Define your data file path with file.path() ( *remember, you downloaded the data in your Downloads folder* )
+12. Assign the path a new variable as "path_my_file"
+13. Use your best read...() function to read the file with "path_my_file"
+14. Assign your data as "temp_2"
+
+<span style="color:brown">WAY 3</span> - **IMPORT THE FILE**
+
+15. Use "Import Datase"
+16. Chose "From Text (base)" option
+17. Try to assign your data as "temp_3" at this time
+
+<span style="color:brown">WAY 4</span> - **GET THE FILE (WITH URL)**
+
+18. Copy the LINK of data
+19. Use your best read() function
+20. Read the file with this function and LINK
+21. Assign your data as "temp_4"
+
+<span style="color:brown">LAST STEP</span>
+
+22. Choose your favorite data ( *temp_1, temp_2, temp_3 or temp_4* ) and assign as just "**temp**"
+
+
+### **PART-2 Play with the Data**
+
+<span style="color:brown">MEET WITH THE DATA</span>
+
+1. Look at class and structure
+2. Learn attributes and dimensions
+3. Rename attributes ( *ex: Months for each column and years for each raw* ) ( *attributes() and month.name or month.abb* )
+
+* ***By the way, your data have to include just temperature values when you print it. Years and months have to be just attributes of data.***
+
+<span style="color:brown">CLEAR **NA** AND CHOOSE COLUMN</span>
+
+4. Print "temp". Do you see irrelevant numbers ? If so, change them as **NA**
+
+* ***Now your "temp" data must seem like this***
+
+![](temp.png){width=60%}
+
+5. Delete rows which include NA ( *which() or na.omit()* )
+
+* ***Now your "temp" data must seem like this***
+
+![](temp1.png){width=60%}
+
+6. Assign it as new "temp" again
+7. Select summer season 
+8. Assign it as "temp_summer" ( *three months*)
+
+
+<span style="color:brown">USE LOGICAL OPERATORS</span>
+
+9. Compare June and July: Find and print the years when June temperatures were **less than** July. ( *which()* )
+10. Calculate mean temperature for each months (*you will probably need the* ***na.rm*** *(NA Remove)* *option* ) and assign it as "avg_month"
+11. Print minimum and maximum values for "avg_month" and find which year and which month they were observed
+12. Calculate the mean temperature for each years (*you will probably need the* ***na.rm*** *(NA Remove)* *option* ) "avg_year"
+13. Calculate the mean temperature of all data and assign it as "avg_temp" and print it
+13. Print the years of "avg_year" **which** are **greater than or equal to** "avg_temp"
+
+<span style="color:brown">PLOT</span>
+
+14. Plot temperature for June ( *for each year* ), add title and unit
+15. Edit y-axis and x-axis label ( *to see which years are they* )
+16. What about July and August ? Plot them on the same figure with June.
+17. Is there any strangeness thing, what do you think ? Compare three plots
+18. Plot "avg_month", make the type of line as "line" and colorful. What is reason of the *inverted V letter* shape
+19. Plot "avg_year", make the line dashed line. What do you think 
+20. Plot just temperature for just 1990 ( *my birth year* )
+
+<span style="color:brown">THE LAST BUT NOT LEAST</span>
+
+21. **Run these codes.** Can you explain what am I doing with my codes which were given below? What are these x-axis and y-axis in here? ( *which years or months are they?* ) What is the result of this figure, what do you see and what do you think? what do colors mean? Can you edit title and x-axis and y-axis labels?
+
+```
+plot(seq(1,12),  temp[142,1:12] , type = "l", col = "red")
+lines(seq(1,12), temp[1,1:12]   , type = "l", col = "blue")
+legend("topleft",c("blue","red"),fill=c("blue","red"))
+abline(h = mean(colMeans(temp, na.rm = T)))
+```
+![](temp2.png){width=60%}
+
+
+```
+par(mfrow = c(2, 2))    #or try par(mfrow = c(4, 1))
+plot(ylim = c(0,30), rowMeans(temp[,9:11])      , type="l", col="orange")
+plot(ylim = c(0,30), rowMeans(temp[,c(12,1,2)]) , type="l", col="blue")
+plot(ylim = c(0,30), rowMeans(temp[,3:5])       , type="l", col="green")
+plot(ylim = c(0,30), rowMeans(temp[,6:8])       , type="l", col="red")
+```
+
+![](temp3.png){width=60%}
+
+
+
+***
+
+***For questions or problems, please use Ninova***
+
+*Emir*
+
+***
+
+
+
+

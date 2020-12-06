@@ -23,6 +23,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
  - HW1 - [Rmd](https://web.itu.edu.tr/tokerem/my_r_notebook_emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/my_r_notebook_emir.pdf) - [html](https://web.itu.edu.tr/tokerem/my_r_notebook_emir.html)
  - HW2 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.html)
+ - Midterm Project - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.html)
 
 <!-- 
 - HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html) -->
