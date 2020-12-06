@@ -1428,70 +1428,291 @@ length(list)
 
 ### **Read**
 
-```
-library(help="datasets")
-```
-```
-list.files("/Users/emirtoker/Desktop/Dersler/Memurluk/Software_Tools_for_Earth_&_Environmental_Science/Software_Tools_R_Github/Presentation")
-```
-```
-file.choose()
-```
-```
-read.table(file = "18397_Cekmekoy_Omerli_15dk.txt")
+First, we need a DATA to read.
 
-read.table(file = "18397_Cekmekoy_Omerli_15dk.txt", 
-          header=TRUE, sep=";")
-          
-read.table(file = "18397_Cekmekoy_Omerli_15dk.txt", 
-          header=TRUE, sep=";", na.strings="-9999")
+Go to Course web page
 
-mydata_txt <- read.table(file = "18397_Cekmekoy_Omerli_15dk.txt",
-                        header=TRUE, 
-                        sep=";",
-                        na.strings="-9999")
-              
-str(mydata_txt)
-```
-```
-mydata_csv <- read.csv(file="18397_Cekmekoy_Omerli.csv",
-                      header=TRUE,
-                      na.strings="-9999")
-                      
-str(mydata_csv)
+https://emirtoker.github.io/Software_Tools_R_Github/index.html
 
-```
+![](data_txt.png)
+
 
 ***
 
-### **Read and Write**
+Save .txt data to your **R Project Directory**
+
+**Cekmekoy_Omerli_15min.txt**
+
+https://emirtoker.github.io/Software_Tools_R_Github/index.html
+
+![](data_txt_1.png)
+
+
+
+
+***
+
+Learn where you are, working directory
+```
+getwd()
+```
+List all directories
+```
+list.dirs()
+```
+List all files
+```
+list.files()
+```
+
+Use default dataset in R
+```
+library(help="datasets")
+# for example co2
+# print() and plot() co2
+```
+
+
+
+***
+
+Two main ways
+
+- Interface of R
+- Console
+
+
+
+***
+
+Interface of R -> Environment -> Import Dataset
+
+![](read_01.png)
+
+
+
+***
+
+Interface of R -> Environment -> Import Dataset
+
+From Text (base)
+
+Interface of R -> Environment -> Import Dataset
+
+From Text (base)
+
+![](read_03.png)
+
+
+***
+
+Import Dataset -> From Text (readr) -> Browse
+
+![](read_04.png)
+
+
+
+
+***
+
+Import Dataset -> From Text (readr) -> URL Paste -> Update
+
+![](read_05.png)
+
+
+
+
+***
+
+Import Dataset -> From Text 
+
+![](read_06.png)
+
+
+
+***
+
+Console
+
+- read.table()
+- read.delim()
+- read.csv()
+
+Try on console
 
 ```
-url <- "https://web.itu.edu.tr/tokerem/18397_Cekmekoy_Omerli_15dk.txt"
+- read.table("Cekmekoy_Omerli_15min.txt")
+- read.delim("Cekmekoy_Omerli_15min.txt")
+- read.csv("Cekmekoy_Omerli_15min.txt")
+```
+
+help()
+
+OPTIONS : header =TRUE, sep = ";"
+
+
+***
+
+Console
+
+```
+url <- "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+
 urldata_txt <- read.table(url,
                           header=TRUE, 
-                          sep=";",
-                          na.strings="-9999")
+                          sep=";")
 ```
-Write .TXT and .CSV
-```
-write.table(x=urldata_txt,file="somenewfile.txt")
 
-write.table(x=urldata_txt,file="somenewfile.txt",
-           sep=";",na="-9999",quote=FALSE,row.names=FALSE)
 
-new_df2
-write.table(x=new_df2,file="dffile.txt",
-            sep=";",na="-9999",quote=FALSE,row.names=FALSE)
-            
-write.table(x=new_df2,file="dffile.csv",
-            sep=";",na="-9999",quote=FALSE,row.names=FALSE)
+***
+
+### **BONUS : Attributes**
 
 ```
+my_data <- read.csv("Cekmekoy_Omerli_15min.txt", 
+                    header=T, 
+                    sep=";")
+View(my_data)
+print(my_data)
+```
+```
+class(my_data)
+str(my_data)
+attributes(my_data)
+my_data$temp
+```
+```
+attributes(my_data)
+attributes(my_data)$names
+attributes(my_data)$names[7]
+attributes(my_data)$names[7] <- "temperature"
+```
+```
+attributes(my_data)
+attributes(my_data)$row.names
+attributes(my_data)$row.names[1]
+attributes(my_data)$row.names[1] <- "first"
+```
+
+
 
 ***
 
 ### **Plot**
+
+```
+plot()
+plot(my_data)
+plot(my_data[7])
+plot(my_data[,7])
+plot(my_data$temperature)
+```
+```
+help(plot)
+OPTIONS
+plot(my_data$temperature, 
+     type = "l", main = "My Plot", 
+     xlab = "Time", ylab = "Temperature")
+```
+
+![](my_plot.png)
+
+
+***
+
+![](plot_01.png)
+
+
+
+***
+
+![](plot_02.png)
+
+
+
+***
+
+Uptade Preview
+
+![](plot_03.png)
+
+
+
+***
+
+Now, plot **PRESSURE** parameter, in my_data
+
+```
+plot(my_data$pressure, 
+     type = "l", 
+     main = "My Plot", 
+     xlab = "Time", 
+     ylab = "Pressure")
+```
+
+![](my_plot_press.png)
+
+
+
+
+***
+
+![](plot_04.png)
+
+
+***
+
+### **Problem**
+
+How can I fix the missing data?
+
+I will just assign NA for now. HOW?
+
+Two ways:
+
+  - Read the data again, but this time with NA
+  - Assign all -9999.0 numbers as NA
+
+```
+my_data_NA <- read.csv("Cekmekoy_Omerli_15min.txt", 
+                      header=T, 
+                      sep=";",
+                      na.strings=-9999.0)
+View(my_data_NA)
+print(my_data_NA)
+```
+
+***
+
+How can I fix the missing data?
+
+I will just assign NA for now. HOW?
+
+Two ways:
+
+  - Read the data again, but this time with NA
+  - Assign all -9999.0 numbers as NA
+  
+```
+my_data$pressure
+my_data$pressure==-9999.0
+
+which(my_data$pressure==-9999.0)
+index <- which(my_data$pressure==-9999.0)
+my_data$pressure[index]
+my_data$pressure[index] <- NA
+
+View(my_data)
+print(my_data)
+```
+
+
+***
+
+![](plot_05.png)
+
+
+***
 
 ```
 foo <- c(1.1,2,3.5,3.9,4.2)
@@ -1549,17 +1770,98 @@ lwd=c(1,NA,NA,NA,NA,2,2),pt.cex=c(NA,1,1,2,2,NA,NA))
 ### **Plot**
 
 ```
-mydata_txt <- read.table(file = "18397_Cekmekoy_Omerli_15dk.txt",
-                        header=TRUE, 
-                        sep=";",
-                        na.strings="-9999")
-
-mydata_txt
-
-plot(mydata_txt$temp, type="l" )
+my_data_NA <- read.csv("Cekmekoy_Omerli_15min.txt", 
+                      header=T, 
+                      sep=";",
+                      na.strings=-9999.0)
+plot(my_data$temp, 
+     type = "l", 
+     main = "My Plot", 
+     xlab = "Time", 
+     ylab = "Temperature",
+     col = "red")
 ```
 
-![](Presentation/fig_temp.png)
+![](my_plot_red.png)
+
+***
+
+### **Plot ggplot2**
+
+```
+library('ggplot2')
+
+gg <- ggplot(my_data_NA, aes(x=seq(1,121))) +
+      geom_line(aes(y=temp)) +
+      labs(title="My Time Series", 
+           subtitle="Temperature for Omerli Station", 
+           caption="Source: Meteorology Station", 
+           y="Temperature", 
+           x="Time Step")
+           
+plot(gg)
+```                    
+![](gg2.png)            
+
+***
+
+```
+library('ggplot2')
+
+gg <- ggplot(my_data_NA, aes(x=seq(1,121), y=temp)) +
+      geom_point(aes(col=temp, size=temp)) +
+      geom_smooth(method="loess", se=F) +
+      labs(title="My Time Series", 
+           subtitle="Temperature for Omerli Station",
+           y="Temperature", 
+           x="Time Step")
+           
+plot(gg)
+```
+![](gg.png)
+
+
+***
+
+### **Write**
+
+```
+write.table(x=urldata_txt,
+            file="somenewfile.txt"
+            sep=";",
+            na="-9999",
+            row.names=FALSE)
+```
+```
+write.table(x=my_data,
+            file="my_data.txt",
+            sep=";",
+            na=-9999.0,
+            row.names=FALSE)
+```
+```       
+write.table(x=my_data_NA,
+            file="my_data_NA.csv",
+            sep=";",
+            na="-9999",
+            row.names=FALSE)
+```
+
+write.table() and OPTIONS
+
+
+***
+
+
+
+
+***
+
+
+
+***
+
+
 
 
 ***
@@ -1912,7 +2214,7 @@ data_frame
 ###  **Practice - R Language**
 
 1. **Read** and **assign** your csv data (Header or seperator ?).
-"18397_Cekmekoy_Omerli_15dk.txt"
+"Cekmekoy_Omerli_15min.txt"
 2. Check the **class** and **structure** of your new data.
 3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
 4. **Plot** the "temperature" vector.
@@ -1927,10 +2229,10 @@ data_frame
 ###  **Practice - R Language**
 
 1. **Read** and **assign** your csv data (Header or seperator ?).
-"18397_Cekmekoy_Omerli_15dk.txt"
+"Cekmekoy_Omerli_15min.txt"
 
 ```{r, echo=TRUE}
-mydata <- read.csv(file = "Presentation/18397_Cekmekoy_Omerli_15dk.txt", 
+mydata <- read.csv(file = "Presentation/Cekmekoy_Omerli_15min.txt", 
                    header = TRUE, 
                    sep = ";")
 mydata

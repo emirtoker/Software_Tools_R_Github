@@ -1,0 +1,106 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "--7th WEEK--"
+author: "Emir Toker"
+date: "01/11/2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: simple
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(error = FALSE)
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## **R Language - Part 3**
+
+- **Syllabus, Last Week and Book**
+
+- **R Language - Part 1 and Part 2**
+
+- **R Language - Part 3**
+
+- <span style="color:orangered">**Workshop - MidTerm Project**</span>
+
+- **Next Week (not next, the other one)**
+
+
+# **Syllabus, Last Week and Book**
+
+
+## **Syllabus**
+
+![](syllabus_7th.png)
+Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
+
+
+## **Last Week**
+
+![](page_7th.png)
+
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/)
+
+## **Book**
+
+![](book_cover_week5.png) ![](book_7th.png)
+
+[PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf) - (Pg. 127-133 and 150-155)
+
+
+# **R Language**
+
+## **R Language - Part 1 & Part 2 - REPEAT**
+
+ - **Basic Math, Assigment, Comment**
+ - **Data Types - Classes**
+     - Numeric
+     - Integer
+     - Logical
+     - Character
+ - **Data Structures - Objects**
+     - Vector
+     - Matrice
+     - Array
+     - Data Frame
+     - List
+ - **Special Values, Attributes**
+ 
+ [LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_language.html)
+    
+## **R Language - Part 3**
+    
+ - **Read**
+ 
+ - **Write**
+ 
+ - **Plot**
+ 
+[LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_language.html)
+
+
+# **Workshop - Midterm Project**
+
+## **Workshop - Midterm Project**
+
+- Open a new R notebook
+- Go to course home page, (Midterm Project)
+- Click **Rmd** and Open "Midterm_Project.Rmd"
+- Copy all code and paste in your R notebook
+- Same way, open STATION DATA (18397_Cekmekoy_Omerli_15dk.txt) and paste file in your project directory.
+- Start to follow **Instructions**
+
+
+# **Next Week (not next, the other one)**
+
+## **Next Week (not next, the other one)**
+
+![](syllabus7_son.png)
+
+
+
+

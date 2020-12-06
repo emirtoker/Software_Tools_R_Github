@@ -2,7 +2,7 @@
 title: "Software Tools for Earth and Environmental Science"
 subtitle:  "--7th WEEK--"
 author: "Emir Toker"
-date: "01/11/2019"
+date: "04/12/2020"
 output: 
   revealjs::revealjs_presentation:
     theme: simple
@@ -21,13 +21,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - **Syllabus, Last Week and Book**
 
-- **R Language - Part 1 and Part 2**
-
 - **R Language - Part 3**
 
-- <span style="color:orangered">**Workshop - MidTerm Project**</span>
+  -   Read
+  -   Write
+  -   Plot
 
-- **Next Week (not next, the other one)**
+- <span style="color:orangered">**TakeHome - MidTerm Project**</span>
+
+- Additional Course - II
+
+- **Next Week - R Programming**
 
 
 # **Syllabus, Last Week and Book**
@@ -35,7 +39,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Syllabus**
 
-![](syllabus_7th.png)
+![](w7_20_21.png)
 Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 
@@ -51,10 +55,34 @@ Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.
 
 [PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf) - (Pg. 127-133 and 150-155)
 
+## **Homework - I and II**
+
+*due date: 07/12/2020 23:59
+
+![](hw7_20_21.png)
+
+## **Homework - I**
+
+Create a Notebook
+
+![](hw1_7_20_21.png)
+
+## **Homework - II**
+
+Practice - Data Types and Structures
+
+![](hw2_7_20_21.png)
+
+## **Additional Course - II**
+
+![](add_course_2.png)
+
+Today, 15:00 - 16:00
+
 
 # **R Language**
 
-## **R Language - Part 1 & Part 2 - REPEAT**
+## **R Language - Part 1 & Part 2**
 
  - **Basic Math, Assigment, Comment**
  - **Data Types - Classes**
@@ -62,13 +90,13 @@ Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.
      - Integer
      - Logical
      - Character
+     - Special Values
  - **Data Structures - Objects**
      - Vector
      - Matrice
      - Array
      - Data Frame
      - List
- - **Special Values, Attributes**
  
  [LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_language.html)
     
@@ -81,6 +109,329 @@ Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.
  - **Plot**
  
 [LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_language.html)
+
+
+
+# **Practice - R Language**
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"18397_Cekmekoy_Omerli_15dk.txt"
+
+```{r, echo=TRUE}
+mydata <- read.csv(file = "Cekmekoy_Omerli_15min.txt", 
+                   header = TRUE, 
+                   sep = ";")
+mydata
+```
+
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+2. Check the **class** and **structure** of your new data.
+
+```{r}
+class(mydata)
+str(mydata)
+attributes(mydata)
+```
+
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+
+```{r, echo=TRUE}
+temp_data <- mydata$temp
+temp_data
+```
+
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+4. **Plot** the "temperature" vector.
+```
+plot(temp_data)
+```
+![](Rplot.png)
+
+
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+
+```{r, echo=TRUE}
+print(min(temp_data))
+
+which(temp_data==19.2) # which(temp_data==min(temp_data))
+```
+
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+6. **change** the minimum value with **NA** and **Print**.
+
+```{r, echo=TRUE}
+
+temp_data[89] <- NA
+
+temp_data[which(temp_data==19.2)] <- NA
+
+temp_data[which(temp_data==min(temp_data))] <- NA
+
+print(temp_data)
+```
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+7. **Plot** the new "temperature" vector.
+
+```{r}
+plot(temp_data)
+```
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+
+```{r, echo=TRUE}
+mydata$temp <- temp_data
+
+mydata
+```
+
+
+## **Practice - R Language**
+
+1. **Read** and **assign** your csv data (Header or seperator ?).
+"Cekmekoy_Omerli_15min.txt"
+2. Check the **class** and **structure** of your new data.
+3. Take the ***"Temperature"*** parameter and **assign** it as a new variable.
+4. **Plot** the "temperature" vector.
+5. **Print** **minimum** temperature and find **which** element is the minimum in temperature vector.
+6. **change** the minimum value with **NA** and **Print**.
+7. **Plot** the new "temperature" vector.
+8. Replace these **new** temperature values with **old** temperature values located in your data frame.
+9. **Write** your data frame as a new csv file.
+
+## **Practice - R Language**
+
+9. **Write** your data frame as a new csv file.
+
+```{r, echo=TRUE}
+write.csv(mydata, file = "new_data.csv")
+```
+
+![](excel.png)
+
+
+
+
+## **BONUS - Create a Function**
+
+**What is Function ?**
+
+A function is a set of statements organized together to perform a specific task
+
+ex: **mean()** (arithmetic mean)
+
+```{r echo=TRUE}
+x <- c(1,2,3)
+mean(x)
+```
+
+```{r echo=TRUE}
+(1+2+3) / 3
+```
+
+
+## **BONUS - Create a Function**
+
+**What is Function ?**
+
+A function is a set of statements organized together to perform a specific task
+
+ex: **sample()** (takes a sample of the specified size from the elements of x )
+
+```{r echo=TRUE}
+sample(c(1,6,32,7), size = 2)
+```
+
+ex: **sum()** (returns the sum of all the values)
+
+
+
+
+
+## **Practice**
+
+**Create a Function**
+
+Problem: Take a sample belonged to population and sum
+
+```
+box <- 1:6                    # This is my population in a BOX
+my_samp <- sample(box, size = 2) # This is my sample, I choose two var.
+sum(my_samp)
+```
+```
+box
+samp
+```
+
+I want to create a new function named ***my_roll()***
+```
+my_roll <- function(box) {
+box <- 1:6 
+my_samp <- sample(box) 
+sum(my_samp)
+}
+```
+```
+my_roll()
+```
+
+
+## **Practice**
+
+**Problem**: I want to define population myself, in every time.
+*remove pre-defined population* ***box*** *?*
+
+```
+my_roll2 <- function(box) {
+my_samp <- sample(box, size = 2) 
+sum(my_samp)
+}
+```
+```
+my_roll2(box)
+```
+box ?
+```
+box = 1:6
+my_roll2(box)
+
+my_roll2(box = 1:6)
+my_roll2(1:6)
+```
+
+## **Practice**
+
+**Create a Function**
+
+![](practice_func.png)
+
+- You can add new options
+- { } and () are important
+
+
+
 
 
 # **Workshop - Midterm Project**
@@ -99,8 +450,10 @@ Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.
 
 ## **Next Week (not next, the other one)**
 
-![](syllabus7_son.png)
+![](w8_20_21.png)
 
+## **Next Week R Programming - PART I**
 
+![](w8_dc.png)
 
 

@@ -673,9 +673,9 @@ b</code></pre>
 <div id="data-types---datetime" class="section level3">
 <h3><strong>Data Types - Date/Time</strong></h3>
 <pre class="r"><code>Sys.Date( ) </code></pre>
-<pre><code>## [1] &quot;2020-11-23&quot;</code></pre>
+<pre><code>## [1] &quot;2020-12-06&quot;</code></pre>
 <pre class="r"><code>date()</code></pre>
-<pre><code>## [1] &quot;Mon Nov 23 22:34:16 2020&quot;</code></pre>
+<pre><code>## [1] &quot;Sun Dec  6 17:24:52 2020&quot;</code></pre>
 <pre class="r"><code>date &lt;- &quot;2007-06-22&quot;
 class(date)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
@@ -698,7 +698,7 @@ class(date_difference)</code></pre>
 %Y    4-digit year                2007</code></pre>
 <pre class="r"><code>today &lt;- Sys.Date()
 format(today, format=&quot;%B %d %Y&quot;)</code></pre>
-<pre><code>## [1] &quot;November 23 2020&quot;</code></pre>
+<pre><code>## [1] &quot;December 06 2020&quot;</code></pre>
 <hr />
 </div>
 <div id="coercion" class="section level3">
@@ -869,11 +869,11 @@ a</code></pre>
 <pre><code>## [1]   3.44   2.50  -1.00 -10.00</code></pre>
 <p><strong>Random - Uniform Distribution</strong></p>
 <pre class="r"><code>runif(15, min = 20, max = 45)</code></pre>
-<pre><code>##  [1] 37.04042 43.37424 40.08237 26.96973 27.53236 40.91039 33.57566 41.48256
-##  [9] 26.48270 33.74773 37.60712 25.47775 28.09938 31.04453 36.17936</code></pre>
+<pre><code>##  [1] 41.51531 36.30589 41.38950 25.30234 32.58584 33.01545 42.96201 23.54518
+##  [9] 28.42095 20.56089 24.75886 42.92289 35.87454 23.16987 43.61878</code></pre>
 <pre class="r"><code>runif(15, 20, 45)</code></pre>
-<pre><code>##  [1] 31.47747 43.14423 22.88327 38.80597 26.23251 42.08163 42.71179 31.50986
-##  [9] 27.05411 38.55242 24.81184 21.02419 32.10145 34.46467 35.96013</code></pre>
+<pre><code>##  [1] 25.18381 26.14945 38.56634 21.43210 40.24181 43.08328 41.79823 32.91286
+##  [9] 39.55189 28.92411 43.27124 28.24067 36.37471 35.29811 39.08374</code></pre>
 <pre class="r"><code>runif(25, 60, 50)</code></pre>
 <pre><code>## Warning in runif(25, 60, 50): NAs produced</code></pre>
 <pre><code>##  [1] NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
@@ -1680,55 +1680,161 @@ length(list)</code></pre>
 <hr />
 <div id="read" class="section level3">
 <h3><strong>Read</strong></h3>
-<pre><code>library(help=&quot;datasets&quot;)</code></pre>
-<pre><code>list.files(&quot;/Users/emirtoker/Desktop/Dersler/Memurluk/Software_Tools_for_Earth_&amp;_Environmental_Science/Software_Tools_R_Github/Presentation&quot;)</code></pre>
-<pre><code>file.choose()</code></pre>
-<pre><code>read.table(file = &quot;18397_Cekmekoy_Omerli_15dk.txt&quot;)
-
-read.table(file = &quot;18397_Cekmekoy_Omerli_15dk.txt&quot;, 
-          header=TRUE, sep=&quot;;&quot;)
-          
-read.table(file = &quot;18397_Cekmekoy_Omerli_15dk.txt&quot;, 
-          header=TRUE, sep=&quot;;&quot;, na.strings=&quot;-9999&quot;)
-
-mydata_txt &lt;- read.table(file = &quot;18397_Cekmekoy_Omerli_15dk.txt&quot;,
-                        header=TRUE, 
-                        sep=&quot;;&quot;,
-                        na.strings=&quot;-9999&quot;)
-              
-str(mydata_txt)</code></pre>
-<pre><code>mydata_csv &lt;- read.csv(file=&quot;18397_Cekmekoy_Omerli.csv&quot;,
-                      header=TRUE,
-                      na.strings=&quot;-9999&quot;)
-                      
-str(mydata_csv)
-</code></pre>
+<p>First, we need a DATA to read.</p>
+<p>Go to Course web page</p>
+<p><a href="https://emirtoker.github.io/Software_Tools_R_Github/index.html" class="uri">https://emirtoker.github.io/Software_Tools_R_Github/index.html</a></p>
+<p><img src="data_txt.png" /></p>
 <hr />
-</div>
-<div id="read-and-write" class="section level3">
-<h3><strong>Read and Write</strong></h3>
-<pre><code>url &lt;- &quot;https://web.itu.edu.tr/tokerem/18397_Cekmekoy_Omerli_15dk.txt&quot;
+<p>Save .txt data to your <strong>R Project Directory</strong></p>
+<p><strong>Cekmekoy_Omerli_15min.txt</strong></p>
+<p><a href="https://emirtoker.github.io/Software_Tools_R_Github/index.html" class="uri">https://emirtoker.github.io/Software_Tools_R_Github/index.html</a></p>
+<p><img src="data_txt_1.png" /></p>
+<hr />
+<p>Learn where you are, working directory</p>
+<pre><code>getwd()</code></pre>
+<p>List all directories</p>
+<pre><code>list.dirs()</code></pre>
+<p>List all files</p>
+<pre><code>list.files()</code></pre>
+<p>Use default dataset in R</p>
+<pre><code>library(help=&quot;datasets&quot;)
+# for example co2
+# print() and plot() co2</code></pre>
+<hr />
+<p>Two main ways</p>
+<ul>
+<li>Interface of R</li>
+<li>Console</li>
+</ul>
+<hr />
+<p>Interface of R -&gt; Environment -&gt; Import Dataset</p>
+<p><img src="read_01.png" /></p>
+<hr />
+<p>Interface of R -&gt; Environment -&gt; Import Dataset</p>
+<p>From Text (base)</p>
+<p>Interface of R -&gt; Environment -&gt; Import Dataset</p>
+<p>From Text (base)</p>
+<p><img src="read_03.png" /></p>
+<hr />
+<p>Import Dataset -&gt; From Text (readr) -&gt; Browse</p>
+<p><img src="read_04.png" /></p>
+<hr />
+<p>Import Dataset -&gt; From Text (readr) -&gt; URL Paste -&gt; Update</p>
+<p><img src="read_05.png" /></p>
+<hr />
+<p>Import Dataset -&gt; From Text</p>
+<p><img src="read_06.png" /></p>
+<hr />
+<p>Console</p>
+<ul>
+<li>read.table()</li>
+<li>read.delim()</li>
+<li>read.csv()</li>
+</ul>
+<p>Try on console</p>
+<pre><code>- read.table(&quot;Cekmekoy_Omerli_15min.txt&quot;)
+- read.delim(&quot;Cekmekoy_Omerli_15min.txt&quot;)
+- read.csv(&quot;Cekmekoy_Omerli_15min.txt&quot;)</code></pre>
+<p>help()</p>
+<p>OPTIONS : header =TRUE, sep = “;”</p>
+<hr />
+<p>Console</p>
+<pre><code>url &lt;- &quot;https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt&quot;
+
 urldata_txt &lt;- read.table(url,
                           header=TRUE, 
-                          sep=&quot;;&quot;,
-                          na.strings=&quot;-9999&quot;)</code></pre>
-<p>Write .TXT and .CSV</p>
-<pre><code>write.table(x=urldata_txt,file=&quot;somenewfile.txt&quot;)
-
-write.table(x=urldata_txt,file=&quot;somenewfile.txt&quot;,
-           sep=&quot;;&quot;,na=&quot;-9999&quot;,quote=FALSE,row.names=FALSE)
-
-new_df2
-write.table(x=new_df2,file=&quot;dffile.txt&quot;,
-            sep=&quot;;&quot;,na=&quot;-9999&quot;,quote=FALSE,row.names=FALSE)
-            
-write.table(x=new_df2,file=&quot;dffile.csv&quot;,
-            sep=&quot;;&quot;,na=&quot;-9999&quot;,quote=FALSE,row.names=FALSE)
-</code></pre>
+                          sep=&quot;;&quot;)</code></pre>
+<hr />
+</div>
+<div id="bonus-attributes" class="section level3">
+<h3><strong>BONUS : Attributes</strong></h3>
+<pre><code>my_data &lt;- read.csv(&quot;Cekmekoy_Omerli_15min.txt&quot;, 
+                    header=T, 
+                    sep=&quot;;&quot;)
+View(my_data)
+print(my_data)</code></pre>
+<pre><code>class(my_data)
+str(my_data)
+attributes(my_data)
+my_data$temp</code></pre>
+<pre><code>attributes(my_data)
+attributes(my_data)$names
+attributes(my_data)$names[7]
+attributes(my_data)$names[7] &lt;- &quot;temperature&quot;</code></pre>
+<pre><code>attributes(my_data)
+attributes(my_data)$row.names
+attributes(my_data)$row.names[1]
+attributes(my_data)$row.names[1] &lt;- &quot;first&quot;</code></pre>
 <hr />
 </div>
 <div id="plot" class="section level3">
 <h3><strong>Plot</strong></h3>
+<pre><code>plot()
+plot(my_data)
+plot(my_data[7])
+plot(my_data[,7])
+plot(my_data$temperature)</code></pre>
+<pre><code>help(plot)
+OPTIONS
+plot(my_data$temperature, 
+     type = &quot;l&quot;, main = &quot;My Plot&quot;, 
+     xlab = &quot;Time&quot;, ylab = &quot;Temperature&quot;)</code></pre>
+<p><img src="my_plot.png" /></p>
+<hr />
+<p><img src="plot_01.png" /></p>
+<hr />
+<p><img src="plot_02.png" /></p>
+<hr />
+<p>Uptade Preview</p>
+<p><img src="plot_03.png" /></p>
+<hr />
+<p>Now, plot <strong>PRESSURE</strong> parameter, in my_data</p>
+<pre><code>plot(my_data$pressure, 
+     type = &quot;l&quot;, 
+     main = &quot;My Plot&quot;, 
+     xlab = &quot;Time&quot;, 
+     ylab = &quot;Pressure&quot;)</code></pre>
+<p><img src="my_plot_press.png" /></p>
+<hr />
+<p><img src="plot_04.png" /></p>
+<hr />
+</div>
+<div id="problem" class="section level3">
+<h3><strong>Problem</strong></h3>
+<p>How can I fix the missing data?</p>
+<p>I will just assign NA for now. HOW?</p>
+<p>Two ways:</p>
+<ul>
+<li>Read the data again, but this time with NA</li>
+<li>Assign all -9999.0 numbers as NA</li>
+</ul>
+<pre><code>my_data_NA &lt;- read.csv(&quot;Cekmekoy_Omerli_15min.txt&quot;, 
+                      header=T, 
+                      sep=&quot;;&quot;,
+                      na.strings=-9999.0)
+View(my_data_NA)
+print(my_data_NA)</code></pre>
+<hr />
+<p>How can I fix the missing data?</p>
+<p>I will just assign NA for now. HOW?</p>
+<p>Two ways:</p>
+<ul>
+<li>Read the data again, but this time with NA</li>
+<li>Assign all -9999.0 numbers as NA</li>
+</ul>
+<pre><code>my_data$pressure
+my_data$pressure==-9999.0
+
+which(my_data$pressure==-9999.0)
+index &lt;- which(my_data$pressure==-9999.0)
+my_data$pressure[index]
+my_data$pressure[index] &lt;- NA
+
+View(my_data)
+print(my_data)</code></pre>
+<hr />
+<p><img src="plot_05.png" /></p>
+<hr />
 <pre><code>foo &lt;- c(1.1,2,3.5,3.9,4.2)
 bar &lt;- c(2,2.2,-1.3,0,0.2)
 plot(foo,bar)</code></pre>
@@ -1774,15 +1880,69 @@ lwd=c(1,NA,NA,NA,NA,2,2),pt.cex=c(NA,1,1,2,2,NA,NA))</code></pre>
 </div>
 <div id="plot-2" class="section level3">
 <h3><strong>Plot</strong></h3>
-<pre><code>mydata_txt &lt;- read.table(file = &quot;18397_Cekmekoy_Omerli_15dk.txt&quot;,
-                        header=TRUE, 
-                        sep=&quot;;&quot;,
-                        na.strings=&quot;-9999&quot;)
+<pre><code>my_data_NA &lt;- read.csv(&quot;Cekmekoy_Omerli_15min.txt&quot;, 
+                      header=T, 
+                      sep=&quot;;&quot;,
+                      na.strings=-9999.0)
+plot(my_data$temp, 
+     type = &quot;l&quot;, 
+     main = &quot;My Plot&quot;, 
+     xlab = &quot;Time&quot;, 
+     ylab = &quot;Temperature&quot;,
+     col = &quot;red&quot;)</code></pre>
+<p><img src="my_plot_red.png" /></p>
+<hr />
+</div>
+<div id="plot-ggplot2" class="section level3">
+<h3><strong>Plot ggplot2</strong></h3>
+<pre><code>library(&#39;ggplot2&#39;)
 
-mydata_txt
+gg &lt;- ggplot(my_data_NA, aes(x=seq(1,121))) +
+      geom_line(aes(y=temp)) +
+      labs(title=&quot;My Time Series&quot;, 
+           subtitle=&quot;Temperature for Omerli Station&quot;, 
+           caption=&quot;Source: Meteorology Station&quot;, 
+           y=&quot;Temperature&quot;, 
+           x=&quot;Time Step&quot;)
+           
+plot(gg)</code></pre>
+<p><img src="gg2.png" /></p>
+<hr />
+<pre><code>library(&#39;ggplot2&#39;)
 
-plot(mydata_txt$temp, type=&quot;l&quot; )</code></pre>
-<p><img src="Presentation/fig_temp.png" /></p>
+gg &lt;- ggplot(my_data_NA, aes(x=seq(1,121), y=temp)) +
+      geom_point(aes(col=temp, size=temp)) +
+      geom_smooth(method=&quot;loess&quot;, se=F) +
+      labs(title=&quot;My Time Series&quot;, 
+           subtitle=&quot;Temperature for Omerli Station&quot;,
+           y=&quot;Temperature&quot;, 
+           x=&quot;Time Step&quot;)
+           
+plot(gg)</code></pre>
+<p><img src="gg.png" /></p>
+<hr />
+</div>
+<div id="write" class="section level3">
+<h3><strong>Write</strong></h3>
+<pre><code>write.table(x=urldata_txt,
+            file=&quot;somenewfile.txt&quot;
+            sep=&quot;;&quot;,
+            na=&quot;-9999&quot;,
+            row.names=FALSE)</code></pre>
+<pre><code>write.table(x=my_data,
+            file=&quot;my_data.txt&quot;,
+            sep=&quot;;&quot;,
+            na=-9999.0,
+            row.names=FALSE)</code></pre>
+<pre><code>write.table(x=my_data_NA,
+            file=&quot;my_data_NA.csv&quot;,
+            sep=&quot;;&quot;,
+            na=&quot;-9999&quot;,
+            row.names=FALSE)</code></pre>
+<p>write.table() and OPTIONS</p>
+<hr />
+<hr />
+<hr />
 <hr />
 </div>
 </div>
@@ -2154,7 +2314,7 @@ data_frame</code></pre>
 <div id="practice---r-language-1" class="section level3">
 <h3><strong>Practice - R Language</strong></h3>
 <ol style="list-style-type: decimal">
-<li><strong>Read</strong> and <strong>assign</strong> your csv data (Header or seperator ?). “18397_Cekmekoy_Omerli_15dk.txt”</li>
+<li><strong>Read</strong> and <strong>assign</strong> your csv data (Header or seperator ?). “Cekmekoy_Omerli_15min.txt”</li>
 <li>Check the <strong>class</strong> and <strong>structure</strong> of your new data.</li>
 <li>Take the <strong><em>“Temperature”</em></strong> parameter and <strong>assign</strong> it as a new variable.</li>
 <li><strong>Plot</strong> the “temperature” vector.</li>
@@ -2169,9 +2329,9 @@ data_frame</code></pre>
 <div id="practice---r-language-2" class="section level3">
 <h3><strong>Practice - R Language</strong></h3>
 <ol style="list-style-type: decimal">
-<li><strong>Read</strong> and <strong>assign</strong> your csv data (Header or seperator ?). “18397_Cekmekoy_Omerli_15dk.txt”</li>
+<li><strong>Read</strong> and <strong>assign</strong> your csv data (Header or seperator ?). “Cekmekoy_Omerli_15min.txt”</li>
 </ol>
-<pre class="r"><code>mydata &lt;- read.csv(file = &quot;Presentation/18397_Cekmekoy_Omerli_15dk.txt&quot;, 
+<pre class="r"><code>mydata &lt;- read.csv(file = &quot;Presentation/Cekmekoy_Omerli_15min.txt&quot;, 
                    header = TRUE, 
                    sep = &quot;;&quot;)
 mydata</code></pre>
@@ -2265,38 +2425,38 @@ mydata</code></pre>
 ## 87   18397 2017     7  27   15      30 25.4          0.00   1000.9
 ## 88   18397 2017     7  27   15      45 24.2          0.00   1001.8
 ## 89   18397 2017     7  27   16       0 19.2          7.01   1003.7
-## 90   18397 2017     7  27   16      15 19.5         15.81   1003.2
-## 91   18397 2017     7  27   16      30 20.1         16.06   1003.1
-## 92   18397 2017     7  27   16      45 20.8         16.06   1003.7
-## 93   18397 2017     7  27   17       0 21.2         17.19  -9999.0
-## 94   18397 2017     7  27   17      15 21.4         17.21   1005.6
-## 95   18397 2017     7  27   17      30 21.4         18.46   1005.4
-## 96   18397 2017     7  27   17      45 21.4         21.21   1005.1
-## 97   18397 2017     7  27   18       0 21.2         21.21   1005.1
-## 98   18397 2017     7  27   18      15 21.0         21.21  -9999.0
-## 99   18397 2017     7  27   18      30 20.8         21.21   1006.3
-## 100  18397 2017     7  27   18      45 20.9         21.21  -9999.0
-## 101  18397 2017     7  27   19       0 20.8         21.40   1005.7
-## 102  18397 2017     7  27   19      15 20.7         21.40   1006.2
-## 103  18397 2017     7  27   19      30 20.8         21.60   1003.6
-## 104  18397 2017     7  27   19      45 20.8         21.82   1003.7
-## 105  18397 2017     7  27   20       0 20.9         21.82  -9999.0
-## 106  18397 2017     7  27   20      15 20.6         21.82  -9999.0
-## 107  18397 2017     7  27   20      30 20.6         21.82   1005.1
-## 108  18397 2017     7  27   20      45 20.5         21.82   1005.6
-## 109  18397 2017     7  27   21       0 20.7         21.82   1005.5
-## 110  18397 2017     7  27   21      15 20.8         21.82   1005.7
-## 111  18397 2017     7  27   21      30 20.4         21.82   1005.6
-## 112  18397 2017     7  27   21      45 20.4         21.82   1005.8
-## 113  18397 2017     7  27   22       0 20.6         21.82   1005.8
-## 114  18397 2017     7  27   22      15 20.5         21.82   1005.9
-## 115  18397 2017     7  27   22      30 20.4         21.82   1006.0
-## 116  18397 2017     7  27   22      45 20.5         21.82   1005.9
-## 117  18397 2017     7  27   23       0 20.5         21.82   1005.9
-## 118  18397 2017     7  27   23      15 20.6         21.82   1005.9
-## 119  18397 2017     7  27   23      30 20.5         21.82   1006.0
-## 120  18397 2017     7  27   23      45 20.5         21.82   1006.0
-## 121  18397 2017     7  28    0       0 20.4         21.82   1006.0
+## 90   18397 2017     7  27   16      15 19.5          8.80   1003.2
+## 91   18397 2017     7  27   16      30 20.1          0.25   1003.1
+## 92   18397 2017     7  27   16      45 20.8          0.00   1003.7
+## 93   18397 2017     7  27   17       0 21.2          1.13  -9999.0
+## 94   18397 2017     7  27   17      15 21.4          0.02   1005.6
+## 95   18397 2017     7  27   17      30 21.4          1.25   1005.4
+## 96   18397 2017     7  27   17      45 21.4          2.75   1005.1
+## 97   18397 2017     7  27   18       0 21.2          0.00   1005.1
+## 98   18397 2017     7  27   18      15 21.0          0.00  -9999.0
+## 99   18397 2017     7  27   18      30 20.8          0.00   1006.3
+## 100  18397 2017     7  27   18      45 20.9          0.00  -9999.0
+## 101  18397 2017     7  27   19       0 20.8          0.19   1005.7
+## 102  18397 2017     7  27   19      15 20.7          0.00   1006.2
+## 103  18397 2017     7  27   19      30 20.8          0.20   1003.6
+## 104  18397 2017     7  27   19      45 20.8          0.22   1003.7
+## 105  18397 2017     7  27   20       0 20.9          0.00  -9999.0
+## 106  18397 2017     7  27   20      15 20.6          0.00  -9999.0
+## 107  18397 2017     7  27   20      30 20.6          0.00   1005.1
+## 108  18397 2017     7  27   20      45 20.5          0.00   1005.6
+## 109  18397 2017     7  27   21       0 20.7          0.00   1005.5
+## 110  18397 2017     7  27   21      15 20.8          0.00   1005.7
+## 111  18397 2017     7  27   21      30 20.4          0.00   1005.6
+## 112  18397 2017     7  27   21      45 20.4          0.00   1005.8
+## 113  18397 2017     7  27   22       0 20.6          0.00   1005.8
+## 114  18397 2017     7  27   22      15 20.5          0.00   1005.9
+## 115  18397 2017     7  27   22      30 20.4          0.00   1006.0
+## 116  18397 2017     7  27   22      45 20.5          0.00   1005.9
+## 117  18397 2017     7  27   23       0 20.5          0.00   1005.9
+## 118  18397 2017     7  27   23      15 20.6          0.00   1005.9
+## 119  18397 2017     7  27   23      30 20.5          0.00   1006.0
+## 120  18397 2017     7  27   23      45 20.5          0.00   1006.0
+## 121  18397 2017     7  28    0       0 20.4          0.00   1006.0
 ##     relative_humidity
 ## 1                  94
 ## 2                  95
@@ -2630,38 +2790,38 @@ mydata</code></pre>
 ## 87   18397 2017     7  27   15      30 25.4          0.00   1000.9
 ## 88   18397 2017     7  27   15      45 24.2          0.00   1001.8
 ## 89   18397 2017     7  27   16       0   NA          7.01   1003.7
-## 90   18397 2017     7  27   16      15 19.5         15.81   1003.2
-## 91   18397 2017     7  27   16      30 20.1         16.06   1003.1
-## 92   18397 2017     7  27   16      45 20.8         16.06   1003.7
-## 93   18397 2017     7  27   17       0 21.2         17.19  -9999.0
-## 94   18397 2017     7  27   17      15 21.4         17.21   1005.6
-## 95   18397 2017     7  27   17      30 21.4         18.46   1005.4
-## 96   18397 2017     7  27   17      45 21.4         21.21   1005.1
-## 97   18397 2017     7  27   18       0 21.2         21.21   1005.1
-## 98   18397 2017     7  27   18      15 21.0         21.21  -9999.0
-## 99   18397 2017     7  27   18      30 20.8         21.21   1006.3
-## 100  18397 2017     7  27   18      45 20.9         21.21  -9999.0
-## 101  18397 2017     7  27   19       0 20.8         21.40   1005.7
-## 102  18397 2017     7  27   19      15 20.7         21.40   1006.2
-## 103  18397 2017     7  27   19      30 20.8         21.60   1003.6
-## 104  18397 2017     7  27   19      45 20.8         21.82   1003.7
-## 105  18397 2017     7  27   20       0 20.9         21.82  -9999.0
-## 106  18397 2017     7  27   20      15 20.6         21.82  -9999.0
-## 107  18397 2017     7  27   20      30 20.6         21.82   1005.1
-## 108  18397 2017     7  27   20      45 20.5         21.82   1005.6
-## 109  18397 2017     7  27   21       0 20.7         21.82   1005.5
-## 110  18397 2017     7  27   21      15 20.8         21.82   1005.7
-## 111  18397 2017     7  27   21      30 20.4         21.82   1005.6
-## 112  18397 2017     7  27   21      45 20.4         21.82   1005.8
-## 113  18397 2017     7  27   22       0 20.6         21.82   1005.8
-## 114  18397 2017     7  27   22      15 20.5         21.82   1005.9
-## 115  18397 2017     7  27   22      30 20.4         21.82   1006.0
-## 116  18397 2017     7  27   22      45 20.5         21.82   1005.9
-## 117  18397 2017     7  27   23       0 20.5         21.82   1005.9
-## 118  18397 2017     7  27   23      15 20.6         21.82   1005.9
-## 119  18397 2017     7  27   23      30 20.5         21.82   1006.0
-## 120  18397 2017     7  27   23      45 20.5         21.82   1006.0
-## 121  18397 2017     7  28    0       0 20.4         21.82   1006.0
+## 90   18397 2017     7  27   16      15 19.5          8.80   1003.2
+## 91   18397 2017     7  27   16      30 20.1          0.25   1003.1
+## 92   18397 2017     7  27   16      45 20.8          0.00   1003.7
+## 93   18397 2017     7  27   17       0 21.2          1.13  -9999.0
+## 94   18397 2017     7  27   17      15 21.4          0.02   1005.6
+## 95   18397 2017     7  27   17      30 21.4          1.25   1005.4
+## 96   18397 2017     7  27   17      45 21.4          2.75   1005.1
+## 97   18397 2017     7  27   18       0 21.2          0.00   1005.1
+## 98   18397 2017     7  27   18      15 21.0          0.00  -9999.0
+## 99   18397 2017     7  27   18      30 20.8          0.00   1006.3
+## 100  18397 2017     7  27   18      45 20.9          0.00  -9999.0
+## 101  18397 2017     7  27   19       0 20.8          0.19   1005.7
+## 102  18397 2017     7  27   19      15 20.7          0.00   1006.2
+## 103  18397 2017     7  27   19      30 20.8          0.20   1003.6
+## 104  18397 2017     7  27   19      45 20.8          0.22   1003.7
+## 105  18397 2017     7  27   20       0 20.9          0.00  -9999.0
+## 106  18397 2017     7  27   20      15 20.6          0.00  -9999.0
+## 107  18397 2017     7  27   20      30 20.6          0.00   1005.1
+## 108  18397 2017     7  27   20      45 20.5          0.00   1005.6
+## 109  18397 2017     7  27   21       0 20.7          0.00   1005.5
+## 110  18397 2017     7  27   21      15 20.8          0.00   1005.7
+## 111  18397 2017     7  27   21      30 20.4          0.00   1005.6
+## 112  18397 2017     7  27   21      45 20.4          0.00   1005.8
+## 113  18397 2017     7  27   22       0 20.6          0.00   1005.8
+## 114  18397 2017     7  27   22      15 20.5          0.00   1005.9
+## 115  18397 2017     7  27   22      30 20.4          0.00   1006.0
+## 116  18397 2017     7  27   22      45 20.5          0.00   1005.9
+## 117  18397 2017     7  27   23       0 20.5          0.00   1005.9
+## 118  18397 2017     7  27   23      15 20.6          0.00   1005.9
+## 119  18397 2017     7  27   23      30 20.5          0.00   1006.0
+## 120  18397 2017     7  27   23      45 20.5          0.00   1006.0
+## 121  18397 2017     7  28    0       0 20.4          0.00   1006.0
 ##     relative_humidity
 ## 1                  94
 ## 2                  95
