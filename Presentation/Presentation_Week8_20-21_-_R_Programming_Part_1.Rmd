@@ -1,6 +1,6 @@
 ---
 title: "Software Tools for Earth and Environmental Science"
-subtitle:  "-- 9th WEEK --"
+subtitle:  "-- 8th WEEK --"
 author: "Emir Toker"
 date: "14/11/2019"
 output: 

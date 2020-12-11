@@ -40,12 +40,13 @@ knitr::opts_chunk$set(echo = TRUE)
 4. R and RStudio - [Slide](http://rpubs.com/emirtoker/software_tools_week4)
 5. R Language Part 1 (Getting Started, Data Types) - [Slide](http://rpubs.com/emir/software_tools_week5)
 6. R Language Part 2 (Data Structures) - [Slide](http://rpubs.com/emir/software_tools_week6)
-6. R Language Part 3 (Read, Write, Plot) - [Slide](http://rpubs.com/emirtoker/software_tools_week7)
-7. R Programming Part 1 (Conditions - if, else, else if) - [Slide](http://rpubs.com/emirtoker/software_tools_week9)
-8. R Programming Part 2 (Loops - repeat, while, for, apply group) - [Slide](http://rpubs.com/emirtoker/software_tools_w10)
-9. R Statistics - [Slide](http://rpubs.com/emirtoker/software_tools_w11)
-10. R Probability - [Slide](http://rpubs.com/emirtoker/software_tools_w13)
-11. <span style="color:grey">R Advance - Packages</span>
+7. R Language Part 3 (Read, Write, Plot) - [Slide](http://rpubs.com/emirtoker/software_tools_week7)
+8. R Programming Part 1 (Conditions - if, else, else if) - [Slide](http://rpubs.com/emirtoker/software_tools_week9)
+9. R Programming Part 2 (Loops - repeat, while, for, apply group) - [Slide](http://rpubs.com/emirtoker/software_tools_w10)
+10. R Statistics - [Slide](http://rpubs.com/emirtoker/software_tools_w11)
+12. R Probability - [Slide](http://rpubs.com/emirtoker/software_tools_w13)
+13. <span style="color:grey">R Summary - Packages</span>
+14. <span style="color:grey">R Advance - Packages</span>
 
 ***
 
