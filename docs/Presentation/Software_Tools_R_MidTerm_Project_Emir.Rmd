@@ -1,10 +1,10 @@
 ---
 title: "Software Tools, R - MidTerm Project"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document:
     df_print: paged
+  html_notebook: default
+  pdf_document: default
 ---
 
 **Due date** : 18 Now 2020, 23:59
@@ -116,13 +116,26 @@ View()
 
 * ***Now your "temp" data must seem like this***
 
-![](temp.png){width=60%}
+
+```{r echo=FALSE, results='asis'}
+download.file(url = "https://web.itu.edu.tr/~tokerem/temp.png",
+          destfile = "temp.png",
+          mode = 'wb')
+knitr::include_graphics(path = "temp.png")
+```
+
 
 5. Delete rows which include NA ( *which() or na.omit()* )
 
 * ***Now your "temp" data must seem like this***
 
-![](temp1.png){width=60%}
+```{r echo=FALSE, results='asis'}
+download.file(url = "https://web.itu.edu.tr/~tokerem/temp1.png",
+          destfile = "temp1.png",
+          mode = 'wb')
+knitr::include_graphics(path = "temp1.png")
+```
+
 
 6. Assign it as new "temp" again
 7. Select summer season 
@@ -158,7 +171,14 @@ lines(seq(1,12), temp[1,1:12]   , type = "l", col = "blue")
 legend("topleft",c("blue","red"),fill=c("blue","red"))
 abline(h = mean(colMeans(temp, na.rm = T)))
 ```
-![](temp2.png){width=60%}
+
+```{r echo=FALSE, results='asis'}
+download.file(url = "https://web.itu.edu.tr/~tokerem/temp2.png",
+          destfile = "temp2.png",
+          mode = 'wb')
+knitr::include_graphics(path = "temp2.png")
+```
+
 
 
 ```
@@ -169,8 +189,12 @@ plot(ylim = c(0,30), rowMeans(temp[,3:5])       , type="l", col="green")
 plot(ylim = c(0,30), rowMeans(temp[,6:8])       , type="l", col="red")
 ```
 
-![](temp3.png){width=60%}
-
+```{r echo=FALSE, results='asis'}
+download.file(url = "https://web.itu.edu.tr/~tokerem/temp2.png",
+          destfile = "temp2.png",
+          mode = 'wb')
+knitr::include_graphics(path = "temp2.png")
+```
 
 
 ***
