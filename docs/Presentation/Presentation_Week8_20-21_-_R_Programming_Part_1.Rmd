@@ -2,7 +2,7 @@
 title: "Software Tools for Earth and Environmental Science"
 subtitle:  "-- 8th WEEK --"
 author: "Emir Toker"
-date: "14/11/2019"
+date: "11/12/2020"
 output: 
   revealjs::revealjs_presentation:
     theme: beige

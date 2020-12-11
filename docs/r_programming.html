@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -22,6 +22,17 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -83,7 +94,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -232,6 +242,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -243,18 +254,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -316,6 +315,9 @@ $(document).ready(function () {
     </li>
     <li>
       <a href="data_sources.html">Data Sources</a>
+    </li>
+    <li>
+      <a href="data_download.html">Data Download</a>
     </li>
     <li>
       <a href="ncl.html">NCL</a>
@@ -422,15 +424,26 @@ score&gt;=75 &amp; score&lt;90 | exam_no==1</code></pre>
 <p><img src="Presentation/if1.png" /></p>
 <pre class="r"><code>if(TRUE) message(&quot;It was true!&quot;)</code></pre>
 <pre><code>## It was true!</code></pre>
-<pre class="r"><code>if(FALSE) message(&quot;It wasn&#39;t true!&quot;)</code></pre>
+<pre class="r"><code>if(FALSE) message(&quot;It wasn&#39;t true!&quot;)
+
+if(TRUE&amp;FALSE) message(&quot;It was true!&quot;)
+
+if(TRUE|FALSE) message(&quot;It doesn&#39;t matter&quot;)</code></pre>
+<pre><code>## It doesn&#39;t matter</code></pre>
+<pre class="r"><code>a &lt;- 3
+num &lt;- 4
+
+if ( a != num ) {
+print(a)
+}</code></pre>
+<pre><code>## [1] 3</code></pre>
 <pre class="r"><code>a &lt;- 3
 num &lt;- 4
 
 if ( a &lt;= num ) {
 a &lt;- a ^ 2
-}
-
-a</code></pre>
+print(a)
+}</code></pre>
 <pre><code>## [1] 9</code></pre>
 <hr />
 </div>
@@ -460,6 +473,47 @@ if ( num &lt; 0 ) {
 <div id="if-stand-alone-statement-3" class="section level3">
 <h3><strong><em>if</em></strong> (Stand-Alone) Statement</h3>
 <p><img src="Presentation/if1c.png" /></p>
+<p>Try it</p>
+<p>Is it in the range ?</p>
+<pre><code>
+x &lt;- 6
+y &lt;- 2
+
+if ( x &gt; 3 &amp; x == 7 ) {
+  print(&quot;It is in the range&quot;)
+  z &lt;- x + y
+  print(z)
+}
+</code></pre>
+<p>Is it in the range ?</p>
+<pre class="r"><code>x &lt;- 6
+y &lt;- 2
+
+if ( x &gt; 3 &amp; x &lt;= 7 ) {
+  print(&quot;It is in the range&quot;)
+  z &lt;- x + y
+  print(z)
+}</code></pre>
+<pre><code>## [1] &quot;It is in the range&quot;
+## [1] 8</code></pre>
+<p>Try it</p>
+<p>You have a fruit which is yellow.</p>
+<p>Is that a banana?</p>
+<p>Or an orange ?</p>
+<pre><code>banana &lt;- &quot;yellow&quot;
+my_fruit &lt;- &quot;yellow&quot;
+
+if ( my_fruit == banana ) {
+  print(&quot;Your fruit might be a banana&quot;)
+}
+</code></pre>
+<pre><code>orange &lt;- &quot;orange&quot;
+my_fruit &lt;- &quot;yellow&quot;
+
+if ( my_fruit == orange ) {
+  print(&quot;Your fruit is not a banana&quot;)
+}
+</code></pre>
 <hr />
 </div>
 <div id="else---statement" class="section level3">
@@ -475,24 +529,46 @@ if ( num &lt; 0 ) {
 }</code></pre>
 <pre><code>## but this will.</code></pre>
 <pre class="r"><code>a &lt;- 3.5
-dec &lt;- 0.5
+b &lt;- 0.5
 
-if (dec &lt;= 0.5) {
-  adec &lt;- dec + 1
+if (a &lt;= 0.5) {
+  c &lt;- b + 1
+  print(c)
 } else {
-  adec &lt;- dec
-}
+  c &lt;- b
+  print(c)
+}</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<p>Let’s say we have two conditions. <strong>Rainy</strong> or <strong>Shiny</strong>.</p>
+<p>And you have recorded <strong>4 mm</strong> precipitation.</p>
+<pre><code>weather &lt;-       # mm           # fill this number
 
-adec</code></pre>
-<pre><code>## [1] 1.5</code></pre>
+if ( ) {                        # fill this condition, using weather
+  print(&quot;it is rainy&quot;)
+} else {
+  print(&quot;it is shiny&quot;)
+}</code></pre>
+<p>Report the weather. Is it rainy ?</p>
+<p><img src="if2.png" style="width:80.0%" /></p>
+<p>Let’s say we have two conditions. <strong>Rainy</strong> or <strong>Shiny</strong>.</p>
+<p>And you have recorded 4 mm precipitation.</p>
+<pre class="r"><code>weather &lt;- 4      # mm              # fill this number
+
+if ( weather &gt; 0 ) {                # fill this condition, using weather
+  print(&quot;it is rainy&quot;)              
+} else {
+  print(&quot;it is shiny&quot;)
+}</code></pre>
+<pre><code>## [1] &quot;it is rainy&quot;</code></pre>
 <hr />
 </div>
 <div id="else---and--else-if--statement" class="section level3">
 <h3>-<strong><em>else </em></strong>- and -<strong><em>else if</em></strong>- Statement</h3>
 <p><img src="Presentation/if2a.png" /></p>
 <p>If your situation has more than two mutually exclusive cases, use <strong>else</strong> and <strong>if</strong> statements together.</p>
-<pre class="r"><code>a &lt;- 1 
-b &lt;- 1 
+<p><img src="Presentation/if2a_v2.png" /></p>
+<pre class="r"><code>a &lt;- 1                  # team &#39;a&#39; has 1 goal
+b &lt;- 1                  # team &#39;b&#39; has 1 goal
 
 if (a &gt; b) { 
   print(&quot;A wins!&quot;)
@@ -502,8 +578,139 @@ if (a &gt; b) {
   print(&quot;Tie.&quot;)
 }</code></pre>
 <pre><code>## [1] &quot;Tie.&quot;</code></pre>
-<hr />
+<p><strong>What do you gonna do ? Eating, Sleeping, or Reading?</strong></p>
+<p>When do you want to read ?</p>
+<ul>
+<li>When you are hungry, or sleepy. <strong>No.</strong></li>
+<li>When you are not hungry and sleepy. <strong>Yes.</strong></li>
+</ul>
+<p>So, start to think about your feelings about sleeping or eating to decide whether reading or not.</p>
 </div>
+<div id="else---and--else-if--statement-1" class="section level2">
+<h2>-<strong><em>else </em></strong>- and -<strong><em>else if</em></strong>- Statement</h2>
+<p><strong>What do you gonna do ? Eating, Sleeping, or Reading?</strong></p>
+<p>Let’s start with define the conditions</p>
+<ul>
+<li><p>If you are hungry –&gt; eat</p></li>
+<li><p>If you are sleepy –&gt; sleep</p>
+<ul>
+<li>If you are hungry and sleepy –&gt; ?</li>
+<li>If you are hungry but not sleepy –&gt; ?</li>
+<li>If you are not hungry but sleepy –&gt; ?</li>
+<li>If you are not hungry and sleepy –&gt; ?</li>
+</ul></li>
+</ul>
+<p>What do you gonna do ? Eat, Sleep or Read?</p>
+<ul>
+<li>If you are hungry and sleepy –&gt; eat</li>
+<li>If you are hungry but not sleepy –&gt; eat</li>
+<li>If you are not hungry but sleepy –&gt; sleep</li>
+<li>If you are not hungry and sleepy –&gt; read</li>
+</ul>
+<p>Let’s define your feelings. <strong>Yes</strong> (TRUE,1) or <strong>No</strong> (FALSE,0)</p>
+<ul>
+<li>Are you hungry ?</li>
+<li>Are you sleepy ?</li>
+</ul>
+<pre><code>hungry &lt;-                   # TRUE or FALSE (1 or 0)
+sleepy &lt;-                   # TRUE or FALSE (1 or 0)
+
+</code></pre>
+<p>What do you gonna do ? Eat, Sleep or Read?</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>If you are hungry and sleepy –&gt; eat</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>If you are hungry but not sleepy –&gt; eat</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>If you are not hungry but sleepy –&gt; sleep</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>If you are not hungry and sleepy –&gt; read</li>
+</ol></li>
+</ul>
+<pre><code>hungry &lt;- TRUE                  # Yes , TRUE , 1
+sleepy &lt;- TRUE                  # Yes , TRUE , 1
+
+if ( ) { 
+  print(&quot; &quot;)
+} else if ( ) { 
+  print(&quot; &quot;)
+} else if ( ) { 
+  print(&quot; &quot;)
+} else {
+  print(&quot; &quot;)
+}</code></pre>
+<p>What do you gonna do ? Eat, Sleep or Read?</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>If you are hungry and sleepy –&gt; eat</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>If you are hungry but not sleepy –&gt; eat</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>If you are not hungry but sleepy –&gt; sleep</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>If you are not hungry and sleepy –&gt; read</li>
+</ol></li>
+</ul>
+<pre><code>hungry &lt;- TRUE                  # Yes , TRUE , 1
+sleepy &lt;- TRUE                  # Yes , TRUE , 1
+
+if ( ) {                    # hungry is TRUE and sleepy is TRUE
+  print(&quot; &quot;)
+} else if ( ) {             # hungry is TRUE and sleepy is FALSE
+  print(&quot; &quot;)
+} else if ( ) {             # hungry is FALSE and sleepy is TRUE
+  print(&quot; &quot;) 
+} else {                    # hungry is FALSE and sleepy is FALSE
+  print(&quot; &quot;)
+}</code></pre>
+<p>What do you gonna do ? Eat, Sleep or Read?</p>
+<ul>
+<li>If you are hungry and sleepy –&gt; eat</li>
+<li>If you are hungry but not sleepy –&gt; eat</li>
+<li>If you are not hungry but sleepy –&gt; sleep</li>
+<li>If you are not hungry and sleepy –&gt; read</li>
+</ul>
+<pre class="r"><code>hungry &lt;- TRUE                  # Yes , TRUE , 1
+sleepy &lt;- TRUE                  # Yes , TRUE , 1
+
+if (hungry==TRUE &amp; sleepy==TRUE) {          # hungry is TRUE and sleepy is TRUE
+  print(&quot; &quot;)
+} else if (hungry==TRUE &amp; sleepy==FALSE) {  # hungry is TRUE and sleepy is FALSE
+  print(&quot; &quot;)
+} else if (hungry==FALSE &amp; sleepy==TRUE) {  # hungry is FALSE and sleepy is TRUE
+  print(&quot; &quot;) 
+} else {                                    # hungry is FALSE and sleepy is FALSE
+  print(&quot; &quot;)
+}</code></pre>
+<pre><code>## [1] &quot; &quot;</code></pre>
+<p>What do you gonna do ? Eat, Sleep or Read?</p>
+<ul>
+<li>If you are hungry and sleepy –&gt; eat</li>
+<li>If you are hungry but not sleepy –&gt; eat</li>
+<li>If you are not hungry but sleepy –&gt; sleep</li>
+<li>If you are not hungry and sleepy –&gt; read</li>
+</ul>
+<pre class="r"><code>hungry &lt;- TRUE                  # Yes , TRUE , 1
+sleepy &lt;- TRUE                  # Yes , TRUE , 1
+
+if (hungry==TRUE &amp; sleepy==TRUE) {          # hungry is TRUE and sleepy is TRUE
+  print(&quot;EAT&quot;)
+} else if (hungry==TRUE &amp; sleepy==FALSE) {  # hungry is TRUE and sleepy is FALSE
+  print(&quot;EAT&quot;)
+} else if (hungry==FALSE &amp; sleepy==TRUE) {  # hungry is FALSE and sleepy is TRUE
+  print(&quot;SLEEP&quot;) 
+} else {                                    # hungry is FALSE and sleepy is FALSE
+  print(&quot;READ&quot;)
+}</code></pre>
+<pre><code>## [1] &quot;EAT&quot;</code></pre>
+<hr />
 <div id="nesting-and-stacking-statements" class="section level3">
 <h3>Nesting and Stacking Statements</h3>
 <p>An <strong><em>if statement</em></strong> can be placed in another <strong><em>if statement</em></strong>. In the editor, modify the mynumber example once more as follows:</p>
@@ -547,50 +754,109 @@ if (a &gt; b) {
    print(&quot;Wake up!&quot;)
 }</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>The variable message to <em>“I execute this when true!”</em> when the condition is <strong>TRUE</strong>.</li>
+<li>The variable message to <em>“I print this when it is false!”</em> when the condition is <strong>FALSE</strong>.</li>
 </ol>
 <pre><code>if (...) {
-  message &lt;- &quot;...&quot;
-  print(message)
+  print(&quot;I print this when it is true!&quot;)
 } else {
-  message &lt;- &quot;I execute this when false!&quot;
   print(...)
 }</code></pre>
 <hr />
 </div>
 <div id="practice---conditions---logical-op" class="section level3">
 <h3>Practice - Conditions - Logical Op</h3>
-<p><strong>Problem</strong> : You are a CAR, and you are going on the road, BUT ;</p>
-<pre class="r"><code>Car_Stop_Light &lt;- &#39;orange&#39;
+<p><strong>ROLE PLAY</strong> : You are a CAR, and you are going on the road.</p>
+<p><img src="Presentation/car.png" /></p>
+<p>Problem : <strong>BUT</strong> ;</p>
+<ul>
+<li>Traffic (stop) light turned to <strong>orange</strong></li>
+<li><strong>Two</strong> pedestrians started to walk across the road</li>
+</ul>
+<p><strong>How can you move ?</strong></p>
+<ul>
+<li>Waiting for the traffic (stop) light turns to <strong>green</strong></li>
+<li>Waiting for pedestrians pass to the across of the road</li>
+</ul>
+<p><strong>Parameters</strong> :</p>
+<ul>
+<li>The <strong>COLOR</strong> of the traffic (stop) light</li>
+<li>The <strong>NUMBER</strong> of pedestrians</li>
+</ul>
+<p>You are a CAR, <strong>BUT</strong> ;</p>
+<ul>
+<li>Traffic (stop) light turned to <strong>orange</strong></li>
+<li><strong>Two</strong> pedestrians started to walk across the road</li>
+</ul>
+<p><strong>Parameters</strong> :</p>
+<ul>
+<li>The <strong>COLOR</strong> of the traffic (stop) light</li>
+<li>The <strong>NUMBER</strong> of pedestrians</li>
+</ul>
+<p><em>First, define the situation</em></p>
+<pre class="r"><code>Traffic_Stop_Light &lt;- &#39;orange&#39;
 Number_of_Pedestrians &lt;- 2</code></pre>
+<p>You are a CAR, <strong>BUT</strong> ;</p>
+<pre class="r"><code>Traffic_Stop_Light &lt;- &#39;orange&#39;
+Number_of_Pedestrians &lt;- 2</code></pre>
+<p><em>Second, define the conditions to move again</em></p>
+<pre><code>Traffic_Stop_Light : ?
+Number_of_Pedestrians : ?</code></pre>
+</div>
+</div>
+<div id="practice---conditions---logical-op-1" class="section level2">
+<h2>Practice - Conditions - Logical Op</h2>
+<p>Situation</p>
+<pre class="r"><code>Traffic_Stop_Light &lt;- &#39;orange&#39;
+Number_of_Pedestrians &lt;- 2</code></pre>
+<p>Condition</p>
+<pre><code>Traffic_Stop_Light : &#39;green&#39;
+Number_of_Pedestrians : 0</code></pre>
 <p>Remember rules</p>
 <pre><code>if (...) {
   print(...);
 } else {
   print(...);
 }</code></pre>
-<hr />
-</div>
-<div id="practice---conditions---logical-op-1" class="section level3">
-<h3>Practice - Conditions - Logical Op</h3>
-<p><strong>ANSWER</strong> : You are a CAR, and you are going on the road, BUT ;</p>
-<pre class="r"><code>Car_Stop_Light &lt;- &#39;orange&#39;
+<p>Situation</p>
+<pre class="r"><code>Traffic_Stop_Light &lt;- &#39;orange&#39;
 Number_of_Pedestrians &lt;- 2</code></pre>
+<p>Condition</p>
+<pre><code>Traffic_Stop_Light : &#39;green&#39;
+Number_of_Pedestrians : 0</code></pre>
 <p>Remember rules</p>
-<pre class="r"><code>if (Car_Stop_Light == &#39;green&#39; &amp; Number_of_Pedestrians ==0) {
+<pre><code>if ( &amp; ) {
+  print(&#39;Go!&#39;);
+} else {
+  print(&#39;STOP&#39;);
+}</code></pre>
+<p>Situation</p>
+<pre class="r"><code>Traffic_Stop_Light &lt;- &#39;orange&#39;
+Number_of_Pedestrians &lt;- 2</code></pre>
+<p>Condition</p>
+<pre><code>Traffic_Stop_Light : &#39;green&#39;
+Number_of_Pedestrians : 0</code></pre>
+<p>Remember rules</p>
+<pre class="r"><code>if (Traffic_Stop_Light==&#39;green&#39; &amp; Number_of_Pedestrians==0) {
   print(&#39;Go!&#39;);
 } else {
   print(&#39;STOP&#39;);
 }</code></pre>
 <pre><code>## [1] &quot;STOP&quot;</code></pre>
 <hr />
-</div>
 <div id="practice---conditions---logical-op-2" class="section level3">
 <h3>Practice - Conditions - Logical Op</h3>
 <p><strong>Problem</strong> : You want to enjoy, and let’s say the day is;</p>
-<pre class="r"><code>day &lt;- &quot;Saturday&quot;</code></pre>
-<p>It is okay, you can fun <strong>if</strong> it is <strong>weekend</strong>.</p>
+<pre class="r"><code>day &lt;- &quot;Friday&quot;</code></pre>
+<p>What do you gonna do <strong>if</strong> it is <strong>Friday</strong>.</p>
 <pre><code>if (...) {
+  print(&#39;Enjoy the weekend!&#39;)
+} else {
+  print(&#39;Do some work.&#39;)
+}</code></pre>
+<hr />
+<pre class="r"><code>day &lt;- &quot;Friday&quot;</code></pre>
+<p>What do you gonna do <strong>if</strong> it is <strong>Friday</strong>.</p>
+<pre><code>if ( day... | day... ) {
   print(&#39;Enjoy the weekend!&#39;)
 } else {
   print(&#39;Do some work.&#39;)
@@ -600,36 +866,43 @@ Number_of_Pedestrians &lt;- 2</code></pre>
 <div id="practice---conditions---logical-op-3" class="section level3">
 <h3>Practice - Conditions - Logical Op</h3>
 <p><strong>ANSWER</strong> : You want to enjoy, and let’s say the day is;</p>
-<pre class="r"><code>day &lt;- &quot;Saturday&quot;</code></pre>
+<pre class="r"><code>day &lt;- &quot;Friday&quot;</code></pre>
 <p>It is okay, you can fun <strong>if</strong> it is <strong>weekend</strong>.</p>
 <pre class="r"><code>if (day == &#39;Saturday&#39; | day == &#39;Sunday&#39;) {
   print(&#39;Enjoy the weekend!&#39;)
 } else {
   print(&#39;Do some work.&#39;)
 }</code></pre>
-<pre><code>## [1] &quot;Enjoy the weekend!&quot;</code></pre>
+<pre><code>## [1] &quot;Do some work.&quot;</code></pre>
 <hr />
 </div>
 <div id="practice---conditions---logical-op-4" class="section level3">
 <h3>Practice - Conditions - Logical Op</h3>
-<p><strong>Problem</strong> : You want to go out and your question is <strong>“Should I take an umbrella?”</strong></p>
+<p><strong>Problem</strong> : You want to go out and your question is</p>
+<p><strong>“Should I take an umbrella?”</strong></p>
+<p><strong>Note</strong> : There are two variables in your code,</p>
+<p><strong>“sky”</strong> (<em>character</em>) and <strong>“high_chance_of_rain”</strong> (<em>logical</em>)</p>
 <ul>
-<li>Check to see, if <strong>“weather”</strong> is <strong>“equal”</strong> to <strong>“cloudy”</strong> and, whether there is a <strong>“high_chance_of_rain”</strong>.</li>
-<li><strong>If</strong> it is <strong>both</strong>, the code should assign the value of the variable <strong>message</strong> to be <strong>“Take umbrella!”</strong></li>
-<li><strong>Otherwise</strong>, the code should assign the value of the variable <strong>message</strong> to <strong>“No need for umbrella!”</strong></li>
-<li><strong>Print</strong> the <strong>message</strong> variable after the conditional statement.</li>
-<li>Based on the condition, what should its value be?</li>
+<li><p>Check, if “<strong>sky</strong>” is equal to “<strong>cloudy</strong>” and, whether there is a “<strong>high_chance_of_rain</strong>”.</p></li>
+<li><p>If both are true, the code should print: <strong>“Take umbrella!”</strong></p></li>
+<li><p>Otherwise, the code should print: <strong>“No need for umbrella!”</strong></p></li>
+<li><p>Based on the condition, what is the answer?</p>
+<pre><code>  RADIO: The sky is cloudy and the chance of rain is high.</code></pre></li>
 </ul>
-<p><strong>Note</strong> : There are two variables in your code, <strong>“weather”</strong> and <strong>“high_chance_of_rain”</strong></p>
+<hr />
+<p>Your conditions, for two variables</p>
+<pre><code># you want to go out and your question is &quot;Should I take an umbrella?&quot;
+
+sky &lt;- 
+
+high_chance_of_rain &lt;- </code></pre>
 <hr />
 </div>
 <div id="practice---conditions---logical-op-5" class="section level3">
 <h3>Practice - Conditions - Logical Op</h3>
 <pre class="r"><code># you want to go out and your question is &quot;Should I take an umbrella?&quot;
 
-message &lt;- &#39;Should I take an umbrella?&#39;
-
-weather &lt;- &quot;cloudy&quot;
+sky &lt;- &quot;cloudy&quot;
 
 high_chance_of_rain &lt;- TRUE</code></pre>
 <hr />
@@ -638,17 +911,28 @@ high_chance_of_rain &lt;- TRUE</code></pre>
 <h3>Practice - Conditions - Logical Op</h3>
 <pre class="r"><code># you want to go out and your question is &quot;Should I take an umbrella?&quot;
 
-message &lt;- &#39;Should I take an umbrella?&#39;
-
-weather &lt;- &quot;cloudy&quot;
+sky &lt;- &quot;cloudy&quot;
 
 high_chance_of_rain &lt;- TRUE</code></pre>
 <pre><code>if (...) {
-  message &lt;- &#39;Take umbrella!&#39;
-  print(message)
+  print(&quot;...&quot;)
 } else { 
-  message &lt;- &#39;No need for umbrella!&#39;
-  print(message)
+  print(&quot;...&quot;)
+  }</code></pre>
+<pre><code>if (...) {
+  print(&quot;Take umbrella!&quot;)
+} else { 
+  print(&quot;No need for umbrella!&quot;)
+  }</code></pre>
+<pre class="r"><code># you want to go out and your question is &quot;Should I take an umbrella?&quot;
+
+sky &lt;- &quot;cloudy&quot;
+
+high_chance_of_rain &lt;- TRUE</code></pre>
+<pre><code>if ( sky... &amp; high_chance_of_rain... ) {
+  print(&quot;Take umbrella!&quot;)
+} else { 
+  print(&quot;No need for umbrella!&quot;)
   }</code></pre>
 <hr />
 </div>
@@ -656,21 +940,18 @@ high_chance_of_rain &lt;- TRUE</code></pre>
 <h3>Practice - Conditions - Logical Op</h3>
 <pre class="r"><code># you want to go out and your question is &quot;Should I take an umbrella?&quot;
 
-message &lt;- &#39;Should I take an umbrella?&#39;
-
-weather &lt;- &quot;cloudy&quot;
+sky &lt;- &quot;cloudy&quot;
 
 high_chance_of_rain &lt;- TRUE
 
-if (weather == &quot;cloudy&quot; &amp; high_chance_of_rain == TRUE) {
-  message &lt;- &#39;Take umbrella!&#39;
-  print(message)
+if (sky == &quot;cloudy&quot; &amp; high_chance_of_rain == TRUE) {
+  print(&quot;Take umbrella!&quot;)
 } else { 
-  message &lt;- &#39;No need for umbrella!&#39;
-  print(message)
+  print(&quot;No need for umbrella!&quot;)
   }</code></pre>
 <pre><code>## [1] &quot;Take umbrella!&quot;</code></pre>
 <hr />
+</div>
 </div>
 <div id="practice---r-language" class="section level2">
 <h2><strong>Practice - R Language</strong></h2>
@@ -696,43 +977,45 @@ if (weather == &quot;cloudy&quot; &amp; high_chance_of_rain == TRUE) {
 ##  [3] &quot;additional_course.Rmd&quot;                                                       
 ##  [4] &quot;book.Rmd&quot;                                                                    
 ##  [5] &quot;code.Rmd&quot;                                                                    
-##  [6] &quot;data_sources.Rmd&quot;                                                            
-##  [7] &quot;data_structure.Rmd&quot;                                                          
-##  [8] &quot;data.Rmd&quot;                                                                    
-##  [9] &quot;datacamp.Rmd&quot;                                                                
-## [10] &quot;dc_logo1.png&quot;                                                                
-## [11] &quot;dc_logo2.png&quot;                                                                
-## [12] &quot;dc_logo3.png&quot;                                                                
-## [13] &quot;dc_logo4.png&quot;                                                                
-## [14] &quot;dc_logo5.png&quot;                                                                
-## [15] &quot;docs&quot;                                                                        
-## [16] &quot;index.Rmd&quot;                                                                   
-## [17] &quot;LICENSE&quot;                                                                     
-## [18] &quot;my_r_notebook.Rmd&quot;                                                           
-## [19] &quot;ncl.Rmd&quot;                                                                     
-## [20] &quot;netcdf.Rmd&quot;                                                                  
-## [21] &quot;new_accounts.Rmd&quot;                                                            
-## [22] &quot;new_data.csv&quot;                                                                
-## [23] &quot;Presentation&quot;                                                                
-## [24] &quot;python.Rmd&quot;                                                                  
-## [25] &quot;r_and_rstudio.Rmd&quot;                                                           
-## [26] &quot;R_Home_Website&quot;                                                              
-## [27] &quot;R_Interactive_Samples_with_Shiny_files&quot;                                      
-## [28] &quot;R_Interactive_Samples_with_Shiny.html&quot;                                       
-## [29] &quot;R_Interactive_Samples_with_Shiny.Rmd&quot;                                        
-## [30] &quot;R_Interactive_Training&quot;                                                      
-## [31] &quot;r_language.Rmd&quot;                                                              
-## [32] &quot;r_probability.Rmd&quot;                                                           
-## [33] &quot;r_programming.Rmd&quot;                                                           
-## [34] &quot;r_statistics.Rmd&quot;                                                            
-## [35] &quot;README.html&quot;                                                                 
-## [36] &quot;README.md&quot;                                                                   
-## [37] &quot;rsconnect&quot;                                                                   
-## [38] &quot;Software_Tools_for_Earth_and_Environmental_Science_Syllabus_2020_21_Fall.png&quot;
-## [39] &quot;Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png&quot;             
-## [40] &quot;Software_Tools_R_Github.Rproj&quot;                                               
-## [41] &quot;syllabus.Rmd&quot;                                                                
-## [42] &quot;unix_linux.Rmd&quot;</code></pre>
+##  [6] &quot;data_download.Rmd&quot;                                                           
+##  [7] &quot;data_sources.Rmd&quot;                                                            
+##  [8] &quot;data_structure.Rmd&quot;                                                          
+##  [9] &quot;data.Rmd&quot;                                                                    
+## [10] &quot;datacamp.Rmd&quot;                                                                
+## [11] &quot;dc_logo1.png&quot;                                                                
+## [12] &quot;dc_logo2.png&quot;                                                                
+## [13] &quot;dc_logo3.png&quot;                                                                
+## [14] &quot;dc_logo4.png&quot;                                                                
+## [15] &quot;dc_logo5.png&quot;                                                                
+## [16] &quot;dc_logo6.png&quot;                                                                
+## [17] &quot;docs&quot;                                                                        
+## [18] &quot;index.Rmd&quot;                                                                   
+## [19] &quot;LICENSE&quot;                                                                     
+## [20] &quot;my_r_notebook.Rmd&quot;                                                           
+## [21] &quot;ncl.Rmd&quot;                                                                     
+## [22] &quot;netcdf.Rmd&quot;                                                                  
+## [23] &quot;new_accounts.Rmd&quot;                                                            
+## [24] &quot;new_data.csv&quot;                                                                
+## [25] &quot;Presentation&quot;                                                                
+## [26] &quot;python.Rmd&quot;                                                                  
+## [27] &quot;r_and_rstudio.Rmd&quot;                                                           
+## [28] &quot;R_Home_Website&quot;                                                              
+## [29] &quot;R_Interactive_Samples_with_Shiny_files&quot;                                      
+## [30] &quot;R_Interactive_Samples_with_Shiny.html&quot;                                       
+## [31] &quot;R_Interactive_Samples_with_Shiny.Rmd&quot;                                        
+## [32] &quot;R_Interactive_Training&quot;                                                      
+## [33] &quot;r_language.Rmd&quot;                                                              
+## [34] &quot;r_probability.Rmd&quot;                                                           
+## [35] &quot;r_programming.Rmd&quot;                                                           
+## [36] &quot;r_statistics.Rmd&quot;                                                            
+## [37] &quot;README.html&quot;                                                                 
+## [38] &quot;README.md&quot;                                                                   
+## [39] &quot;rsconnect&quot;                                                                   
+## [40] &quot;Software_Tools_for_Earth_and_Environmental_Science_Syllabus_2020_21_Fall.png&quot;
+## [41] &quot;Software_Tools_for_Earth_and_Environmental_Science_Syllabus.png&quot;             
+## [42] &quot;Software_Tools_R_Github.Rproj&quot;                                               
+## [43] &quot;syllabus.Rmd&quot;                                                                
+## [44] &quot;unix_linux.Rmd&quot;</code></pre>
 <hr />
 </div>
 <div id="practice---r-language-2" class="section level3">
@@ -747,237 +1030,45 @@ setwd(&quot;/Users/emirtoker/Downloads/&quot;)
 getwd()</code></pre>
 <pre><code>## [1] &quot;/Users/emirtoker/Downloads&quot;</code></pre>
 <pre class="r"><code>list.files()</code></pre>
-<pre><code>##   [1] &quot;_grib2netcdf-webmars-public-svc-green-007-6fe5cac1a363ec1525f54343b6cc9fd8-8LiuI0.nc&quot;                                                                                                                  
-##   [2] &quot;-1396197156987262396..xls&quot;                                                                                                                                                                             
-##   [3] &quot;-5211097752695221187..xls&quot;                                                                                                                                                                             
-##   [4] &quot;-7376906819256400609..xls&quot;                                                                                                                                                                             
-##   [5] &quot;-953619339638234986..xls&quot;                                                                                                                                                                              
-##   [6] &quot;-969412494327541903..xls&quot;                                                                                                                                                                              
-##   [7] &quot;(Cambridge Atmospheric and Space Science Series) Boris A. Kagan - Ocean Atmosphere Interaction and Climate Modeling-Cambridge University Press (2006).pdf&quot;                                             
-##   [8] &quot;(International Geophysics 101) Benoit Cushman-Roisin and Jean-Marie Beckers (Eds.) - Introduction to Geophysical Fluid Dynamics_ Physical and Numerical Aspects-Academic Press (2011).pdf&quot;             
-##   [9] &quot;(International Geophysics 103) Gerold Siedler, Stephen M. Griffies, John Gould and John A. Church (Eds.) - Ocean Circulation and Climate_ A 21 Century Perspective-Academic Press, Elsevier (2013).pdf&quot;
-##  [10] &quot;(Introduction to Geophysical 101) Benoit Cushman-Roisin, Jean-Marie Beckers - Introduction to Geophysical Fluid Dynamics_ Physical and Numerical Aspects-Academic Press (2011).pdf&quot;                    
-##  [11] &quot;1-s2.0-S0169809511000366-main.pdf&quot;                                                                                                                                                                     
-##  [12] &quot;1-s2.0-S0169809512001561-main.pdf&quot;                                                                                                                                                                     
-##  [13] &quot;1-s2.0-S016980951200347X-main (1).pdf&quot;                                                                                                                                                                 
-##  [14] &quot;1-s2.0-S016980951200347X-main (2).pdf&quot;                                                                                                                                                                 
-##  [15] &quot;1-s2.0-S016980951200347X-main.pdf&quot;                                                                                                                                                                     
-##  [16] &quot;1-s2.0-S0169809513003669-main.pdf&quot;                                                                                                                                                                     
-##  [17] &quot;1-s2.0-S0169809514003913-main.pdf&quot;                                                                                                                                                                     
-##  [18] &quot;1-s2.0-S0169809516304537-main.pdf&quot;                                                                                                                                                                     
-##  [19] &quot;1-s2.0-S0169809516307189-main.pdf&quot;                                                                                                                                                                     
-##  [20] &quot;1-s2.0-S016980951931347X-main.pdf&quot;                                                                                                                                                                     
-##  [21] &quot;1-s2.0-S0169809520301071-main.pdf&quot;                                                                                                                                                                     
-##  [22] &quot;1-s2.0-S0277379114000298-mmc1 (1).kmz&quot;                                                                                                                                                                 
-##  [23] &quot;1-s2.0-S0277379114000298-mmc1.kmz&quot;                                                                                                                                                                     
-##  [24] &quot;10113034.pdf&quot;                                                                                                                                                                                          
-##  [25] &quot;14. Granulit, Eklojit.pptx&quot;                                                                                                                                                                            
-##  [26] &quot;16638_F.pdf&quot;                                                                                                                                                                                           
-##  [27] &quot;19394386126_Akademisyen.pdf&quot;                                                                                                                                                                           
-##  [28] &quot;19394386126_Ogrenci.pdf&quot;                                                                                                                                                                               
-##  [29] &quot;1963_Book_SevereLocalStorms.pdf&quot;                                                                                                                                                                       
-##  [30] &quot;2_AVICENA_-_Authors_statement_for_publication.doc&quot;                                                                                                                                                     
-##  [31] &quot;2015_OCEAN820_Final_engl.pdf&quot;                                                                                                                                                                          
-##  [32] &quot;2018_Korotenko_peerj-5448.pdf&quot;                                                                                                                                                                         
-##  [33] &quot;2019_eş-danışman-atama-dilekçesi.docx&quot;                                                                                                                                                                 
-##  [34] &quot;2019JD031403.pdf&quot;                                                                                                                                                                                      
-##  [35] &quot;2020JournalImpactFactorandQuartile.pdf&quot;                                                                                                                                                                
-##  [36] &quot;3400534.acsm&quot;                                                                                                                                                                                          
-##  [37] &quot;3759624810925922053..xls&quot;                                                                                                                                                                              
-##  [38] &quot;465-Article Text-1246-1-10-20111104.pdf&quot;                                                                                                                                                               
-##  [39] &quot;601151011.pdf&quot;                                                                                                                                                                                         
-##  [40] &quot;6583231.png&quot;                                                                                                                                                                                           
-##  [41] &quot;8174-era-interim-archive-version-20.pdf&quot;                                                                                                                                                               
-##  [42] &quot;86773.pdf&quot;                                                                                                                                                                                             
-##  [43] &quot;A_Novel_and_Scalable_Spatio-Temporal_Technique_for.pdf&quot;                                                                                                                                                
-##  [44] &quot;a3_hafta_cizelge_zoom_link_V2.xlsx - Sheet2.pdf&quot;                                                                                                                                                       
-##  [45] &quot;a3_hafta_cizelge_zoom_link.xlsx - Sheet2.pdf&quot;                                                                                                                                                          
-##  [46] &quot;a4_TURQUA_2020_Programı_V3 (1).xlsx&quot;                                                                                                                                                                   
-##  [47] &quot;a4_TURQUA_2020_Programı_V3.xlsx&quot;                                                                                                                                                                       
-##  [48] &quot;a4_TURQUA_2020_Programı_V3.xlsx - Program  (1).pdf&quot;                                                                                                                                                    
-##  [49] &quot;a4_TURQUA_2020_Programı_V3.xlsx - Program .pdf&quot;                                                                                                                                                        
-##  [50] &quot;a4_TURQUA_2020_Programı_V4.xlsx&quot;                                                                                                                                                                       
-##  [51] &quot;a4_TURQUA_2020_Programı_V8.xlsx - Program .pdf&quot;                                                                                                                                                        
-##  [52] &quot;AGU2017_poster_XZ.pdf&quot;                                                                                                                                                                                 
-##  [53] &quot;Akarsu_Jeomorfolojisi_Lec6.pdf&quot;                                                                                                                                                                        
-##  [54] &quot;Akiskanlar_Mekanigi_rev.pdf&quot;                                                                                                                                                                           
-##  [55] &quot;angeo-21-21-2003.pdf&quot;                                                                                                                                                                                  
-##  [56] &quot;APR-D2000240-ResponsetoReviewers-Rev02.docx&quot;                                                                                                                                                           
-##  [57] &quot;Argor_oturumlar.pdf&quot;                                                                                                                                                                                   
-##  [58] &quot;atmosphere-09-00106.pdf&quot;                                                                                                                                                                               
-##  [59] &quot;atmosphere-09-00378.pdf&quot;                                                                                                                                                                               
-##  [60] &quot;ATMOSRES-D-20-00012 (1).pdf&quot;                                                                                                                                                                           
-##  [61] &quot;ATMOSRES-D-20-00012_R1.pdf&quot;                                                                                                                                                                            
-##  [62] &quot;ATMOSRES-D-20-00012_reviewer_comments.pdf&quot;                                                                                                                                                             
-##  [63] &quot;ATMOSRES-D-20-00012.pdf&quot;                                                                                                                                                                               
-##  [64] &quot;AX88179_178A_Macintosh_Driver_Installer_v2.9.0_20171011.zip&quot;                                                                                                                                           
-##  [65] &quot;AX88179_178A_macOS_10.15_above_Driver_Installer_v2.16.0 (1).zip&quot;                                                                                                                                       
-##  [66] &quot;AX88179_178A_macOS_10.15_above_Driver_Installer_v2.16.0 2&quot;                                                                                                                                             
-##  [67] &quot;AX88179_178A_macOS_10.15_above_Driver_Installer_v2.16.0.zip&quot;                                                                                                                                           
-##  [68] &quot;aybe_seminerbilgiformu.docx&quot;                                                                                                                                                                           
-##  [69] &quot;Bae2019_Article_DevelopmentOfASingle-MomentClo (1).pdf&quot;                                                                                                                                                
-##  [70] &quot;Bae2019_Article_DevelopmentOfASingle-MomentClo.pdf&quot;                                                                                                                                                    
-##  [71] &quot;BAP_Uygulama_Esasları_Kılavuz_28_04_2020_v3 (1).pdf&quot;                                                                                                                                                   
-##  [72] &quot;BAP_Uygulama_Esasları_Kılavuz_28_04_2020_v3.pdf&quot;                                                                                                                                                       
-##  [73] &quot;Basvuru_Formu.doc&quot;                                                                                                                                                                                     
-##  [74] &quot;Besiktepe_1994_circulation_hydrography.pdf&quot;                                                                                                                                                            
-##  [75] &quot;C. Donald Ahrens, Robert Henson - Essentials of Meteorology_ An Invitation to the Atmosphere-Cengage Learning (2018).pdf&quot;                                                                              
-##  [76] &quot;CBO9781107707405.011.pdf&quot;                                                                                                                                                                              
-##  [77] &quot;check_input_data&quot;                                                                                                                                                                                      
-##  [78] &quot;Chevuturi-Dimri2015_Article_Inter-comparisonOfPhysicalProc.pdf&quot;                                                                                                                                        
-##  [79] &quot;cintineo_mwr_jan2014.pdf&quot;                                                                                                                                                                              
-##  [80] &quot;citation-318968783.ris&quot;                                                                                                                                                                                
-##  [81] &quot;climate-05-00048-v2.pdf&quot;                                                                                                                                                                               
-##  [82] &quot;Committee on the Earth system Context for Hominin Evolution, National Research Council - Understanding Climate&#39;s Influence on Human Evolution (2010).pdf&quot;                                              
-##  [83] &quot;deniz-biyolojisi-6.pdf&quot;                                                                                                                                                                                
-##  [84] &quot;deniz-planktonlari-ve-ekolojisi1.pdf&quot;                                                                                                                                                                  
-##  [85] &quot;Density_colorbar_1000x500 (1).tif&quot;                                                                                                                                                                     
-##  [86] &quot;Density_colorbar_1000x500.tif&quot;                                                                                                                                                                         
-##  [87] &quot;Diffenbaugh-2020-The-covid--lockdowns-a-window-into-.pdf&quot;                                                                                                                                              
-##  [88] &quot;dinamiknot1.doc&quot;                                                                                                                                                                                       
-##  [89] &quot;DiversityofbacteriaisolatedfromTurkishmarineareas.pdf&quot;                                                                                                                                                 
-##  [90] &quot;doğrudan-temin-onay-belgesi.xls&quot;                                                                                                                                                                       
-##  [91] &quot;doktora-yeterlik-sınavı-başvuru-formu-g_1935ee314bceeb6433bf21ff0000f8c30df1333a4bceeb6433bf21ff0000f8c30d.doc&quot;                                                                                        
-##  [92] &quot;Dropbox&quot;                                                                                                                                                                                               
-##  [93] &quot;Dropbox.zip&quot;                                                                                                                                                                                           
-##  [94] &quot;DSM_DS1515+_25426.pat&quot;                                                                                                                                                                                 
-##  [95] &quot;efi_what_science_can_tell_us_1_2011_en.pdf&quot;                                                                                                                                                            
-##  [96] &quot;Emir_Comments_Response_V5_YE.docx&quot;                                                                                                                                                                     
-##  [97] &quot;Emir_Paper_Revision_V1_YE.docx&quot;                                                                                                                                                                        
-##  [98] &quot;Emir_Paper_Revision_V3_YE.docx&quot;                                                                                                                                                                        
-##  [99] &quot;Evaluation_of_the_WRF_model_with_different_domain_.pdf&quot;                                                                                                                                                
-## [100] &quot;Evidence that the Great Pacifc Garbage Patch is rapidly accumulating plastic.pdf&quot;                                                                                                                      
-## [101] &quot;Ezber-2015-Investigation-of-local-flow-feature (1).pdf&quot;                                                                                                                                                
-## [102] &quot;Ezber-2015-Investigation-of-local-flow-feature.pdf&quot;                                                                                                                                                    
-## [103] &quot;FileZilla_3.49.1_macosx-x86.app.tar.bz2&quot;                                                                                                                                                               
-## [104] &quot;FileZilla_3.50.0_macosx-x86.app.tar.bz2&quot;                                                                                                                                                               
-## [105] &quot;Frederick K. Lutgens_ Edward J. Tarbuck - The atmosphere_ an introduction to meteorology (2016, Pearson) - libgen.lc.pdf&quot;                                                                              
-## [106] &quot;Frederick K. Lutgens_ Edward J. Tarbuck - The atmosphere_ an introduction to meteorology-Pearson (2016).pdf&quot;                                                                                           
-## [107] &quot;Friedlingstein-2019-Global-carbon-budget-.pdf&quot;                                                                                                                                                         
-## [108] &quot;Gao2011_Article_ATwo-momentBulkMicrophysicsCou.pdf&quot;                                                                                                                                                    
-## [109] &quot;Gimeno-etal-2012-RevGeophys.pdf&quot;                                                                                                                                                                       
-## [110] &quot;gmd-2019-349 (1).bib&quot;                                                                                                                                                                                  
-## [111] &quot;gmd-2019-349 (1).ris&quot;                                                                                                                                                                                  
-## [112] &quot;gmd-2019-349 (2).bib&quot;                                                                                                                                                                                  
-## [113] &quot;gmd-2019-349 (3).bib&quot;                                                                                                                                                                                  
-## [114] &quot;gmd-2019-349.bib&quot;                                                                                                                                                                                      
-## [115] &quot;gmd-2019-349.ris&quot;                                                                                                                                                                                      
-## [116] &quot;IJG_2013090916272381.pdf&quot;                                                                                                                                                                              
-## [117] &quot;ijgi-08-00204-v2.pdf&quot;                                                                                                                                                                                  
-## [118] &quot;Impact_of_Highly_Reflective_Materials_on_Meteorolo.pdf&quot;                                                                                                                                                
-## [119] &quot;inputdata_checksum.dat&quot;                                                                                                                                                                                
-## [120] &quot;Install League of Legends euw.app&quot;                                                                                                                                                                     
-## [121] &quot;Install League of Legends euw.zip&quot;                                                                                                                                                                     
-## [122] &quot;Introductory Dynamical Oceanography by Stephen Pond and G L Pickard (Auth.) (z-lib.org).pdf&quot;                                                                                                           
-## [123] &quot;ipynb.ipynb&quot;                                                                                                                                                                                           
-## [124] &quot;ITU_bap_yonerge_16_04_2019_v3 (1).pdf&quot;                                                                                                                                                                 
-## [125] &quot;ITU_bap_yonerge_16_04_2019_v3.pdf&quot;                                                                                                                                                                     
-## [126] &quot;IVD-Alindi-bU85GQ9XV8.pdf&quot;                                                                                                                                                                             
-## [127] &quot;Jane H. Hodgkinson, Frank D. Stacey - Practical Handbook of Earth Science-Taylor &amp; Francis_CRC Press (2017).pdf&quot;                                                                                       
-## [128] &quot;Jim Bell - The Earth Book_ From the Beginning to the End of Our Planet, 250 Milestones in the History of Earth Science-Sterling Publishing Co. Inc. (2019).pdf&quot;                                        
-## [129] &quot;joc.4457.pdf&quot;                                                                                                                                                                                          
-## [130] &quot;Kevin Hamilton (auth.), Kevin Hamilton, Wataru Ohfuchi (eds.) - High Resolution Numerical Modelling of the Atmosphere and Ocean-Springer-Verlag New York (2008) (1).pdf&quot;                               
-## [131] &quot;KiraPfoch_2019_Poster_ESA_Louvain-la-Neuve.pdf&quot;                                                                                                                                                        
-## [132] &quot;klt-trh-un-1.pdf&quot;                                                                                                                                                                                      
-## [133] &quot;klt-trh-un-2.pdf&quot;                                                                                                                                                                                      
-## [134] &quot;Launiainen_etal_2013Ambio.pdf&quot;                                                                                                                                                                         
-## [135] &quot;makale çalışma 180820.docx&quot;                                                                                                                                                                            
-## [136] &quot;manual.pdf&quot;                                                                                                                                                                                            
-## [137] &quot;mdinhawaii.pdf&quot;                                                                                                                                                                                        
-## [138] &quot;Midlatitude Synoptic Meteorology Dynamics, Analysis, and Forecasting by Gary Lackmann (z-lib.org).pdf&quot;                                                                                                 
-## [139] &quot;model_description_template_lpjg21.doc&quot;                                                                                                                                                                 
-## [140] &quot;Moya-Álvarez2019_Article_ResponseOfTheWRFModelToDiffere.pdf&quot;                                                                                                                                           
-## [141] &quot;Müh Jeo-3 Mineral ve kayaçlar.pdf&quot;                                                                                                                                                                     
-## [142] &quot;Murthy2018_Article_WRFSimulationOfASevereHailstor.pdf&quot;                                                                                                                                                 
-## [143] &quot;MY1DMM_CHLORA-MYD28M.mov&quot;                                                                                                                                                                              
-## [144] &quot;MY1DMM_CHLORA.mov&quot;                                                                                                                                                                                     
-## [145] &quot;Neil C. Wells - The Atmosphere and Ocean_ A Physical Introduction (Advancing Weather and Climate Science)-Wiley (2012).pdf&quot;                                                                            
-## [146] &quot;New Recording 6.m4a&quot;                                                                                                                                                                                   
-## [147] &quot;noaa_7088_DS1.pdf&quot;                                                                                                                                                                                     
-## [148] &quot;ornek.docx&quot;                                                                                                                                                                                            
-## [149] &quot;ÖSYM Aday İşlemleri Sistemi - Sınav Başvuru Kayıt Bilgileri Elif Gözler.pdf&quot;                                                                                                                           
-## [150] &quot;ÖSYM Aday İşlemleri Sistemi - Sınav Başvuru Kayıt Bilgileri.pdf&quot;                                                                                                                                       
-## [151] &quot;ÖSYM Sonuç Açıklama Sistemi (1).pdf&quot;                                                                                                                                                                   
-## [152] &quot;ÖSYM Sonuç Açıklama Sistemi.pdf&quot;                                                                                                                                                                       
-## [153] &quot;Ozgecmis_Formu.doc&quot;                                                                                                                                                                                    
-## [154] &quot;PanoplyMacOS-4.11.4.dmg&quot;                                                                                                                                                                               
-## [155] &quot;Paper_forpreprintserver (1).pdf&quot;                                                                                                                                                                       
-## [156] &quot;Paper_forpreprintserver.pdf&quot;                                                                                                                                                                           
-## [157] &quot;PDF Datastream.pdf&quot;                                                                                                                                                                                    
-## [158] &quot;PDF_TL_11_06_08_A.pdf&quot;                                                                                                                                                                                 
-## [159] &quot;pericles_1944920858.enw&quot;                                                                                                                                                                               
-## [160] &quot;pericles_1944920858.txt&quot;                                                                                                                                                                               
-## [161] &quot;piyasa-fiyat-araştırma-tutanağı1b8bee4aceeb6433bf21ff0000f8c30d.xls&quot;                                                                                                                                   
-## [162] &quot;pngbarn (1).png&quot;                                                                                                                                                                                       
-## [163] &quot;pngbarn.png&quot;                                                                                                                                                                                           
-## [164] &quot;PngItem_201916.png&quot;                                                                                                                                                                                    
-## [165] &quot;Potential_Temperature.pdf&quot;                                                                                                                                                                             
-## [166] &quot;pr_MNA-44_CNRM-CERFACS-CNRM-CM5_historicalandrcp85_r1i1p1_SMHI-RCA4_v1-bc-dbs-wfdei_day_19510101-21001231_2046_2046.nc&quot;                                                                                
-## [167] &quot;pr_MNA-44_CNRM-CERFACS-CNRM-CM5_historicalandrcp85_r1i1p1_SMHI-RCA4_v1-bc-dbs-wfdei_day_19510101-21001231_2046_2046.nc.aux.xml&quot;                                                                        
-## [168] &quot;pr_mna-44_cnrm-cerfacs-cnrm-cm5_historicalandrcp85_r1i1p1_smhi-rca4_v1-bc-dbs-wfdei_day_19510101-21001231_2046_2046.zip&quot;                                                                               
-## [169] &quot;qgis-macos-ltr.dmg&quot;                                                                                                                                                                                    
-## [170] &quot;qj.49708737407.pdf&quot;                                                                                                                                                                                    
-## [171] &quot;qj.49709942229.pdf&quot;                                                                                                                                                                                    
-## [172] &quot;QNAPQfinderProMac-7.4.0.0731.dmg&quot;                                                                                                                                                                      
-## [173] &quot;R1T8MA.jpg&quot;                                                                                                                                                                                            
-## [174] &quot;RD9700 Mac Driver&quot;                                                                                                                                                                                     
-## [175] &quot;RD9700 Mac Driver 2&quot;                                                                                                                                                                                   
-## [176] &quot;RD9700 Mac Driver 3&quot;                                                                                                                                                                                   
-## [177] &quot;rd9700-mac-driver (1).zip&quot;                                                                                                                                                                             
-## [178] &quot;rd9700-mac-driver (2).zip&quot;                                                                                                                                                                             
-## [179] &quot;rd9700-mac-driver.zip&quot;                                                                                                                                                                                 
-## [180] &quot;remotesensing-09-01143-v2.pdf&quot;                                                                                                                                                                         
-## [181] &quot;remotesensing-12-02253-v2.pdf&quot;                                                                                                                                                                         
-## [182] &quot;Review_AtmoRes-D-20-00012.pdf&quot;                                                                                                                                                                         
-## [183] &quot;roisinGFD2010.pdf&quot;                                                                                                                                                                                     
-## [184] &quot;S0169809520300375.bib&quot;                                                                                                                                                                                 
-## [185] &quot;S0169809520300375.ris&quot;                                                                                                                                                                                 
-## [186] &quot;S0169809520300375.txt&quot;                                                                                                                                                                                 
-## [187] &quot;Sarah Cornell_ I  Colin Prentice_ Joanna House_ Catherine Downy - Understanding the earth system _ global change science for application-Cambridge University Press (2012).pdf&quot;                        
-## [188] &quot;sari2018.pdf&quot;                                                                                                                                                                                          
-## [189] &quot;ScienceDirect_articles_22Jul2020_22-19-21.653&quot;                                                                                                                                                         
-## [190] &quot;ScienceDirect_articles_22Jul2020_22-19-21.653.zip&quot;                                                                                                                                                     
-## [191] &quot;Seasonally_asymmetric_transition_of_the_Asian_mons.pdf&quot;                                                                                                                                                
-## [192] &quot;singh2015.pdf&quot;                                                                                                                                                                                         
-## [193] &quot;snw_cvr&quot;                                                                                                                                                                                               
-## [194] &quot;snw_cvr.rar&quot;                                                                                                                                                                                           
-## [195] &quot;Song-Sohn2018_Article_AnEvaluationOfWRFMicrophysicsS.pdf&quot;                                                                                                                                              
-## [196] &quot;SSRN-id3550308.pdf&quot;                                                                                                                                                                                    
-## [197] &quot;SSS_colorbar_1000x500.tif&quot;                                                                                                                                                                             
-## [198] &quot;SST_colorbar_1000x500.tif&quot;                                                                                                                                                                             
-## [199] &quot;sst.wkmean.1981-1989.nc&quot;                                                                                                                                                                               
-## [200] &quot;sst.wkmean.1990-present.nc&quot;                                                                                                                                                                            
-## [201] &quot;Stephen Pond and G L Pickard (Auth.) - Introductory Dynamical Oceanography (1983) - libgen.lc.pdf&quot;                                                                                                     
-## [202] &quot;Supplementary_Toker_et_al_Revised.pptx&quot;                                                                                                                                                                
-## [203] &quot;synology-assistant-6.2-24922.dmg&quot;                                                                                                                                                                      
-## [204] &quot;tez-projeleri-bursiyer-bilgi-formu.docx&quot;                                                                                                                                                               
-## [205] &quot;The_Making_of_the_New_European_Wind_Atlas_Part_1_M.pdf&quot;                                                                                                                                                
-## [206] &quot;Thomas D. Potter, Bradley R. Colman - Handbook of Weather, Climate and Water_ Dynamics, Climate, Physical Meteorology, Weather Systems, and Measurements-Wiley-Interscience (2003).pdf&quot;                
-## [207] &quot;TM_NWS_ER_69.pdf&quot;                                                                                                                                                                                      
-## [208] &quot;Toker-11.12.19.pdf&quot;                                                                                                                                                                                    
-## [209] &quot;turqua20_kurs.csv&quot;                                                                                                                                                                                     
-## [210] &quot;turqua20_kurs.csv.zip&quot;                                                                                                                                                                                 
-## [211] &quot;turqua20_kuvaterner_atolye.csv&quot;                                                                                                                                                                        
-## [212] &quot;turqua20_kuvaterner_atolye.csv.zip&quot;                                                                                                                                                                    
-## [213] &quot;turqua20_Quaternary_workshop.csv&quot;                                                                                                                                                                      
-## [214] &quot;turqua20_Quaternary_workshop.csv.zip&quot;                                                                                                                                                                  
-## [215] &quot;turqua20_R_atolye.csv&quot;                                                                                                                                                                                 
-## [216] &quot;Unite_4.pdf&quot;                                                                                                                                                                                           
-## [217] &quot;Unite_9 (1).pdf&quot;                                                                                                                                                                                       
-## [218] &quot;Unite_9.pdf&quot;                                                                                                                                                                                           
-## [219] &quot;unluata_etal.pdf&quot;                                                                                                                                                                                      
-## [220] &quot;video 2.MOV&quot;                                                                                                                                                                                           
-## [221] &quot;video.MOV&quot;                                                                                                                                                                                             
-## [222] &quot;Vorticity.PDF&quot;                                                                                                                                                                                         
-## [223] &quot;Wang_etal_hess-2012 (1).pdf&quot;                                                                                                                                                                           
-## [224] &quot;Wang_etal_hess-2012.pdf&quot;                                                                                                                                                                               
-## [225] &quot;Water Exchange through Canal İstanbul and Bosphorus Strait.pdf&quot;                                                                                                                                        
-## [226] &quot;wct-4.5.1&quot;                                                                                                                                                                                             
-## [227] &quot;wct-4.5.1.zip&quot;                                                                                                                                                                                         
-## [228] &quot;WhatsApp Image 2020-07-14 at 00.31.59.jpeg&quot;                                                                                                                                                            
-## [229] &quot;WINDS 850 - 4 SEASONS.docx&quot;                                                                                                                                                                            
-## [230] &quot;Zhang2018_Article_ApplyingTheWRFDouble-MomentSix.pdf&quot;                                                                                                                                                  
-## [231] &quot;د. عزام أبو حبيب.pptx&quot;</code></pre>
+<pre><code>##  [1] &quot;1-s2.0-S0019103519301150-main.pdf&quot;                                                                                                 
+##  [2] &quot;1-s2.0-S0169809520313107-main.pdf&quot;                                                                                                 
+##  [3] &quot;1-s2.0-S0169809520313107-mmc1 (1).pptx&quot;                                                                                            
+##  [4] &quot;1-s2.0-S0169809520313107-mmc1.pptx&quot;                                                                                                
+##  [5] &quot;131381.pdf&quot;                                                                                                                        
+##  [6] &quot;18397_Cekmekoy_Omerli.csv&quot;                                                                                                         
+##  [7] &quot;An Introduction to Dynamic Meteorology by James R. Holton Gregory J. Hakim (z-lib.org).pdf&quot;                                        
+##  [8] &quot;ATMOS_105373_session_report.pdf&quot;                                                                                                   
+##  [9] &quot;AX88179_178A_macOS_10.15_above_Driver_Installer_v2.16.0&quot;                                                                           
+## [10] &quot;AX88179_178A_macOS_10.15_above_Driver_Installer_v2.16.0.zip&quot;                                                                       
+## [11] &quot;cpc_station_list_master_06112020.csv&quot;                                                                                              
+## [12] &quot;Essentials of Atmospheric and Oceanic Dynamics (draft) by Geoffrey K. Vallis (z-lib.org).pdf&quot;                                      
+## [13] &quot;Geoffrey K. Vallis - Essentials of Atmospheric and Oceanic Dynamics (draft) (2018, Cambridge University Press) - libgen.lc (1).pdf&quot;
+## [14] &quot;Geoffrey K. Vallis - Essentials of Atmospheric and Oceanic Dynamics (draft) (2018, Cambridge University Press) - libgen.lc.pdf&quot;    
+## [15] &quot;Geoffrey K. Vallis - Essentials of Atmospheric and Oceanic Dynamics (draft)-Cambridge University Press (2018).pdf&quot;                 
+## [16] &quot;git-lfs-darwin-amd64-v2.12.1&quot;                                                                                                      
+## [17] &quot;git-lfs-darwin-amd64-v2.12.1.zip&quot;                                                                                                  
+## [18] &quot;hata.PNG&quot;                                                                                                                          
+## [19] &quot;Introductory Dynamical Oceanography by Stephen Pond and G L Pickard (Auth.) (z-lib.org).pdf&quot;                                       
+## [20] &quot;jdk-15.0.1_osx-x64_bin.dmg&quot;                                                                                                        
+## [21] &quot;Kahoot_QUIZ_Physics_&amp;_Chemistry_of_Clim_Sy.xlsx&quot;                                                                                   
+## [22] &quot;mmc1_page_1.pptx&quot;                                                                                                                  
+## [23] &quot;mmc1.pptx&quot;                                                                                                                         
+## [24] &quot;mwr-071-07-0115.pdf&quot;                                                                                                               
+## [25] &quot;noaa_olr_daily.doc&quot;                                                                                                                
+## [26] &quot;ocean_36km.nc&quot;                                                                                                                     
+## [27] &quot;pagination_ATMOS_105373.pdf&quot;                                                                                                       
+## [28] &quot;RD9700 Mac Driver&quot;                                                                                                                 
+## [29] &quot;RD9700 Mac Driver 2&quot;                                                                                                               
+## [30] &quot;rd9700-mac-driver (1).zip&quot;                                                                                                         
+## [31] &quot;rd9700-mac-driver.zip&quot;                                                                                                             
+## [32] &quot;S016980951200347X.txt&quot;                                                                                                             
+## [33] &quot;S0169809520313107.txt&quot;                                                                                                             
+## [34] &quot;Şengör2019_Article_ThePhanerozoicPalaeotectonicsO.pdf&quot;                                                                             
+## [35] &quot;StationLibrary_Global.png&quot;                                                                                                         
+## [36] &quot;StationLibrary_US.png&quot;                                                                                                             
+## [37] &quot;Stephen Pond and G L Pickard (Auth.) - Introductory Dynamical Oceanography (1983) - libgen.lc.pdf&quot;                                 
+## [38] &quot;WhatsApp Image 2020-11-26 at 10.46.55.jpeg&quot;                                                                                        
+## [39] &quot;yunusemre.ipynb&quot;</code></pre>
 <pre class="r"><code>file.path(&quot;~&quot;,&quot;Users&quot;,&quot;emirtoker&quot;,&quot;Downloads&quot;,&quot;-this_is_my_file.csv&quot;)</code></pre>
 <pre><code>## [1] &quot;~/Users/emirtoker/Downloads/-this_is_my_file.csv&quot;</code></pre>
 <hr />
@@ -1388,9 +1479,8 @@ message(&quot;just say it &quot;, i, &quot; times&quot;)
 <div id="r-programming---for-loops-3" class="section level3">
 <h3><strong>R Programming - <span style="color:green"><em>for</em></span> Loops</strong></h3>
 <pre class="r"><code>month.name</code></pre>
-<pre><code>##  [1] &quot;January&quot;   &quot;February&quot;  &quot;March&quot;     &quot;April&quot;     &quot;May&quot;      
-##  [6] &quot;June&quot;      &quot;July&quot;      &quot;August&quot;    &quot;September&quot; &quot;October&quot;  
-## [11] &quot;November&quot;  &quot;December&quot;</code></pre>
+<pre><code>##  [1] &quot;January&quot;   &quot;February&quot;  &quot;March&quot;     &quot;April&quot;     &quot;May&quot;       &quot;June&quot;     
+##  [7] &quot;July&quot;      &quot;August&quot;    &quot;September&quot; &quot;October&quot;   &quot;November&quot;  &quot;December&quot;</code></pre>
 <pre class="r"><code>for(month in month.name) {
   message(&quot;The month of &quot;, month)
 }</code></pre>
@@ -1451,7 +1541,7 @@ sapply(precip_2b_summer,&quot;[&quot;,1)</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1459,6 +1549,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

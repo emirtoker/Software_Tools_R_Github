@@ -64,6 +64,20 @@ The ***if statement*** executes a chunk of code if and only if a defined conditi
 if(TRUE) message("It was true!")
 
 if(FALSE) message("It wasn't true!")
+
+if(TRUE&FALSE) message("It was true!")
+
+if(TRUE|FALSE) message("It doesn't matter")
+
+```
+
+```{r, echo=TRUE}
+a <- 3
+num <- 4
+
+if ( a != num ) {
+print(a)
+}
 ```
 
 ```{r, echo=TRUE}
@@ -72,12 +86,9 @@ num <- 4
 
 if ( a <= num ) {
 a <- a ^ 2
+print(a)
 }
-
-a
 ```
-
-
 
 ***
 
@@ -110,6 +121,69 @@ num
 
 ![](Presentation/if1c.png)
 
+Try it
+
+Is it in the range ?
+
+```
+
+x <- 6
+y <- 2
+
+if ( x > 3 & x == 7 ) {
+  print("It is in the range")
+  z <- x + y
+  print(z)
+}
+
+```
+
+
+Is it in the range ?
+
+```{r, echo=TRUE}
+
+x <- 6
+y <- 2
+
+if ( x > 3 & x <= 7 ) {
+  print("It is in the range")
+  z <- x + y
+  print(z)
+}
+
+```
+
+
+
+Try it
+
+You have a fruit which is yellow.
+
+Is that a banana?
+
+Or an orange ?
+
+```
+banana <- "yellow"
+my_fruit <- "yellow"
+
+if ( my_fruit == banana ) {
+  print("Your fruit might be a banana")
+}
+
+```
+
+```
+orange <- "orange"
+my_fruit <- "yellow"
+
+if ( my_fruit == orange ) {
+  print("Your fruit is not a banana")
+}
+
+```
+
 
 
 ***
@@ -137,16 +211,52 @@ if(FALSE)
 
 ```{r, echo=TRUE}
 a <- 3.5
-dec <- 0.5
+b <- 0.5
 
-if (dec <= 0.5) {
-  adec <- dec + 1
+if (a <= 0.5) {
+  c <- b + 1
+  print(c)
 } else {
-  adec <- dec
+  c <- b
+  print(c)
 }
-
-adec
 ```
+
+
+Let's say we have two conditions. **Rainy** or **Shiny**. 
+
+And you have recorded **4 mm** precipitation.
+
+```
+weather <-       # mm           # fill this number
+
+if ( ) {                        # fill this condition, using weather
+  print("it is rainy")
+} else {
+  print("it is shiny")
+}
+```
+
+
+
+Report the weather. Is it rainy ?
+
+![](if2.png){width=80%}
+
+Let's say we have two conditions. **Rainy** or **Shiny**. 
+
+And you have recorded 4 mm precipitation.
+
+```{r, echo=TRUE}
+weather <- 4      # mm              # fill this number
+
+if ( weather > 0 ) {                # fill this condition, using weather
+  print("it is rainy")              
+} else {
+  print("it is shiny")
+}
+```
+
 
 
 ***
@@ -158,9 +268,12 @@ adec
 If your situation has more than two mutually exclusive cases, 
 use **else** and **if** statements together.
 
+![](Presentation/if2a_v2.png)
+
+
 ```{r, echo=TRUE}
-a <- 1 
-b <- 1 
+a <- 1                  # team 'a' has 1 goal
+b <- 1                  # team 'b' has 1 goal
 
 if (a > b) { 
   print("A wins!")
@@ -170,6 +283,145 @@ if (a > b) {
   print("Tie.")
 }
 ```
+
+
+**What do you gonna do ? Eating, Sleeping, or Reading?**
+
+When do you want to read ?
+
+- When you are hungry, or sleepy. **No.**
+- When you are not hungry and sleepy. **Yes.**
+
+So, start to think about your feelings about sleeping or eating to decide whether reading or not.    
+    
+
+## -***else ***-  and -***else if***- Statement
+
+**What do you gonna do ? Eating, Sleeping, or Reading?**
+
+Let's start with define the conditions
+
+  - If you are hungry --> eat
+  - If you are sleepy --> sleep
+  
+    - If you are hungry and sleepy --> ?
+    - If you are hungry but not sleepy --> ?
+    - If you are not hungry but sleepy --> ?
+    - If you are not hungry and sleepy --> ?
+
+
+What do you gonna do ? Eat, Sleep or Read? 
+
+- If you are hungry and sleepy --> eat
+- If you are hungry but not sleepy --> eat
+- If you are not hungry but sleepy --> sleep
+- If you are not hungry and sleepy --> read
+
+Let's define your feelings. **Yes** (TRUE,1) or **No** (FALSE,0)
+
+- Are you hungry ? 
+- Are you sleepy ? 
+
+
+```
+hungry <-                   # TRUE or FALSE (1 or 0)
+sleepy <-                   # TRUE or FALSE (1 or 0)
+
+
+```
+
+What do you gonna do ? Eat, Sleep or Read? 
+
+- 1) If you are hungry and sleepy --> eat
+- 2) If you are hungry but not sleepy --> eat
+- 3) If you are not hungry but sleepy --> sleep
+- 4) If you are not hungry and sleepy --> read
+
+```
+hungry <- TRUE                  # Yes , TRUE , 1
+sleepy <- TRUE                  # Yes , TRUE , 1
+
+if ( ) { 
+  print(" ")
+} else if ( ) { 
+  print(" ")
+} else if ( ) { 
+  print(" ")
+} else {
+  print(" ")
+}
+```
+
+
+What do you gonna do ? Eat, Sleep or Read? 
+
+- 1) If you are hungry and sleepy --> eat
+- 2) If you are hungry but not sleepy --> eat
+- 3) If you are not hungry but sleepy --> sleep
+- 4) If you are not hungry and sleepy --> read
+
+```
+hungry <- TRUE                  # Yes , TRUE , 1
+sleepy <- TRUE                  # Yes , TRUE , 1
+
+if ( ) {                    # hungry is TRUE and sleepy is TRUE
+  print(" ")
+} else if ( ) {             # hungry is TRUE and sleepy is FALSE
+  print(" ")
+} else if ( ) {             # hungry is FALSE and sleepy is TRUE
+  print(" ") 
+} else {                    # hungry is FALSE and sleepy is FALSE
+  print(" ")
+}
+```
+
+What do you gonna do ? Eat, Sleep or Read? 
+
+- If you are hungry and sleepy --> eat
+- If you are hungry but not sleepy --> eat
+- If you are not hungry but sleepy --> sleep
+- If you are not hungry and sleepy --> read
+
+```{r, echo=TRUE}
+hungry <- TRUE                  # Yes , TRUE , 1
+sleepy <- TRUE                  # Yes , TRUE , 1
+
+if (hungry==TRUE & sleepy==TRUE) {          # hungry is TRUE and sleepy is TRUE
+  print(" ")
+} else if (hungry==TRUE & sleepy==FALSE) {  # hungry is TRUE and sleepy is FALSE
+  print(" ")
+} else if (hungry==FALSE & sleepy==TRUE) {  # hungry is FALSE and sleepy is TRUE
+  print(" ") 
+} else {                                    # hungry is FALSE and sleepy is FALSE
+  print(" ")
+}
+```
+
+
+
+What do you gonna do ? Eat, Sleep or Read? 
+
+- If you are hungry and sleepy --> eat
+- If you are hungry but not sleepy --> eat
+- If you are not hungry but sleepy --> sleep
+- If you are not hungry and sleepy --> read
+
+```{r, echo=TRUE}
+hungry <- TRUE                  # Yes , TRUE , 1
+sleepy <- TRUE                  # Yes , TRUE , 1
+
+if (hungry==TRUE & sleepy==TRUE) {          # hungry is TRUE and sleepy is TRUE
+  print("EAT")
+} else if (hungry==TRUE & sleepy==FALSE) {  # hungry is TRUE and sleepy is FALSE
+  print("EAT")
+} else if (hungry==FALSE & sleepy==TRUE) {  # hungry is FALSE and sleepy is TRUE
+  print("SLEEP") 
+} else {                                    # hungry is FALSE and sleepy is FALSE
+  print("READ")
+}
+```
+
+
 
 
 ***
@@ -232,14 +484,12 @@ if (...) {
 }
 ```
 
-3. The variable message to *"I execute this when true!"* when the condition is **TRUE**.
+3. The variable message to *"I print this when it is false!"* when the condition is **FALSE**.
 
 ```
 if (...) {
-  message <- "..."
-  print(message)
+  print("I print this when it is true!")
 } else {
-  message <- "I execute this when false!"
   print(...)
 }
 ```
@@ -249,15 +499,80 @@ if (...) {
 
 ###  Practice - Conditions - Logical Op
 
-**Problem** : You are a CAR, and you are going on the road, BUT ;
+**ROLE PLAY** : You are a CAR, and you are going on the road. 
+
+![](Presentation/car.png)
+
+
+
+Problem : **BUT** ;
+
+- Traffic (stop) light turned to **orange**
+- **Two** pedestrians started to walk across the road
+
+**How can you move ?**
+
+- Waiting for the traffic (stop) light turns to **green**
+- Waiting for pedestrians pass to the across of the road
+
+**Parameters** : 
+
+- The **COLOR** of the traffic (stop) light
+- The **NUMBER** of pedestrians
+
+
+
+You are a CAR, **BUT** ;
+
+- Traffic (stop) light turned to **orange**
+- **Two** pedestrians started to walk across the road
+
+**Parameters** : 
+
+- The **COLOR** of the traffic (stop) light
+- The **NUMBER** of pedestrians
+
+*First, define the situation*
 
 ```{r, echo=T}
-Car_Stop_Light <- 'orange'
+Traffic_Stop_Light <- 'orange'
 Number_of_Pedestrians <- 2
 ```
 
-Remember rules
 
+
+
+You are a CAR, **BUT** ;
+
+```{r, echo=T}
+Traffic_Stop_Light <- 'orange'
+Number_of_Pedestrians <- 2
+```
+
+*Second, define the conditions to move again*
+
+```
+Traffic_Stop_Light : ?
+Number_of_Pedestrians : ?
+```
+
+##  Practice - Conditions - Logical Op
+
+Situation
+```{r, echo=T}
+Traffic_Stop_Light <- 'orange'
+Number_of_Pedestrians <- 2
+```
+
+
+
+Condition
+```
+Traffic_Stop_Light : 'green'
+Number_of_Pedestrians : 0
+```
+
+Remember rules
 ```
 if (...) {
   print(...);
@@ -266,26 +581,53 @@ if (...) {
 }
 ```
 
-***
 
-### Practice - Conditions - Logical Op
 
-**ANSWER** : You are a CAR, and you are going on the road, BUT ;
-
+Situation
 ```{r, echo=T}
-Car_Stop_Light <- 'orange'
+Traffic_Stop_Light <- 'orange'
 Number_of_Pedestrians <- 2
 ```
 
-Remember rules
+Condition
+```
+Traffic_Stop_Light : 'green'
+Number_of_Pedestrians : 0
+```
 
-```{r, echo=T}
-if (Car_Stop_Light == 'green' & Number_of_Pedestrians ==0) {
+Remember rules
+```
+if ( & ) {
   print('Go!');
 } else {
   print('STOP');
 }
 ```
+
+
+
+
+Situation
+```{r, echo=T}
+Traffic_Stop_Light <- 'orange'
+Number_of_Pedestrians <- 2
+```
+
+Condition
+```
+Traffic_Stop_Light : 'green'
+Number_of_Pedestrians : 0
+```
+
+Remember rules
+```{r, echo=T}
+if (Traffic_Stop_Light=='green' & Number_of_Pedestrians==0) {
+  print('Go!');
+} else {
+  print('STOP');
+}
+```
+
 
 
 ***
@@ -295,12 +637,29 @@ if (Car_Stop_Light == 'green' & Number_of_Pedestrians ==0) {
 **Problem** : You want to enjoy, and let's say the day is;
 
 ```{r, echo=T}
-day <- "Saturday"
+day <- "Friday"
 ```
 
-It is okay, you can fun **if** it is **weekend**.
+What do you gonna do **if** it is **Friday**.
 ```
 if (...) {
+  print('Enjoy the weekend!')
+} else {
+  print('Do some work.')
+}
+```
+
+
+
+***
+
+```{r, echo=T}
+day <- "Friday"
+```
+
+What do you gonna do **if** it is **Friday**.
+```
+if ( day... | day... ) {
   print('Enjoy the weekend!')
 } else {
   print('Do some work.')
@@ -315,7 +674,7 @@ if (...) {
 **ANSWER** : You want to enjoy, and let's say the day is;
 
 ```{r, echo=T}
-day <- "Saturday"
+day <- "Friday"
 ```
 
 It is okay, you can fun **if** it is **weekend**.
@@ -333,17 +692,32 @@ if (day == 'Saturday' | day == 'Sunday') {
 
 ###  Practice - Conditions - Logical Op
 
-**Problem** : You want to go out and your question is **"Should I take an umbrella?"**
+**Problem** : You want to go out and your question is 
 
-- Check to see, if **"weather"** is **"equal"** to **"cloudy"** and, whether there is a **"high_chance_of_rain"**.
-- **If** it is **both**, the code should assign the value of the variable **message** to be **"Take umbrella!"**
-- **Otherwise**, the code should assign the value of the variable **message** to **"No need for umbrella!"**
-- **Print** the **message** variable after the conditional statement. 
-- Based on the condition, what should its value be?
+**"Should I take an umbrella?"**
 
-**Note** : There are two variables in your code, 
-**"weather"** and **"high_chance_of_rain"**
+**Note** : There are two variables in your code,
 
+**"sky"** (*character*) and **"high_chance_of_rain"** (*logical*)
+
+- Check, if "**sky**" is equal to "**cloudy**" and, whether there is a "**high_chance_of_rain**".
+- If both are true, the code should print: **"Take umbrella!"**
+- Otherwise, the code should print: **"No need for umbrella!"**
+- Based on the condition, what is the answer?
+
+        RADIO: The sky is cloudy and the chance of rain is high.
+
+***
+
+Your conditions, for two variables
+
+```
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- 
+
+high_chance_of_rain <- 
+```
 ***
 
 ### Practice - Conditions - Logical Op
@@ -352,9 +726,7 @@ if (day == 'Saturday' | day == 'Sunday') {
 ```{r, echo=T}
 # you want to go out and your question is "Should I take an umbrella?"
 
-message <- 'Should I take an umbrella?'
-
-weather <- "cloudy"
+sky <- "cloudy"
 
 high_chance_of_rain <- TRUE
 ```
@@ -367,43 +739,63 @@ high_chance_of_rain <- TRUE
 ```{r, echo=T}
 # you want to go out and your question is "Should I take an umbrella?"
 
-message <- 'Should I take an umbrella?'
-
-weather <- "cloudy"
+sky <- "cloudy"
 
 high_chance_of_rain <- TRUE
+```
+
+
+```
+if (...) {
+  print("...")
+} else { 
+  print("...")
+  }
 ```
 
 ```
 if (...) {
-  message <- 'Take umbrella!'
-  print(message)
+  print("Take umbrella!")
 } else { 
-  message <- 'No need for umbrella!'
-  print(message)
+  print("No need for umbrella!")
   }
 ```
+
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- "cloudy"
+
+high_chance_of_rain <- TRUE
+```
+
+```
+if ( sky... & high_chance_of_rain... ) {
+  print("Take umbrella!")
+} else { 
+  print("No need for umbrella!")
+  }
+```
+
 
 ***
 
 ### Practice - Conditions - Logical Op
 
 
+
 ```{r, echo=T}
 # you want to go out and your question is "Should I take an umbrella?"
 
-message <- 'Should I take an umbrella?'
-
-weather <- "cloudy"
+sky <- "cloudy"
 
 high_chance_of_rain <- TRUE
 
-if (weather == "cloudy" & high_chance_of_rain == TRUE) {
-  message <- 'Take umbrella!'
-  print(message)
+if (sky == "cloudy" & high_chance_of_rain == TRUE) {
+  print("Take umbrella!")
 } else { 
-  message <- 'No need for umbrella!'
-  print(message)
+  print("No need for umbrella!")
   }
 ```
 
