@@ -1,0 +1,91 @@
+---
+title: "Software Tools, R - Homework3"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+**Due date** : 01 Dec 2019, 23:00
+
+***
+
+#### <span style="color:green">**Objectives**</span>
+
+- Function
+- Condition Statments
+- Loops
+
+***
+
+#### <span style="color:brown">**Questions**</span>
+
+***
+
+**1** - A dependent function chain is defined as $h(x)=\frac{log(x)-1}{\sqrt{x}}$, $g(x)=e^{\sqrt{h(x)}}$ and $f(x)=sing(x)^{cosg(x)}$.  Create a function and solve $f(x)$ for each **x <- 4:250**. Print and **plot$f(x)$**.
+
+```{r}
+my_fun <- function() { 
+  
+x <- 4:250
+
+# Fill here
+
+plot(fx)
+
+}
+```
+
+***
+
+**2** - Create a function. Inside; 
+
+  - Create **n** sizes random **x** vector which starts with minimum (**min**) and ends maximum (**max**) values
+  - Define a **threshold**. *(for example: my_threshold <- 500)*
+  - Find how many values in **x** vector are greater than the threshold. (you can assign as **big_numbers**)
+  - If there are no any **big_numbers**, print a sentence like 'There is no big number' 
+  - Else print the size (or lenght) of **big_numbers**
+
+```{r}
+my_num <- function(n, min, max, threshold) { 
+  
+# x <- runif(n,min,max)     # You can use runif() function or different function
+
+# big_numbers <-   (you can use this to fidn which values are bigger than threshold: (x > threshold) )
+
+# if
+
+# else
+
+}
+```
+
+***
+
+**3** - Create a function that calculates the sum of each digit of any number *(For instance, sum of digits of 385102 is 3 + 8 + 5 + 1 + 2 = 19)*. While sum is lower than 50, then add 10 to sum in a loop. In every loop, print a warning sentence.
+
+```{r}
+sumofdig <- function(x) { 
+  
+# You can use strsplit() function
+# sum <-
+
+# while ( ) {
+#
+# print("sum is lower than 50, so I am going to add more 10")
+#    
+#   }
+
+}
+```
+
+***
+
+***For questions or problems, please use Ninova***
+
+***
+
+*I inspired from Ismail SEZEN*
+
+***

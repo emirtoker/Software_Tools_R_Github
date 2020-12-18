@@ -2,7 +2,7 @@
 title: "Software Tools for Earth and Environmental Science"
 subtitle:  "-- 9th WEEK --"
 author: "Emir Toker"
-date: "14/11/2019"
+date: "18/11/2020"
 output: 
   revealjs::revealjs_presentation:
     theme: beige
@@ -18,27 +18,19 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-## **R Promgramming - Part 1**
+## **R Promgramming - Part 2**
 
 - **Syllabus and Book**
-- **DataCamp Class**
-- **Repeat - R Language**
-- **Practice - R Language**
-- **Practice - Create a Function**
+- **Practice - R Programming ( Conditions )**
 
-<span style="color:brown">**Coffee Break**</span>
+- **R Programming - <span style="color:blue">*repeat*</span> Loops**
+- **R Programming - <span style="color:blue">*while*</span> Loops**
+- **R Programming - <span style="color:blue">*for*</span> Loops** 
+- **R Programming - <span style="color:blue">*apply*</span> groups**
 
-- **R Programming - Conditions**
-     - Comparison Operators
-     - ***if*** Statement
-     - ***else*** Statement
-     - ***ifelse*** Statement
+<span style="color:brown">**QUIZ**</span>
 
 - **Next Week**
-
-<span style="color:brown">**(Optional)**</span> <span style="color:brown">**Practice - MidTerm Project**</span>
-
-
 
 
 
@@ -49,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## **Syllabus**
 
-![](syllabus_9.png)
+![](w9_20_21.png)
 Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 ## **Book**
@@ -62,36 +54,25 @@ Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.
 
 
 
-# **DataCamp - Class**
-
-## **DataCamp**
-
-![](dc1.png)
-
-
-[Home](https://www.datacamp.com/home) & [Info-Class](https://emirtoker.github.io/Software_Tools_R_Github/datacamp.html)
-
-
-
-
 # **R Language - Repeat**
 
-## **R Language - Repeat**
+## **Repeat - R Programming (Conditions)**
 
- - **Create/Open R Project or R File**
- - **Basic Math, Assigment, Comment**
- - **Data Types - Classes**
-     - Numeric
-     - Integer
-     - Logical
-     - Character
- - **Data Structures - Objects**
-     - Vector
-     - Matrice
-     - Array
-     - Data Frame
-     - List
- - **Special Values, Attributes**
+- **Comparison Operators **
+    - equal (**==**)
+    - not equal (**!=**)
+    - greater or equal to (**>=**)
+    - less or equal to (**<=**)
+
+- **Logical Operators **
+    - the *and* operator (**&**)
+    - the *or* operator (**|**)
+    - the *not* operator (**!**)
+
+- ***if*** (Stand-Alone) Statement
+- ***else*** Statement
+- ***else if*** Statement
+
     
 ## **R Language - Repeat**
 
@@ -162,6 +143,895 @@ score >= 75 | exam_no == 1
 score>=75 & score<90 | exam_no==1
 ```
 </div>
+
+## **Repeat - R Programming (Conditions)**
+
+![](if1a.png)
+
+![](if2a.png)
+
+![](if2a_v2.png)
+
+
+## **Practice I - R Programming (Conditions)**
+
+**Problem** : You want to enjoy at the weekend ("Saturday" or "Sunday"), and let's say the **day** is;
+
+```{r, echo=T}
+day <- "Friday"
+```
+
+What do you gonna do **if** it is **Friday**.
+```
+if (...) {
+  print('Weekend : Sorry. Lockdown.')
+} else {
+  print('Do some work.')
+}
+```
+
+
+## **Practice I - R Programming (Conditions)**
+
+**Problem** : You want to enjoy at the weekend ("Saturday" or "Sunday"), and let's say the **day** is;
+
+```{r, echo=T}
+day <- "Friday"
+```
+
+What do you gonna do **if** it is **Friday**.
+```
+if ( day... | day... ) {
+  print('Weekend : Sorry. Lockdown.')
+} else {
+  print('Do some work.')
+}
+```
+
+## **Practice I - R Programming (Conditions)**
+
+**ANSWER** : You want to enjoy, and let's say the day is;
+
+```{r, echo=T}
+day <- "Friday"
+```
+
+It is okay, you can fun **if** it is **weekend**.
+```{r, echo=T}
+if (day == 'Saturday' | day == 'Sunday') {
+  print('Weekend : Sorry. Lockdown.')
+} else {
+  print('Do some work.')
+}
+```
+
+
+## **Practice II - R Programming (Conditions)**
+
+**Problem** : You want to go out and your question is
+
+**"Should I take an umbrella?"**
+
+- ***Note** : There are two variables in your code,*
+  - **"sky"** (*character*) 
+  - **"high_chance_of_rain"** (*logical*)
+  
+  
+- Check: if "**sky**" is equal to "**cloudy**" and, is the "**high_chance_of_rain**" TRUE or FALSE
+- If both are true, the code should print: **"Take umbrella!"**
+- Otherwise, the code should print: **"No need for umbrella!"**
+- Based on the condition, what is the answer?
+
+```
+RADIO: The sky is cloudy and the chance of rain is high.
+```
+
+##  **Practice II - R Programming (Conditions)**
+
+Your conditions, for two variables
+
+```
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- 
+
+high_chance_of_rain <- 
+```
+
+
+## **Practice II - R Programming (Conditions)**
+
+Your conditions, for two variables
+
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- "cloudy"
+
+high_chance_of_rain <- TRUE
+```
+
+- Check: if "**sky**" is equal to "**cloudy**" and, is the "**high_chance_of_rain**" TRUE or FALSE
+- If both are true, the code should print: **"Take umbrella!"**
+- Otherwise, the code should print: **"No need for umbrella!"**
+
+## **Practice II - R Programming (Conditions)**
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- "cloudy"
+
+high_chance_of_rain <- TRUE
+```
+
+```
+if (...) {
+  print("...")
+} else { 
+  print("...")
+  }
+```
+
+## **Practice II - R Programming (Conditions)**
+
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- "cloudy"
+
+high_chance_of_rain <- TRUE
+```
+
+```
+if (...) {
+  print("Take umbrella!")
+} else { 
+  print("No need for umbrella!")
+  }
+```
+
+## **Practice II - R Programming (Conditions)**
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- "cloudy"
+
+high_chance_of_rain <- TRUE
+```
+
+```
+if ( sky...     &      high_chance_of_rain... ) {
+  print("Take umbrella!")
+} else { 
+  print("No need for umbrella!")
+  }
+```
+
+## **Practice II - R Programming (Conditions)**
+
+```{r, echo=T}
+# you want to go out and your question is "Should I take an umbrella?"
+
+sky <- "cloudy"
+
+high_chance_of_rain <- TRUE
+
+if (sky == "cloudy" & high_chance_of_rain == TRUE) {
+  print("Take umbrella!")
+} else { 
+  print("No need for umbrella!")
+  }
+```
+
+
+
+# **R Programming - Loops**
+
+## **R Programming - Loops**
+
+![](r-loops.png)
+
+Loops are R’s method for repeating a task, which makes them a useful tool for programming simulations. 
+
+
+# **R Programming - <span style="color:blue">*repeat*</span> Loops**
+
+## **R Programming - <span style="color:blue">*repeat*</span> Loops**
+
+![](r-repeat-loop.png)
+
+```
+repeat
+{
+  message("Happy Free Day!")
+  break
+}
+```
+
+## **R Programming - <span style="color:blue">*repeat*</span> Loops**
+
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 30%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](r-repeat-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+
+I have 3 COINS and I want to play the game. (So, at first I have 0 GAME)
+
+```{r}
+# Statements previous to repeat loop
+coins <- 3
+game <- 0
+```
+```
+When I started the repeat-loop I want to
+  - Reduce (decrease) 1 Coin for each game
+  - Enhance (increase) 1 Game for each game
+```
+```{r}
+# block of statements
+  game <- game + 1
+  coins <- coins -1
+```
+</div>
+
+## **R Programming - <span style="color:blue">*repeat*</span> Loops**
+
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 30%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](r-repeat-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+
+I have 3 COINS and I want to play the game. (So, at first I have 0 GAME)
+
+```{r}
+# Statements previous to repeat loop
+coins <- 3
+game <- 0
+
+# block of statements
+  game <- game + 1
+  coins <- coins -1
+```
+
+```
+When I spend my all coins, I want to stop playing game
+```
+```{r}
+# breaking condition
+if (coins==0) {
+    break
+  }
+```
+
+</div>
+
+
+
+## **R Programming - <span style="color:blue">*repeat*</span> Loops**
+
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 30%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](r-repeat-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+```{r}
+# Statements previous to repeat loop
+coins <- 3
+game <- 0
+
+repeat {
+# block of statements
+  game <- game + 1
+  coins <- coins -1
+  
+  message("Game =",game, " Nice try, play again")
+
+  # breaking condition
+if (coins==0) {
+    break
+    }
+}  
+```
+
+
+## **R Programming - <span style="color:blue">*repeat*</span> Loops**
+
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 70%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 30%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](r-repeat-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+
+What if, there is no any break command ?!
+
+```
+# Statements previous to repeat loop
+coins <- 3
+game <- 0
+
+repeat {
+# block of statements
+  game <- game + 1
+  coins <- coins -1
+  
+  message("Game =",game, " Nice try, play again")
+
+  # breaking condition
+  # there is no any break command !
+}
+```
+
+```
+# use CTRL + C 
+```
+
+
+
+
+# **R Programming - <span style="color:blue">*while*</span> Loops** 
+
+## **R Programming - <span style="color:blue">*while*</span> Loops** 
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+While loops are like backward repeat loops.
+
+![](r-while-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+
+```{r}
+# statements before while loop
+number <- 5
+
+while( number != 10  ) {  # condition
+# statements in while loop
+number <- number + 1       
+print("LOOP")
+}
+print(number) # statements after while loop
+```
+
+</div>
+
+
+
+## **R Programming - <span style="color:blue">*while*</span> Loops** 
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+While loops are like backward repeat loops.
+
+![](r-while-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+
+```{r}
+# statements before while loop
+coins <- 3
+game <- 0
+
+while(coins > 0) {    # condition
+  coins <- coins - 1  # statements in while loop
+  game <- game + 1    # statements in while loop
+  message("Game = ",game, " Nice try, play again")
+}
+```
+
+```{r}
+print(c(coins,game)) # statements after while loop
+```
+
+</div>
+
+
+
+# **R Programming - <span style="color:blue">*for*</span> Loops**
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+When you know exactly how many times you want the code to repeat. 
+
+![](r-for-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+
+```{r}
+number <- 2  # statement before for loop
+for(i in 1:3) {  # 1:3 is my vector
+print(i)
+  number <- number*2  # statement in for loop
+}
+print(number) # statement after for loop
+```
+
+</div>
+
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+When you know exactly how many times you want the code to repeat. 
+
+![](r-for-loop.png)
+
+</div>
+
+
+<div class="column-right0">
+
+```{r}
+number <- 2  # statement before for loop
+for(i in c("a","b","c")) {  # 1:3 is my vector
+print(i)
+  number <- number*2  # statement in for loop
+}
+print(number) # statement after for loop
+```
+
+loop is related with the length of the vector !
+</div>
+
+
+
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+![](r-for1.png)
+![](r-for2.png)
+```{r}
+for(i in 1:2) {
+message("just say it ", i, " times")
+}
+```
+
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+When you know exactly how many times you want the code to repeat. 
+
+![](r-for-loop.png)
+
+</div>
+
+<div class="column-right0">
+
+```{r}
+for(i in c(1,2) ) {
+message("just say it ", i, " times")
+}
+```
+
+```{r}
+for(i in c("apple","banana") ) {
+message("just say it ", i, " times")
+}
+```
+
+
+<span style="color:brown">*LOOP is related with the length(vector)*</span>
+
+</div>
+
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+```{r}
+month.name
+
+for(month in month.name) {
+  message("The month of ", month)
+}
+```
+
+
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](r-for-loop.png)
+
+</div>
+
+<div class="column-right0">
+
+```
+for (i in 1:10) {
+  if (i == 2){
+    print("i don't use i=2")
+    next
+  }
+  print(i)
+}
+```
+
+</div>
+
+
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](r-for-loop.png)
+
+</div>
+
+<div class="column-right0">
+
+```{r}
+for (i in 1:10) {
+  if (i == 2){
+    print("i don't use i=2")
+    next
+  }
+  print(i)
+}
+```
+
+
+</div>
+
+
+## **R Programming - <span style="color:blue">*for*</span> Loops**
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](r-for-loop.png)
+
+</div>
+
+<div class="column-right0">
+
+```{r}
+for (i in 1:10) {
+  if (i == 2){
+    print("i don't use i=2")
+    next
+  }
+  else if (i == 6){
+    i <- i+100
+  }
+  print(i)
+}
+```
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+# **R Programming - <span style="color:blue">*apply*</span> Groups**
+
+## **R Programming - <span style="color:blue">*apply*</span> Groups**
+
+- The **apply()** functions form the basis of more complex combinations and helps to perform operations with very few lines of code. 
+- More specifically, the family is made up of the **apply()**, **lapply()** , **sapply()**, **vapply()**, **mapply()**, **rapply()**, and **tapply()** functions.
+
+```
+apply(X, MARGIN, FUN, ...)
+
+# X is an array or a matrix, dim(X) must have a positive length
+# MARGIN=1, it applies over rows, whereas with 
+# MARGIN=2, it works over columns. Note that when you use the construct 
+# MARGIN=c(1,2), it applies to both rows and columns
+# FUN, which is the function that you want to apply to the data. 
+```
+
+```
+apply(my_matrix, MARGIN=1, mean)
+```
+
+
+## **R Programming - <span style="color:blue">*apply*</span> **
+
+```{r}
+my_matrix <- matrix(rnorm(15), nrow=3, ncol=5)
+my_matrix
+```
+
+```{r}
+apply(my_matrix, MARGIN = 1, FUN = mean)     # row 
+apply(my_matrix, MARGIN = 2, FUN = mean)     # column
+```
+
+## **R Programming - <span style="color:blue">*apply*</span> **
+
+```{r}
+my_matrix <- matrix(rnorm(15), nrow=3, ncol=5)
+my_matrix
+```
+
+```{r}
+apply(my_matrix, MARGIN = 1, FUN = function(x) c(mean(x), sum(x) ) ) 
+```
+
+## **R Programming - <span style="color:blue">*apply*</span> **
+
+```{r}
+my_df <- data.frame(col1 = rnorm(5), col2 = rnorm(5), col3 = rnorm(5))
+attributes(my_df)$row.names = letters[1:5]
+my_df
+
+apply (my_df, 1, function(x) which(x == min(x)))
+```
+
+## **R Programming - <span style="color:blue">*lapply*</span> **
+
+```{r}
+A <- matrix(seq(1,9), nrow = 3, ncol = 3)
+B <- matrix(seq(4,15), nrow = 4, ncol = 3)
+C <- matrix(seq(8,10), nrow = 3, ncol = 2)
+MyList <- list(A,B,C)
+MyList
+```
+
+
+## **R Programming - <span style="color:blue">*lapply*</span> **
+
+![](lapply2.png){width=70%}
+
+```{r}
+lapply(MyList,"[", ,2)
+```
+
+## **R Programming - <span style="color:blue">*lapply*</span> **
+
+![](lapply2.png){width=70%}
+
+```{r}
+lapply(MyList,"[", 1, )
+```
+
+
+## **R Programming - <span style="color:blue">*sapply*</span> (simplify)**
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 60%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+```{r}
+MyList
+``````
+
+</div>
+
+<div class="column-right0">
+
+
+
+```{r}
+sapply(MyList,"[", 1)
+
+sapply(MyList,"[", 1:3)
+``````
+
+
 
 
 ## **R Programming - Conditions**

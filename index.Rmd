@@ -24,9 +24,8 @@ knitr::opts_chunk$set(echo = TRUE)
  - HW1 - [Rmd](https://web.itu.edu.tr/tokerem/my_r_notebook_emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/my_r_notebook_emir.pdf) - [html](https://web.itu.edu.tr/tokerem/my_r_notebook_emir.html)
  - HW2 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.html)
  - Midterm Project - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.html)
+- HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_III_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_III_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_III_Emir.html)
 
-<!-- 
-- HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3.nb.html) -->
 <!--  [Answer](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3_Answer.nb.html)
 - Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html) -->
 
@@ -41,8 +40,8 @@ knitr::opts_chunk$set(echo = TRUE)
 5. R Language Part 1 (Getting Started, Data Types) - [Slide](http://rpubs.com/emir/software_tools_week5)
 6. R Language Part 2 (Data Structures) - [Slide](http://rpubs.com/emir/software_tools_week6)
 7. R Language Part 3 (Read, Write, Plot) - [Slide](http://rpubs.com/emirtoker/software_tools_week7)
-8. R Programming Part 1 (Conditions - if, else, else if) - [Slide](http://rpubs.com/emirtoker/software_tools_week9)
-9. R Programming Part 2 (Loops - repeat, while, for, apply group) - [Slide](http://rpubs.com/emirtoker/software_tools_w10)
+8. R Programming Part 1 (Conditions - if, else, else if) - [Slide](http://rpubs.com/emirtoker/software_tools_week8)
+9. R Programming Part 2 (Loops - repeat, while, for, apply group) - [Slide](http://rpubs.com/emirtoker/software_tools_week9)
 10. R Statistics - [Slide](http://rpubs.com/emirtoker/software_tools_w11)
 12. R Probability - [Slide](http://rpubs.com/emirtoker/software_tools_w13)
 13. <span style="color:grey">R Summary - Packages</span>

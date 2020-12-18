@@ -1,8 +1,10 @@
 ---
 title: "Software Tools, R - Homework3"
 output:
-  pdf_document: default
+  html_document:
+    df_print: paged
   html_notebook: default
+  pdf_document: default
 ---
 
 **Due date** : 01 Dec 2019, 23:00
@@ -21,24 +23,33 @@ output:
 
 ***
 
-**1** - A dependent function chain is defined as $h(x)=\frac{log(x)-1}{\sqrt{x}}$, $g(x)=e^{\sqrt{h(x)}}$ and $f(x)=sing(x)^{cosg(x)}$.  Create a function and solve $f(x)$ for each x <- 4:250. Print and plot $f(x)$.
+**1** - A dependent function chain is defined as $h(x)=\frac{log(x)-1}{\sqrt{x}}$, $g(x)=e^{\sqrt{h(x)}}$ and $f(x)=sing(x)^{cosg(x)}$.  Create a function and solve $f(x)$ for each **x <- 4:250**. Print and **plot$f(x)$**.
 
 ```{r}
 exeedence <- function() { 
 x <- 4:250
+
 # Fill here
+
 plot(fx)
 }
 ```
 
 ***
 
-**2** - Create a function that calculates number of exceedence of a specified threshold in an random x vector. If the number of exceedence is higher than threshold than print a sentence, else print another sentence for warning.
+**2** - Create a function. Inside; 
+
+  - Create **n** sizes random **x** vector with minimum **min** and maximum **max** values.
+  - Find the **x** vector values which is greater than threshold which is defined by you. *(for example: threshold <- 500)*
+  - 
+that calculates number of exceedence of a specified threshold in an random x vector. If the number of exceedence is higher than threshold than print a sentence, else print another sentence for warning.
 
 ```{r}
 exeedence <- function(n, min, max, threshold) { 
-# Fill here
 # You can use runif() function
+x <- runif(n,min,max)
+
+# Fill here
 }
 ```
 

@@ -8,16 +8,6 @@ output:
     theme: beige
 ---
 
-```{r, echo=FALSE}
-knitr::opts_chunk$set(error = FALSE)
-```
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
-
-
 ## **R Promgramming - Part 2**
 
 - **Syllabus and Book**
@@ -35,26 +25,29 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 
-
-# **Syllabus and Book**
-
-
+# **Syllabus, Book**
 ## **Syllabus**
-
 ![](w9_20_21.png)
-Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.pdf)
 
 ## **Book**
+![](week10_book.png)
 
-![](book_cover_week9.png) ![](conditions_book.png)
+Loops and Other Control Flow Mechanisms - pg. 193 - 213
 
-[PDF](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf) - (179 - 185)
+## Homework-I, II and Midterm Project 
 
+**Any problem ?**
 
+*You can pass or ignore 11. Question fo Midterm Project*
 
+```
+11)
+a) Print minimum and maximum values for “avg_month”
+b) Find which year and which month minimum and maximum values were observed
+````
 
+# **Practice - R Programming (Conditions)**
 
-# **R Language - Repeat**
 
 ## **Repeat - R Programming (Conditions)**
 
@@ -73,76 +66,6 @@ Extended Syllabus [PDF](https://web.itu.edu.tr/~tokerem/Software_Tools_Syllabus.
 - ***else*** Statement
 - ***else if*** Statement
 
-    
-## **R Language - Repeat**
-
-[LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_language.html)
-
-# **R Programming - Conditions**
-
-## **R Programming - Conditions**
-
-<style>
-
-.column-right0{
-  float: right;
-  width: 50%;
-  text-align: right;
-}
-.column-left0{
-  float: left;
-  width: 50%;
-  text-align: left;
-}
-</style>
-
-<div class="column-left0">
-
-- **Comparison Operators **
-    - equal (**==**)
-    - not equal (**!=**)
-    - greater or equal to (**>=**)
-    - lower or equal to (**<=**)
-
-
-- **Logical Operators **
-    - the and operator (**&**)
-    - the or operator (**|**)
-    - the not operator (**!**)
-
-- ***if*** (Stand-Alone) Statement
-- ***else*** Statement
-- ***ifelse*** Statement
-
-</div>
-
-
-<div class="column-right0">
-
-```
-TRUE & TRUE  
-TRUE & FALSE
-TRUE | FALSE 
-!TRUE
-
-2 == 3
-5 < 6
-
-c(1,4) >= 6
-
-9 != 8
-
-5 < 6 & 9 != 8
-```
-```
-score <- 80
-exam_no <- 2
-
-score >= 75 | exam_no == 1
-
-score>=75 & score<90 | exam_no==1
-```
-</div>
 
 ## **Repeat - R Programming (Conditions)**
 
@@ -1032,24 +955,20 @@ sapply(MyList,"[", 1:3)
 ``````
 
 
+# <span style="color:brown">**QUIZ**</span>
 
+## **QUIZ **
 
-## **R Programming - Conditions**
+R Programming - Part - I & II
 
+![](R_and_R_Studio.png)
 
-[LINK](https://emirtoker.github.io/Software_Tools_R_Github/r_programming.html)
-
+kahoot.it
 
 # **Next Week**
-
 ## **Next Week**
 
-![](week10.png)
-Conditions and Loops, DataCamp
-
-# <span style="color:brown">**(Optional) Practice - MidTerm Project**</span>
-
-
+![](w10_20-21.png)
 
 
 

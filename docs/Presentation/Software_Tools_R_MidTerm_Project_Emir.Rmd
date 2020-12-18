@@ -1,10 +1,10 @@
 ---
 title: "Software Tools, R - MidTerm Project"
 output:
+  pdf_document: default
+  html_notebook: default
   html_document:
     df_print: paged
-  html_notebook: default
-  pdf_document: default
 ---
 
 **Due date** : 18 Now 2020, 23:59
@@ -146,9 +146,10 @@ knitr::include_graphics(path = "temp1.png")
 
 9. Compare June and July: Find and print the years when June temperatures were **less than** July. ( *which()* )
 10. Calculate mean temperature for each months (*you will probably need the* ***na.rm*** *(NA Remove)* *option* ) and assign it as "avg_month"
-11. Print minimum and maximum values for "avg_month" and find which year and which month they were observed
-12. Calculate the mean temperature for each years (*you will probably need the* ***na.rm*** *(NA Remove)* *option* ) "avg_year"
-13. Calculate the mean temperature of all data and assign it as "avg_temp" and print it
+11.
+  a) Print minimum and maximum values for “avg_month”
+  b) Find which year and which month minimum and maximum values were observed12. Calculate the mean temperature for each years (*you will probably need the* ***na.rm*** *(NA Remove)* *option* ) "avg_year"
+12. Calculate the mean temperature of all data and assign it as "avg_temp" and print it
 13. Print the years of "avg_year" **which** are **greater than or equal to** "avg_temp"
 
 <span style="color:brown">PLOT</span>
