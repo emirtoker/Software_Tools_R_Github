@@ -42,7 +42,8 @@ knitr::opts_chunk$set(echo = TRUE)
 7. R Language Part 3 (Read, Write, Plot) - [Slide](http://rpubs.com/emirtoker/software_tools_week7)
 8. R Programming Part 1 (Conditions - if, else, else if) - [Slide](http://rpubs.com/emirtoker/software_tools_week8)
 9. R Programming Part 2 (Loops - repeat, while, for, apply group) - [Slide](http://rpubs.com/emirtoker/software_tools_week9)
-10. R Statistics - [Slide](http://rpubs.com/emirtoker/software_tools_w11)
+10. R Elementary Statistics - [Slide](http://rpubs.com/emirtoker/software_tools_w10)
+11. Happy New Year!
 12. R Probability - [Slide](http://rpubs.com/emirtoker/software_tools_w13)
 13. <span style="color:grey">R Summary - Packages</span>
 14. <span style="color:grey">R Advance - Packages</span>

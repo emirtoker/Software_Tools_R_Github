@@ -15,6 +15,9 @@ output: html_document
 
 ![](Presentation/pop_sample.png)
 
+![](Presentation/pop_samp.png)
+
+
 ***
 
 **Centrality**: <span style="color:orangered">**Mean**</span>, Median, Mode
@@ -67,6 +70,7 @@ xdata <- c(2,4.4,3,3,2,2.2,2,4)
 - min(xdata)
 - max(xdata)
 - range(xdata)
+- table(xdata)
 
 
 ***
@@ -79,9 +83,10 @@ xdata <- c(2,4.4,3,3,2,2.2,2,4)
 
 <span style="color:orangered">**The median = the 0.5th quantile = The 50th percentile**</span>
 
-Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4
 
-2 , 2 , 2 , <span style="color:orangered">2.2 , 3</span> , 3 , 4, 4.4
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4     ( n=8 , n/2 - 1 = 3, n/2 = 4)
+ 
+Sort : 2 , 2 , 2 , <span style="color:orangered">2.2 , 3</span> , 3 , 4, 4.4    
 
 0.5th quantile = median = 2.6
 
@@ -126,11 +131,12 @@ mean(ydata)
 ***
 
 ```{r fig.height=3, fig.width=8}
-plot(xdata,type="n",xlab="",ylab="data vector",yaxt="n",bty="n")
-abline(h=c(3,3.5),lty=2,col="red")
+plot(xdata,type="n",xlab="values",ylab="data vector",yaxt="n",bty="n", xlim = c(0,7)  )
+abline(h=c(2.5,3),lty=2,col="red")
 abline(v=2.825,lwd=2,lty=3)
-text(c(0.8,0.8),c(3,3.5),labels=c("x","y"))
-points(jitter(c(xdata,ydata)),c(rep(3,length(xdata)), rep(3.5,length(ydata))))
+text(c(0.0,0.0),c(2.5,3),labels=c("x","y"))
+text(c(2.825),c(4),labels=c("mean"))
+points(jitter(c(xdata,ydata)),c(rep(2.5,length(xdata)), rep(3,length(ydata))))
 ```
 
 the observations in *ydata* are more “spread out”
@@ -184,7 +190,6 @@ the observations in *ydata* are more “spread out”
 
 ```{r}
 xdata <- c(2,4.4,3,3,2,2.2,2,4)
-
 var(xdata)
 sd(xdata)
 IQR(xdata)
@@ -333,10 +338,10 @@ plot(xdata,ydata,pch=13,cex=1.5)
 <span style="color:orangered">**Barplots**</span> and Pie Charts
 
 ```{r}
-station_data <- read.csv("https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15dk.txt", header=T, sep = ";")
+file_url = "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+station_data <- read.csv(file_url, header=T, sep = ";")
 
 head(station_data)
-
 ```
 
 
@@ -481,3 +486,197 @@ ggpairs(station_data[,7:10],axisLabels="internal")
 ```
 
 ***
+
+
+
+## **Practice**
+
+  1-    Read the data
+
+  2-    Plot the data
+
+  3-    Find the outliers
+
+  4-    Remove the outliers
+
+
+***
+
+**Read**
+```{r}
+file_url = "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+station_data <- read.csv(file_url)
+station_data
+```
+
+
+
+***
+
+```{r}
+file_url = "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+station_data <- read.csv(file_url, sep = ";" )
+station_data
+```
+
+
+***
+
+**Plot**
+```{r fig.height=4, fig.width=6}
+plot(station_data)
+```
+
+
+***
+
+```{r fig.height=4, fig.width=6}
+plot(station_data$temp)
+```
+
+
+***
+
+```{r fig.height=4, fig.width=6}
+plot(station_data$pressure)
+```
+
+
+***
+
+**Read with missing values (NA)**
+```{r}
+file_url = "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+station_data <- read.csv(file_url, sep = ";", na.strings = -9999.0 )
+station_data
+```
+
+
+***
+
+**Plot**
+```{r fig.height=4, fig.width=4}
+plot(station_data$pressure)
+```
+
+
+***
+
+**Plot - Histogram**
+```{r fig.height=4, fig.width=4}
+hist(station_data$pressure)
+```
+
+
+
+***
+
+**Plot - Boxplot**
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$pressure)
+```
+
+
+***
+
+**Summary**
+```{r fig.height=4, fig.width=4}
+summary(station_data$pressure, na.rm = T)
+IQR(station_data$pressure, na.rm = T)
+1.5 * IQR(station_data$pressure, na.rm = T)
+```
+
+
+***
+
+**Plot - Boxplot - RANGE**
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$pressure, range = 3)  # default range=1.5
+```
+
+
+***
+
+**Find outliers**
+
+  - Outliers = DATA > 0.75th DATA + 3*IQR
+  - Outliers = DATA < 0.25th DATA - 3*IQR
+
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$pressure, range = 3)   #default range=1.5
+```
+
+***
+
+  - Outliers = DATA > 0.75th DATA + 3*IQR
+
+```{r}
+data <- station_data$pressure
+IQR_3 <- 3*IQR(data, na.rm = TRUE)
+data_075th <- quantile(data, na.rm = T, probs = 0.75)
+outlier_index <- which(data > (data_075th + IQR_3)) 
+
+data[outlier_index]
+```
+
+
+***
+
+**Find outliers** - WAY 2
+
+```
+str(boxplot(station_data$pressure, range = 3))
+
+List of 6
+ $ stats: num [1:5, 1] 1002 1003 1003 1004 1004
+ $ n    : num 116
+ $ conf : num [1:2, 1] 1003 1003
+ $ out  : num [1:38] 1002 1002 1001 1001 1001 ...
+ $ group: num [1:38] 1 1 1 1 1 1 1 1 1 1 ...
+ $ names: chr "1"
+```
+
+```
+boxplot(station_data$pressure, range = 3)$out
+
+ [1] 1006.3 1005.7 1006.2 1005.7 1005.8 1005.8 1005.9 1006.0 1005.9 1005.9 1005.9 1006.0 1006.0 1006.0
+```
+
+***
+
+**Remove outliers**
+
+```{r}
+data <- station_data$pressure
+
+data_Q1  <- quantile(data, probs = .25, na.rm = T)
+data_Q3  <- quantile(data, probs = .75, na.rm = T)
+data_IQR <- IQR(data, na.rm = T)
+
+part1 <- data > (data_Q1 - 3*data_IQR)
+part2 <- data < (data_Q3 + 3*data_IQR)
+
+no_outliers <- subset(data, part1 & part2)
+
+no_outliers
+```
+
+
+***
+
+```{r fig.height=4, fig.width=4}
+boxplot(no_outliers)
+```
+
+
+***
+
+```{r fig.height=4, fig.width=4}
+boxplot(no_outliers, range = 3)
+```
+
+***
+
+
+
+

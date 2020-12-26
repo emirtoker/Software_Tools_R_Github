@@ -1,0 +1,867 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "-- 10th WEEK --"
+author: "Emir Toker"
+date: "25/12/2020"
+output: 
+  revealjs::revealjs_presentation:
+    theme: white
+---
+
+
+## **R Promgramming - Part 2**
+
+- **Syllabus and Book**
+- **DataCamp Class**
+
+- **R Promgramming - Part 2**
+  - R Elemantary Statistics
+  - Basic Data Visualization
+
+- **Next Week**
+
+
+
+
+
+
+
+
+# **Syllabus and Book**
+## **Syllabus**
+
+![](w10_20-21.png)
+
+## **Book**
+
+![](book_11th.png)
+Elementary Statistics pg. 261 - 287
+
+## **Book**
+
+![](book_11th_b.png)
+Basic Data Visualization pg. 289 - 306
+
+# **DataCamp Class**
+## **DataCamp Class**
+
+![](w10_dc_20-21.png)
+
+
+
+#  **R Promgramming - Part 2**
+
+##  **R Elemantary Statistics**
+
+- Population and Sample
+- Mean, Median, Mode
+- Quantiles, Percentiles, and the Five-Number Summary
+- Variance, Standard Deviation, Interquartile Range
+- Covariance and Correlation
+
+
+##  **Basic Data Visualization** 
+
+- Barplots and Pie Charts
+- Histogram
+- Boxplot
+- Scatter Plots
+
+
+##  **Practice** 
+
+- Read the data
+- Plot the data
+- Find the outliers
+- Remove the outliers
+
+
+
+
+#  **R Elemantary Statistics**
+
+
+##  **R Elemantary Statistics**
+
+![](pop_sample.png)
+
+##  **R Elemantary Statistics**
+
+![](pop_samp.png){width=130%}
+
+
+##  **R Elemantary Statistics**
+
+**Centrality**: <span style="color:orangered">**Mean**</span>, Median, Mode
+
+- Measures of centrality are commonly used to explain large collections of data by describing where numeric observations are centered.
+
+![](art_mean.png)
+
+**mean()**
+
+##  **R Elemantary Statistics**
+
+**Centrality**: Mean, <span style="color:orangered">**Median**</span>, Mode
+
+- **Median** : “middle magnitude” of your observations
+
+![](median.png)
+
+-   0 . 0 . <span style="color:orangered">0</span> . 0 . 0
+-   o . o . <span style="color:orangered">o . o</span> . o . o
+-   **median()**
+
+
+
+##  **R Elemantary Statistics**
+
+**Centrality**: Mean, Median, <span style="color:orangered">**Mode**</span>
+
+- **Mode** : Simply the “most common” observation.
+
+
+```
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4
+```
+
+![](mod.png)
+![](art_mean_a.png)
+
+```
+2 , 2 , 2 , 2.2 , 3 , 3 , 4, 4.4 ( n=8 , n/2 = 4)
+```
+
+![](median_a.png)
+
+
+##  **R Elemantary Statistics**
+
+**Centrality**: Mean, Median, Mode
+
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+
+xdata
+```
+
+- mean(xdata)
+- median(xdata)
+- min(xdata)
+- max(xdata)
+- range(xdata)
+- table(xdata)
+
+
+
+
+##  **R Elemantary Statistics**
+
+<span style="color:orangered">**Quantiles**</span>, Percentiles, and the Five-Number Summary
+
+- A quantile is a value indicates an observation rank when compared to all the other present observations.
+- For example, the **median** is itself a **quantile**. It’s the 0.5th quantile. 
+
+<span style="color:orangered">**The median = the 0.5th quantile**</span>
+
+
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4     ( n=8 , n/2 - 1 = 3, n/2 = 4)
+ 
+Sort : 2 , 2 , 2 , <span style="color:orangered">2.2 , 3</span> , 3 , 4, 4.4     
+
+0.5th quantile = median = 2.6
+
+
+
+##  **R Elemantary Statistics**
+
+Quantiles, <span style="color:orangered">**Percentiles**</span>, and the Five-Number Summary
+
+- Alternatively, quantiles can be expressed as a **percentile.**
+
+<span style="color:orangered">**The median = the 0.5th quantile = The 50th percentile**</span>
+
+Sample : 2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4       ( n=8 , n/2 - 1 = 3, n/2 = 4)
+
+2 , 2 , 2 , <span style="color:orangered">2.2 , 3</span> , 3 , 4, 4.4
+
+50th percentile = 0.5th quantile = median = 2.6
+
+
+
+##  **R Elemantary Statistics**
+
+<span style="color:orangered">**Quantiles, Percentiles**</span>, and the Five-Number Summary
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)            
+# sort(xdata)    2.0 2.0 2.0 2.2 3.0 3.0 4.0 4.4 
+quantile(xdata,prob=0.8) # the 0.8th quantile (or 80th percentile)
+
+quantile(xdata,prob=c(0,0.25,0.5,0.75,1))
+```
+
+
+##  **R Elemantary Statistics**
+
+Quantiles, Percentiles, and <span style="color:orangered">**the Five-Number Summary**</span>
+
+![](five_number_summary.png)
+
+A **quartile** is a type of quantile.
+
+##  **R Elemantary Statistics**
+
+**Spread**: Variance, Standard Deviation, Interquartile Range
+
+- How dispersed your data are. For this, measures of spread are needed.
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+
+mean(xdata)
+mean(ydata)
+```
+
+
+
+##  **R Elemantary Statistics**
+
+```{r fig.height=2.7, fig.width=8}
+plot(xdata,type="n",xlab="values",ylab="data vector",yaxt="n",bty="n", xlim = c(0,7)  )
+abline(h=c(2.5,3),lty=2,col="red")
+abline(v=2.825,lwd=2,lty=3)
+text(c(0.0,0.0),c(2.5,3),labels=c("x","y"))
+text(c(2.825),c(4),labels=c("mean"))
+points(jitter(c(xdata,ydata)),c(rep(2.5,length(xdata)), rep(3,length(ydata))))
+```
+
+the observations in *ydata* are more “spread out”
+
+
+##  **R Elemantary Statistics**
+
+**Spread**: <span style="color:orangered">**Variance**</span>, Standard Deviation, and the Interquartile Range
+
+- The sample **variance** measures the degree of the spread of numeric observations around their arithmetic mean.
+
+![](var1.png)
+![](var2.png)
+
+var()
+
+
+##  **R Elemantary Statistics**
+
+**Spread**: <span style="color:orangered">**Variance**</span>, Standard Deviation, and the Interquartile Range
+
+**2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4**   *( mean = 2.825)*
+
+![](var3.png)
+
+```
+var(c(2 , 4.4 , 3 , 3 , 2 , 2.2 , 2 , 4))
+### 0.9078571
+```
+
+
+
+##  **R Elemantary Statistics**
+
+**Spread**: Variance, <span style="color:orangered">**Standard Deviation**</span>, and the Interquartile Range
+
+- The standard deviation is simply the square root of the variance. The scale of the original observations.
+
+![](sd1.png)
+![](sd2.png)
+
+**0.953 represents the average distance of each observation from the mean**
+
+
+
+##  **R Elemantary Statistics**
+
+**Spread**: Variance, <span style="color:orangered">**Standard Deviation**</span>, and the Interquartile Range
+
+![](sd1.png)
+
+![](sd2.png)
+
+```
+sd(xdata)
+###  0.9528154
+```
+
+
+
+
+##  **R Elemantary Statistics**
+
+**Spread**: Variance, Standard Deviation, and <span style="color:orangered">**the Interquartile Range**</span>,
+
+- Unlike the variance and standard deviation, the interquartile range (IQR) is **not** computed with respect to the sample mean.
+
+![](qrt.png)
+
+- IQR is computed as the difference between the upper and lower quartiles of your data. **Q3 - Q1**
+
+```
+IQR(xdata)
+# 1.25
+```
+
+
+##  **R Elemantary Statistics**
+
+**Spread**: Variance, Standard Deviation, and the Interquartile Range
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+var(xdata)
+sd(xdata)
+IQR(xdata)
+```
+
+
+##  **R Elemantary Statistics**
+
+```
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+xdata <- c(2,4.4,3,3,......................,2,2.2,2,4)
+```
+
+![](summary_a.png)
+
+##  **R Elemantary Statistics**
+
+Definition of outliers in R *(default)*
+
+![](summary_b.png){width=130%}
+
+
+
+
+##  **R Elemantary Statistics**
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+- Investigate the relationship between two numeric variables to assess trends
+- The **covariance** expresses how much two numeric variables “change together” and the nature of that relationship, whether it is positive or negative. 
+
+![](covar_a.png)
+
+##  **R Elemantary Statistics**
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+x = {x1,x2,...,xn}
+
+y = {y1,y2,...,yn}
+
+for i = 1,. . . ,n
+
+![](covar_b.png)
+
+
+When you get a positive result for rxy, it shows that there is a positive lin- ear relationship. When rxy = 0, this indicates that there is no linear relationship. 
+
+
+##  **R Elemantary Statistics**
+
+<span style="color:orangered">**Covariance**</span> and Correlation
+
+```
+x = {2,4.4,3,3,2,2.2,2,4}
+y = {1,4.4,1,3,2,2.2,2,7}
+
+## mean x and y = 2.825
+```
+
+![](covar_c.png)
+positive relationship
+
+```
+cov(xdata,ydata)
+## 1.479286
+```
+
+##  **R Elemantary Statistics**
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+- Correlation allows you to interpret the covariance further by identifying the strength of any association.
+
+![](corr_1.png)
+
+
+##  **R Elemantary Statistics**
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+- Most common of these is Pearson’s product-moment correlation coefficient. (R default)
+
+- The correlation coefficient estimates the nature of the linear relationship between two sets of observations
+
+![](corr_a.png)
+
+−1 ≤ *ρ*xy ≤ 1
+
+ρxy = 1, which is a perfect positive linear relationship
+
+
+##  **R Elemantary Statistics**
+
+Covariance and <span style="color:orangered">**Correlation**</span>
+
+```
+x = {2,4.4,3,3,2,2.2,2,4}
+y = {1,4.4,1,3,2,2.2,2,7}
+
+#  mean x and y = 2.825
+#  (*s*x = 0.953 and *s*y = 2.013)
+#  (*r*xy = 1.479)
+```
+
+![](corr_b.png)
+
+*ρ*xy is positive
+
+```
+cor(xdata,ydata)
+#  0.7713962
+```
+
+##  **R Elemantary Statistics**
+
+Covariance and Correlation
+
+```{r}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+
+cov(xdata,ydata)
+
+cor(xdata,ydata)
+```
+
+
+
+##  **R Elemantary Statistics**
+
+Covariance and Correlation
+
+```{r fig.height=3, fig.width=3}
+xdata <- c(2,4.4,3,3,2,2.2,2,4)
+ydata <- c(1,4.4,1,3,2,2.2,2,7)
+plot(xdata,ydata,col ="red")
+abline(lm(ydata~xdata), col="blue")
+```
+
+
+
+##  **R Elemantary Statistics**
+
+![](corr_2.png)
+
+
+##  **R Elemantary Statistics**
+
+![](corr_3.svg)
+
+
+![](corr_4.png)
+
+
+
+
+
+#  **Basic Data Visualization** 
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r}
+station_data <- read.csv("https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt", header=T, sep = ";")
+
+head(station_data)
+
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+head(station_data$temp)
+barplot(station_data$temp)
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+table(station_data$temp)
+
+f_temp <- table(station_data$temp)
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=6}
+f_temp <- table(station_data$temp)
+barplot(f_temp)
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=8}
+barplot(f_temp,beside=TRUE,horiz=TRUE,las=1,
+        main="Frequency of Station Temperature",
+        names.arg=c("T"),legend.text=c("TEMP-f"),
+        args.legend=list(x="bottomright"))
+```
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Barplots**</span> and Pie Charts
+
+```{r fig.height=3, fig.width=8}
+library(ggplot2)
+qplot(factor(station_data$temp),geom="bar")
+```
+
+
+##  **Basic Data Visualization** 
+
+Barplots and <span style="color:orangered">**Pie Charts**</span>
+
+```{r}
+station_data$precipitation
+```
+
+
+##  **Basic Data Visualization** 
+
+Barplots and <span style="color:orangered">**Pie Charts**</span>
+
+```{r fig.height=4, fig.width=4}
+pie(table(station_data$precipitation[101:120]),labels=c("P0","P1","P2","P3","P4"),col=c("white","blue","green","orange"),main="pie chart for precipitation")
+```
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+hist(station_data$temp)
+```
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+hist(station_data$tem,breaks=seq(19,32,1),col="green",main="Temp",xlab="values")
+abline(v=c(mean(station_data$temp),median(station_data$temp)), col=c("blue","red"),lty=c(2,3),lwd=2)
+legend("topright",legend=c("mean T","median T"),lty=c(2,3),lwd=2,col=c("blue","red"))
+```
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Histogram**</span>
+
+```{r fig.height=3, fig.width=8}
+qplot(station_data$temp,geom="blank",main="Temp Hist",xlab="Temp")+ 
+  geom_histogram(color="black",fill="white",breaks=seq(19,32,1),closed="right") + 
+  geom_vline(mapping=aes(xintercept=c(mean(station_data$tem), median(station_data$tem)), linetype=factor(c("mean","median"))) , col=c("blue","red"),show.legend=TRUE)+ 
+  scale_linetype_manual(values=c(2,3)) + 
+  labs(linetype="")
+```
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Boxplot**</span>
+
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$temp)
+```
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Boxplot**</span>
+
+```
+hist(quakes$mag)
+boxplot(quakes$mag)
+```
+
+![](hist_5.png)
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Scatter Plots**</span>
+
+```{r fig.height=4, fig.width=4}
+plot(station_data$temp,station_data$relative_humidity)
+```
+
+
+
+##  **Basic Data Visualization** 
+
+<span style="color:orangered">**Scatter Plots**</span>
+
+```{r fig.height=4, fig.width=4}
+head(station_data[,7:10])
+```
+
+
+
+
+##  **Basic Data Visualization** 
+
+```
+library("GGally")
+ggpairs(station_data[,7:10],axisLabels="internal")
+````
+
+
+```{r echo=F, fig.height=5, fig.width=5, message=FALSE, warning=FALSE}
+library("GGally")
+ggpairs(station_data[,7:10],axisLabels="internal")
+```
+
+
+
+
+# **Practice**
+
+## **Practice**
+
+  1-    Read the data
+
+  2-    Plot the data
+
+  3-    Find the outliers
+
+  4-    Remove the outliers
+
+
+## **Practice**
+
+**Read**
+```{r}
+file_url = "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+station_data <- read.csv(file_url)
+station_data
+```
+
+
+
+## **Practice**
+
+**Read**
+```{r}
+file_url = "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+station_data <- read.csv(file_url, sep = ";" )
+station_data
+```
+
+
+## **Practice**
+
+**Plot**
+```{r fig.height=4, fig.width=6}
+plot(station_data)
+```
+
+
+## **Practice**
+
+**Plot**
+```{r fig.height=4, fig.width=6}
+plot(station_data$temp)
+```
+
+
+## **Practice**
+
+**Plot**
+```{r fig.height=4, fig.width=6}
+plot(station_data$pressure)
+```
+
+
+## **Practice**
+
+**Read with missing values (NA)**
+```{r}
+file_url = "https://web.itu.edu.tr/~tokerem/18397_Cekmekoy_Omerli_15min.txt"
+station_data <- read.csv(file_url, sep = ";", na.strings = -9999.0 )
+station_data
+```
+
+
+## **Practice**
+
+**Plot**
+```{r fig.height=4, fig.width=4}
+plot(station_data$pressure)
+```
+
+
+## **Practice**
+
+**Plot - Histogram**
+```{r fig.height=4, fig.width=4}
+hist(station_data$pressure)
+```
+
+
+
+## **Practice**
+
+**Plot - Boxplot**
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$pressure)
+```
+
+
+## **Practice**
+
+**Summary**
+```{r fig.height=4, fig.width=4}
+summary(station_data$pressure, na.rm = T)
+IQR(station_data$pressure, na.rm = T)
+1.5 * IQR(station_data$pressure, na.rm = T)
+```
+
+
+## **Practice**
+
+**Plot - Boxplot - RANGE**
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$pressure, range = 3)  # default range=1.5
+```
+
+
+## **Practice**
+
+**Find outliers**
+
+  - Outliers = DATA > 0.75th DATA + 3*IQR
+  - Outliers = DATA < 0.25th DATA - 3*IQR
+
+```{r fig.height=4, fig.width=4}
+boxplot(station_data$pressure, range = 3)   #default range=1.5
+```
+
+## **Practice**
+
+**Find outliers**
+
+  - Outliers = DATA > 0.75th DATA + 3*IQR
+
+```{r}
+data <- station_data$pressure
+IQR_3 <- 3*IQR(data, na.rm = TRUE)
+data_075th <- quantile(data, na.rm = T, probs = 0.75)
+outlier_index <- which(data > (data_075th + IQR_3)) 
+
+data[outlier_index]
+```
+
+
+## **Practice**
+
+**Find outliers** - WAY 2
+
+```
+str(boxplot(station_data$pressure, range = 3))
+
+List of 6
+ $ stats: num [1:5, 1] 1002 1003 1003 1004 1004
+ $ n    : num 116
+ $ conf : num [1:2, 1] 1003 1003
+ $ out  : num [1:38] 1002 1002 1001 1001 1001 ...
+ $ group: num [1:38] 1 1 1 1 1 1 1 1 1 1 ...
+ $ names: chr "1"
+```
+
+```
+boxplot(station_data$pressure, range = 3)$out
+
+ [1] 1006.3 1005.7 1006.2 1005.7 1005.8 1005.8 1005.9 1006.0 1005.9 1005.9 1005.9 1006.0 1006.0 1006.0
+```
+
+## **Practice**
+
+**Remove outliers**
+
+```{r}
+data <- station_data$pressure
+
+data_Q1  <- quantile(data, probs = .25, na.rm = T)
+data_Q3  <- quantile(data, probs = .75, na.rm = T)
+data_IQR <- IQR(data, na.rm = T)
+
+part1 <- data > (data_Q1 - 3*data_IQR)
+part2 <- data < (data_Q3 + 3*data_IQR)
+
+no_outliers <- subset(data, part1 & part2)
+
+no_outliers
+```
+
+
+## **Practice**
+
+```{r fig.height=4, fig.width=4}
+boxplot(no_outliers)
+```
+
+
+## **Practice**
+
+```{r fig.height=4, fig.width=4}
+boxplot(no_outliers, range = 3)
+```
+
+
+
+
+
+# **Next Week**
+
+## **Next Week**
+
+![](w11_20-21.png){width=90%}
+HAPPY NEW YEAR
+
+## **Next Week**
+
+![](w12_20-21.png){width=90%}
+
+R Probability
+
+

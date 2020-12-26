@@ -1,10 +1,10 @@
 ---
 title: "Software Tools, R - Homework3"
 output:
-  pdf_document: default
-  html_notebook: default
   html_document:
     df_print: paged
+  html_notebook: default
+  pdf_document: default
 ---
 
 **Due date** : 30 Dec 2020, 23:59
@@ -23,7 +23,7 @@ output:
 
 ***
 
-**1** - A dependent function chain is defined as $h(x)=\frac{log(x)-1}{\sqrt{x}}$, $g(x)=e^{\sqrt{h(x)}}$ and $f(x)=sing(x)^{cosg(x)}$.  Create a function and solve $f(x)$ for each **x <- 4:250**. Print and **plot$f(x)$**.
+**1** - A dependent function chain is defined as $h(x)=\frac{log(x)-1}{\sqrt{x}}$, $g(x)=e^{\sqrt{h(x)}}$ and $f(x)=sin(g(x))^{cos(g(x))}$.  Create a function and solve $f(x)$ for each **x <- 4:250**. Print and **plot$f(x)$**.
 
 ```{r}
 my_fun <- function() { 
