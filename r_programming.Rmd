@@ -1409,3 +1409,137 @@ sapply(precip_2b_summer,"[",1)
 ```
 
 ***
+
+**Practice** : Write A Function - 3
+
+- I have four different numbers w,x,y,z
+- I want to define them WHEN I am using the function
+- I want to calculate w+x IN function
+- I want to calculate y*z IN function
+- I want to print the results IN function
+
+
+```{r}
+my_fun3 <- function(w,x,y,z){
+  
+result1 <- w+x
+result2 <- y*z
+
+print(result1)
+print(result2)
+
+}
+
+# my_fun3()
+my_fun3(1,2,3,4)
+```
+
+***
+
+ BONUS
+
+- menu() function
+
+
+```
+menu(c("Yes", "No"), title="What dou you think?")
+menu1 <- menu(c("Yes", "No"), title="What dou you think?")
+menu1
+
+menu(c("Option1","Option2","Option3","Option4"), title="Choose one of them")
+menu2 <- menu(c("Option1","Option2","Option3","Option4"), title="Choose one of them")
+menu2
+
+```
+
+***
+
+- I have two different numbers x,y
+- I want to define them WHEN I am using the function
+- I want to define ONE calculation DURING the function
+- I want to print the results IN function
+
+```
+my_fun3 <- function(x,y){
+
+math <- menu(c("+", "-", "*", "/"), title="Which calculation?")
+
+  if (math==1) {
+    result <- x+y
+  } else if ( ) {
+     
+  } else if ( ) {
+    
+  } else  {
+    
+  }
+
+print(result)
+}
+```
+
+
+
+***
+
+ **Practice** : Write An IF-Statement - 2
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+![](worry_flowchart.jpg)
+</div>
+
+<div class="column-right0">
+
+- Two answers
+- Two options
+- One Result
+
+```{r}
+worry_flow <- function() {
+
+answer1 <-  menu(c("Yes","No"), title = "Do you have a problem in your life ?")
+  if (answer1 == 2) {
+      print("Then Don't Worry")
+  }
+  else {
+      answer2 <- menu(c("Yes","No"), title = "Can you do something about it ?")
+      if(answer2 == 1){
+          print("Then Don't Worry")
+      }
+      else{
+      print("Then Don't Worry")
+      }
+  }
+
+require(tcltk)
+msgBox <- tkmessageBox(title = "Title of message box",
+                       message = "THEN WYH WORRY!", 
+                       icon = "info", 
+                       type = "ok")
+
+}
+```
+
+</div>
+
+
+***
+
+
+
+

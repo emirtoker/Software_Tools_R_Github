@@ -227,46 +227,65 @@ rnetcdf_time<- var.get.nc(rnetcdf_open, "time")
 - rnetcdf_time_julian <- as.Date(rnetcdf_time, origin=as.Date("1900-01-01")) 
 - ncdf4_time_julian <- as.Date(ncdf4_time, origin=as.Date("1900-01-01"))
 
-- ncdf4_tmp <- ncvar_get(ncdf4_open,"tmp")
-- ncdf4_tmp[,,1]
-- ncdf4_tmp_mean <- ncdf4_tmp[,,mean(1:1344)]
+ncdf4_tmp <- ncvar_get(ncdf4_open,"tmp")
+ncdf4_tmp[,,1]
+ncdf4_tmp_first<- ncdf4_tmp[,,1]
 
-- image(ncdf4_lon, ncdf4_lat, ncdf4_tmp_mean)
+image(ncdf4_lon, ncdf4_lat, ncdf4_tmp_first)
 
 ```
 
-![](Presentation/Tr_temp_mean.png)
+![](Presentation/temp_emir.png)
 
 
 ***
 
+```
+library("maptools")
+
+turkey_shp <- readShapePoly("turkiye.shp")
+
+image(ncdf4_lon, ncdf4_lat, ncdf4_tmp_first)
+
+plot(turkey_shp, add = T)
+
+```
+
+![](Presentation/emir_temp2.png)
 
 
 ```
-- install.packages("maptools")
-- library("maptools")
+library("fields")
 
-- turkey_shp <- readShapePoly("turkiye.shp")
-
-- image(rnetcdf_lon, rnetcdf_lat, ncdf4_tmp_mean)
-
-- plot(turkey_shp, add = T)
-```
-
-![](Presentation/shp_tr_mean.png)
-
-
-```
-- library("fields")
-
-- image.plot( rnetcdf_lon, rnetcdf_lat, ncdf4_tmp_mean, 
+image.plot( ncdf4_lon, ncdf4_lat, ncdf4_tmp_first, 
               xlab = "Lon", 
               ylab = "Lat", 
-              main = "Mean Temperature for Turkey" )
+              main = "First Step (01-1901) Temperature for Turkey" )
 
-- plot(turkiye.shp, add = T) 
+plot(turkey_shp, add = T) 
+
 ```
 
-![](Presentation/Shp_mean_temp.png)
+![](Presentation/emir_temp3.png)
 
 ***
+
+
+
+```
+image.plot( ncdf4_lon, ncdf4_lat, 
+            apply(ncdf4_tmp[,,1332:1344],1:2,mean) - apply(ncdf4_tmp[,,1:1331],1:2,mean), 
+            xlab = "Lon", 
+            ylab = "Lat", 
+            main = " 2012 VS Mean of 1901-2011 for Turkey" )
+         
+plot(turkey_shp, add = T) 
+```
+
+
+![](Presentation/emir_temp5.png)
+
+
+***
+
+

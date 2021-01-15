@@ -5,12 +5,51 @@ output: html_document
 
 ***
 
+- **Probability**
+- **Qualitative and Quantitative Data**
+- **Discrete and Continuous Data**
+- **Probability 'Density vs Mass' Function (PDF vs PMF)**
+- **Cumulative Distribution Function (CDF)**
+- **Shape of PDF** : Symmetry, Skewness, Modality, Kurtosis
+- **Common Probability Distributions - Discrete**
+- **Common Probability Distributions - Continuous**
+- **Practice** : Write A Function for outliers
+
+
+
+***
+
 A **probability** is a number that describes the *“magnitude of chance”* associated with making a particular observation or statement. 
 
 ![](Presentation/zar_a.png)
 
 It’s always a number **between 0 and 1** (inclusive) and is often expressed as a fraction.
 
+***
+
+**Quantitative** data can be counted, measured, and expressed using numbers. **Qualitative** data is descriptive and conceptual.
+
+![](Presentation/data-types.png){width=50%}
+
+
+***
+
+**Discrete** data is information that can only take certain values. **Continuous** data is data that can take any value
+
+![](Presentation/disc_cont.png)
+
+
+***
+
+Probability **mass** and **density** functions are used to describe discrete and continuous probability distributions, respectively. 
+
+![](Presentation/pdf-defin-nls.png)
+
+***
+
+**CDF** describes the probability (with a given probability distribution) at less than or equal to **x**.
+
+![](Presentation/yzEQw.gif){width=38.5%}   ![](Presentation/yBP1Z.gif){width=30%} 
 
 ***
 
@@ -107,12 +146,22 @@ text(4,0.01,labels=fx.specific.area)
 
 - **Symmetry** : Draw a vertical line down the center, and it is equally reflected with 0.5 probability.
 
-- **Skew** : If a distribution is asymmetric, look at the “**tail**” of a distribution. *Positive* or *right* *skew* indicates a tail extending longer to the right of center.
+- **Skewness** : If a distribution is asymmetric, look at the “**tail**” of a distribution. *Positive* or *right* *skew* indicates a tail extending longer to the right of center.
 
-- **Modality** : Modality describes the number of easily identifiable peaks in the distribution of interest. *Unimodal*, *bimodal*, and *trimodal...*
+- **Modality** : Describes the number of easily identifiable peaks in the distribution of interest. *Unimodal*, *bimodal*, and *trimodal...*
+
+- **Kurtosis** : Measure of the "tailedness" of the probability distribution. Positive kurtosis indicates a distribution where more of the values are located in the tails
 
 
 ***
+
+![](Presentation/kur_type.png) 
+
+
+![](Presentation/kur_type1.png){width=30%}  ![](Presentation/kur_type2.png){width=29.4%} 
+
+
+![](Presentation/skew_mod.jpeg)
 
 
 ![](Presentation/shape_r.png)
@@ -201,25 +250,29 @@ There are four functions associated with Binomial distributions.
 It is a density or distribution function.
 
 ```{r}
-x <- 1
-size <- 8
-prob <- 1/2
+x <- 0:4  
+size <- 12
+prob <- 0.5
+
 dbinom(x , size , prob)
 
-x <- 4
-dbinom(x , size , prob)
-
-x <- 0:8
-dbinom(x , size , prob)
+pbinom(4 , size , prob)
 ```
 
 
 ***
 
 ```{r fig.height=5}
-bin <- dbinom(x = 0:8 , size = 8 , prob = 0.5)
-plot(x=0:8, y = bin)
+prob <- dbinom(x = 0:12 , size = 12 , prob = 0.5)
+plot(prob)
 ```
+
+
+```{r fig.height=3, fig.width=5}
+prob <- dbinom(x = 0:12 , size = 12 , prob = 0.2)
+plot(prob)
+```
+
 
 
 ***
@@ -272,6 +325,14 @@ There are three functions associated with Binomial distributions.
 
 
 ***
+
+```{r fig.height=3, fig.width=5}
+x <- 6:16
+lambpa <- 4
+prob <- dpois(x, lambpa)
+plot(x = 5:15, prob)
+```
+
 
 ```{r fig.height=5}
 plot(dpois(0:10,2.22),type = "o", col="red")
@@ -378,15 +439,38 @@ Characterized by a distinctive “bell-shaped” curve, it’s also referred to 
 
 ### **Normal**
 
+
+- Theoretical, characterized by a distinctive “bell-shaped” curve 
+- Aso referred to as the **Gaussian** distribution
+- Mean = Median = Mode, Symmetric, Skewness = 0, Kurtosis = 3
+- 50% of values less than the mean and 50% greater than the mean
+
+![](Presentation/normal1.png)
+
+![](Presentation/normal2.png)
+
+
+
+
+
 ![](Presentation/normal.png)
 
 ![](Presentation/normal_1.png)
+
+
+![](Presentation/normal4.png){width=40%} ![](Presentation/normal5.png){width=40%}
+
 
 ![](Presentation/normal_2.png)
 
 ***
 
 #### **Standart Normal**
+
+The standard normal distribution is a normal distribution with a mean of 0 and standard deviation of 1.
+
+![](Presentation/normal3.png)
+
 
 ![](Presentation/normal_1.png)
 

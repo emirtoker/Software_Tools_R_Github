@@ -324,7 +324,7 @@ rnetcdf_time<- var.get.nc(rnetcdf_open, "time")
 
 - ncdf4_tmp <- ncvar_get(ncdf4_open,"tmp")
 - ncdf4_tmp[,,1]
-- ncdf4_tmp_mean <- ncdf4_tmp[,,mean(1:1344)]
+- ncdf4_tmp_mean <- ncdf4_tmp[,,1:1344]
 
 - image(ncdf4_lon, ncdf4_lat, ncdf4_tmp_mean)
 
