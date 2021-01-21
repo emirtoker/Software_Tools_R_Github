@@ -1,8 +1,8 @@
 ---
 title: "Software Tools for Earth and Environmental Science"
-subtitle:  "-- 15th WEEK --"
+subtitle:  "-- 14th WEEK --"
 author: "Emir Toker"
-date: "27/12/2019"
+date: "22/01/2020"
 output: 
   revealjs::revealjs_presentation:
     theme: league
@@ -14,53 +14,293 @@ output:
 
 - **Course Requirements**
 
-- <span style="color:cyan">**DataCamp**</span> **Class**
+- **Course Assessment**
 
-- **Next Term - Data Analysis**
+- **Self Assesment Exam**
 
-- **ANKET**
+- **Netcdf Read and Plot**
 
-- <span style="color:orangered">**FINAL**</span>
+- <span style="color:orangered">**Next Week**</span>
 
 
 ## **Syllabus**
 
-![](w15_sy.png)
+![](new_w14_20-21.png)
 
 ## **Course Requirements**
 
-- **Absence**
+![](not_listv2.png)
 
-- **Homeworks**
-
-- <span style="color:cyan">**DataCamp**</span> **Class**
-
-- <span style="color:orangered">**FINAL**</span>
-
-## **DataCamp Class**
-
-![](w15_d1a.png) ![](w15_d1.png) ![](w15_d2a.png) ![](w15_d2.png)
 
 ## **Next Term - Data Analysis**
 
 ![](w15_b1.png) ![](w15_b2.png)
 
-## **ANKET**
 
-![](w15_anket.png)
+## **Course Assessment**
+
+![](Course_assessment.png)
 
 https://emirtoker.github.io/Software_Tools_R_Github/index.html
 
 
-## **FINAL**
+## **Self Assesment Exam**
 
-1. Go to web page.
-2. Click on <span style="color:orangered">**FINAL**</span>, and start.
-3. Don't talk to anybody for 1 hour.
-4. We have 1 hour to complete the first 20 steps.
-5. Mail me the <span style="color:orange">**Project_1**</span>, when you complete the first 20 steps. (tokerem@itu.edu.tr)
-6. Continue for other steps. You have 2 hours for next 15.
-7. Mail me the <span style="color:orange">**Project_2**</span>, with all. (tokerem@itu.edu.tr)
+https://emirtoker.github.io/Software_Tools_R_Github/index.html
+
+
+
+
+
+# **Netcdf Read and Plot**
+
+## **Netcdf Read and Plot**
+
+
+![](pnply_a.png){width=90%}
+
+CRU_TR_Near-Surface_Temp_16-01-1901_16-12-2012_Monthly
+
+
+## **R - NETCDF**
+
+![](pnply_b.png){width=90%}
+
+CRU_TR_Near-Surface_Temp_16-01-1901_16-12-2012_Monthly
+
+
+
+
+
+## **R - NETCDF**
+
+```
+install.packages("ncdf4")
+install.packages("RNetCDF")
+install.packages("maptools")
+install.packages("fields")
+```
+
+![](emir_temp1.png)
+
+
+## **R Advance - <span style="color:orangered">*ncdf4*</span> Package**
+
+![](ncdf4_a.png)
+
+## **R Advance - <span style="color:orangered">*ncdf4*</span> Package**
+
+
+```{r}
+library(ncdf4)
+ncdf4_open <- nc_open("cru_1901_2012_tmp_TR.nc")
+ncdf4_open
+```
+
+
+
+## **R Advance - <span style="color:orangered">*RNetCDF*</span> Package**
+
+![](rncdf_a.png)
+
+## **R Advance - <span style="color:orangered">*RNetCDF*</span> Package**
+
+
+```{r}
+library(RNetCDF)
+rnetcdf_open <- open.nc("cru_1901_2012_tmp_TR.nc")
+print.nc(rnetcdf_open)
+```
+
+
+
+
+## R Advance - <span style="color:orangered">*ncdf4 *</span> VS <span style="color:orangered">*RNetCDF*</span>
+
+<style>
+
+.column-right0{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+.column-left0{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+</style>
+
+<div class="column-left0">
+
+```
+ncdf4_open <- nc_open("data.nc")
+class(ncdf4_open)
+str(ncdf4_open)
+attributes(ncdf4_open)
+attributes(ncdf4_open$dim)
+attributes(ncdf4_open$var)
+attributes(ncdf4_open$var$tmp)
+
+ncdf4_open$var$tmp$longname
+ncdf4_open$var$tmp$name
+ncdf4_open$var$tmp
+
+```
+
+```
+ncatt_get(ncdf4_open,'tmp')
+ncvar_get(ncdf4_open,"tmp")
+ncdf4_tmp <- ncvar_get(ncdf4_open,"tmp")
+
+class(ncdf4_tmp)
+dim(ncdf4_tmp)
+str(ncdf4_tmp)
+
+attributes(ncdf4_open)
+attributes(ncdf4_open$dim)
+ncdf4_lon <- ncvar_get(ncdf4_open, ncdf4_open$dim$lon)
+ncdf4_lat <- ncvar_get(ncdf4_open, ncdf4_open$dim$lat)
+ncdf4_time<- ncvar_get(ncdf4_open, ncdf4_open$dim$time)
+
+```
+
+</div>
+
+
+
+<div class="column-right0">
+
+```
+rnetcdf_open <- open.nc("data.nc")
+class(rnetcdf_open)
+str(rnetcdf_open)
+
+rnetcdf_read <- read.nc(rnetcdf_open)
+class(rnetcdf_read)
+str(rnetcdf_read)
+attributes(rnetcdf_read)
+
+var.get.nc(rnetcdf_open,'tmp')
+rnetcdf_tmp <- var.get.nc(rnetcdf_open,'tmp')
+
+class(rnetcdf_tmp)
+dim(rnetcdf_tmp)
+str(rnetcdf_tmp)
+```
+
+```
+attributes(rnetcdf_open)
+attributes(rnetcdf_read)
+
+rnetcdf_lon <- var.get.nc(rnetcdf_open, "lon")
+rnetcdf_lat <- var.get.nc(rnetcdf_open, "lat")
+rnetcdf_time<- var.get.nc(rnetcdf_open, "time")
+```
+
+</div>
+
+
+
+## **R Advance - <span style="color:orangered">*ncdf4*</span> Package**
+
+
+```
+ncdf4_tmp <- ncvar_get(ncdf4_open,"tmp")
+ncdf4_tmp[,,1]
+ncdf4_tmp_first<- ncdf4_tmp[,,1]
+
+image(ncdf4_lon, ncdf4_lat, ncdf4_tmp_first)
+````
+
+![](temp_emir.png)
+
+
+
+
+
+
+## **R Advance - <span style="color:orangered">*ncdf4*</span> Package**
+
+
+```
+library("maptools")
+
+turkey_shp <- readShapePoly("turkiye.shp")
+
+image(ncdf4_lon, ncdf4_lat, ncdf4_tmp_first)
+
+plot(turkey_shp, add = T)
+
+```
+
+![](emir_temp2.png)
+
+
+
+
+
+
+## **R Advance - <span style="color:orangered">*ncdf4*</span> Package**
+
+
+```
+library("fields")
+
+image.plot( ncdf4_lon, ncdf4_lat, ncdf4_tmp_first, 
+              xlab = "Lon", 
+              ylab = "Lat", 
+              main = "First Step (01-1901) Temperature for Turkey" )
+
+plot(turkey_shp, add = T) 
+
+```
+
+![](emir_temp3.png)
+
+apply(array1[,,index1],1:2,mean)
+
+
+
+## **R - NETCDF**
+
+``` 
+image.plot( ncdf4_lon, ncdf4_lat, 
+            apply(ncdf4_tmp[,,1332:1344],1:2,mean) - apply(ncdf4_tmp[,,1:1331],1:2,mean), 
+            xlab = "Lon", 
+            ylab = "Lat", 
+            main = "? for Turkey" )
+         
+plot(turkey_shp, add = T) 
+```
+
+![](emir_temp4.png)
+
+
+
+## **R - NETCDF**
+
+```
+image.plot( ncdf4_lon, ncdf4_lat, 
+            apply(ncdf4_tmp[,,1332:1344],1:2,mean) - apply(ncdf4_tmp[,,1:1331],1:2,mean), 
+            xlab = "Lon", 
+            ylab = "Lat", 
+            main = " 2012 VS Mean of 1901-2011 for Turkey" )
+         
+plot(turkey_shp, add = T) 
+```
+
+![](emir_temp5.png)
+
+
+
+
+## <span style="color:orangered">**Next Week**</span>
+
+# <span style="color:orangered">**Next Week**</span>
+
+![](january-2021-calendar_last.gif)
+29 January 2020, 09:00-11:30
 
 
 
