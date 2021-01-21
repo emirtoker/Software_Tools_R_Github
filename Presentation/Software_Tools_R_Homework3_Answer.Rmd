@@ -31,6 +31,8 @@ fx <- sin(gx)^(cos(gx))
 print(fx)
 plot(fx)
 }
+
+chain()
 ```
 
 ***
@@ -49,6 +51,8 @@ exeedence <- function(n, min, max, threshold) {
     print("20 samples are lower than 500")
   }
 }
+
+exeedence(100,0,1000,500)
 ```
 
 ***
@@ -59,11 +63,14 @@ exeedence <- function(n, min, max, threshold) {
 sumofdig <- function(x) { 
 sum <- sum(as.integer(strsplit(as.character(x), "")[[1]]))
 while (sum < 50) {
+  print(c("sum is :", sum))
   print("sum is lower than 50, so I am going to add more 10")
   sum <- sum + 10
   message("new sum is : ",sum)
   }
 }
+
+sumofdig(385102)
 ```
 
 

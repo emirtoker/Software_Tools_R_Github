@@ -1,0 +1,66 @@
+---
+title: "Software Tools for Earth and Environmental Science"
+subtitle:  "-- 15th WEEK --"
+author: "Emir Toker"
+date: "27/12/2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: league
+---
+
+## **R FINAL PROJECT**
+
+- **Syllabus**
+
+- **Course Requirements**
+
+- <span style="color:cyan">**DataCamp**</span> **Class**
+
+- **Next Term - Data Analysis**
+
+- **ANKET**
+
+- <span style="color:orangered">**FINAL**</span>
+
+
+## **Syllabus**
+
+![](w15_sy.png)
+
+## **Course Requirements**
+
+- **Absence**
+
+- **Homeworks**
+
+- <span style="color:cyan">**DataCamp**</span> **Class**
+
+- <span style="color:orangered">**FINAL**</span>
+
+## **DataCamp Class**
+
+![](w15_d1a.png) ![](w15_d1.png) ![](w15_d2a.png) ![](w15_d2.png)
+
+## **Next Term - Data Analysis**
+
+![](w15_b1.png) ![](w15_b2.png)
+
+## **ANKET**
+
+![](w15_anket.png)
+
+https://emirtoker.github.io/Software_Tools_R_Github/index.html
+
+
+## **FINAL**
+
+1. Go to web page.
+2. Click on <span style="color:orangered">**FINAL**</span>, and start.
+3. Don't talk to anybody for 1 hour.
+4. We have 1 hour to complete the first 20 steps.
+5. Mail me the <span style="color:orange">**Project_1**</span>, when you complete the first 20 steps. (tokerem@itu.edu.tr)
+6. Continue for other steps. You have 2 hours for next 15.
+7. Mail me the <span style="color:orange">**Project_2**</span>, with all. (tokerem@itu.edu.tr)
+
+
+
