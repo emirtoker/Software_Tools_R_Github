@@ -25,9 +25,9 @@ knitr::opts_chunk$set(echo = TRUE)
  - HW2 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_II_Emir.html)
  - Midterm Project - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_R_MidTerm_Project_Emir.html)
 - HW3 - [Rmd](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_III_Emir.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_III_Emir.pdf) - [html](https://web.itu.edu.tr/tokerem/Software_Tools_Homework_III_Emir.html)
+- Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html)
 
 <!--  [Answer](https://web.itu.edu.tr/tokerem/Software_Tools_R_Homework3_Answer.nb.html)  -->
-- Assessment_Test - [html](https://web.itu.edu.tr/tokerem/Assessment_Test.html)
 
 ***
 
@@ -80,14 +80,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ***
 
-
+-  [ANKET](https://forms.gle/NJXf7eiUkmKwpaMD8) 
 
 ***
 
--  [ANKET](https://forms.gle/NJXf7eiUkmKwpaMD8) 
+-  Final Project - [Rmd](https://web.itu.edu.tr/tokerem/Final_Project.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Final_Project.pdf) - [html](https://web.itu.edu.tr/tokerem/Final_Project.html)
 
-<!--  Final Project - [Rmd](https://web.itu.edu.tr/tokerem/Final_Project.Rmd) - [pdf](https://web.itu.edu.tr/tokerem/Final_Project.pdf) - [html](https://web.itu.edu.tr/tokerem/Final_Project.html) -->
-
+***
 
 
 <!-- **KNMI Data - ERA5 2m-Temp - CDO and NCO**--> 

@@ -5,7 +5,7 @@ author: "Emir Toker"
 date: "22/01/2020"
 output: 
   revealjs::revealjs_presentation:
-    theme: league
+    theme: white
 ---
 
 ## **R FINAL PROJECT**
@@ -45,6 +45,8 @@ https://emirtoker.github.io/Software_Tools_R_Github/index.html
 
 
 ## **Self Assesment Exam**
+
+![](ass_site.png)
 
 https://emirtoker.github.io/Software_Tools_R_Github/index.html
 
@@ -111,7 +113,6 @@ library(RNetCDF)
 rnetcdf_open <- open.nc("cru_1901_2012_tmp_TR.nc")
 print.nc(rnetcdf_open)
 ```
-
 
 
 

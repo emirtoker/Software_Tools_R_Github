@@ -1,15 +1,15 @@
 ---
 title: "Final Project"
 author: "Emir Toker"
-subtitle: happy Christmas and new year :)
+subtitle: It was nice to meet you :) See you in a while. Have fun!
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ***
 
-**Date** : 27/12/2019
+**Date** : 29/01/2020
 
 ***
 
@@ -35,13 +35,13 @@ output:
 17. Check the **structure** and **attributes** of **sta_data**. **Print** and **plot** the *precipiptation* and *temperature* of **sta_data1**.
 18. Change temperature with **NA** if the value is **lower** than 20. Assign it as *sta_data2*
 19. Write *sta_data2* as a new txt file in your working directory.
-20. **Install** "ncdf4" package and call it into R-Studio from **library**.
+20. **Install** "ncdf4" and "RNetCDF" package and call it into R-Studio from **library**.
 
 ***
 
 ### <span style="color:brown">**R Programming - Statistics - Visualization - 3D Data**</span>
 
-21. Check the clock and assign it as a new variable named *clock* (e.g. 11,23). Write a **if condition**. If the *clock* is between 10 and 12, print "I am at school", else print "I should go to school".
+21. Check the clock and assign it as a new variable named *clock* (e.g. 11,23). Write a **if condition**. If the *clock* is between 10 and 12, print "I am in a zoom meeting", else print "I should join a zoom meeting".
 ```
 if ( ... ) {
    print( ... )
@@ -55,7 +55,7 @@ for ( ... in ... ) {
      print( ... ) 
 }
 ```
-23. **Assign** *temperature* of *sta_data1* as *temp1*. Write an nested **if-else condition** in **for loop**. Do that: 
+23. **Assign** *temperature* of *sta_data1* as *temp1*. Write an nested **if-else condition** in **for loop**. Do these: 
   - look for all temperature values with **for loop**, (lenght of *temp1* is important, from 1st element to last element of *temp1*)
   - **if** *temp1* is **bigger than 20 and lower than 30** then **print** the value with " is not a extreme value" 
   - **else if** *temp1* is **lower than 20** then **print** each value with " is a lower value" 
@@ -88,6 +88,8 @@ OUTLIERS > MEAN+IQR(temp1)
 ```
 outlier <- function( x ) {
 
+mean(...)
+median(...)
 ...
 ...
 ...
@@ -98,15 +100,14 @@ outlier <- function( x ) {
       print(which(...))
     }
   }
-  
 }
 ```
 
 ***
 
-25. Go to main web page and download CRU_TR_Near-Surface_Temp_16-01-1901_16-12-2012_Monthly.nc in your working directory and **read** the station data in R-Studio (WITH **ncdf4** Package). Assign it as **cru_data1**.
+25. Go to main web page and download CRU_TR_Near-Surface_Temp_16-01-1901_16-12-2012_Monthly.nc in your working directory and **read** the station data in R-Studio (with **ncdf4** or **RNetCDF** Package). Assign it as **cru_data1**.
 26. Check the metadata, **structure**, **class** and **attributes** of **cru_data1**.
-27. Write these 
+27. Write these to me as messages:
   - The **number** of *variable*(s) and *dimension*(s) 
   - **Name**(s) of *dimension*(s), 
   - Long and short **name** of *variable*(s), 
@@ -120,17 +121,22 @@ message("the size of time step is ... ")
 message("Time ends in  ... / ... ")
 
 ```
-28. **Get** **attributes** of variable from netcdf file (WITH **ncdf4** Package). 
-29. **Get** **variable** from netcdf file (WITH **ncdf4** Package). **Assign** it as *var1*.
+28. **Get** **attributes** of variable from **cru_data1** data (with **ncdf4** or **RNetCDF** Package). 
+29. **Get** the temperature **variable** from **cru_data1** data (with **ncdf4** or **RNetCDF** Package). **Assign** it as *var1*.
 30. Check the **structure**, **class** and **dimensions** of *var1*.
 31. Print *var1* at 2nd *Time* step for all *Latitude*, *Longitude*.
-32. **Image** the spatial (2D) Turkey Map for November 2010. (size of time step and temporal resolution are important)
-33. Can you find the Latitude and Longitude grid (or **index**) number of **Istanbul**, approximately ? *(e.g. var1[2,34,])*
+32. **Image** the Turkey Temperature Map for November 2010. (with latitudes and longitudes - 2D map) (be careful about the size of time step and temporal resolution of **cru_data1**)
+33. Can you find the Latitude and Longitude grid (or **index**) number of **Istanbul**, approximately ? *(e.g., var1[2,34,])*
 34. Calculate the **mean** of *var1* for Istanbul grid (or **index**) for **ALL time**.
-35. **Plot** the values of *var1* time series for **ALL time** considering the Istanbul grid (or **index**).
+35. **Plot** the values of *var1* time series for **ALL time** considering the Istanbul grid (hint: use the **index** of Istanbul, e.g., var1[2,34,]).
+36. Can you plot (or **Image**) the **mean** of Turkey Temperature Map for **ALL time** (hint: use the **apply** function)
+
 
 ***
 
+37. If you are here, then special thanks to you for visiting my GitHub page, and our official website ( *Hint: You are special!* )
+
+***
 
 
 
